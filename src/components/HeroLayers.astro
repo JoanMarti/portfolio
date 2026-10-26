@@ -1,0 +1,65 @@
+---
+// Hero visual: how Joan works, drawn as the three layers of a design system.
+// The layers separate once on page load (skipped with reduced motion).
+const iso = (cx: number, cy: number, w: number, h: number) =>
+  `${cx},${cy - h} ${cx + w},${cy} ${cx},${cy + h} ${cx - w},${cy}`;
+
+const layers = [
+  { y: 110, name: 'Product', note: 'Flows people trust', cls: 'top' },
+  { y: 230, name: 'System', note: 'Components & governance', cls: 'mid' },
+  { y: 350, name: 'Foundations', note: 'Tokens & accessibility', cls: 'base' },
+];
+---
+
+<svg class="hero-layers" viewBox="0 0 600 460" role="img"
+  aria-label="Three stacked layers: product flows on top of a component system on top of foundations and tokens.">
+  {[...layers].reverse().map((l, i) => (
+    <g class={`layer layer--${l.cls}`} style={`--rise:${i * 120}px; --delay:${i * 90}ms`}>
+      <polygon points={iso(220, l.y, 200, 80)} class="plane" />
+      {l.cls === 'base' && Array.from({ length: 4 }).map((_, r) =>
+        Array.from({ length: 4 }).map((_, c) => (
+          <circle cx={220 + (c - r) * 38} cy={l.y + (c + r - 3) * 15} r="3.5" class="dot" />
+        )))}
+      {l.cls === 'mid' && (
+        <g>
+          <polygon points={iso(170, l.y - 2, 46, 18)} class="chip" />
+          <polygon points={iso(262, l.y - 18, 46, 18)} class="chip" />
+          <polygon points={iso(268, l.y + 26, 46, 18)} class="chip" />
+        </g>
+      )}
+      {l.cls === 'top' && (
+        <g>
+          <polygon points={iso(190, l.y, 104, 42)} class="chip chip--light" />
+          <polyline points={`${150},${l.y + 2} ${190},${l.y - 14} ${232},${l.y + 4}`} class="path" />
+        </g>
+      )}
+      <line x1="420" y1={l.y} x2="440" y2={l.y} class="leader" />
+      <text x="450" y={l.y - 4} class="t-name">{l.name}</text>
+      <text x="450" y={l.y + 18} class="t-note">{l.note}</text>
+    </g>
+  ))}
+</svg>
+
+<style>
+  .hero-layers { width: 100%; height: auto; overflow: visible; }
+  .plane { fill: var(--paper-2); stroke: var(--ink); stroke-width: 1.5; }
+  .layer--top .plane { fill: var(--accent); stroke: var(--accent); }
+  .chip { fill: var(--accent-soft); stroke: var(--ink); stroke-width: 1.25; }
+  .chip--light { fill: var(--paper); stroke: var(--paper); }
+  .dot { fill: var(--ink); }
+  .path { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+  .leader { stroke: var(--muted); stroke-width: 1; }
+  .t-name { fill: var(--ink); font: 700 18px var(--font); }
+  .t-note { fill: var(--muted); font: 400 14px var(--font); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .layer {
+      animation: rise 900ms cubic-bezier(0.2, 0.7, 0.1, 1) both;
+      animation-delay: calc(250ms + var(--delay));
+    }
+    @keyframes rise {
+      from { transform: translateY(var(--rise)); }
+      to { transform: translateY(0); }
+    }
+  }
+</style>

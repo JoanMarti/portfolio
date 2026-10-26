@@ -1,0 +1,255 @@
+---
+// Diagram covers: each one draws the central idea of a case study.
+// They use CSS variables, so they follow light/dark mode and never break an NDA.
+// To use a real image instead, add `image` support in the case study template.
+interface Props {
+  kind: 'layers' | 'tenants' | 'branching' | 'loop' | 'hmi' | 'mood' | 'signals';
+  label: string;
+  size?: 'large' | 'small';
+}
+const { kind, label, size = 'large' } = Astro.props;
+
+// Isometric rhombus: centre (cx, cy), half-width w, half-height h.
+const iso = (cx: number, cy: number, w: number, h: number) =>
+  `${cx},${cy - h} ${cx + w},${cy} ${cx},${cy + h} ${cx - w},${cy}`;
+
+// Points on a circle.
+const onCircle = (i: number, n: number, r: number, cx = 400, cy = 250, start = -90) => {
+  const a = ((start + (360 / n) * i) * Math.PI) / 180;
+  return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
+};
+
+const loopSteps = ['Search', 'Explore', 'Compare', 'Return', 'Contact dealer'];
+const sources = ['Strava', 'WHOOP', 'Garmin', 'Suunto', 'Wahoo', 'Intervals', 'TrainingPeaks'];
+const moods = ['Calm', 'Focus', 'Energy', 'Nostalgic', 'Euphoric'];
+const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 102, 86, 60, 42, 56, 38, 26, 16];
+---
+
+<figure class={`cover cover--${size}`} role="img" aria-label={label}>
+  <svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect width="800" height="500" class="c-bg" />
+
+    {kind === 'layers' && (
+      <g>
+        {/* Tokens */}
+        <polygon points={iso(360, 360, 230, 92)} class="c-plane" />
+        {Array.from({ length: 5 }).map((_, r) =>
+          Array.from({ length: 5 }).map((_, c) => {
+            const x = 360 + (c - r) * 34;
+            const y = 360 + (c + r - 4) * 14;
+            return <circle cx={x} cy={y} r="4" class="c-ink-fill" />;
+          }),
+        )}
+        {/* Components */}
+        <polygon points={iso(360, 250, 230, 92)} class="c-plane c-plane--float" />
+        <polygon points={iso(300, 245, 52, 21)} class="c-chip" />
+        <polygon points={iso(400, 225, 52, 21)} class="c-chip" />
+        <polygon points={iso(420, 280, 52, 21)} class="c-chip" />
+        <polygon points={iso(320, 290, 34, 14)} class="c-chip" />
+        {/* Templates */}
+        <polygon points={iso(360, 140, 230, 92)} class="c-plane c-plane--accent" />
+        <polygon points={iso(320, 140, 120, 48)} class="c-chip c-chip--light" />
+        <polygon points={iso(450, 135, 60, 24)} class="c-chip c-chip--light" />
+        {/* Labels */}
+        <g class="c-label">
+          <line x1="590" y1="140" x2="640" y2="140" class="c-leader" />
+          <text x="652" y="146">Templates</text>
+          <line x1="590" y1="250" x2="640" y2="250" class="c-leader" />
+          <text x="652" y="256">Components</text>
+          <line x1="590" y1="360" x2="640" y2="360" class="c-leader" />
+          <text x="652" y="366">Tokens</text>
+        </g>
+      </g>
+    )}
+
+    {kind === 'tenants' && (
+      <g>
+        {['Retail', 'Private', 'Corporate', 'Wealth'].map((seg, i) => {
+          const a0 = (-90 + i * 90 + 2) * (Math.PI / 180);
+          const a1 = (-90 + (i + 1) * 90 - 2) * (Math.PI / 180);
+          const R = 215, r = 165;
+          const p = (rad: number, a: number) => `${400 + rad * Math.cos(a)},${250 + rad * Math.sin(a)}`;
+          return (
+            <path d={`M ${p(R, a0)} A ${R} ${R} 0 0 1 ${p(R, a1)} L ${p(r, a1)} A ${r} ${r} 0 0 0 ${p(r, a0)} Z`} class="c-plane" />
+          );
+        })}
+        {[['Retail', 660, 90], ['Private', 660, 420], ['Corporate', 140, 420], ['Wealth', 140, 90]].map(([t, x, y]) => (
+          <text x={x} y={y} text-anchor={Number(x) > 400 ? 'start' : 'end'} class="c-label c-small">{t}</text>
+        ))}
+        <circle cx="400" cy="250" r="128" class="c-line c-dashed" />
+        {Array.from({ length: 7 }).map((_, i) => {
+          const p = onCircle(i, 7, 128);
+          return <circle cx={p.x} cy={p.y} r="13" class={i === 0 ? 'c-accent-fill' : 'c-tint-' + (i % 3)} />;
+        })}
+        <circle cx="400" cy="250" r="66" class="c-plane c-plane--accent" />
+        <text x="400" y="257" text-anchor="middle" class="c-label c-on-accent">Core</text>
+      </g>
+    )}
+
+    {kind === 'branching' && (
+      <g>
+        <circle cx="90" cy="230" r="26" class="c-plane c-plane--accent" />
+        {['Referral source', 'Client profile', 'Relationship', 'Experience'].map((t, i) => {
+          const y = 90 + i * 94;
+          return (
+            <g>
+              <path d={`M 116 230 C 200 230, 200 ${y}, 290 ${y}`} class="c-line" />
+              <rect x="290" y={y - 22} width="210" height="44" rx="22" class="c-plane" />
+              <text x="395" y={y + 6} text-anchor="middle" class="c-label c-small">{t}</text>
+              <path d={`M 500 ${y} C 590 ${y}, 590 230, 664 230`} class="c-line" />
+            </g>
+          );
+        })}
+        <rect x="664" y="204" width="110" height="52" rx="8" class="c-plane c-plane--accent" />
+        <text x="719" y="236" text-anchor="middle" class="c-label c-on-accent">Account</text>
+        <line x1="90" y1="440" x2="719" y2="440" class="c-line c-dashed c-accent-stroke" />
+        {[90, 395, 719].map((x) => <circle cx={x} cy="440" r="9" class="c-accent-fill" />)}
+        <text x="90" y="475" class="c-label c-small">Advisor present throughout</text>
+      </g>
+    )}
+
+    {kind === 'loop' && (
+      <g>
+        <circle cx="400" cy="250" r="160" class="c-line c-accent-stroke c-thick" fill="none" />
+        {loopSteps.map((t, i) => {
+          const p = onCircle(i, loopSteps.length, 160);
+          return (
+            <g>
+              <circle cx={p.x} cy={p.y} r="12" class={i === 3 ? 'c-accent-fill' : 'c-plane'} />
+              <text x={p.x + (i === 0 ? -24 : p.x >= 400 ? 24 : -24)} y={p.y + 6} text-anchor={i === 0 ? 'end' : p.x >= 400 ? 'start' : 'end'} class="c-label">{t}</text>
+            </g>
+          );
+        })}
+        <path d="M 412 84 C 440 40, 480 30, 520 30" class="c-line c-dashed c-faded" />
+        <text x="530" y="36" class="c-label c-small c-faded-text">Before: search, then leave</text>
+        <text x="400" y="258" text-anchor="middle" class="c-label c-small">Every visit picks up</text>
+        <text x="400" y="280" text-anchor="middle" class="c-label c-small">where the last one ended</text>
+      </g>
+    )}
+
+    {kind === 'hmi' && (
+      <g>
+        <g class="c-faded">
+          <text x="60" y="70" class="c-label c-small">Before: deep menus</text>
+          <circle cx="160" cy="120" r="9" class="c-ink-fill" />
+          {[0, 1].map((a) => (
+            <g>
+              <line x1="160" y1="120" x2={100 + a * 120} y2="190" class="c-line" />
+              <circle cx={100 + a * 120} cy="190" r="8" class="c-ink-fill" />
+              {[0, 1].map((b) => (
+                <g>
+                  <line x1={100 + a * 120} y1="190" x2={70 + a * 120 + b * 60} y2="260" class="c-line" />
+                  <circle cx={70 + a * 120 + b * 60} cy="260" r="7" class="c-ink-fill" />
+                  {[0, 1].map((c) => (
+                    <g>
+                      <line x1={70 + a * 120 + b * 60} y1="260" x2={55 + a * 120 + b * 60 + c * 30} y2="330" class="c-line" />
+                      <circle cx={55 + a * 120 + b * 60 + c * 30} cy="330" r="6" class="c-ink-fill" />
+                      <line x1={55 + a * 120 + b * 60 + c * 30} y1="330" x2={55 + a * 120 + b * 60 + c * 30} y2="400" class="c-line" />
+                      <circle cx={55 + a * 120 + b * 60 + c * 30} cy="400" r="5" class="c-ink-fill" />
+                    </g>
+                  ))}
+                </g>
+              ))}
+            </g>
+          ))}
+        </g>
+        <text x="380" y="70" class="c-label c-small">After: shallow, grouped by driver goals</text>
+        <circle cx="560" cy="150" r="46" class="c-plane c-plane--accent" />
+        <circle cx="560" cy="150" r="20" class="c-bg-fill" />
+        {Array.from({ length: 12 }).map((_, i) => {
+          const a = (i * 30 * Math.PI) / 180;
+          return <line x1={560 + 54 * Math.cos(a)} y1={150 + 54 * Math.sin(a)} x2={560 + 62 * Math.cos(a)} y2={150 + 62 * Math.sin(a)} class="c-line" />;
+        })}
+        {['Navigate', 'Media', 'Phone', 'Car', 'Assist'].map((t, i) => {
+          const x = 380 + i * 80;
+          return (
+            <g>
+              <line x1="560" y1="212" x2={x + 34} y2="280" class="c-line" />
+              <rect x={x} y="280" width="68" height="68" rx="6" class={i === 0 ? 'c-plane c-plane--accent' : 'c-plane'} />
+              <text x={x + 34} y="378" text-anchor="middle" class="c-label c-small">{t}</text>
+            </g>
+          );
+        })}
+        <rect x="380" y="410" width="388" height="28" rx="4" class="c-chip c-chip--light" />
+        <text x="392" y="429" class="c-label c-small">Persistent status area</text>
+      </g>
+    )}
+
+    {kind === 'mood' && (
+      <g>
+        {bars.map((h, i) => (
+          <rect x={150 + i * 21} y={230 - h / 2} width="12" height={h} rx="6" class={i > 9 && i < 15 ? 'c-accent-fill' : 'c-ink-fill c-soft'} />
+        ))}
+        {moods.map((m, i) => {
+          const x = 100 + i * 128;
+          const on = i === 2;
+          return (
+            <g>
+              <rect x={x} y="360" width="112" height="44" rx="22" class={on ? 'c-plane c-plane--accent' : 'c-plane'} />
+              <text x={x + 56} y="388" text-anchor="middle" class={on ? 'c-label c-small c-on-accent' : 'c-label c-small'}>{m}</text>
+            </g>
+          );
+        })}
+        <text x="100" y="90" class="c-label c-small">How do you feel right now?</text>
+      </g>
+    )}
+
+    {kind === 'signals' && (
+      <g>
+        {sources.map((s, i) => {
+          const y = 70 + i * 60;
+          return (
+            <g>
+              <text x="40" y={y + 6} class="c-label c-small">{s}</text>
+              <path d={`M 170 ${y} C 300 ${y}, 330 250, 470 250`} class="c-line" />
+              <circle cx="170" cy={y} r="5" class="c-ink-fill" />
+            </g>
+          );
+        })}
+        <circle cx="560" cy="250" r="96" class="c-plane" />
+        <circle cx="560" cy="250" r="96" class="c-line c-accent-stroke c-thick" fill="none"
+          stroke-dasharray={`${2 * Math.PI * 96 * 0.72} ${2 * Math.PI * 96}`} transform="rotate(-90 560 250)" />
+        <text x="560" y="262" text-anchor="middle" class="c-label c-big">72</text>
+        <text x="560" y="290" text-anchor="middle" class="c-label c-small">readiness</text>
+        <rect x="470" y="380" width="290" height="44" rx="6" class="c-plane c-plane--accent" />
+        <text x="486" y="408" class="c-label c-small c-on-accent">Today: 60 min endurance, zone 2</text>
+      </g>
+    )}
+  </svg>
+</figure>
+
+<style>
+  .cover {
+    margin: 0;
+    background: var(--paper-2);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    aspect-ratio: 8 / 5;
+  }
+  .cover svg { display: block; width: 100%; height: 100%; }
+  .c-bg { fill: var(--paper-2); }
+  .c-bg-fill { fill: var(--paper-2); stroke: var(--ink); stroke-width: 1.5; }
+  .c-plane { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
+  .c-plane--float { fill: var(--paper); }
+  .c-plane--accent { fill: var(--accent); stroke: var(--accent); }
+  .c-chip { fill: var(--accent-soft); stroke: var(--ink); stroke-width: 1.25; }
+  .c-chip--light { fill: var(--paper); }
+  .c-ink-fill { fill: var(--ink); }
+  .c-accent-fill { fill: var(--accent); }
+  .c-tint-0 { fill: var(--accent-soft); stroke: var(--ink); stroke-width: 1.25; }
+  .c-tint-1 { fill: var(--paper); stroke: var(--ink); stroke-width: 1.25; }
+  .c-tint-2 { fill: var(--ink); }
+  .c-soft { opacity: 0.25; }
+  .c-line { fill: none; stroke: var(--ink); stroke-width: 1.5; }
+  .c-thick { stroke-width: 6; stroke-linecap: round; }
+  .c-dashed { stroke-dasharray: 6 8; }
+  .c-accent-stroke { stroke: var(--accent); }
+  .c-leader { stroke: var(--muted); stroke-width: 1; }
+  .c-label { fill: var(--ink); font-family: var(--font); font-size: 20px; font-weight: 500; }
+  .c-small { font-size: 16px; font-weight: 450; }
+  .c-big { font-size: 48px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .c-on-accent { fill: var(--on-accent); }
+  .c-faded { opacity: 0.35; }
+  .c-faded-text { fill: var(--muted); }
+
+</style>

@@ -1,0 +1,117 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+import { experience, education, recommendations } from '../data/experience';
+import { url } from '../lib/url';
+---
+
+<Base title="About" description="Joan Martí Díez — Senior Product Designer in Zug, Switzerland. 16 years designing systems and products for banking, trading, marketplaces and automotive." current="about">
+  <section class="intro wrap">
+    <h1>Hi, I’m Joan.</h1>
+    <div class="intro-text">
+      <p class="big">
+        I’m a Senior Product Designer based in Zug, Switzerland. For 16 years I’ve designed digital products
+        where clarity isn’t a nice-to-have: private banking, commodity trading, banking SaaS, car marketplaces
+        and in-car interfaces.
+      </p>
+      <p>
+        These days I mostly lead design systems — and design the products that run on them. I like the
+        unglamorous parts: naming tokens so engineers and designers mean the same thing, writing documentation
+        people actually read, and setting up the governance that keeps a system alive after launch.
+      </p>
+      <p>
+        I started in graphic and multimedia design, which gave me a visual foundation and an eye for detail.
+        Curiosity about how people think pulled me into UX and product. A master’s in advertising and
+        marketing strategy, plus training in trend analysis and qualitative research, taught me to connect
+        design decisions to business ones.
+      </p>
+      <p>
+        For the last four years I’ve been using AI in my own workflow — research synthesis, documentation,
+        prototyping — and building with it, like <a href={url('/work/athleteos/')}>AthleteOS</a>. I’m
+        interested in where it adds real value and where a human should step in.
+      </p>
+      <p>
+        Outside work I write about design systems, research and accessibility, follow how technology and
+        mobility shape behaviour, and spend more time than I should analysing my own training data.
+      </p>
+    </div>
+    <!-- TODO: add a portrait at public/images/joan.jpg and uncomment
+    <img class="portrait" src={url('/images/joan.jpg')} alt="Joan Martí Díez" width="480" height="600" />
+    -->
+  </section>
+
+  <section class="wrap block" aria-labelledby="exp-h">
+    <div class="section-head">
+      <h2 id="exp-h">Experience</h2>
+      <a href={url(`/${site.cv}`)} download>Download CV (PDF)</a>
+    </div>
+    <ol class="timeline">
+      {experience.map((r) => (
+        <li>
+          <span class="t-period muted">{r.period ?? ''}</span>
+          <div>
+            <p class="t-role">{r.role}</p>
+            <p class="t-company">{r.company}<span class="muted"> — {r.sector}</span></p>
+            {r.note && <p class="t-note muted">{r.note}</p>}
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="wrap block" aria-labelledby="rec-h">
+    <div class="section-head">
+      <h2 id="rec-h">What colleagues say</h2>
+      <a href="https://www.linkedin.com/in/joan-marti-productdesigner/details/recommendations/" rel="noopener">All 23 recommendations on LinkedIn</a>
+    </div>
+    <div class="recs">
+      {recommendations.map((r) => (
+        <blockquote>
+          <p>“{r.quote}”</p>
+          <footer><strong>{r.name}</strong><span class="muted">, {r.context}</span></footer>
+        </blockquote>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap block facts-grid">
+    <div>
+      <h2>Education</h2>
+      <ul>{education.map((e) => <li>{e}</li>)}</ul>
+    </div>
+    <div>
+      <h2>Languages</h2>
+      <ul>{site.languages.map((l) => <li>{l.name} <span class="muted">— {l.level}</span></li>)}</ul>
+    </div>
+    <div>
+      <h2>Recognition</h2>
+      <ul><li>First place, Google Spain AMP Hackathon (2018)</li></ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro { display: grid; grid-template-columns: 4fr 8fr; gap: clamp(24px, 5vw, 72px); padding-top: clamp(32px, 6vw, 88px); }
+  .intro h1 { font-size: var(--step-4); letter-spacing: -0.035em; }
+  .intro-text { display: grid; gap: 1.1em; max-width: var(--measure); }
+  .big { font-size: var(--step-1); line-height: 1.45; font-weight: 500; }
+  @media (max-width: 860px) { .intro { grid-template-columns: 1fr; } }
+
+  .block { margin-top: clamp(72px, 10vw, 128px); }
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 8rem 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .t-role { font-weight: 650; }
+  .t-note { margin-top: 4px; font-size: var(--step--1); }
+  @media (max-width: 600px) { .timeline li { grid-template-columns: 1fr; gap: 4px; } }
+
+  .recs { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .recs blockquote { margin: 0; padding: 28px; background: var(--paper-2); border-radius: var(--radius-lg); }
+  .recs p { font-size: var(--step-1); line-height: 1.45; }
+  .recs footer { margin-top: 20px; font-size: var(--step--1); }
+  @media (max-width: 760px) { .recs { grid-template-columns: 1fr; } }
+
+  .facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .facts-grid h2 { font-size: var(--step-1); padding-bottom: 12px; border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+  .facts-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  @media (max-width: 760px) { .facts-grid { grid-template-columns: 1fr; } }
+</style>
