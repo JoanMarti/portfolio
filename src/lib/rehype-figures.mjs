@@ -23,6 +23,9 @@ export default function rehypeFigures({ base = '/' } = {}) {
           return figure;
         }
       }
+      if (child.type === 'element' && child.tagName === 'img' && child.properties?.src) {
+        child.properties.src = fix(String(child.properties.src));
+      }
       walk(child);
       return child;
     });
