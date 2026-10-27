@@ -107,7 +107,8 @@ p { margin: 0; text-wrap: pretty; }
 .section-head h2 { font-size: var(--step-2); }
 
 /* Long-form text inside case studies */
-.prose { max-width: var(--measure); }
+.prose { max-width: none; }
+.prose > :not(figure) { max-width: var(--measure); }
 .prose > * + * { margin-top: 1.1em; }
 .prose h2 { font-size: var(--step-2); margin-top: 2.4em; }
 .prose h3 { font-size: var(--step-1); margin-top: 1.8em; }
@@ -119,6 +120,10 @@ p { margin: 0; text-wrap: pretty; }
 }
 .prose blockquote p { margin: 0; }
 .prose strong { font-weight: 650; }
+.prose figure { margin: 2.6em 0; display: grid; gap: 12px; }
+.prose figure a { display: block; border-radius: var(--radius-lg); overflow: hidden; background: var(--paper-2); }
+.prose figure img { display: block; width: 100%; height: auto; }
+.prose figcaption { color: var(--muted); font-size: var(--step--1); max-width: var(--measure); }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }

@@ -1,6 +1,6 @@
 """Bundle the built Astro site (dist/) into one self-contained HTML page with
 in-page navigation, for a shareable live preview. Run after `npm run build`."""
-import json, pathlib, re, sys
+import base64, json, pathlib, re, sys
 
 dist = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else 'dist')
 out = pathlib.Path(sys.argv[2] if len(sys.argv) > 2 else 'demo/index.html')
@@ -22,6 +22,14 @@ for p in sorted(dist.rglob('index.html')):
         if s not in css: css.append(s)
     title = re.search(r'<title>(.*?)</title>', html, re.S).group(1)
     main = re.search(r'<main id="main"[^>]*>(.*?)</main>', html, re.S).group(1)
+    # Inline local images (the demo runs where only data: URIs are allowed).
+    def inline(m):
+        f = dist / m.group(2).lstrip('/')
+        if not f.exists(): return m.group(0)
+        mime = {'.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml'}[f.suffix]
+        return f'{m.group(1)}="data:{mime};base64,{base64.b64encode(f.read_bytes()).decode()}"'
+    main = re.sub(r'<a href="/projects/[^"]+"', '<a', main).replace(' loading="lazy"', '')
+    main = re.sub(r'(src)="(/(?:projects|images)/[^"]+)"', inline, main)
     routes[r] = {'title': title, 'html': main}
     if r == '/':
         header = re.search(r'(<header class="site-header.*?</header>)', html, re.S).group(1)

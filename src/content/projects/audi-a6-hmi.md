@@ -11,7 +11,7 @@ duration: "TODO"
 tools: [Information architecture, Interaction design, High-fidelity prototyping, Simulator testing]
 cover: hmi
 featured: false
-order: 7
+order: 8
 tldr:
   - Cars were turning into connected platforms — navigation, media, phone, vehicle settings, driver assistance — and menus were getting deeper with every feature.
   - I defined the information architecture, navigation model and interaction principles for the connected A6, designing for the rotary controller first, and tested prototypes in a cabin simulator.

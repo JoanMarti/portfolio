@@ -11,7 +11,7 @@ duration: 3 months to MVP
 tools: [Figma, Hotjar, Google Analytics, Typeform, Guerrilla testing]
 cover: mood
 featured: false
-order: 6
+order: 7
 tldr:
   - Recommendation engines rely on listening history, so they keep serving more of the same. Young listeners (15–25) wanted something new that matched the moment.
   - I defined the MVP, ran discovery, and designed and tested two entry flows — an optional selfie as a playful mood signal, and quick manual mood selection — on top of Spotify and Apple Music.

@@ -11,7 +11,7 @@ duration: "TODO"
 tools: [Figma, Storybook, Confluence, Design tokens]
 cover: tenants
 featured: true
-order: 2
+order: 3
 tldr:
   - Crealogix builds digital banking channels for retail, private, corporate and wealth clients. Each office was building its own components, so delivery slowed and quality varied from client to client.
   - I defined a multi-tenant model — shared core, token-driven brand themes, segment extensions — and the documentation and governance that made teams actually adopt it.

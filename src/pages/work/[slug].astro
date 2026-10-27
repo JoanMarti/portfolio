@@ -1,7 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
-import ProjectCover from '../../components/ProjectCover.astro';
+import Cover from '../../components/Cover.astro';
 import { writing } from '../../data/writing';
 import { url, filled } from '../../lib/url';
 
@@ -41,7 +41,7 @@ const related = writing.filter((a) => a.relatedProject === project.id);
     </header>
 
     <div class="wrap">
-      <ProjectCover kind={d.cover} label={d.headline} />
+      <Cover data={d} />
     </div>
 
     <section class="overview wrap" aria-label="Overview">
@@ -137,8 +137,7 @@ const related = writing.filter((a) => a.relatedProject === project.id);
   .m-method { font-size: var(--step--1); line-height: 1.45; }
 
   .body { margin-top: clamp(32px, 5vw, 48px); }
-  .body .prose { margin-left: calc((100% - var(--measure)) * 0.33); }
-  @media (max-width: 1000px) { .body .prose { margin-left: 0; } }
+
 
   .related { margin-top: 64px; display: grid; gap: 8px; }
   .related a { font-weight: 600; font-size: var(--step-1); }

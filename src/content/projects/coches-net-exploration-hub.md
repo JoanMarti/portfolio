@@ -11,7 +11,7 @@ duration: "TODO"
 tools: [Adobe Analytics, Figma, Guerrilla testing, A/B testing]
 cover: loop
 featured: false
-order: 4
+order: 5
 tldr:
   - Car buyers on Coches.net searched, looked at a listing and left. Buying a car takes weeks of comparing, but the platform made people start from zero every visit.
   - I designed an exploration hub in the main navigation that keeps saved searches, favourites, comparisons and personalised recommendations in one place, and validated it with guerrilla tests and a staged A/B test.

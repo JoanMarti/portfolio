@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import HeroLayers from '../components/HeroLayers.astro';
-import ProjectCover from '../components/ProjectCover.astro';
+import Cover from '../components/Cover.astro';
 import { site } from '../data/site';
 import { writing } from '../data/writing';
 import { recommendations } from '../data/experience';
@@ -74,7 +74,7 @@ const byId = Object.fromEntries(projects.map((p) => [p.id, p]));
       {featured.map((p, i) => (
         <article class:list={['feature', { 'feature--flip': i % 2 === 1 }]}>
           <a href={url(`/work/${p.id}/`)} class="feature-cover" tabindex="-1" aria-hidden="true">
-            <ProjectCover kind={p.data.cover} label={p.data.headline} />
+            <Cover data={p.data} />
           </a>
           <div class="feature-text">
             <p class="meta muted">
@@ -101,7 +101,7 @@ const byId = Object.fromEntries(projects.map((p) => [p.id, p]));
       {more.map((p) => (
         <article class="tile">
           <a href={url(`/work/${p.id}/`)} class="tile-link">
-            <ProjectCover kind={p.data.cover} label={p.data.headline} size="small" />
+            <Cover data={p.data} size="small" />
             <p class="meta muted">
               <span>{p.data.title}</span>
               {filled(p.data.year) && <span>{p.data.year}</span>}

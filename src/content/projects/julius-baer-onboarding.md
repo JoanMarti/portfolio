@@ -11,7 +11,7 @@ duration: "TODO"
 tools: [Figma, Interview synthesis, Journey mapping, Moderated usability testing]
 cover: branching
 featured: true
-order: 3
+order: 4
 tldr:
   - Onboarding at Julius Baer was split across digital and human channels. For clients who expect discretion and a personal relationship, the first digital impression didn’t match the brand.
   - I led research, the adaptive flow logic and high-fidelity prototypes for a proof of concept that tailors onboarding to each client and keeps the advisor visible throughout.

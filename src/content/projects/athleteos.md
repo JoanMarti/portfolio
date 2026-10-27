@@ -11,7 +11,7 @@ duration: Ongoing
 tools: [Figma, Next.js, TypeScript, Supabase, Recharts, Claude]
 cover: signals
 featured: false
-order: 5
+order: 6
 kind: side-project
 tldr:
   - Endurance athletes collect data in many apps — Strava, WHOOP, Garmin, Suunto, Wahoo, Intervals.icu, TrainingPeaks — but none answers the only question that matters in the morning — how should I train today?

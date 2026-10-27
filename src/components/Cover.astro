@@ -1,0 +1,29 @@
+---
+// Chooses the cover for a case study: a real image when `coverImage` is set
+// in the front matter, otherwise the diagram cover.
+import ProjectCover from './ProjectCover.astro';
+import { url } from '../lib/url';
+
+interface Props {
+  data: {
+    cover?: 'layers' | 'tenants' | 'branching' | 'loop' | 'hmi' | 'mood' | 'signals';
+    coverImage?: { src: string; alt: string };
+    headline: string;
+  };
+  size?: 'large' | 'small';
+}
+const { data, size = 'large' } = Astro.props;
+---
+
+{data.coverImage ? (
+  <figure class={`img-cover img-cover--${size}`}>
+    <img src={url(data.coverImage.src)} alt={data.coverImage.alt} loading={size === 'small' ? 'lazy' : 'eager'} decoding="async" />
+  </figure>
+) : (
+  <ProjectCover kind={data.cover ?? 'layers'} label={data.headline} size={size} />
+)}
+
+<style>
+  .img-cover { margin: 0; border-radius: var(--radius-lg); overflow: hidden; aspect-ratio: 8 / 5; background: var(--paper-2); }
+  .img-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
+</style>
