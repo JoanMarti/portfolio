@@ -1,0 +1,61 @@
+---
+import Base from '../layouts/Base.astro';
+import { writing } from '../data/writing';
+import { site } from '../data/site';
+import { ui, locales, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang].writing;
+const fmt = (d?: string) =>
+  d ? new Date(d).toLocaleDateString(locales[lang], { month: 'short', year: 'numeric' }) : '';
+const outlets = site.social.filter((s) => ['Medium', 'Substack', 'LinkedIn'].includes(s.label));
+const joiner = { en: 'and', de: 'und', es: 'y' }[lang];
+---
+
+<Base lang={lang} path="/writing/" title={t.title} description={t.meta} current="writing">
+  <section class="wrap head">
+    <h1>{t.title}</h1>
+    <p class="lede muted">
+      {t.lede}{' '}
+      {outlets.map((o, i) => (
+        <>
+          <a href={o.href} rel="noopener">{o.label}</a>{i < outlets.length - 2 ? ', ' : i === outlets.length - 2 ? ` ${joiner} ` : '.'}
+        </>
+      ))}
+    </p>
+  </section>
+
+  <section class="wrap">
+    <ul class="list">
+      {writing.map((a) => (
+        <li>
+          <div class="side muted">
+            <span>{a.topic[lang]}</span>
+            {a.date && <time datetime={a.date}>{fmt(a.date)}</time>}
+            {t.inEnglish && <span>{t.inEnglish}</span>}
+          </div>
+          <a href={a.url} rel="noopener" class="item">
+            <h2 lang="en">{a.title}</h2>
+            <p class="muted">{a.excerpt[lang]}</p>
+            <span class="src">{t.readOn(a.source)}</span>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .head { padding-top: clamp(32px, 6vw, 88px); padding-bottom: 40px; }
+  .head h1 { font-size: var(--step-4); letter-spacing: -0.035em; }
+  .lede { font-size: var(--step-1); line-height: 1.45; max-width: 50ch; margin-top: 20px; }
+  .list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+  .list li { display: grid; grid-template-columns: 12rem 1fr; gap: 24px; padding: 32px 0; border-bottom: 1px solid var(--line); }
+  .side { display: grid; gap: 4px; font-size: var(--step--1); align-content: start; }
+  .item { text-decoration: none; display: grid; gap: 10px; max-width: 64ch; min-width: 0; }
+  .item h2 { font-size: var(--step-2); }
+  .item:hover h2 { color: var(--accent); }
+  .src { font-weight: 600; color: var(--accent); font-size: var(--step--1); }
+  @media (max-width: 700px) { .list li { grid-template-columns: 1fr; gap: 8px; } }
+</style>

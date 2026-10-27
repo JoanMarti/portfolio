@@ -1,4 +1,4 @@
-# Joan Martí Díez — Portfolio
+# Portfolio de Joan Martí Díez
 
 Portfolio de producto construido con [Astro](https://astro.build): estático, rápido, sin dependencias de UI y listo para publicar en GitHub Pages.
 
@@ -21,16 +21,26 @@ Necesitas Node 20 o superior.
 | Nombre, email, disponibilidad, redes, idiomas, enlace de calendario | `src/data/site.ts` |
 | Trayectoria, formación, recomendaciones | `src/data/experience.ts` |
 | Artículos (Medium, Substack, LinkedIn) | `src/data/writing.ts` |
-| Un caso de estudio | `src/content/projects/<slug>.md` |
+| Un caso de estudio | `src/content/projects/<idioma>/<slug>.md` (en, de, es) |
+| Textos de la interfaz (menú, botones, About, títulos) | `src/lib/i18n.ts` |
 | Colores, tipografía, espaciado | `src/styles/global.css` (variables en `:root`) |
 | Portadas-diagrama de los casos | `src/components/ProjectCover.astro` |
 | Ilustración del hero | `src/components/HeroLayers.astro` |
 | CV en PDF | `public/joan-marti-diez-cv.pdf` |
 | Imagen al compartir en LinkedIn/Slack | `public/og.png` (1200×630) |
 
+## Idiomas
+
+El sitio está en inglés (`/`), alemán (`/de/`) y español (`/es/`). El alemán sigue la ortografía suiza (ss en lugar de ß).
+
+- Cada caso de estudio tiene un archivo por idioma con el mismo nombre: `en/glencore-ctrm.md`, `de/glencore-ctrm.md`, `es/glencore-ctrm.md`.
+- Si falta la traducción de un caso, se muestra la versión en inglés.
+- Los textos de la interfaz están en `src/lib/i18n.ts`, y los datos con traducción (disponibilidad, experiencia, extractos de artículos) en `src/data/`.
+- Los títulos de los artículos y las recomendaciones de LinkedIn se mantienen en su idioma original.
+
 ## Añadir un caso de estudio nuevo
 
-1. Copia cualquier archivo de `src/content/projects/` y renómbralo (el nombre del archivo es la URL: `mi-proyecto.md` → `/work/mi-proyecto/`).
+1. Copia cualquier archivo de `src/content/projects/en/` y renómbralo (el nombre del archivo es la URL: `mi-proyecto.md` da `/work/mi-proyecto/`). Haz lo mismo en `de/` y `es/` para las traducciones.
 2. Rellena la ficha del principio (front matter). Los campos obligatorios están definidos en `src/content.config.ts`; si falta alguno, `npm run build` te dirá cuál.
 3. `tldr` son exactamente tres frases: problema, qué hiciste, resultado.
 4. En `metrics`, añade siempre `method`: cómo se midió. Es lo que hace creíble un número.

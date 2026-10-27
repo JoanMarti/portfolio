@@ -1,0 +1,18 @@
+---
+import Base from '../layouts/Base.astro';
+import { ui, href, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang].notFound;
+const body = t.body
+  .replace('{home}', `<a href="${href(lang, '/')}">${t.home}</a>`)
+  .replace('{work}', `<a href="${href(lang, '/')}#work">${t.work}</a>`);
+---
+
+<Base lang={lang} path="/404/" title={t.title}>
+  <section class="wrap" style="padding-top: clamp(48px, 10vw, 140px);">
+    <h1 style="font-size: var(--step-4); letter-spacing: -0.035em;">{t.title}</h1>
+    <p class="muted" style="margin-top: 20px; font-size: var(--step-1); max-width: 50ch;" set:html={body} />
+  </section>
+</Base>

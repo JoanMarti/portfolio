@@ -1,18 +1,23 @@
 ---
 // Hero visual: how Joan works, drawn as the three layers of a design system.
 // The layers separate once on page load (skipped with reduced motion).
+interface Props {
+  layers: { name: string; note: string }[]; // top to bottom
+  label: string;
+}
+const { layers: text, label } = Astro.props;
+
 const iso = (cx: number, cy: number, w: number, h: number) =>
   `${cx},${cy - h} ${cx + w},${cy} ${cx},${cy + h} ${cx - w},${cy}`;
 
 const layers = [
-  { y: 110, name: 'Product', note: 'Flows people trust', cls: 'top' },
-  { y: 230, name: 'System', note: 'Components & governance', cls: 'mid' },
-  { y: 350, name: 'Foundations', note: 'Tokens & accessibility', cls: 'base' },
+  { y: 110, cls: 'top', ...text[0] },
+  { y: 230, cls: 'mid', ...text[1] },
+  { y: 350, cls: 'base', ...text[2] },
 ];
 ---
 
-<svg class="hero-layers" viewBox="0 0 600 460" role="img"
-  aria-label="Three stacked layers: product flows on top of a component system on top of foundations and tokens.">
+<svg class="hero-layers" viewBox="0 0 640 460" role="img" aria-label={label}>
   {[...layers].reverse().map((l, i) => (
     <g class={`layer layer--${l.cls}`} style={`--rise:${i * 120}px; --delay:${i * 90}ms`}>
       <polygon points={iso(220, l.y, 200, 80)} class="plane" />
@@ -50,7 +55,7 @@ const layers = [
   .path { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
   .leader { stroke: var(--muted); stroke-width: 1; }
   .t-name { fill: var(--ink); font: 700 18px var(--font); }
-  .t-note { fill: var(--muted); font: 400 14px var(--font); }
+  .t-note { fill: var(--muted); font: 400 13px var(--font); }
 
   @media (prefers-reduced-motion: no-preference) {
     .layer {

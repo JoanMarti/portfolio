@@ -1,4 +1,4 @@
-# Portfolio de Joan Martí Díez — Diagnóstico y estrategia
+# Portfolio de Joan Martí Díez: diagnóstico y estrategia
 
 *Borrador v1 · 26 octubre 2026*
 
@@ -28,8 +28,8 @@ El contenido de fondo es bueno: seis casos con contexto, rol, proceso y métrica
 ### Problemas estructurales
 
 - **No hay hero ni propuesta de valor.** La home empieza con "Selected Case Studies". En 5 segundos no se sabe quién eres, en qué eres el mejor ni si estás disponible.
-- **Los casos son largos y uniformes.** 2.000–3.000 palabras cada uno, todos con la misma plantilla. Un hiring manager necesita un resumen escaneable arriba (rol, equipo, duración, resultado) y poder profundizar si quiere.
-- **Las métricas no tienen método.** "+80 % design fidelity" o "+40 % UX–Dev synchronisation" sin decir cómo se midió suenan inventadas, aunque no lo sean. Una línea de método las vuelve creíbles.
+- **Los casos son largos y uniformes.** Entre 2.000 y 3.000 palabras cada uno, todos con la misma plantilla. Un hiring manager necesita un resumen escaneable arriba (rol, equipo, duración, resultado) y poder profundizar si quiere.
+- **Las métricas no tienen método.** "+80 % design fidelity" o "+40 % UX Dev synchronisation" sin decir cómo se midió suenan inventadas, aunque no lo sean. Una línea de método las vuelve creíbles.
 - **Mucha mención a IA "validada por humanos"** repetida en cada caso. Una vez, bien explicada, es una ventaja; seis veces parece relleno de tendencia.
 - **Lo más actual no está en el portfolio**: AthleteOS (tu proyecto de IA con wearables en GitHub), tu auditoría de accesibilidad de apps bancarias suizas y el artículo "Designing Access to Information". Son exactamente las señales que buscan hoy los equipos: IA aplicada, accesibilidad, criterio propio.
 - **Imágenes genéricas.** Mockups de dispositivo con alt text "Screen design displayed in a mockup". No enseñan cómo piensas, y un senior se contrata por cómo piensa.
@@ -45,7 +45,9 @@ El contenido de fondo es bueno: seis casos con contexto, rol, proceso y métrica
 
 Frase principal del hero:
 
-> I design systems and products for places where mistakes are expensive — private banking, trading platforms and cars.
+> I design systems and products for places where mistakes are expensive.
+>
+> (Versión actual: «I design systems and products for places where mistakes are expensive.»)
 
 Por qué funciona:
 - Diferencia: no "hago UX", sino "trabajo donde el error cuesta caro". Explica a la vez banca, CTRM y HMI de coche.
@@ -53,9 +55,9 @@ Por qué funciona:
 - Deja los design systems como la habilidad nuclear, que es tu especialidad más demandada y mejor pagada.
 
 Tres pilares que se repiten en todo el sitio:
-1. **Design systems como producto** — Glencore, Crealogix.
-2. **UX en entornos regulados y de confianza** — Julius Baer, auditoría de accesibilidad bancaria.
-3. **Producto medible** — Coches.net (crecimiento), Instamusic (MVP), AthleteOS (IA).
+1. **Design systems como producto:** Glencore, Crealogix.
+2. **UX en entornos regulados y de confianza:** Julius Baer, Smartstamp, auditoría de accesibilidad bancaria.
+3. **Producto medible:** Coches.net (crecimiento), Instamusic (MVP), AthleteOS (IA).
 
 ---
 
@@ -71,13 +73,14 @@ Tres pilares que se repiten en todo el sitio:
 
 ### Orden de los proyectos (de más a menos relevante para el mercado actual)
 
-1. **Glencore CTRM — Enterprise design system** (destacado) — tu caso más fuerte y más reciente.
-2. **Crealogix — Multi-tenant banking design system** (destacado) — demuestra escala internacional.
-3. **Julius Baer — Private banking onboarding** (destacado) — banca privada suiza + aprobación a nivel de board.
-4. **Coches.net — Exploration hub** — el caso con mejores números de negocio.
-5. **AthleteOS — AI coach for wearables** (nuevo, side project) — IA aplicada con código propio.
-6. **Instamusic — Mood-based discovery MVP**.
-7. **Audi A6 — Connected HMI** — valioso pero de 2015; va al final con el año visible.
+1. **Glencore CTRM, enterprise design system** (destacado): tu caso más fuerte y más reciente.
+2. **Smartstamp, app de autenticación de arte** (destacado): antes y después, arquitectura de la información y producto real.
+3. **Crealogix, design system multicliente para banca** (destacado): demuestra escala internacional.
+4. **Julius Baer, onboarding de banca privada** (destacado): banca privada suiza y aprobación del comité de dirección.
+5. **Coches.net, hub de exploración**: el caso con mejores números de negocio.
+6. **AthleteOS, coach con IA para wearables** (proyecto personal): IA aplicada con código propio.
+7. **Instamusic, MVP de descubrimiento musical**.
+8. **Audi A6, HMI conectado**: valioso pero de 2015, va al final con el año visible.
 
 ### Plantilla de caso de estudio
 
@@ -85,9 +88,9 @@ Cada caso tiene ahora la misma estructura, pensada para leer en 60 segundos o en
 
 1. **Ficha**: rol, equipo, duración, sector, herramientas.
 2. **TL;DR**: tres frases (problema, qué hice, resultado).
-3. **Impacto**: 2–4 métricas con *cómo se midió*.
+3. **Impacto**: Entre 2 y 4 métricas con *cómo se midió*.
 4. **El problema**: contexto y por qué importaba al negocio.
-5. **Decisiones clave**: 3–4 decisiones con su trade-off (es lo que más valora un hiring manager senior).
+5. **Decisiones clave**: Entre 3 y 4 decisiones con su trade-off (es lo que más valora un hiring manager senior).
 6. **Proceso**: resumido, solo lo que cambió el resultado.
 7. **Qué haría diferente**: honestidad = seniority.
 

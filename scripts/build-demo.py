@@ -12,6 +12,7 @@ def route_of(p):
     return '/' + rel[:-len('index.html')]
 
 css, routes, chrome = [], {}, None
+IMGS = {}
 for f in sorted(dist.glob('_astro/*.css')):
     css.append(f.read_text())
 for p in sorted(dist.rglob('index.html')):
@@ -27,13 +28,17 @@ for p in sorted(dist.rglob('index.html')):
         f = dist / m.group(2).lstrip('/')
         if not f.exists(): return m.group(0)
         mime = {'.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml'}[f.suffix]
-        return f'{m.group(1)}="data:{mime};base64,{base64.b64encode(f.read_bytes()).decode()}"'
+        key = m.group(2)
+        if key not in IMGS:
+            IMGS[key] = f'data:{mime};base64,{base64.b64encode(f.read_bytes()).decode()}'
+        return f'data-img="{key}"'
     main = re.sub(r'<a href="/projects/[^"]+"', '<a', main).replace(' loading="lazy"', '')
     main = re.sub(r'(src)="(/(?:projects|images)/[^"]+)"', inline, main)
-    routes[r] = {'title': title, 'html': main}
+    header = re.search(r'(<header class="site-header.*?</header>)', html, re.S).group(1)
+    footer = re.search(r'(<footer id="contact".*?</footer>)', html, re.S).group(1)
+    lang = re.search(r'<html lang="([a-z]+)"', html).group(1)
+    routes[r] = {'title': title, 'html': main, 'header': header, 'footer': footer, 'lang': lang}
     if r == '/':
-        header = re.search(r'(<header class="site-header.*?</header>)', html, re.S).group(1)
-        footer = re.search(r'(<footer id="contact".*?</footer>)', html, re.S).group(1)
         chrome = (header, footer)
 
 def token(r):  # bare hash token for each view
@@ -56,6 +61,7 @@ html {{ scroll-behavior: smooth; }}
 {chrome[1]}
 <script>
 const ROUTES = {json.dumps(routes, ensure_ascii=False)};
+const IMGS = {json.dumps(IMGS)};
 const TOKENS = {json.dumps({token(r): r for r in routes})};
 const tokenOf = r => r === '/' ? 'home' : r.replace(/^\\/|\\/$/g, '').replace(/\\//g, '-');
 const main = document.getElementById('main');
@@ -66,11 +72,17 @@ function show(path, anchor, push) {{
   if (path !== current) {{
     current = path;
     main.innerHTML = ROUTES[path].html;
+    document.querySelector('header.site-header').outerHTML = ROUTES[path].header;
+    document.getElementById('contact').outerHTML = ROUTES[path].footer;
+    document.documentElement.lang = ROUTES[path].lang;
+    main.querySelectorAll('img[data-img]').forEach(i => {{ i.src = IMGS[i.dataset.img]; }});
     document.title = ROUTES[path].title.replace(/&amp;/g, '&');
     main.classList.remove('enter'); void main.offsetWidth; main.classList.add('enter');
     document.querySelectorAll('.site-header nav a').forEach(a => {{
       const key = a.getAttribute('href');
-      a.toggleAttribute('aria-current', (key === '/about/' && path === '/about/') || (key === '/writing/' && path === '/writing/') || (key === '/#work' && path.startsWith('/work/')));
+      const bare = path.replace(/^\\/(de|es)\\//, '/');
+      const k = key.replace(/^\\/(de|es)\\//, '/');
+      a.toggleAttribute('aria-current', (k === '/about/' && bare === '/about/') || (k === '/writing/' && bare === '/writing/') || (k.endsWith('#work') && bare.startsWith('/work/')));
     }});
   }}
   const target = anchor && document.getElementById(anchor);
@@ -97,6 +109,7 @@ document.addEventListener('click', e => {{
 const start = (location.hash || '').slice(1);
 if (TOKENS[start]) show(TOKENS[start], null, false);
 else if (start === 'work') show('/', 'work', false);
+else if (start === 'de' || start === 'es') show('/' + start + '/', null, false);
 else show('/', null, false);
 </script>
 '''

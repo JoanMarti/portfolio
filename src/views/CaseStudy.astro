@@ -1,0 +1,147 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Cover from '../components/Cover.astro';
+import { writing } from '../data/writing';
+import { filled } from '../lib/url';
+import { ui, href, langs, type Lang } from '../lib/i18n';
+import { getProjects, type Project } from '../lib/projects';
+
+interface Props { lang: Lang; project: Project }
+const { lang, project } = Astro.props;
+const t = ui[lang].cs;
+
+const all = await getProjects(lang);
+const i = all.findIndex((p) => p.slug === project.slug);
+const next = all[(i + 1) % all.length];
+
+const { Content } = await render(project);
+const d = project.data;
+
+const facts = [
+  [t.facts.client, d.client],
+  [t.facts.role, d.role],
+  [t.facts.team, d.team],
+  [t.facts.duration, d.duration],
+  [t.facts.year, d.year],
+  [t.facts.sector, d.sector],
+].filter(([, v]) => filled(v)) as [string, string][];
+
+const related = writing.filter((a) => a.relatedProject === project.slug);
+---
+
+<Base lang={lang} path={`/work/${project.slug}/`} title={d.title} description={d.summary} current="work" alternates={[...langs]}>
+  <article lang={project.lang}>
+    <header class="cs-head wrap">
+      <a class="back muted" href={href(lang, '/') + '#work'}>{t.allWork}</a>
+      <h1>{d.headline}</h1>
+      <p class="lede">{d.summary}</p>
+    </header>
+
+    <div class="wrap">
+      <Cover data={d} lang={lang} />
+    </div>
+
+    <section class="overview wrap" aria-label={t.overview}>
+      <dl class="facts">
+        {facts.map(([k, v]) => (
+          <div><dt>{k}</dt><dd>{v}</dd></div>
+        ))}
+        {d.tools.length > 0 && (
+          <div><dt>{t.facts.tools}</dt><dd>{d.tools.join(', ')}</dd></div>
+        )}
+        {d.links.map((l) => (
+          <div><dt>{t.facts.link}</dt><dd><a href={l.href} rel="noopener">{l.label}</a></dd></div>
+        ))}
+      </dl>
+
+      <div class="tldr">
+        <h2>{t.inShort}</h2>
+        <dl>
+          {d.tldr.map((x, n) => (
+            <div><dt>{t.tldr[n]}</dt><dd>{x}</dd></div>
+          ))}
+        </dl>
+      </div>
+    </section>
+
+    {d.metrics.length > 0 && (
+      <section class="impact wrap" aria-labelledby="impact-h">
+        <h2 id="impact-h">{t.impact}</h2>
+        <ul>
+          {d.metrics.map((m) => (
+            <li>
+              <span class="m-value">{m.value}</span>
+              <span class="m-label">{m.label}</span>
+              {filled(m.method) && <span class="m-method muted">{m.method}</span>}
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+
+    <div class="body wrap">
+      <div class="prose">
+        <Content />
+      </div>
+    </div>
+
+    {related.length > 0 && (
+      <aside class="related wrap" aria-label={t.related}>
+        <p class="muted">{t.related}</p>
+        {related.map((a) => (
+          <a href={a.url} rel="noopener" lang="en">{a.title}</a>
+        ))}
+      </aside>
+    )}
+
+    <nav class="next wrap" aria-label={t.next}>
+      <a href={href(lang, `/work/${next.slug}/`)}>
+        <span class="muted">{t.next}</span>
+        <span class="next-title">{next.data.headline}</span>
+      </a>
+    </nav>
+  </article>
+</Base>
+
+<style>
+  .cs-head { padding-top: clamp(24px, 5vw, 64px); padding-bottom: 40px; }
+  .back { font-size: var(--step--1); text-decoration: none; }
+  .back::before { content: '← '; }
+  .cs-head h1 { font-size: var(--step-4); letter-spacing: -0.035em; line-height: 1.04; max-width: 21ch; margin-top: 20px; }
+  .lede { font-size: var(--step-1); line-height: 1.45; color: var(--muted); max-width: 50ch; margin-top: 24px; }
+
+  .overview { display: grid; grid-template-columns: 4fr 8fr; gap: clamp(32px, 5vw, 72px); margin-top: clamp(40px, 6vw, 72px); }
+  .facts { margin: 0; display: grid; gap: 18px; align-content: start; font-size: var(--step--1); }
+  .facts dt { color: var(--muted); }
+  .facts dd { margin: 2px 0 0; font-weight: 500; }
+  .tldr { min-width: 0; }
+  .tldr h2 { font-size: var(--step-2); margin-bottom: 20px; }
+  .tldr dl { margin: 0; display: grid; gap: 20px; }
+  .tldr div { display: grid; grid-template-columns: 8rem 1fr; gap: 16px; padding-top: 16px; border-top: 1px solid var(--line); }
+  .tldr dt { font-weight: 650; }
+  .tldr dd { margin: 0; max-width: 60ch; }
+  @media (max-width: 760px) {
+    .overview { grid-template-columns: 1fr; }
+    .facts { grid-template-columns: 1fr 1fr; }
+    .tldr div { grid-template-columns: 1fr; gap: 4px; }
+  }
+
+  .impact { margin-top: clamp(56px, 8vw, 96px); }
+  .impact h2 { font-size: var(--step-2); padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  .impact ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; margin-top: 28px; }
+  .impact li { display: grid; gap: 6px; align-content: start; }
+  .m-value { font-size: var(--step-3); font-weight: 700; letter-spacing: -0.03em; line-height: 1; font-variant-numeric: tabular-nums; color: var(--accent); }
+  .m-label { font-weight: 600; }
+  .m-method { font-size: var(--step--1); line-height: 1.45; }
+
+  .body { margin-top: clamp(32px, 5vw, 48px); }
+
+  .related { margin-top: 64px; display: grid; gap: 8px; }
+  .related a { font-weight: 600; font-size: var(--step-1); }
+
+  .next { margin-top: clamp(64px, 9vw, 120px); }
+  .next a { display: grid; gap: 8px; padding-top: 24px; border-top: 1px solid var(--line); text-decoration: none; }
+  .next-title { font-size: var(--step-3); font-weight: 700; letter-spacing: -0.025em; line-height: 1.1; max-width: 24ch; }
+  .next a:hover .next-title { color: var(--accent); }
+</style>

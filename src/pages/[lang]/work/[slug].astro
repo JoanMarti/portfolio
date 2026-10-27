@@ -1,0 +1,19 @@
+---
+import CaseStudy from '../../../views/CaseStudy.astro';
+import { getProjects } from '../../../lib/projects';
+import type { Lang } from '../../../lib/i18n';
+
+export async function getStaticPaths() {
+  const paths = [];
+  for (const lang of ['de', 'es'] as Lang[]) {
+    for (const project of await getProjects(lang)) {
+      paths.push({ params: { lang, slug: project.slug }, props: { project } });
+    }
+  }
+  return paths;
+}
+const lang = Astro.params.lang as Lang;
+const { project } = Astro.props;
+---
+
+<CaseStudy lang={lang} project={project} />

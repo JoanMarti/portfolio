@@ -1,13 +1,46 @@
 ---
 // Diagram covers: each one draws the central idea of a case study.
 // They use CSS variables, so they follow light/dark mode and never break an NDA.
-// To use a real image instead, add `image` support in the case study template.
+// A case study can use a real image instead: see coverImage in src/content.config.ts.
+import type { Lang } from '../lib/i18n';
 interface Props {
   kind: 'layers' | 'tenants' | 'branching' | 'loop' | 'hmi' | 'mood' | 'signals';
   label: string;
   size?: 'large' | 'small';
+  lang?: Lang;
 }
-const { kind, label, size = 'large' } = Astro.props;
+const { kind, label, size = 'large', lang = 'en' } = Astro.props;
+
+// Diagram labels per language.
+const T = {
+  en: {
+    templates: 'Templates', components: 'Components', tokens: 'Tokens',
+    segs: ['Retail', 'Private', 'Corporate', 'Wealth'], core: 'Core',
+    branches: ['Referral source', 'Client profile', 'Relationship', 'Experience'], account: 'Account', advisor: 'Advisor present throughout',
+    loop: ['Search', 'Explore', 'Compare', 'Return', 'Contact dealer'], loopBefore: 'Before: search, then leave', loopMid: ['Every visit picks up', 'where the last one ended'],
+    hmiBefore: 'Before: deep menus', hmiAfter: 'After: shallow, grouped by driver goals', hmiCats: ['Navigate', 'Media', 'Phone', 'Car', 'Assist'], status: 'Persistent status area',
+    moods: ['Calm', 'Focus', 'Energy', 'Nostalgic', 'Euphoric'], moodQ: 'How do you feel right now?',
+    readiness: 'readiness', today: 'Today: 60 min endurance, zone 2',
+  },
+  de: {
+    templates: 'Vorlagen', components: 'Komponenten', tokens: 'Tokens',
+    segs: ['Retail', 'Private', 'Corporate', 'Wealth'], core: 'Kern',
+    branches: ['Empfehlungsquelle', 'Kundenprofil', 'Beziehung', 'Erfahrung'], account: 'Konto', advisor: 'Berater während des ganzen Prozesses sichtbar',
+    loop: ['Suchen', 'Entdecken', 'Vergleichen', 'Zurückkehren', 'Händler kontaktieren'], loopBefore: 'Vorher: suchen und gehen', loopMid: ['Jeder Besuch knüpft dort an,', 'wo der letzte endete'],
+    hmiBefore: 'Vorher: tiefe Menüs', hmiAfter: 'Nachher: flach, nach Fahrerzielen', hmiCats: ['Navi', 'Medien', 'Telefon', 'Fahrzeug', 'Assistenz'], status: 'Feste Statusleiste',
+    moods: ['Ruhig', 'Fokus', 'Energie', 'Nostalgisch', 'Euphorisch'], moodQ: 'Wie fühlst du dich gerade?',
+    readiness: 'Bereitschaft', today: 'Heute: 60 Min. Ausdauer, Zone 2',
+  },
+  es: {
+    templates: 'Plantillas', components: 'Componentes', tokens: 'Tokens',
+    segs: ['Retail', 'Privada', 'Corporativa', 'Patrimonio'], core: 'Núcleo',
+    branches: ['Origen del cliente', 'Perfil del cliente', 'Relación', 'Experiencia'], account: 'Cuenta', advisor: 'Asesor presente en todo el proceso',
+    loop: ['Buscar', 'Explorar', 'Comparar', 'Volver', 'Contactar'], loopBefore: 'Antes: buscar y salir', loopMid: ['Cada visita continúa', 'donde terminó la anterior'],
+    hmiBefore: 'Antes: menús profundos', hmiAfter: 'Después: plano, por objetivos', hmiCats: ['Navegar', 'Medios', 'Teléfono', 'Coche', 'Ayudas'], status: 'Área de estado fija',
+    moods: ['Calma', 'Foco', 'Energía', 'Nostalgia', 'Euforia'], moodQ: '¿Cómo te sientes ahora?',
+    readiness: 'preparación', today: 'Hoy: 60 min de fondo, zona 2',
+  },
+}[lang];
 
 // Isometric rhombus: centre (cx, cy), half-width w, half-height h.
 const iso = (cx: number, cy: number, w: number, h: number) =>
@@ -19,9 +52,9 @@ const onCircle = (i: number, n: number, r: number, cx = 400, cy = 250, start = -
   return { x: cx + r * Math.cos(a), y: cy + r * Math.sin(a) };
 };
 
-const loopSteps = ['Search', 'Explore', 'Compare', 'Return', 'Contact dealer'];
+const loopSteps = T.loop;
 const sources = ['Strava', 'WHOOP', 'Garmin', 'Suunto', 'Wahoo', 'Intervals', 'TrainingPeaks'];
-const moods = ['Calm', 'Focus', 'Energy', 'Nostalgic', 'Euphoric'];
+const moods = T.moods;
 const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 102, 86, 60, 42, 56, 38, 26, 16];
 ---
 
@@ -53,18 +86,18 @@ const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 1
         {/* Labels */}
         <g class="c-label">
           <line x1="590" y1="140" x2="640" y2="140" class="c-leader" />
-          <text x="652" y="146">Templates</text>
+          <text x="652" y="146">{T.templates}</text>
           <line x1="590" y1="250" x2="640" y2="250" class="c-leader" />
-          <text x="652" y="256">Components</text>
+          <text x="652" y="256">{T.components}</text>
           <line x1="590" y1="360" x2="640" y2="360" class="c-leader" />
-          <text x="652" y="366">Tokens</text>
+          <text x="652" y="366">{T.tokens}</text>
         </g>
       </g>
     )}
 
     {kind === 'tenants' && (
       <g>
-        {['Retail', 'Private', 'Corporate', 'Wealth'].map((seg, i) => {
+        {T.segs.map((seg, i) => {
           const a0 = (-90 + i * 90 + 2) * (Math.PI / 180);
           const a1 = (-90 + (i + 1) * 90 - 2) * (Math.PI / 180);
           const R = 215, r = 165;
@@ -73,7 +106,7 @@ const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 1
             <path d={`M ${p(R, a0)} A ${R} ${R} 0 0 1 ${p(R, a1)} L ${p(r, a1)} A ${r} ${r} 0 0 0 ${p(r, a0)} Z`} class="c-plane" />
           );
         })}
-        {[['Retail', 660, 90], ['Private', 660, 420], ['Corporate', 140, 420], ['Wealth', 140, 90]].map(([t, x, y]) => (
+        {[[T.segs[0], 660, 90], [T.segs[1], 660, 420], [T.segs[2], 140, 420], [T.segs[3], 140, 90]].map(([t, x, y]) => (
           <text x={x} y={y} text-anchor={Number(x) > 400 ? 'start' : 'end'} class="c-label c-small">{t}</text>
         ))}
         <circle cx="400" cy="250" r="128" class="c-line c-dashed" />
@@ -82,14 +115,14 @@ const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 1
           return <circle cx={p.x} cy={p.y} r="13" class={i === 0 ? 'c-accent-fill' : 'c-tint-' + (i % 3)} />;
         })}
         <circle cx="400" cy="250" r="66" class="c-plane c-plane--accent" />
-        <text x="400" y="257" text-anchor="middle" class="c-label c-on-accent">Core</text>
+        <text x="400" y="257" text-anchor="middle" class="c-label c-on-accent">{T.core}</text>
       </g>
     )}
 
     {kind === 'branching' && (
       <g>
         <circle cx="90" cy="230" r="26" class="c-plane c-plane--accent" />
-        {['Referral source', 'Client profile', 'Relationship', 'Experience'].map((t, i) => {
+        {T.branches.map((t, i) => {
           const y = 90 + i * 94;
           return (
             <g>
@@ -101,10 +134,10 @@ const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 1
           );
         })}
         <rect x="664" y="204" width="110" height="52" rx="8" class="c-plane c-plane--accent" />
-        <text x="719" y="236" text-anchor="middle" class="c-label c-on-accent">Account</text>
+        <text x="719" y="236" text-anchor="middle" class="c-label c-on-accent">{T.account}</text>
         <line x1="90" y1="440" x2="719" y2="440" class="c-line c-dashed c-accent-stroke" />
         {[90, 395, 719].map((x) => <circle cx={x} cy="440" r="9" class="c-accent-fill" />)}
-        <text x="90" y="475" class="c-label c-small">Advisor present throughout</text>
+        <text x="90" y="475" class="c-label c-small">{T.advisor}</text>
       </g>
     )}
 
@@ -121,16 +154,16 @@ const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 1
           );
         })}
         <path d="M 412 84 C 440 40, 480 30, 520 30" class="c-line c-dashed c-faded" />
-        <text x="530" y="36" class="c-label c-small c-faded-text">Before: search, then leave</text>
-        <text x="400" y="258" text-anchor="middle" class="c-label c-small">Every visit picks up</text>
-        <text x="400" y="280" text-anchor="middle" class="c-label c-small">where the last one ended</text>
+        <text x="530" y="36" class="c-label c-small c-faded-text">{T.loopBefore}</text>
+        <text x="400" y="258" text-anchor="middle" class="c-label c-small">{T.loopMid[0]}</text>
+        <text x="400" y="280" text-anchor="middle" class="c-label c-small">{T.loopMid[1]}</text>
       </g>
     )}
 
     {kind === 'hmi' && (
       <g>
         <g class="c-faded">
-          <text x="60" y="70" class="c-label c-small">Before: deep menus</text>
+          <text x="60" y="70" class="c-label c-small">{T.hmiBefore}</text>
           <circle cx="160" cy="120" r="9" class="c-ink-fill" />
           {[0, 1].map((a) => (
             <g>
@@ -153,14 +186,14 @@ const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 1
             </g>
           ))}
         </g>
-        <text x="380" y="70" class="c-label c-small">After: shallow, grouped by driver goals</text>
+        <text x="380" y="70" class="c-label c-small">{T.hmiAfter}</text>
         <circle cx="560" cy="150" r="46" class="c-plane c-plane--accent" />
         <circle cx="560" cy="150" r="20" class="c-bg-fill" />
         {Array.from({ length: 12 }).map((_, i) => {
           const a = (i * 30 * Math.PI) / 180;
           return <line x1={560 + 54 * Math.cos(a)} y1={150 + 54 * Math.sin(a)} x2={560 + 62 * Math.cos(a)} y2={150 + 62 * Math.sin(a)} class="c-line" />;
         })}
-        {['Navigate', 'Media', 'Phone', 'Car', 'Assist'].map((t, i) => {
+        {T.hmiCats.map((t, i) => {
           const x = 380 + i * 80;
           return (
             <g>
@@ -171,7 +204,7 @@ const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 1
           );
         })}
         <rect x="380" y="410" width="388" height="28" rx="4" class="c-chip c-chip--light" />
-        <text x="392" y="429" class="c-label c-small">Persistent status area</text>
+        <text x="392" y="429" class="c-label c-small">{T.status}</text>
       </g>
     )}
 
@@ -190,7 +223,7 @@ const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 1
             </g>
           );
         })}
-        <text x="100" y="90" class="c-label c-small">How do you feel right now?</text>
+        <text x="100" y="90" class="c-label c-small">{T.moodQ}</text>
       </g>
     )}
 
@@ -210,9 +243,9 @@ const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 1
         <circle cx="560" cy="250" r="96" class="c-line c-accent-stroke c-thick" fill="none"
           stroke-dasharray={`${2 * Math.PI * 96 * 0.72} ${2 * Math.PI * 96}`} transform="rotate(-90 560 250)" />
         <text x="560" y="262" text-anchor="middle" class="c-label c-big">72</text>
-        <text x="560" y="290" text-anchor="middle" class="c-label c-small">readiness</text>
+        <text x="560" y="290" text-anchor="middle" class="c-label c-small">{T.readiness}</text>
         <rect x="470" y="380" width="290" height="44" rx="6" class="c-plane c-plane--accent" />
-        <text x="486" y="408" class="c-label c-small c-on-accent">Today: 60 min endurance, zone 2</text>
+        <text x="486" y="408" class="c-label c-small c-on-accent">{T.today}</text>
       </g>
     )}
   </svg>

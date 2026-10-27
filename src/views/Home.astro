@@ -1,0 +1,219 @@
+---
+import Base from '../layouts/Base.astro';
+import HeroLayers from '../components/HeroLayers.astro';
+import Cover from '../components/Cover.astro';
+import { site } from '../data/site';
+import { writing } from '../data/writing';
+import { recommendations } from '../data/experience';
+import { filled } from '../lib/url';
+import { ui, href, type Lang } from '../lib/i18n';
+import { getProjects } from '../lib/projects';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang].home;
+
+const projects = await getProjects(lang);
+const featured = projects.filter((p) => p.data.featured);
+const more = projects.filter((p) => !p.data.featured);
+const bySlug = Object.fromEntries(projects.map((p) => [p.slug, p]));
+const work = (slug: string) => href(lang, `/work/${slug}/`);
+
+const clients = ['Glencore', 'Julius Baer', 'Crealogix', 'Smartstamp', 'Audi', 'Adevinta', 'IBM iX', 'Webrepublic'];
+const seen = [
+  ['glencore-ctrm', 'crealogix-design-hub'],
+  ['julius-baer-onboarding', 'smartstamp'],
+  ['coches-net-exploration-hub', 'instamusic'],
+];
+const quote = recommendations[0];
+---
+
+<Base lang={lang} path="/">
+  <section class="hero wrap">
+    <div class="hero-text">
+      <h1>{t.title}</h1>
+      <p class="hero-sub">{t.sub}</p>
+      {site.availability.open && (
+        <p class="availability"><span class="dot" aria-hidden="true"></span>{site.availability.text[lang]}</p>
+      )}
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="#work">{t.seeWork}</a>
+        <a class="btn" href={`mailto:${site.email}`}>{t.emailMe}</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <HeroLayers layers={t.layers} label={t.layersLabel} />
+    </div>
+  </section>
+
+  <section class="wrap" aria-label={t.clients}>
+    <div class="clients">
+      <p class="muted">{t.clients}</p>
+      <ul>{clients.map((c) => <li>{c}</li>)}</ul>
+    </div>
+  </section>
+
+  <section id="work" class="work wrap">
+    <div class="section-head">
+      <h2>{t.selected}</h2>
+      <span class="muted">{t.count(projects.length)}</span>
+    </div>
+
+    <div class="featured">
+      {featured.map((p, i) => (
+        <article class:list={['feature', { 'feature--flip': i % 2 === 1 }]}>
+          <a href={work(p.slug)} class="feature-cover" tabindex="-1" aria-hidden="true">
+            <Cover data={p.data} lang={lang} />
+          </a>
+          <div class="feature-text">
+            <p class="meta muted">
+              <span>{p.data.client}</span>
+              <span>{p.data.sector}</span>
+              {filled(p.data.year) && <span>{p.data.year}</span>}
+            </p>
+            <h3><a href={work(p.slug)}>{p.data.headline}</a></h3>
+            <p class="summary">{p.data.summary}</p>
+            {p.data.metrics.length > 0 && (
+              <dl class="mini-metrics">
+                {p.data.metrics.slice(0, 2).map((m) => (
+                  <div><dt>{m.label}</dt><dd>{m.value}</dd></div>
+                ))}
+              </dl>
+            )}
+            <a class="read" href={work(p.slug)}>{t.read(p.data.title)}</a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <div class="more">
+      {more.map((p) => (
+        <article class="tile">
+          <a href={work(p.slug)} class="tile-link">
+            <Cover data={p.data} size="small" lang={lang} />
+            <p class="meta muted">
+              <span>{p.data.title}</span>
+              {filled(p.data.year) && <span>{p.data.year}</span>}
+              {p.data.kind === 'side-project' && <span class="tag">{t.side}</span>}
+            </p>
+            <h3>{p.data.headline}</h3>
+          </a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="practices wrap" aria-labelledby="how">
+    <div class="section-head">
+      <h2 id="how">{t.how}</h2>
+      <a href={href(lang, '/about/')}>{t.more}</a>
+    </div>
+    <div class="practice-grid">
+      {t.practices.map((pr, i) => (
+        <div class="practice">
+          <h3>{pr.title}</h3>
+          <p>{pr.text}</p>
+          <p class="seen muted">
+            {t.seenIn}{' '}
+            <a href={work(seen[i][0])}>{bySlug[seen[i][0]]?.data.title}</a> {t.and}{' '}
+            <a href={work(seen[i][1])}>{bySlug[seen[i][1]]?.data.title}</a>
+          </p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="quote wrap">
+    <blockquote lang="en">
+      <p>“{quote.quote}”</p>
+      <footer class="muted" lang={lang}>{quote.name}, {quote.context[lang]}</footer>
+    </blockquote>
+  </section>
+
+  <section class="writing wrap" aria-labelledby="writing-h">
+    <div class="section-head">
+      <h2 id="writing-h">{t.writing}</h2>
+      <a href={href(lang, '/writing/')}>{t.allArticles}</a>
+    </div>
+    <ul class="articles">
+      {writing.slice(0, 3).map((a) => (
+        <li>
+          <a href={a.url} rel="noopener">
+            <span class="a-title" lang="en">{a.title}</span>
+            <span class="a-excerpt muted">{a.excerpt[lang]}</span>
+          </a>
+          <span class="a-source muted">{a.source}</span>
+        </li>
+      ))}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 5vw, 72px);
+    align-items: center; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 6vw, 80px);
+  }
+  .hero h1 { font-size: var(--step-4); letter-spacing: -0.035em; line-height: 1.02; max-width: 16ch; hyphens: manual; }
+  .hero-sub { font-size: var(--step-1); line-height: 1.45; margin-top: 28px; max-width: 42ch; color: var(--muted); }
+  .availability { display: flex; gap: 10px; align-items: baseline; margin-top: 24px; max-width: 52ch; font-size: var(--step--1); }
+  .dot { flex: none; width: 9px; height: 9px; border-radius: 50%; background: var(--ok); transform: translateY(-1px); }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero-visual { max-width: 540px; justify-self: end; width: 100%; }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; }
+    .hero-visual { justify-self: start; max-width: 460px; }
+  }
+
+  .clients { display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: baseline; padding-top: 24px; padding-bottom: 24px; border-top: 1px solid var(--line); }
+  .clients p { font-size: var(--step--1); }
+  .clients ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; font-weight: 600; font-size: var(--step-1); letter-spacing: -0.01em; }
+
+  .work { margin-top: clamp(64px, 9vw, 120px); }
+  .featured { display: grid; gap: clamp(56px, 8vw, 104px); }
+  .feature { display: grid; grid-template-columns: 7fr 5fr; gap: clamp(24px, 4vw, 56px); align-items: center; }
+  .feature--flip .feature-cover { order: 2; }
+  .feature-text { min-width: 0; }
+  .feature h3 { font-size: var(--step-2); }
+  .feature h3 a { text-decoration: none; }
+  .feature h3 a:hover { text-decoration: underline; }
+  .meta { display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: var(--step--1); margin-bottom: 12px; }
+  .summary { margin-top: 14px; color: var(--muted); }
+  .mini-metrics { display: flex; flex-wrap: wrap; gap: 16px 32px; margin: 24px 0 0; }
+  .mini-metrics div { display: flex; flex-direction: column-reverse; max-width: 16ch; }
+  .mini-metrics dd { margin: 0; font-size: var(--step-2); font-weight: 700; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+  .mini-metrics dt { font-size: var(--step--1); color: var(--muted); }
+  .read { display: inline-block; margin-top: 24px; font-weight: 600; color: var(--accent); }
+  @media (max-width: 860px) {
+    .feature { grid-template-columns: 1fr; }
+    .feature--flip .feature-cover { order: 0; }
+  }
+
+  .more { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); gap: 48px 32px; margin-top: clamp(64px, 9vw, 112px); padding-top: 40px; border-top: 1px solid var(--line); }
+  .tile-link { text-decoration: none; display: block; }
+  .tile .meta { margin-top: 16px; margin-bottom: 6px; }
+  .tile h3 { font-size: var(--step-1); line-height: 1.25; }
+  .tile-link:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; }
+  .tag { color: var(--accent); }
+
+  .practices { margin-top: clamp(80px, 10vw, 140px); }
+  .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .practice h3 { font-size: var(--step-1); }
+  .practice p { margin-top: 12px; }
+  .seen { font-size: var(--step--1); }
+  @media (max-width: 860px) { .practice-grid { grid-template-columns: 1fr; gap: 32px; } }
+
+  .quote { margin-top: clamp(80px, 10vw, 140px); }
+  .quote blockquote { margin: 0; max-width: 30em; }
+  .quote p { font-size: var(--step-2); line-height: 1.3; font-weight: 500; letter-spacing: -0.015em; }
+  .quote footer { margin-top: 20px; }
+
+  .writing { margin-top: clamp(80px, 10vw, 140px); }
+  .articles { list-style: none; margin: 0; padding: 0; }
+  .articles li { display: grid; grid-template-columns: 1fr auto; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .articles a { text-decoration: none; display: grid; gap: 4px; min-width: 0; }
+  .a-title { font-weight: 650; font-size: var(--step-1); line-height: 1.3; }
+  .articles a:hover .a-title { color: var(--accent); }
+  .a-excerpt { max-width: 70ch; }
+  .a-source { font-size: var(--step--1); }
+</style>

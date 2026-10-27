@@ -2,35 +2,45 @@
 import '../styles/global.css';
 import { site } from '../data/site';
 import { url } from '../lib/url';
+import { ui, langs, langNames, href, defaultLang, type Lang } from '../lib/i18n';
 
 interface Props {
+  lang: Lang;
+  path: string; // language-neutral path of this page, e.g. "/work/glencore-ctrm/"
   title?: string;
   description?: string;
   current?: 'work' | 'about' | 'writing';
+  alternates?: Lang[]; // languages this page exists in (default: all)
 }
-const { title, description = site.metaDescription, current } = Astro.props;
-const pageTitle = title ? `${title} — ${site.name}` : site.metaTitle;
-const canonical = new URL(Astro.url.pathname, Astro.site);
+const { lang, path, title, description = site.metaDescription[lang], current, alternates = [...langs] } = Astro.props;
+const t = ui[lang];
+const pageTitle = title ? `${title}, ${site.name}` : site.metaTitle[lang];
+const canonical = new URL(href(lang, path), Astro.site);
 
 const nav = [
-  { href: url('/#work'), label: 'Work', key: 'work' },
-  { href: url('/about/'), label: 'About', key: 'about' },
-  { href: url('/writing/'), label: 'Writing', key: 'writing' },
+  { href: href(lang, '/') + '#work', label: t.nav.work, key: 'work' },
+  { href: href(lang, '/about/'), label: t.nav.about, key: 'about' },
+  { href: href(lang, '/writing/'), label: t.nav.writing, key: 'writing' },
 ];
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
+    {alternates.map((l) => (
+      <link rel="alternate" hreflang={l} href={new URL(href(l, path), Astro.site)} />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL(href(defaultLang, path), Astro.site)} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={lang} />
     <meta property="og:image" content={new URL(url('/og.png'), Astro.site)} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
@@ -46,22 +56,34 @@ const nav = [
       name: site.name,
       jobTitle: site.role,
       address: { '@type': 'PostalAddress', addressLocality: 'Zug', addressCountry: 'CH' },
+      knowsLanguage: ['es', 'ca', 'en', 'de', 'fr'],
       sameAs: site.social.map((s) => s.href),
     })} />
   </head>
   <body>
-    <a class="skip" href="#main">Skip to content</a>
+    <a class="skip" href="#main">{t.skip}</a>
     <header class="site-header wrap">
-      <a href={url('/')} class="brand">
+      <a href={href(lang, '/')} class="brand">
         <span class="brand-name">{site.name}</span>
         <span class="brand-role">{site.role}</span>
       </a>
-      <nav aria-label="Main">
-        {nav.map((item) => (
-          <a href={item.href} aria-current={current === item.key ? 'page' : undefined}>{item.label}</a>
-        ))}
-        <a href="#contact" class="nav-cta">Contact</a>
-      </nav>
+      <div class="header-right">
+        <nav aria-label="Main">
+          {nav.map((item) => (
+            <a href={item.href} aria-current={current === item.key ? 'page' : undefined}>{item.label}</a>
+          ))}
+          <a href="#contact" class="nav-cta">{t.nav.contact}</a>
+        </nav>
+        <nav class="langs" aria-label={t.nav.language}>
+          {langs.map((l) =>
+            l === lang ? (
+              <span aria-current="true" title={langNames[l]}>{l.toUpperCase()}</span>
+            ) : (
+              <a href={href(alternates.includes(l) ? l : l, alternates.includes(l) ? path : '/')} hreflang={l} lang={l} title={langNames[l]}>{l.toUpperCase()}</a>
+            ),
+          )}
+        </nav>
+      </div>
     </header>
 
     <main id="main">
@@ -71,20 +93,20 @@ const nav = [
     <footer id="contact" class="site-footer">
       <div class="wrap footer-grid">
         <div>
-          <h2 class="footer-title">Have a complex product that needs to feel simple?</h2>
-          <p class="muted footer-sub">{site.availability.text}</p>
+          <h2 class="footer-title">{t.footer.title}</h2>
+          <p class="muted footer-sub">{site.availability.text[lang]}</p>
         </div>
         <div class="footer-actions">
-          <a class="btn btn--primary" href={`mailto:${site.email}`}>Email {site.email}</a>
-          {site.calendar && <a class="btn" href={site.calendar}>Book a 20-minute call</a>}
-          <a class="btn" href={url(`/${site.cv}`)} download>Download CV (PDF)</a>
+          <a class="btn btn--primary" href={`mailto:${site.email}`}>{t.footer.email} {site.email}</a>
+          {site.calendar && <a class="btn" href={site.calendar}>{t.footer.call}</a>}
+          <a class="btn" href={url(`/${site.cv}`)} download>{t.footer.cv}</a>
         </div>
-        <ul class="footer-links" aria-label="Elsewhere">
+        <ul class="footer-links" aria-label={t.footer.elsewhere}>
           {site.social.map((s) => (
             <li><a href={s.href} rel="me noopener">{s.label}</a></li>
           ))}
         </ul>
-        <p class="footer-meta muted">© {new Date().getFullYear()} {site.name} · {site.location}</p>
+        <p class="footer-meta muted">© {new Date().getFullYear()} {site.name}, {site.location[lang]}</p>
       </div>
     </footer>
   </body>
@@ -98,11 +120,17 @@ const nav = [
   .brand { display: flex; flex-direction: column; text-decoration: none; line-height: 1.25; }
   .brand-name { font-weight: 700; }
   .brand-role { color: var(--muted); font-size: var(--step--1); }
+  .header-right { display: flex; align-items: center; gap: clamp(16px, 3vw, 36px); flex-wrap: wrap; }
   nav { display: flex; gap: clamp(14px, 3vw, 32px); align-items: center; }
   nav a { text-decoration: none; font-weight: 500; }
   nav a[aria-current='page'] { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 6px; }
   .nav-cta { color: var(--accent); }
-  @media (max-width: 560px) {
+  .langs { gap: 2px; font-size: var(--step--1); font-weight: 600; border: 1px solid var(--line); border-radius: 999px; padding: 3px; }
+  .langs a, .langs span { padding: 3px 9px; border-radius: 999px; letter-spacing: 0.04em; }
+  .langs span { background: var(--ink); color: var(--paper); }
+  .langs a { color: var(--muted); }
+  .langs a:hover { color: var(--ink); background: var(--paper-2); }
+  @media (max-width: 640px) {
     .site-header { flex-direction: column; align-items: flex-start; gap: 12px; }
   }
 
@@ -118,7 +146,7 @@ const nav = [
   .site-footer .btn--primary { background: var(--paper); color: var(--ink); }
   .site-footer .btn--primary:hover { background: transparent; color: var(--paper); }
   .footer-grid { display: grid; gap: 40px; }
-  .footer-title { font-size: var(--step-3); max-width: 18ch; }
+  .footer-title { font-size: var(--step-3); max-width: 20ch; }
   .footer-sub { margin-top: 16px; max-width: 52ch; }
   .footer-actions { display: flex; flex-wrap: wrap; gap: 12px; }
   .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px 28px; }

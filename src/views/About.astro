@@ -1,0 +1,99 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+import { experience, education, recommendations } from '../data/experience';
+import { url } from '../lib/url';
+import { ui, href, type Lang } from '../lib/i18n';
+
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const t = ui[lang].about;
+const athleteos = `<a href="${href(lang, '/work/athleteos/')}">AthleteOS</a>`;
+---
+
+<Base lang={lang} path="/about/" title={t.title} description={t.meta} current="about">
+  <section class="intro wrap">
+    <h1>{t.hi}</h1>
+    <div class="intro-text">
+      {t.paras.map((p, i) => (
+        <p class={i === 0 ? 'big' : ''} set:html={p.replace('{athleteos}', athleteos)} />
+      ))}
+    </div>
+    <!-- TODO: add a portrait at public/images/joan.jpg and show it here. -->
+  </section>
+
+  <section class="wrap block" aria-labelledby="exp-h">
+    <div class="section-head">
+      <h2 id="exp-h">{t.experience}</h2>
+      <a href={url(`/${site.cv}`)} download>{t.cv}</a>
+    </div>
+    <ol class="timeline">
+      {experience.map((r) => (
+        <li>
+          <span class="t-period muted">{r.period ?? ''}</span>
+          <div>
+            <p class="t-role">{r.role}</p>
+            <p class="t-company">{r.company}<span class="muted">, {r.sector[lang]}</span></p>
+            <p class="t-note muted">{r.note[lang]}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="wrap block" aria-labelledby="rec-h">
+    <div class="section-head">
+      <h2 id="rec-h">{t.colleagues}</h2>
+      <a href="https://www.linkedin.com/in/joan-marti-productdesigner/details/recommendations/" rel="noopener">{t.allRecs}</a>
+    </div>
+    <div class="recs">
+      {recommendations.map((r) => (
+        <blockquote lang="en">
+          <p>“{r.quote}”</p>
+          <footer lang={lang}><strong>{r.name}</strong><span class="muted">, {r.context[lang]}</span></footer>
+        </blockquote>
+      ))}
+    </div>
+  </section>
+
+  <section class="wrap block facts-grid">
+    <div>
+      <h2>{t.education}</h2>
+      <ul>{education[lang].map((e) => <li>{e}</li>)}</ul>
+    </div>
+    <div>
+      <h2>{t.languages}</h2>
+      <ul>{site.languages[lang].map(([n, l]) => <li>{n} <span class="muted">({l})</span></li>)}</ul>
+    </div>
+    <div>
+      <h2>{t.recognition}</h2>
+      <ul><li>{t.award}</li></ul>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .intro { display: grid; grid-template-columns: 4fr 8fr; gap: clamp(24px, 5vw, 72px); padding-top: clamp(32px, 6vw, 88px); }
+  .intro h1 { font-size: var(--step-4); letter-spacing: -0.035em; }
+  .intro-text { display: grid; gap: 1.1em; max-width: var(--measure); }
+  .big { font-size: var(--step-1); line-height: 1.45; font-weight: 500; }
+  @media (max-width: 860px) { .intro { grid-template-columns: 1fr; } }
+
+  .block { margin-top: clamp(72px, 10vw, 128px); }
+  .timeline { list-style: none; margin: 0; padding: 0; }
+  .timeline li { display: grid; grid-template-columns: 8rem 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .t-role { font-weight: 650; }
+  .t-note { margin-top: 4px; font-size: var(--step--1); }
+  @media (max-width: 600px) { .timeline li { grid-template-columns: 1fr; gap: 4px; } }
+
+  .recs { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+  .recs blockquote { margin: 0; padding: 28px; background: var(--paper-2); border-radius: var(--radius-lg); }
+  .recs p { font-size: var(--step-1); line-height: 1.45; }
+  .recs footer { margin-top: 20px; font-size: var(--step--1); }
+  @media (max-width: 760px) { .recs { grid-template-columns: 1fr; } }
+
+  .facts-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .facts-grid h2 { font-size: var(--step-1); padding-bottom: 12px; border-bottom: 1px solid var(--line); margin-bottom: 12px; }
+  .facts-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  @media (max-width: 760px) { .facts-grid { grid-template-columns: 1fr; } }
+</style>

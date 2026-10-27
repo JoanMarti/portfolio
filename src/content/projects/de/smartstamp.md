@@ -1,0 +1,213 @@
+---
+title: Smartstamp
+headline: Eine App zur Echtheitsprüfung von Kunst neu gedacht, von der unfertigen Sitemap zum navigierbaren Produkt
+summary: "Ich übernahm die iOS- und Android-App von Smartstamp mit einer unfertigen Informationsarchitektur, definierte Struktur und Abläufe neu und gestaltete das Erlebnis rund um vier Kernaktionen: registrieren, prüfen, übertragen und zertifizieren."
+client: Smartstamp
+sector: Kunst und Echtheitsprüfung
+year: "2025"            # TODO: confirm start and end dates
+role: Product Designer  # TODO: confirm exact title
+team: "TODO"
+duration: "TODO"
+tools: [Figma, User Flows, Informationsarchitektur, UI-Bibliothek, Designspezifikationen, TestFlight]
+coverImage:
+  src: /projects/smartstamp/cover.webp
+  alt: Sechs Screens der Smartstamp-App beim Bearbeiten eines Kunstwerks, mit Auswahl für Grösse, Gewicht und Preis, Auswahl der Technik und Bestätigungen direkt im Feld.
+featured: true
+order: 2
+tldr:
+  - Smartstamp erstellt mit KI und Computer Vision einen einzigartigen digitalen Fingerabdruck eines Kunstwerks. Als ich dazukam, war die Struktur der App eine unfertige Sitemap mit einer Startseite, sechs Ästen, tief versteckten Kernaktionen und vielen Bereichen mit dem Vermerk «work in progress».
+  - Ich definierte die Informationsarchitektur und alle Kernabläufe neu und gestaltete die App zweimal. Die erste Version ging in TestFlight. Die zweite baut auf einer leichteren Startseite und einem zentralen Aktionsbereich auf, der mit Premium-Funktionen wachsen kann.
+  - Ein Kunstwerk zu übertragen, lag früher fünf Ebenen tief und ist jetzt einen Tipp von der Navigationsleiste entfernt. Jeder Ablauf ist vollständig definiert, und die Entwicklung erhielt jede Änderung als kurze, testbare Spezifikation.
+metrics:
+  - value: "5 → 1"
+    label: Ebenen bis zur Übertragung eines Kunstwerks
+    method: Übernommene Sitemap (Start › Spaces › Space › Werkliste › Werk › Übertragen) im Vergleich zum Tab Actions in der neuen Navigation
+  - value: "7"
+    label: Kernfunktionen in einem Aktionsbereich
+    method: Registrieren, Prüfen, Übertragen, Entwürfe fortsetzen, Zertifikat, Ausstellungsetikett und Preisliste
+  - value: "4"
+    label: Nutzertypen in einer App
+    method: Registrierte Künstlerinnen und Künstler, Sammler, Unternehmen und Besucher
+links: []
+---
+
+## Kontext
+
+Echtheitszertifikate sind meist eine Unterschrift auf Papier oder ein Etikett auf der Rückseite einer Leinwand. Beides lässt sich leicht fälschen. Das Schweizer Unternehmen Smartstamp hat eine patentierte Technologie entwickelt, die mit KI und Computer Vision einen einzigartigen Fingerabdruck des Werks selbst erstellt und per Blockchain mit einem Zeitstempel sichert. Danach kann jede Person ein Werk mit dem Smartphone prüfen.
+
+Die Technologie funktionierte. Die App drumherum noch nicht. Sie musste vier Arten von Nutzern (**registrierten Künstlerinnen und Künstlern, Sammlern, Unternehmen und Besuchern**) ermöglichen, ein Werk durch korrektes Fotografieren zu registrieren, jedes Werk zu prüfen, das Eigentum beim Verkauf zu übertragen und eine Sammlung zu verwalten.
+
+## Was ich übernommen habe
+
+Ich übernahm eine Sitemap, die das Produkt als eine Startseite mit sechs Ästen beschrieb: Profil, Mitteilungen, Suche, Spaces, Registrieren und Prüfen.
+
+![Die übernommene Informationsarchitektur: eine farbcodierte Sitemap mit einer Startseite und sechs Ästen, tiefer Verschachtelung unter Spaces und vielen Notizen mit dem Vermerk work in progress.](/projects/smartstamp/ia-received.webp "Die übernommene Sitemap. Jede Farbe ist ein Ast der Startseite, die orangen Notizen bedeuten «work in progress».")
+
+Sie war ein brauchbarer Ausgangspunkt, hatte aber drei strukturelle Probleme:
+
+- **Kernaktionen waren versteckt.** Ein Kunstwerk zu übertragen, eine der drei Kernaktionen, lag fünf Ebenen tief: Start › Spaces › Space › Werkliste › Werk › Übertragen.
+- **Die Struktur folgte dem System, nicht den Menschen.** Die Äste entsprachen Objekten im Backend wie Spaces, Archiven und Dokumenten, nicht dem, was Menschen in der App erledigen wollen.
+- **Grosse Bereiche waren undefiniert.** Suche, Mitteilungen, Übertragungen, Support und mehrere Profilseiten waren als «work in progress» oder gar nicht definiert markiert.
+
+## Die Informationsarchitektur neu definieren
+
+Ich baute die Struktur um die Aufgaben herum, für die Menschen die App öffnen. Das Ergebnis ist eine Navigation mit vier Tabs, in der jede Kernaktion vom ersten Screen aus erreichbar ist.
+
+<div class="ia">
+  <section>
+    <h3>Vorher</h3>
+    <p class="ia-sub">Eine Startseite und sechs Äste, geordnet nach Systemobjekten</p>
+    <ul>
+      <li><span class="node">Startseite</span>
+        <ul>
+          <li>Benutzerprofil
+            <ul><li>Konto upgraden, Freunde einladen, Über uns, Kundendienst, Einstellungen, Persönliche Angaben, Abmelden</li></ul>
+          </li>
+          <li>Mitteilungen <span class="wip">(teilweise definiert)</span></li>
+          <li>Suchleiste <span class="wip">(nicht definiert)</span></li>
+          <li>Spaces
+            <ul>
+              <li>Einzelner Space
+                <ul>
+                  <li>Werkliste
+                    <ul>
+                      <li>Werkdetails</li>
+                      <li>Smart Archive › Zertifikate und Dokumente</li>
+                      <li><span class="deep">Werk übertragen</span> <span class="wip">(in Arbeit)</span></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>Neues Werk registrieren</li>
+          <li>Prüfen</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+  <section>
+    <h3>Nachher</h3>
+    <p class="ia-sub">Vier Tabs, geordnet nach dem, was Menschen tun wollen</p>
+    <ul>
+      <li><span class="node">Home</span>
+        <ul><li>Spaces, neueste Werkeinträge, meine neuesten Einträge, neueste Prüfungen, letzte Übertragungen und ein Button zum Registrieren</li></ul>
+      </li>
+      <li><span class="node">Actions</span>
+        <ul>
+          <li>Werk registrieren</li>
+          <li>Werk prüfen</li>
+          <li><span class="key">Werk übertragen</span></li>
+          <li>Entwürfe fortsetzen</li>
+          <li>Zertifikat erstellen <span class="premium">Premium</span></li>
+          <li>Ausstellungsetikett <span class="premium">Premium</span></li>
+          <li>Preisliste <span class="premium">Premium</span></li>
+        </ul>
+      </li>
+      <li><span class="node">Verify</span>
+        <ul><li>QR-Code scannen oder Smartstamp-ID eingeben</li></ul>
+      </li>
+      <li><span class="node">Profile</span>
+        <ul><li>Persönliche Angaben, Sicherheit, Präferenzen (Sprache, Währung und Masseinheiten), Abo und Zahlungen, Support, Freunde einladen</li></ul>
+      </li>
+    </ul>
+  </section>
+</div>
+
+Drei Prinzipien leiteten die neue Struktur:
+
+- **Aktionen vor Objekten.** Registrieren, prüfen und übertragen sind der Grund, warum Menschen die App öffnen. Deshalb stehen sie auf der obersten Ebene. Spaces und Einträge unterstützen sie von der Startseite aus.
+- **Ein Ort, der wachsen kann.** Der Aktionsbereich gibt jeder Funktion dieselbe Karte und dasselbe Schritt-für-Schritt-Muster. Neue Premium-Funktionen wie Zertifikate, Ausstellungsetiketten und Preislisten fügen sich ein, ohne die Navigation zu ändern.
+- **Abkürzungen ausserhalb der App.** Registrieren, prüfen und übertragen stehen auch als Schnellaktionen auf dem Home-Bildschirm von iPhone und iPad zur Verfügung.
+
+## Von Lücken zu definierten Abläufen
+
+Mit der neuen Struktur zeichnete ich jeden Ablauf vollständig auf. Die erste Version machte bewusst sichtbar, was fehlte: undefinierte Bereiche in Blau, offene Fragen an das Marketing in Rosa.
+
+![Erste Version des User Flows von Smartstamp. Blaue Blöcke markieren noch nicht definierte Bereiche, ein rosa Block Onboarding-Inhalte, die mit dem Marketing zu klären waren.](/projects/smartstamp/userflow-v1.webp "Flow v1.0: undefinierte Bereiche in Blau und offene Fragen an das Marketing in Rosa, damit die Lücken für alle sichtbar waren.")
+
+Diese Karte wurde zur Agenda für Entscheidungen mit den Gründern, dem Marketing und der Entwicklung. In Version 1.2 hatte jeder Ast eine Antwort.
+
+![Version 1.2 des User Flows mit Onboarding für Sammler, allen definierten Ästen und Fingerabdruck-Sequenzen mit drei, sechs, sieben und neun Aufnahmen.](/projects/smartstamp/userflow-v2.webp "Flow v1.2: Onboarding für Sammler, definierte Nutzertypen und Zahlung, und eine Auswahl von 3, 6, 7 oder 9 Fingerabdruck-Aufnahmen.")
+
+Die wichtigsten Änderungen zwischen den beiden Versionen:
+
+- **Onboarding für Sammler** mit vier Botschaften: die Sammlung schützen, jeden Besitzerwechsel festhalten und die Provenienz sichern.
+- **Definierte Nutzertypen** (Art Intro, Art Lover, Art Pro und Enterprise) mit Abo-Auswahl und Zahlung über Apple Pay oder Google Pay.
+- **Klar definierte Registrierung:** Gesamtfoto, Detailfoto, dann die Wahl, wie viele Fingerabdrücke aufgenommen werden (standardmässig drei, wahlweise sechs, sieben oder neun), eine Zusammenfassung zum Lesen und ein Ladeschritt, der erklärt, dass die Daten verschlüsselt werden.
+- **Gestaltete Ausstiege.** Wer die Registrierung abbricht, kehrt mit einem Hinweis, dass der Vorgang unvollständig ist, zum Dashboard zurück und kann den Entwurf später fortsetzen.
+
+## Die Oberfläche neu gestalten
+
+### Version 1
+
+Die erste Oberfläche war dunkel, mit der orangen Markenfarbe im Header und einer Startseite als Raster von Spaces. Sie ging im September 2025 in TestFlight.
+
+<div class="compare">
+  <figure>
+    <span class="tag">Version 1, Design</span>
+    <img src="/projects/smartstamp/home-v1-dark.webp" alt="Startseite der Version 1 im dunklen Design: oranger Header mit Begrüssung und Suche, Umschalter zwischen Spaces und übertragenen Werken und ein Raster aus acht Spaces." />
+    <p class="compare-note">Die Startseite als Raster von Spaces. Übertragungen liegen hinter einem Umschalter.</p>
+  </figure>
+  <figure>
+    <span class="tag">Version 1 in TestFlight</span>
+    <img src="/projects/smartstamp/home-v1-build.webp" alt="Screenshot des ersten Builds in TestFlight im September 2025: Smartstamp-Logo, Umschalter zwischen Spaces und übertragenen Werken, ein Test-Space und ein Button zum Registrieren." />
+    <p class="compare-note">Der erste Build in TestFlight. Im Test zeigte sich, wie leer die Startseite für neue Nutzer wirkte.</p>
+  </figure>
+  <figure>
+    <span class="tag tag--new">Version 2, Redesign</span>
+    <img src="/projects/smartstamp/home-v2.webp" alt="Startseite der Version 2 im hellen Design: Begrüssung, Premium-Banner und horizontale Bereiche für Spaces, neueste Werkeinträge, QR-Einträge, Prüfungen und Übertragungen, mit einem Button zum Registrieren." />
+    <p class="compare-note">Eine helle Startseite aus Bereichen für Spaces, Einträge, Prüfungen und Übertragungen, jeweils einen Tipp von der vollständigen Liste entfernt.</p>
+  </figure>
+</div>
+
+### Version 2
+
+Version 2 behielt die Struktur und veränderte, wie sie sich anfühlt und wie sie wächst:
+
+- **Eine Startseite, die Aktivität zeigt.** Statt eines Rasters aus Ordnern zeigt die Startseite, was in der Sammlung passiert (neueste Einträge, Prüfungen und Übertragungen), mit einem festen Button zum Registrieren.
+- **Eine leichtere Bildsprache.** Ein helles Design mit wärmeren Neutraltönen überlässt die Farbe den Kunstwerken. Icons, Beschriftungen und Abstände der Navigationsleiste wurden vereinfacht, damit sie weniger mit dem Inhalt konkurriert.
+- **Der Aktionsbereich.** Alle Kernfunktionen stehen in einer Liste, jede mit kurzer Beschreibung, einem Zähler (zum Beispiel zwei offene Übertragungen oder fünf Zertifikate) und, wo nötig, einem Premium-Hinweis. Jede Funktion folgt danach derselben Struktur: Schritte zuerst erklärt, ein Hauptbutton unten.
+
+![Spezifikation der Actions-Seite neben acht Screens: dem Aktionsbereich und den Abläufen Registrieren, Prüfen, Übertragen, Entwürfe fortsetzen, Zertifikat erstellen, Ausstellungsetikett und Preisliste.](/projects/smartstamp/actions-hub.webp "Der Aktionsbereich und die sieben Abläufe, die er öffnet. Alle folgen derselben Struktur: zuerst die Schritte, unten eine Hauptaktion.")
+
+![Spezifikation für die visuelle Überarbeitung der Navigationsleiste, mit den Screens Home, Verify und Profile in der neuen Navigation.](/projects/smartstamp/nav-redesign.webp "Überarbeitete Navigationsleiste: leichtere Icons, klarere Beschriftungen und mehr Platz für Inhalt.")
+
+![Smartstamp-App-Icon auf einem iPad-Home-Bildschirm mit Schnellaktionen für Werk registrieren, Werk prüfen und Werk übertragen.](/projects/smartstamp/ipad-quick-actions.webp "Schnellaktionen auf dem iPad. Die drei Kernaktionen sind verfügbar, bevor die App überhaupt geöffnet ist.")
+
+## Die Details gestalten
+
+Werkdaten ändern sich oft (Preise, Inventarnummern, Serien). Deshalb wird jedes Feld direkt bearbeitet und einzeln bestätigt. Grösse, Gewicht und Preis nutzen Auswahlfelder mit Einheiten (Zentimeter oder Zoll, Kilogramm oder Pfund, CHF, EUR oder USD), damit internationale Sammler Daten auf ihre Art erfassen und die Einträge trotzdem einheitlich bleiben.
+
+![Zwölf Zustände des Werkeintrags: Bearbeitung direkt im Feld, Bestätigungshaken, Einheitenauswahl für Grösse und Gewicht, Währungsauswahl für den Preis und Mehrfachauswahl für die Technik.](/projects/smartstamp/artwork-edit-states.webp "Zustände des Werkeintrags. Jedes Feld wird direkt bearbeitet und einzeln bestätigt.")
+
+## Ein System hinter den Screens
+
+Ich organisierte die Arbeit so, dass sie mit dem Produkt wachsen konnte: eine Figma-Datei pro Funktion (Home, Registrieren, Prüfen, Übertragen, Space, Suche, Profil, Ereignisprotokoll, Archiv, E-Mails und Promotionen in der App), alle auf einer gemeinsamen UI-Bibliothek mit dokumentierten Komponenten.
+
+![Der Figma-Arbeitsbereich von Smartstamp: über 20 Dateien, eine pro Funktion, darunter UI Library, Foundations CSS, User Flow und Proto-Persona.](/projects/smartstamp/figma-files.webp "Eine Datei pro Funktion, alle auf derselben UI-Bibliothek und denselben Grundlagen.")
+
+<div class="compare">
+  <figure>
+    <img src="/projects/smartstamp/ui-buttons.webp" alt="Zustände der Button-Komponente für primäre, sekundäre und tertiäre Buttons in Normal, Hover und Gedrückt, dazu Icons für Schnellaktionen, eine Reihe von Spaces und zwei Prüfkarten." />
+    <p class="compare-note">Button-Zustände und die Komponenten, die daraus entstehen.</p>
+  </figure>
+  <figure>
+    <img src="/projects/smartstamp/ui-button-docs.webp" alt="Dokumentationsseite der Button-Komponente: Verhalten, Varianten, Header-Aktionen, Regeln zu Interaktion und Bedienbarkeit, visuelle Hierarchie und Hinweise zum Verhalten." />
+    <p class="compare-note">Jede Komponente ist dokumentiert: Verhalten, Varianten, Barrierefreiheit (Tippflächen von 44 bis 48 px) und Einsatz.</p>
+  </figure>
+</div>
+
+## Zusammenarbeit mit der Entwicklung nach dem Launch
+
+Sobald die App im Test war, lieferte ich Verbesserungen als kurze Spezifikationen, die die Entwicklung in der nächsten Version umsetzen konnte. Jede hatte dieselben Felder: das Problem, betroffene Nutzer und Plattformen, Einstiegspunkt, Auslöser und erwartetes Ergebnis.
+
+![Eine Designspezifikation, die die Höhe der Navigationsleiste von 83 auf 56 Pixel reduziert, neben der aktualisierten Startseite von Smartstamp.](/projects/smartstamp/spec-bottom-nav.webp "Beispiel einer Spezifikation: die Navigationsleiste von 83 px auf 56 px verkleinern, im Einklang mit Material Design und den Richtlinien von Apple.")
+
+Ein Beispiel: Die Navigationsleiste war 83 Pixel hoch und drängte die Werkvorschauen auf kleineren Telefonen zusammen. Mit 56 Pixeln gewann jeder Screen rund 27 Pixel für Inhalt zurück, und der Button zum Registrieren rückte näher an den Daumen.
+
+## Was ich gelernt habe
+
+- Wer ein Produkt übernimmt, sollte zuerst ein gemeinsames Bild davon schaffen, was fehlt. Sichtbare Lücken beschleunigen Entscheidungen mehr als ausgefeilte Screens.
+- Navigation sollte sich daran orientieren, was Menschen tun wollen, nicht an den Objekten in der Datenbank. Das macht das Produkt auch leichter erweiterbar.
+- Ein erster Build in echten Händen, selbst in TestFlight, zeigt am schnellsten, was am Design nicht stimmt. Version 2 entstand aus der Nutzung von Version 1.

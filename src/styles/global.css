@@ -151,3 +151,8 @@ p { margin: 0; text-wrap: pretty; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+/* Long German compounds: allow hyphenation in headings so they never overflow on phones. */
+h1, h2, h3 { overflow-wrap: break-word; }
+:lang(de) { hyphens: auto; }
+body { overflow-wrap: break-word; }
