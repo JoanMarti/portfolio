@@ -4,7 +4,7 @@
 // A case study can use a real image instead: see coverImage in src/content.config.ts.
 import type { Lang } from '../lib/i18n';
 interface Props {
-  kind: 'layers' | 'tenants' | 'branching' | 'loop' | 'hmi' | 'mood' | 'signals';
+  kind: 'layers' | 'tenants' | 'branching' | 'loop' | 'hmi' | 'mood' | 'signals' | 'ia';
   label: string;
   size?: 'large' | 'small';
   lang?: Lang;
@@ -21,6 +21,7 @@ const T = {
     hmiBefore: 'Before: deep menus', hmiAfter: 'After: shallow, grouped by driver goals', hmiCats: ['Navigate', 'Media', 'Phone', 'Car', 'Assist'], status: 'Persistent status area',
     moods: ['Calm', 'Focus', 'Energy', 'Nostalgic', 'Euphoric'], moodQ: 'How do you feel right now?',
     readiness: 'readiness', today: 'Today: 60 min endurance, zone 2',
+    iaBefore: 'Before: six branches', iaAfter: 'After: four tabs', iaLevels: '5 levels → 1 tap',
   },
   de: {
     templates: 'Vorlagen', components: 'Komponenten', tokens: 'Tokens',
@@ -30,6 +31,7 @@ const T = {
     hmiBefore: 'Vorher: tiefe Menüs', hmiAfter: 'Nachher: flach, nach Fahrerzielen', hmiCats: ['Navi', 'Medien', 'Telefon', 'Fahrzeug', 'Assistenz'], status: 'Feste Statusleiste',
     moods: ['Ruhig', 'Fokus', 'Energie', 'Nostalgisch', 'Euphorisch'], moodQ: 'Wie fühlst du dich gerade?',
     readiness: 'Bereitschaft', today: 'Heute: 60 Min. Ausdauer, Zone 2',
+    iaBefore: 'Vorher: sechs Äste', iaAfter: 'Nachher: vier Tabs', iaLevels: '5 Ebenen → 1 Tipp',
   },
   es: {
     templates: 'Plantillas', components: 'Componentes', tokens: 'Tokens',
@@ -39,6 +41,7 @@ const T = {
     hmiBefore: 'Antes: menús profundos', hmiAfter: 'Después: plano, por objetivos', hmiCats: ['Navegar', 'Medios', 'Teléfono', 'Coche', 'Ayudas'], status: 'Área de estado fija',
     moods: ['Calma', 'Foco', 'Energía', 'Nostalgia', 'Euforia'], moodQ: '¿Cómo te sientes ahora?',
     readiness: 'preparación', today: 'Hoy: 60 min de fondo, zona 2',
+    iaBefore: 'Antes: seis ramas', iaAfter: 'Después: cuatro pestañas', iaLevels: '5 niveles → 1 toque',
   },
 }[lang];
 
@@ -205,6 +208,59 @@ const bars = [18, 34, 52, 40, 70, 88, 64, 96, 78, 58, 84, 110, 92, 66, 48, 74, 1
         })}
         <rect x="380" y="410" width="388" height="28" rx="4" class="c-chip c-chip--light" />
         <text x="392" y="429" class="c-label c-small">{T.status}</text>
+      </g>
+    )}
+
+    {kind === 'ia' && (
+      <g>
+        {/* Before: one homepage, six branches, Transfer five levels deep */}
+        <text x="40" y="54" class="c-label c-small c-faded-text">{T.iaBefore}</text>
+        <g class="c-faded">
+          <circle cx="200" cy="100" r="11" class="c-ink-fill" />
+          {[0, 1, 2, 3, 4, 5].map((i) => {
+            const x = 70 + i * 52;
+            return (
+              <g>
+                <line x1="200" y1="100" x2={x} y2="170" class="c-line" />
+                <circle cx={x} cy="170" r="8" class={i === 3 ? 'c-ink-fill' : 'c-plane'} />
+              </g>
+            );
+          })}
+          {[230, 290, 350].map((y, i) => (
+            <g>
+              <line x1="226" y1={y - 60} x2="226" y2={y} class="c-line" />
+              <circle cx="226" cy={y} r="7" class="c-ink-fill" />
+            </g>
+          ))}
+          <line x1="226" y1="350" x2="226" y2="410" class="c-line" />
+        </g>
+        <circle cx="226" cy="410" r="11" class="c-accent-fill" />
+        <text x="246" y="416" class="c-label c-small">Transfer</text>
+
+        {/* After: four tabs, Actions hub one tap away */}
+        <text x="440" y="54" class="c-label c-small">{T.iaAfter}</text>
+        <rect x="500" y="80" width="200" height="226" rx="12" class="c-plane" />
+        {['Register', 'Verify', 'Transfer', 'Drafts', 'Certificate'].map((t, i) => {
+          const y = 96 + i * 42;
+          return (
+            <g>
+              <rect x="512" y={y} width="176" height="32" rx="7" class={i === 2 ? 'c-plane c-plane--accent' : 'c-chip c-chip--light'} />
+              <text x="526" y={y + 21} class={i === 2 ? 'c-label c-small c-on-accent' : 'c-label c-small'}>{t}</text>
+            </g>
+          );
+        })}
+        <line x1="600" y1="306" x2="600" y2="340" class="c-line c-accent-stroke" />
+        <rect x="440" y="340" width="320" height="64" rx="12" class="c-plane" />
+        {['Home', 'Actions', 'Verify', 'Profile'].map((t, i) => {
+          const x = 440 + i * 80;
+          return (
+            <g>
+              {i === 1 && <rect x={x + 6} y="346" width="68" height="52" rx="9" class="c-plane c-plane--accent" />}
+              <text x={x + 40} y="378" text-anchor="middle" class={i === 1 ? 'c-label c-small c-on-accent' : 'c-label c-small'}>{t}</text>
+            </g>
+          );
+        })}
+        <text x="440" y="460" class="c-label">{T.iaLevels}</text>
       </g>
     )}
 

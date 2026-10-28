@@ -9,9 +9,7 @@ role: Product Designer  # TODO: confirm exact title (Lead or Senior Product Desi
 team: "TODO"            # TODO: founders, engineers, marketing. Who did you work with?
 duration: "TODO"
 tools: [Figma, User flows, Information architecture, UI library, Design specs, TestFlight]
-coverImage:
-  src: /projects/smartstamp/cover.webp
-  alt: Six screens of the Smartstamp app showing an artwork record being edited, with size, weight and price pickers, medium selection and inline confirmations.
+cover: ia
 featured: true
 order: 2
 discipline: [product, visual]

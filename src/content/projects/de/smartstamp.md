@@ -9,9 +9,7 @@ role: Product Designer  # TODO: confirm exact title
 team: "TODO"
 duration: "TODO"
 tools: [Figma, User Flows, Informationsarchitektur, UI-Bibliothek, Designspezifikationen, TestFlight]
-coverImage:
-  src: /projects/smartstamp/cover.webp
-  alt: Sechs Screens der Smartstamp-App beim Bearbeiten eines Kunstwerks, mit Auswahl für Grösse, Gewicht und Preis, Auswahl der Technik und Bestätigungen direkt im Feld.
+cover: ia
 featured: true
 order: 2
 discipline: [product, visual]

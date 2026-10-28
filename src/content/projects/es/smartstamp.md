@@ -9,9 +9,7 @@ role: Product Designer  # TODO: confirm exact title
 team: "TODO"
 duration: "TODO"
 tools: [Figma, User flows, Arquitectura de la información, Librería de UI, Especificaciones de diseño, TestFlight]
-coverImage:
-  src: /projects/smartstamp/cover.webp
-  alt: Seis pantallas de la app de Smartstamp editando la ficha de una obra, con selectores de tamaño, peso y precio, selección de técnica y confirmaciones en cada campo.
+cover: ia
 featured: true
 order: 2
 discipline: [product, visual]
