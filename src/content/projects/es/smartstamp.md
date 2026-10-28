@@ -15,7 +15,7 @@ order: 2
 discipline: [product, visual]
 tldr:
   - Smartstamp crea una huella digital única de cada obra de arte con IA y visión por ordenador. Cuando llegué, la estructura de la app era un sitemap a medias, con una home, seis ramas, las acciones clave escondidas varios niveles por debajo y muchas zonas marcadas como «work in progress».
-  - Redefiní la arquitectura de la información y todos los flujos principales, y rediseñé la app dos veces. La primera versión llegó a TestFlight. La segunda se basa en una home más ligera y en un centro de acciones que puede crecer con funciones premium.
+  - Redefiní la arquitectura de la información y todos los flujos principales, y llevé la app a lo largo de tres versiones. La primera llegó a TestFlight, la segunda trajo una home más ligera y un centro de acciones, y la tercera mejoró la visibilidad, la accesibilidad y la navegación.
   - Transferir una obra pasó de estar cinco niveles por debajo a un toque desde la barra de navegación. Todos los flujos quedaron definidos de principio a fin, y desarrollo recibió cada cambio como una especificación breve y fácil de probar.
 metrics:
   - value: "5 → 1"
@@ -87,10 +87,10 @@ Reconstruí la estructura en torno a las tareas que la gente viene a hacer. El r
   </section>
   <section>
     <h3>Después</h3>
-    <p class="ia-sub">Cuatro pestañas, organizadas por lo que la gente viene a hacer</p>
+    <p class="ia-sub">Cuatro pestañas en la versión 3, organizadas por lo que la gente viene a hacer</p>
     <ul>
       <li><span class="node">Home</span>
-        <ul><li>Spaces, últimos registros de obras, mis últimos registros, últimas verificaciones, transferencias recientes y un botón para registrar obra</li></ul>
+        <ul><li>Botón para registrar obra, verificación de identidad, acciones rápidas (verificar, transferir, más opciones), obras y transferidas</li></ul>
       </li>
       <li><span class="node">Actions</span>
         <ul>
@@ -103,8 +103,8 @@ Reconstruí la estructura en torno a las tareas que la gente viene a hacer. El r
           <li>Lista de precios <span class="premium">Premium</span></li>
         </ul>
       </li>
-      <li><span class="node">Verify</span>
-        <ul><li>Escanear el código QR o introducir el ID de Smartstamp</li></ul>
+      <li><span class="node">Feedback</span>
+        <ul><li>Un canal directo entre los usuarios y el equipo</li></ul>
       </li>
       <li><span class="node">Profile</span>
         <ul><li>Datos personales, seguridad, preferencias (idioma, moneda y unidades), plan y pagos, soporte, invitar a un amigo</li></ul>
@@ -154,9 +154,14 @@ La primera interfaz era oscura, con el naranja de la marca en la cabecera y una 
     <p class="compare-note">La primera build en TestFlight. Al probarla se vio lo vacía que se sentía la home para un usuario nuevo.</p>
   </figure>
   <figure>
-    <span class="tag tag--new">Versión 2, rediseño</span>
+    <span class="tag">Versión 2, rediseño</span>
     <img src="/projects/smartstamp/home-v2.webp" alt="Home de la versión 2 en tema claro: saludo, un banner premium y secciones horizontales de spaces, últimos registros de obras, registros con QR, verificaciones y transferencias, con un botón para registrar obra." />
     <p class="compare-note">Una home clara hecha de secciones para spaces, registros, verificaciones y transferencias, cada una a un toque de su lista completa.</p>
+  </figure>
+  <figure>
+    <span class="tag tag--new">Versión 3, actual</span>
+    <img src="/projects/smartstamp/home-v3.webp" alt="Home de la versión 3 en un móvil: logo de Smartstamp y búsqueda, un botón para registrar obra arriba, un aviso para que los usuarios Pro verifiquen su identidad, acciones rápidas para verificar, transferir y más opciones, una sección de obras y una navegación con Home, Actions, Feedback y Profile." />
+    <p class="compare-note">La versión actual: la acción principal primero, acciones rápidas a mano y una navegación más clara.</p>
   </figure>
 </div>
 
@@ -173,6 +178,14 @@ La versión 2 mantuvo la estructura y cambió cómo se siente y cómo crece:
 ![Especificación del rediseño visual de la barra de navegación inferior, con las pantallas Home, Verify y Profile usando la nueva barra.](/projects/smartstamp/nav-redesign.webp "Rediseño de la barra de navegación: iconos más ligeros, etiquetas más claras y más espacio para el contenido.")
 
 ![Icono de la app de Smartstamp en la pantalla de inicio de un iPad con acciones rápidas para registrar, verificar y transferir una obra.](/projects/smartstamp/ipad-quick-actions.webp "Acciones rápidas en el iPad. Las tres acciones principales están disponibles antes incluso de abrir la app.")
+
+### Versión 3
+
+La versión actual, a la derecha en la comparación de arriba, mejoró la versión 2 en tres aspectos:
+
+- **Visibilidad.** Registrar obra pasó a estar arriba del todo en la home como acción principal. Un aviso indica a los usuarios Pro cuándo falta verificar su identidad, con un enlace directo para completarlo. Verificar y transferir aparecen justo debajo como acciones rápidas, así que las tres acciones principales se ven sin hacer scroll.
+- **Accesibilidad.** Áreas táctiles más grandes en las acciones rápidas, una etiqueta de texto debajo de cada icono y una pestaña activa marcada con color, una línea indicadora y su etiqueta, no solo con color. Los avisos combinan un icono, un título y una frase de explicación, así que tampoco dependen del color.
+- **Arquitectura de la información.** La navegación pasó a ser Home, Actions, Feedback y Profile. Verificar salió de su propia pestaña y se integró en las acciones rápidas de la home, que es donde la gente lo busca primero, y una pestaña de Feedback da a los usuarios un canal directo con el equipo. La home agrupa ahora el contenido en Obras y Transferidas, cada una con un enlace para ver la lista completa.
 
 ## Diseñar los detalles
 

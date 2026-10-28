@@ -15,7 +15,7 @@ order: 2
 discipline: [product, visual]
 tldr:
   - Smartstamp erstellt mit KI und Computer Vision einen einzigartigen digitalen Fingerabdruck eines Kunstwerks. Als ich dazukam, war die Struktur der App eine unfertige Sitemap mit einer Startseite, sechs Ästen, tief versteckten Kernaktionen und vielen Bereichen mit dem Vermerk «work in progress».
-  - Ich definierte die Informationsarchitektur und alle Kernabläufe neu und gestaltete die App zweimal. Die erste Version ging in TestFlight. Die zweite baut auf einer leichteren Startseite und einem zentralen Aktionsbereich auf, der mit Premium-Funktionen wachsen kann.
+  - Ich definierte die Informationsarchitektur und alle Kernabläufe neu und entwickelte die App über drei Versionen weiter. Die erste ging in TestFlight, die zweite brachte eine leichtere Startseite und einen zentralen Aktionsbereich, und die dritte verbesserte Sichtbarkeit, Barrierefreiheit und Navigation.
   - Ein Kunstwerk zu übertragen, lag früher fünf Ebenen tief und ist jetzt einen Tipp von der Navigationsleiste entfernt. Jeder Ablauf ist vollständig definiert, und die Entwicklung erhielt jede Änderung als kurze, testbare Spezifikation.
 metrics:
   - value: "5 → 1"
@@ -87,10 +87,10 @@ Ich baute die Struktur um die Aufgaben herum, für die Menschen die App öffnen.
   </section>
   <section>
     <h3>Nachher</h3>
-    <p class="ia-sub">Vier Tabs, geordnet nach dem, was Menschen tun wollen</p>
+    <p class="ia-sub">Vier Tabs in Version 3, geordnet nach dem, was Menschen tun wollen</p>
     <ul>
       <li><span class="node">Home</span>
-        <ul><li>Spaces, neueste Werkeinträge, meine neuesten Einträge, neueste Prüfungen, letzte Übertragungen und ein Button zum Registrieren</li></ul>
+        <ul><li>Button zum Registrieren, Identitätsprüfung, Schnellaktionen (Prüfen, Übertragen, weitere Optionen), Kunstwerke und übertragene Werke</li></ul>
       </li>
       <li><span class="node">Actions</span>
         <ul>
@@ -103,8 +103,8 @@ Ich baute die Struktur um die Aufgaben herum, für die Menschen die App öffnen.
           <li>Preisliste <span class="premium">Premium</span></li>
         </ul>
       </li>
-      <li><span class="node">Verify</span>
-        <ul><li>QR-Code scannen oder Smartstamp-ID eingeben</li></ul>
+      <li><span class="node">Feedback</span>
+        <ul><li>Ein direkter Draht von den Nutzern zum Team</li></ul>
       </li>
       <li><span class="node">Profile</span>
         <ul><li>Persönliche Angaben, Sicherheit, Präferenzen (Sprache, Währung und Masseinheiten), Abo und Zahlungen, Support, Freunde einladen</li></ul>
@@ -154,9 +154,14 @@ Die erste Oberfläche war dunkel, mit der orangen Markenfarbe im Header und eine
     <p class="compare-note">Der erste Build in TestFlight. Im Test zeigte sich, wie leer die Startseite für neue Nutzer wirkte.</p>
   </figure>
   <figure>
-    <span class="tag tag--new">Version 2, Redesign</span>
+    <span class="tag">Version 2, Redesign</span>
     <img src="/projects/smartstamp/home-v2.webp" alt="Startseite der Version 2 im hellen Design: Begrüssung, Premium-Banner und horizontale Bereiche für Spaces, neueste Werkeinträge, QR-Einträge, Prüfungen und Übertragungen, mit einem Button zum Registrieren." />
     <p class="compare-note">Eine helle Startseite aus Bereichen für Spaces, Einträge, Prüfungen und Übertragungen, jeweils einen Tipp von der vollständigen Liste entfernt.</p>
+  </figure>
+  <figure>
+    <span class="tag tag--new">Version 3, aktuell</span>
+    <img src="/projects/smartstamp/home-v3.webp" alt="Startseite der Version 3 auf einem Telefon: Smartstamp-Logo und Suche, oben ein Button zum Registrieren, ein Hinweis an Pro-Nutzer, ihre Identität zu bestätigen, Schnellaktionen für Prüfen, Übertragen und weitere Optionen, ein Bereich mit Kunstwerken und eine Navigation mit Home, Actions, Feedback und Profile." />
+    <p class="compare-note">Die aktuelle Version: die Hauptaktion zuerst, Schnellaktionen in Reichweite und eine klarere Navigation.</p>
   </figure>
 </div>
 
@@ -173,6 +178,14 @@ Version 2 behielt die Struktur und veränderte, wie sie sich anfühlt und wie si
 ![Spezifikation für die visuelle Überarbeitung der Navigationsleiste, mit den Screens Home, Verify und Profile in der neuen Navigation.](/projects/smartstamp/nav-redesign.webp "Überarbeitete Navigationsleiste: leichtere Icons, klarere Beschriftungen und mehr Platz für Inhalt.")
 
 ![Smartstamp-App-Icon auf einem iPad-Home-Bildschirm mit Schnellaktionen für Werk registrieren, Werk prüfen und Werk übertragen.](/projects/smartstamp/ipad-quick-actions.webp "Schnellaktionen auf dem iPad. Die drei Kernaktionen sind verfügbar, bevor die App überhaupt geöffnet ist.")
+
+### Version 3
+
+Die aktuelle Version, im Vergleich oben rechts zu sehen, verbesserte Version 2 in drei Bereichen:
+
+- **Sichtbarkeit.** Werk registrieren steht als Hauptaktion ganz oben auf der Startseite. Ein Hinweis zeigt Pro-Nutzern, wenn ihre Identität noch bestätigt werden muss, mit einem direkten Link dorthin. Prüfen und Übertragen folgen direkt darunter als Schnellaktionen, sodass alle drei Kernaktionen ohne Scrollen sichtbar sind.
+- **Barrierefreiheit.** Grössere Tippflächen für die Schnellaktionen, eine Beschriftung unter jedem Icon und ein aktiver Tab, der durch Farbe, eine Markierungslinie und seine Beschriftung erkennbar ist und nicht nur durch Farbe. Hinweise verbinden ein Icon, einen Titel und einen erklärenden Satz und sind damit ebenfalls nicht auf Farbe angewiesen.
+- **Informationsarchitektur.** Die Navigation wurde zu Home, Actions, Feedback und Profile. Prüfen wanderte vom eigenen Tab in die Schnellaktionen der Startseite, wo man es zuerst sucht, und ein Feedback-Tab gibt Nutzern einen direkten Draht zum Team. Die Startseite gliedert die Inhalte jetzt in Kunstwerke und Übertragene Werke, jeweils mit einem Link zur vollständigen Liste.
 
 ## Die Details gestalten
 

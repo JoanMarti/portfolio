@@ -15,7 +15,7 @@ order: 2
 discipline: [product, visual]
 tldr:
   - Smartstamp creates a unique digital fingerprint of an artwork with AI and computer vision. When I joined, the app’s structure was a sitemap still in progress, with one homepage, six branches, key actions buried several levels deep and many areas marked as work in progress.
-  - I redefined the information architecture and every core flow, then redesigned the app twice. The first version went to TestFlight. The second is built around a lighter home and a central Actions hub that can grow with premium features.
+  - I redefined the information architecture and every core flow, then took the app through three versions. The first went to TestFlight, the second introduced a lighter home and a central Actions hub, and the third improved visibility, accessibility and navigation.
   - Transferring an artwork went from five levels deep to one tap from the navigation bar, every flow was defined end to end, and engineering received each change as a short, testable spec.
 metrics:
   - value: "5 → 1"
@@ -87,10 +87,10 @@ I rebuilt the structure around the jobs people come to do. The result is a four-
   </section>
   <section>
     <h3>After</h3>
-    <p class="ia-sub">Four tabs, organised by what people come to do</p>
+    <p class="ia-sub">Four tabs in version 3, organised by what people come to do</p>
     <ul>
       <li><span class="node">Home</span>
-        <ul><li>Spaces, latest artwork records, my latest records, latest verifications, recent transfers and a Register artwork button</li></ul>
+        <ul><li>Register artwork button, identity verification, quick actions (Verify, Transfer, More options), Artworks and Transferred</li></ul>
       </li>
       <li><span class="node">Actions</span>
         <ul>
@@ -103,8 +103,8 @@ I rebuilt the structure around the jobs people come to do. The result is a four-
           <li>Price list <span class="premium">Premium</span></li>
         </ul>
       </li>
-      <li><span class="node">Verify</span>
-        <ul><li>Scan QR code or enter the Smartstamp ID</li></ul>
+      <li><span class="node">Feedback</span>
+        <ul><li>A direct channel from users to the team</li></ul>
       </li>
       <li><span class="node">Profile</span>
         <ul><li>Personal information, security, preferences (language, currency and units), plan and payments, support, invite a friend</li></ul>
@@ -154,9 +154,14 @@ The first interface was dark, with the orange brand colour in the header and a h
     <p class="compare-note">The first build in TestFlight. Testing it showed how empty the home felt for new users.</p>
   </figure>
   <figure>
-    <span class="tag tag--new">Version 2 redesign</span>
+    <span class="tag">Version 2 redesign</span>
     <img src="/projects/smartstamp/home-v2.webp" alt="Version 2 home screen in a light theme: greeting, a premium banner, and horizontal sections for spaces, latest artwork records, QR records, verifications and transfers, with a Register artwork button." />
     <p class="compare-note">A light home made of sections for spaces, records, verifications and transfers, each one tap away from its full list.</p>
+  </figure>
+  <figure>
+    <span class="tag tag--new">Version 3, latest</span>
+    <img src="/projects/smartstamp/home-v3.webp" alt="Version 3 home screen on a phone: Smartstamp logo and search, a Register Artwork button at the top, a banner asking Pro users to verify their identity, quick actions for Verify Artwork, Transfer Artwork and More Options, an Artworks section, and a navigation bar with Home, Actions, Feedback and Profile." />
+    <p class="compare-note">The latest version: the main action first, quick actions within reach and a clearer navigation.</p>
   </figure>
 </div>
 <!-- TODO: confirm which parts of version 1 you received and which you designed. -->
@@ -174,6 +179,14 @@ Version 2 kept the structure and changed how it feels and how it scales:
 ![Specification for the visual redesign of the bottom navigation, with the Home, Verify and Profile screens using the new navigation bar.](/projects/smartstamp/nav-redesign.webp "Bottom navigation redesign: lighter icons, clearer labels and more room for content.")
 
 ![Smartstamp app icon on an iPad home screen with quick actions for Register artwork, Verify artwork and Transfer artwork.](/projects/smartstamp/ipad-quick-actions.webp "Home screen quick actions on iPad. The three core actions are available before the app opens.")
+
+### Version 3
+
+The latest version, shown on the right in the comparison above, refined version 2 in three areas:
+
+- **Visibility.** Register artwork moved to the top of the home screen as the main action. A banner tells Pro users when their identity still needs to be verified, with a direct link to finish it. Verify and Transfer sit right below as quick actions, so the three core actions are visible without scrolling.
+- **Accessibility.** Larger touch targets for quick actions, a text label under every icon, and an active tab marked by colour, an indicator line and its label rather than by colour alone. Warnings combine an icon, a title and a sentence of explanation, so they don’t rely on colour either.
+- **Information architecture.** The navigation became Home, Actions, Feedback and Profile. Verify moved from its own tab into the home quick actions, where people look for it first, and a Feedback tab gives users a direct channel to the team. The home now groups content into Artworks and Transferred, each with a See all link.
 
 ## Designing the details
 
