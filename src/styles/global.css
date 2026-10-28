@@ -156,3 +156,13 @@ p { margin: 0; text-wrap: pretty; }
 h1, h2, h3 { overflow-wrap: break-word; }
 :lang(de) { hyphens: auto; }
 body { overflow-wrap: break-word; }
+
+/* Wide compare grid for desktop screenshots */
+.prose .compare--wide { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
+.prose .compare--wide img { max-width: none; border-radius: var(--radius); }
+
+/* Tables in case studies */
+.prose table { width: 100%; border-collapse: collapse; margin: 2em 0; font-size: var(--step--1); display: block; overflow-x: auto; }
+.prose th, .prose td { text-align: left; vertical-align: top; padding: 10px 14px 10px 0; border-bottom: 1px solid var(--line); }
+.prose th { font-weight: 650; color: var(--muted); }
+.prose td:first-child { font-weight: 600; white-space: nowrap; }
