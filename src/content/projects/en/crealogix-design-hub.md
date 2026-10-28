@@ -1,6 +1,6 @@
 ---
 title: Crealogix Design Hub
-headline: One design system for many banks, white-label and multi-tenant across seven countries
+headline: One design system, many banks
 summary: A SaaS-ready design system that let banking clients share one core while keeping their own brand, regulations and regional needs.
 client: Crealogix
 sector: Banking software (SaaS)

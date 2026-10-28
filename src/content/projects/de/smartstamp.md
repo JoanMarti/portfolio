@@ -1,6 +1,6 @@
 ---
 title: Smartstamp
-headline: Eine App zur Echtheitsprüfung von Kunst neu gedacht, von der unfertigen Sitemap zum navigierbaren Produkt
+headline: Echtheitsprüfung für Kunst neu gestaltet
 summary: "Ich übernahm die iOS- und Android-App von Smartstamp mit einer unfertigen Informationsarchitektur, definierte Struktur und Abläufe neu und gestaltete das Erlebnis rund um vier Kernaktionen: registrieren, prüfen, übertragen und zertifizieren."
 client: Smartstamp
 sector: Kunst und Echtheitsprüfung

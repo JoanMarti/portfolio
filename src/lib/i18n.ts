@@ -26,7 +26,7 @@ const en = {
     elsewhere: 'Elsewhere',
   },
   home: {
-    title: 'I design systems and products for places where mistakes are expensive.',
+    title: 'Design where mistakes are expensive.',
     sub: 'Senior Product Designer with 16 years in private banking, trading platforms, marketplaces and cars. I lead design systems and design the products built on them, from research to measurable results.',
     seeWork: 'See selected work',
     emailMe: 'Email me',
@@ -120,7 +120,7 @@ const de: Dict = {
     elsewhere: 'Weitere Profile',
   },
   home: {
-    title: 'Ich gestalte Systeme und Produkte für Bereiche, in denen Fehler teuer sind.',
+    title: 'Design, wo Fehler teuer sind.',
     sub: 'Senior Product Designer mit 16 Jahren Erfahrung in Private Banking, Handelsplattformen, Marktplätzen und der Automobilbranche. Ich leite Designsysteme und gestalte die Produkte, die darauf aufbauen, von der Nutzerforschung bis zu messbaren Ergebnissen.',
     seeWork: 'Ausgewählte Projekte ansehen',
     emailMe: 'E-Mail schreiben',
@@ -212,7 +212,7 @@ const es: Dict = {
     elsewhere: 'En otras webs',
   },
   home: {
-    title: 'Diseño sistemas y productos para entornos donde un error sale caro.',
+    title: 'Diseño donde un error sale caro.',
     sub: 'Senior Product Designer con 16 años de experiencia en banca privada, plataformas de trading, marketplaces y automoción. Lidero design systems y diseño los productos que se construyen sobre ellos, desde la investigación hasta resultados medibles.',
     seeWork: 'Ver proyectos',
     emailMe: 'Escríbeme',

@@ -1,6 +1,6 @@
 ---
 title: Onboarding de Julius Baer
-headline: Un onboarding digital para clientes de banca privada que conserva la relación personal
+headline: Onboarding digital con trato humano
 summary: Una prueba de concepto de onboarding adaptativo para clientes de alto patrimonio, validada con clientes y asesores y aprobada por el comité de dirección para un piloto.
 client: Julius Baer (a través de IBM iX Suiza)
 sector: Banca privada

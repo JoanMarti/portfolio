@@ -1,6 +1,6 @@
 ---
 title: Julius Bär Onboarding
-headline: Digitales Onboarding für Private-Banking-Kunden, das die persönliche Beziehung bewahrt
+headline: Digitales Onboarding mit persönlicher Note
 summary: Ein Proof of Concept für ein adaptives Onboarding vermögender Privatkunden, mit Kunden und Beratern validiert und von der Geschäftsleitung für einen Pilot freigegeben.
 client: Julius Bär (über IBM iX Schweiz)
 sector: Private Banking

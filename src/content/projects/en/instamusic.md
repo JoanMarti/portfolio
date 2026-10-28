@@ -1,6 +1,6 @@
 ---
 title: Instamusic
-headline: From idea to MVP in three months, a music discovery app based on how you feel right now
+headline: Music discovery by mood
 summary: A mood-based discovery app that breaks the “because you listened to” loop, built as a layer on top of existing streaming services.
 client: Musiclist (Barcelona startup)
 sector: Consumer music

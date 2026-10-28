@@ -1,6 +1,6 @@
 ---
 title: AthleteOS
-headline: Die Daten einer Athletin aus sieben Wearables und Apps verständlich machen, gestaltet und entwickelt von A bis Z
+headline: Eine Antwort aus sieben Wearables
 summary: Ein eigenes Projekt, in dem ich eine Trainingsplattform gestaltet und programmiert habe, die Daten von Strava, WHOOP, Garmin und anderen zu einer täglichen Empfehlung zusammenführt.
 client: Eigenes Projekt
 sector: Gesundheit und Sporttechnologie

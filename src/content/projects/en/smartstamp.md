@@ -1,6 +1,6 @@
 ---
 title: Smartstamp
-headline: Redefining an art authentication app, from a sitemap in progress to a product people can navigate
+headline: Redesigning art authentication
 summary: "I took over Smartstamp’s iOS and Android app with an unfinished information architecture, redefined its structure and flows, and redesigned the experience around four core actions: register, verify, transfer and certify."
 client: Smartstamp
 sector: Art tech and authentication

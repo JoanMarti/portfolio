@@ -1,6 +1,6 @@
 ---
 title: Smartstamp
-headline: Rediseñar una app de autenticación de arte, de un sitemap a medias a un producto en el que es fácil orientarse
+headline: Rediseñar la autenticación de arte
 summary: "Me hice cargo de la app de iOS y Android de Smartstamp con una arquitectura de la información sin terminar, redefiní su estructura y sus flujos, y rediseñé la experiencia en torno a cuatro acciones: registrar, verificar, transferir y certificar."
 client: Smartstamp
 sector: Arte y autenticación

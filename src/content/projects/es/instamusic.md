@@ -1,6 +1,6 @@
 ---
 title: Instamusic
-headline: De la idea al MVP en tres meses, una app para descubrir música según cómo te sientes ahora
+headline: Música según tu estado de ánimo
 summary: Una app de descubrimiento musical basada en el estado de ánimo que rompe el bucle de «porque escuchaste», construida como una capa sobre los servicios de streaming existentes.
 client: Musiclist (startup de Barcelona)
 sector: Música para el público general

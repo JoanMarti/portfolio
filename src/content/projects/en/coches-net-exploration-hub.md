@@ -1,6 +1,6 @@
 ---
 title: Coches.net exploration hub
-headline: Turning one-visit searches into returning buyers on Spain’s largest car marketplace
+headline: From one visit to returning buyers
 summary: A personal space that remembers what each buyer was looking at (saved searches, favourites and comparisons) and brings them back to it.
 client: Coches.net (Adevinta)
 sector: Automotive marketplace

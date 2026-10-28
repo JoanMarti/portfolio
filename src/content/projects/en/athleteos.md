@@ -1,6 +1,6 @@
 ---
 title: AthleteOS
-headline: Making sense of an athlete’s data from seven wearables and apps, designed and built end to end
+headline: One answer from seven wearables
 summary: A personal project where I designed and coded a training platform that combines data from Strava, WHOOP, Garmin and others into one daily recommendation.
 client: Personal project
 sector: Health and sport tech

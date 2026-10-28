@@ -1,6 +1,6 @@
 ---
 title: Julius Baer onboarding
-headline: Digital onboarding for private banking clients that keeps the human relationship
+headline: Digital onboarding with a human touch
 summary: An adaptive onboarding proof of concept for high-net-worth clients, validated with clients and advisors and approved by the executive board for a pilot.
 client: Julius Baer (through IBM iX Switzerland)
 sector: Private banking

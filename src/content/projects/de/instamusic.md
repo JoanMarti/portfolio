@@ -1,6 +1,6 @@
 ---
 title: Instamusic
-headline: In drei Monaten von der Idee zum MVP, eine Musik-App nach der Stimmung des Moments
+headline: Musik nach Stimmung
 summary: Eine stimmungsbasierte Musik-App, die die Schleife «weil du X gehört hast» durchbricht, gebaut als Ebene über bestehenden Streamingdiensten.
 client: Musiclist (Startup aus Barcelona)
 sector: Musik für Endkunden

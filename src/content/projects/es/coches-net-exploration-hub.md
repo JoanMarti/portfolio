@@ -1,6 +1,6 @@
 ---
 title: Hub de exploración de Coches.net
-headline: Convertir búsquedas de una sola visita en compradores que vuelven, en el mayor marketplace de coches de España
+headline: De una visita a compradores que vuelven
 summary: Un espacio personal que recuerda lo que cada comprador estaba mirando (búsquedas guardadas, favoritos y comparaciones) y le devuelve a ello.
 client: Coches.net (Adevinta)
 sector: Marketplace de automoción

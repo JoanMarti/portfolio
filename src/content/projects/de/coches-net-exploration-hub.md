@@ -1,6 +1,6 @@
 ---
 title: Coches.net Entdeckungsbereich
-headline: Aus einmaligen Suchen wiederkehrende Käufer machen, auf dem grössten Automarktplatz Spaniens
+headline: Vom einmaligen Besuch zum Stammkunden
 summary: Ein persönlicher Bereich, der sich merkt, was jede Käuferin und jeder Käufer angeschaut hat (gespeicherte Suchen, Favoriten und Vergleiche), und dorthin zurückführt.
 client: Coches.net (Adevinta)
 sector: Automarktplatz

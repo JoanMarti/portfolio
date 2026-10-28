@@ -1,6 +1,6 @@
 ---
 title: AthleteOS
-headline: Dar sentido a los datos de un deportista de siete wearables y apps, diseñado y programado de principio a fin
+headline: Una respuesta a partir de siete wearables
 summary: Un proyecto personal en el que diseñé y programé una plataforma de entrenamiento que combina datos de Strava, WHOOP, Garmin y otras en una única recomendación diaria.
 client: Proyecto personal
 sector: Salud y tecnología deportiva

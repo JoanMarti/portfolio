@@ -1,6 +1,6 @@
 ---
 title: Audi A6 connected HMI
-headline: An in-car interface designed for drivers who should be looking at the road
+headline: Eyes on the road
 summary: Information architecture and interaction model for the connected Audi A6 infotainment system, tested in a driving simulator.
 client: Audi (Volkswagen Group)
 sector: Automotive

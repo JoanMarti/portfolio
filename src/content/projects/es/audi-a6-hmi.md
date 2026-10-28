@@ -1,6 +1,6 @@
 ---
 title: HMI conectado del Audi A6
-headline: Una interfaz de coche pensada para conductores que deberían estar mirando la carretera
+headline: La mirada en la carretera
 summary: Arquitectura de la información y modelo de interacción del sistema de infoentretenimiento conectado del Audi A6, probado en un simulador de conducción.
 client: Audi (Grupo Volkswagen)
 sector: Automoción

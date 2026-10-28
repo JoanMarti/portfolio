@@ -1,6 +1,6 @@
 ---
 title: Vernetztes HMI im Audi A6
-headline: Eine Fahrzeugschnittstelle für Menschen, die eigentlich auf die Strasse schauen sollten
+headline: Den Blick auf der Strasse
 summary: Informationsarchitektur und Interaktionsmodell für das vernetzte Infotainmentsystem des Audi A6, getestet in einem Fahrsimulator.
 client: Audi (Volkswagen Konzern)
 sector: Automobil
