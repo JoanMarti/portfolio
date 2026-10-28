@@ -14,6 +14,7 @@ coverImage:
   alt: Sechs Screens der Smartstamp-App beim Bearbeiten eines Kunstwerks, mit Auswahl für Grösse, Gewicht und Preis, Auswahl der Technik und Bestätigungen direkt im Feld.
 featured: true
 order: 2
+discipline: [product, visual]
 tldr:
   - Smartstamp erstellt mit KI und Computer Vision einen einzigartigen digitalen Fingerabdruck eines Kunstwerks. Als ich dazukam, war die Struktur der App eine unfertige Sitemap mit einer Startseite, sechs Ästen, tief versteckten Kernaktionen und vielen Bereichen mit dem Vermerk «work in progress».
   - Ich definierte die Informationsarchitektur und alle Kernabläufe neu und gestaltete die App zweimal. Die erste Version ging in TestFlight. Die zweite baut auf einer leichteren Startseite und einem zentralen Aktionsbereich auf, der mit Premium-Funktionen wachsen kann.

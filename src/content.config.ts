@@ -23,6 +23,8 @@ const projects = defineCollection({
     featured: z.boolean().default(false),
     order: z.number(), // lower = higher on the page
     kind: z.enum(['client', 'side-project']).default('client'),
+    // Which tabs on the home page show this case: product (Product and UX) and/or visual (UI and visual design).
+    discipline: z.array(z.enum(['product', 'visual'])).default(['product']),
     tldr: z.array(z.string()).length(3), // problem, what I did, result
     metrics: z
       .array(

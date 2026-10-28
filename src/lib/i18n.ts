@@ -41,6 +41,11 @@ const en = {
     and: 'and',
     writing: 'Writing',
     allArticles: 'All articles',
+    tabs: { label: 'Type of work', product: 'Product and UX design', visual: 'UI and visual design' },
+    visualIntro: 'Interfaces, websites, brand identities and campaigns from my years as a UI designer and art director.',
+    viewBehance: 'View on Behance',
+    caseStudy: 'Case study',
+    allBehance: 'See all visual work on Behance',
     practices: [
       {
         title: 'Design systems as products',
@@ -135,6 +140,11 @@ const de: Dict = {
     and: 'und',
     writing: 'Artikel',
     allArticles: 'Alle Artikel',
+    tabs: { label: 'Art der Arbeit', product: 'Produkt- und UX-Design', visual: 'UI und visuelles Design' },
+    visualIntro: 'Oberflächen, Websites, Markenidentitäten und Kampagnen aus meinen Jahren als UI-Designer und Art Director.',
+    viewBehance: 'Auf Behance ansehen',
+    caseStudy: 'Fallstudie',
+    allBehance: 'Alle visuellen Arbeiten auf Behance',
     practices: [
       {
         title: 'Designsysteme als Produkte',
@@ -227,6 +237,11 @@ const es: Dict = {
     and: 'y',
     writing: 'Artículos',
     allArticles: 'Todos los artículos',
+    tabs: { label: 'Tipo de trabajo', product: 'Producto y UX', visual: 'UI y diseño visual' },
+    visualIntro: 'Interfaces, webs, identidades de marca y campañas de mis años como diseñador UI y director de arte.',
+    viewBehance: 'Ver en Behance',
+    caseStudy: 'Caso de estudio',
+    allBehance: 'Ver todo el trabajo visual en Behance',
     practices: [
       {
         title: 'Design systems como productos',

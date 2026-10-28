@@ -26,6 +26,7 @@ Necesitas Node 20 o superior.
 | Colores, tipografía, espaciado | `src/styles/global.css` (variables en `:root`) |
 | Portadas-diagrama de los casos | `src/components/ProjectCover.astro` |
 | Ilustración del hero | `src/components/HeroLayers.astro` |
+| Trabajo visual (UI, web, marca, dirección de arte) en la pestaña "UI y diseño visual" | `src/data/visual.ts` e imágenes en `public/visual/` |
 | CV en PDF | `public/joan-marti-diez-cv.pdf` |
 | Imagen al compartir en LinkedIn/Slack | `public/og.png` (1200×630) |
 
@@ -46,7 +47,8 @@ El sitio está en inglés (`/`), alemán (`/de/`) y español (`/es/`). El alemá
 4. En `metrics`, añade siempre `method`: cómo se midió. Es lo que hace creíble un número.
 5. `order` decide la posición; `featured: true` lo muestra en grande en la home (recomendado: máximo 3).
 6. `draft: true` lo oculta mientras lo escribes.
-7. Imágenes: guárdalas en `public/projects/<slug>/` y úsalas en el Markdown con `![Texto alternativo que explique qué se ve](/projects/<slug>/imagen.webp)`.
+7. `discipline` decide en qué pestaña de la home aparece: `[product]` (por defecto), `[visual]` o `[product, visual]` para las dos.
+8. Imágenes: guárdalas en `public/projects/<slug>/` y úsalas en el Markdown con `![Texto alternativo que explique qué se ve](/projects/<slug>/imagen.webp)`.
 
 Cualquier valor que empiece por `TODO` no se muestra en la web, así puedes dejar huecos pendientes sin que se vean.
 

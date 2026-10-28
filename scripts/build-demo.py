@@ -33,13 +33,14 @@ for p in sorted(dist.rglob('index.html')):
             IMGS[key] = f'data:{mime};base64,{base64.b64encode(f.read_bytes()).decode()}'
         return f'data-img="{key}"'
     main = re.sub(r'<a href="/projects/[^"]+"', '<a', main).replace(' loading="lazy"', '')
-    main = re.sub(r'(src)="(/(?:projects|images)/[^"]+)"', inline, main)
+    main = re.sub(r'(src)="(/(?:projects|images|visual)/[^"]+)"', inline, main)
     header = re.search(r'(<header class="site-header.*?</header>)', html, re.S).group(1)
     footer = re.search(r'(<footer id="contact".*?</footer>)', html, re.S).group(1)
     lang = re.search(r'<html lang="([a-z]+)"', html).group(1)
     routes[r] = {'title': title, 'html': main, 'header': header, 'footer': footer, 'lang': lang}
     if r == '/':
         chrome = (header, footer)
+        gscript = ''.join(re.findall(r'<script data-global>(.*?)</script>', html, re.S))
 
 def token(r):  # bare hash token for each view
     return 'home' if r == '/' else r.strip('/').replace('/', '-')
@@ -59,6 +60,7 @@ html {{ scroll-behavior: smooth; }}
 {chrome[0]}
 <main id="main"></main>
 {chrome[1]}
+<script>{gscript}</script>
 <script>
 const ROUTES = {json.dumps(routes, ensure_ascii=False)};
 const IMGS = {json.dumps(IMGS)};

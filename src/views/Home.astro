@@ -5,7 +5,8 @@ import Cover from '../components/Cover.astro';
 import { site } from '../data/site';
 import { writing } from '../data/writing';
 import { recommendations } from '../data/experience';
-import { filled } from '../lib/url';
+import { filled, url } from '../lib/url';
+import { visualWork, visualCategories, behanceProfile } from '../data/visual';
 import { ui, href, type Lang } from '../lib/i18n';
 import { getProjects } from '../lib/projects';
 
@@ -14,8 +15,10 @@ const { lang } = Astro.props;
 const t = ui[lang].home;
 
 const projects = await getProjects(lang);
-const featured = projects.filter((p) => p.data.featured);
-const more = projects.filter((p) => !p.data.featured);
+const productWork = projects.filter((p) => p.data.discipline.includes('product'));
+const featured = productWork.filter((p) => p.data.featured);
+const more = productWork.filter((p) => !p.data.featured);
+const visualCases = projects.filter((p) => p.data.discipline.includes('visual'));
 const bySlug = Object.fromEntries(projects.map((p) => [p.slug, p]));
 const work = (slug: string) => href(lang, `/work/${slug}/`);
 
@@ -54,52 +57,88 @@ const quote = recommendations[0];
   </section>
 
   <section id="work" class="work wrap">
-    <div class="section-head">
+    <div class="section-head work-head">
       <h2>{t.selected}</h2>
-      <span class="muted">{t.count(projects.length)}</span>
+      <div class="tabs" role="tablist" aria-label={t.tabs.label}>
+        <button type="button" role="tab" id="tab-product" aria-controls="panel-product" aria-selected="true">
+          {t.tabs.product} <span class="count">{productWork.length}</span>
+        </button>
+        <button type="button" role="tab" id="tab-visual" aria-controls="panel-visual" aria-selected="false" tabindex="-1">
+          {t.tabs.visual} <span class="count">{visualCases.length + visualWork.length}</span>
+        </button>
+      </div>
     </div>
 
-    <div class="featured">
-      {featured.map((p, i) => (
-        <article class:list={['feature', { 'feature--flip': i % 2 === 1 }]}>
-          <a href={work(p.slug)} class="feature-cover" tabindex="-1" aria-hidden="true">
-            <Cover data={p.data} lang={lang} />
-          </a>
-          <div class="feature-text">
-            <p class="meta muted">
-              <span>{p.data.client}</span>
-              <span>{p.data.sector}</span>
-              {filled(p.data.year) && <span>{p.data.year}</span>}
-            </p>
-            <h3><a href={work(p.slug)}>{p.data.headline}</a></h3>
-            <p class="summary">{p.data.summary}</p>
-            {p.data.metrics.length > 0 && (
-              <dl class="mini-metrics">
-                {p.data.metrics.slice(0, 2).map((m) => (
-                  <div><dt>{m.label}</dt><dd>{m.value}</dd></div>
-                ))}
-              </dl>
-            )}
-            <a class="read" href={work(p.slug)}>{t.read(p.data.title)}</a>
-          </div>
-        </article>
-      ))}
+    <div id="panel-product" role="tabpanel" aria-labelledby="tab-product">
+      <div class="featured">
+        {featured.map((p, i) => (
+          <article class:list={['feature', { 'feature--flip': i % 2 === 1 }]}>
+            <a href={work(p.slug)} class="feature-cover" tabindex="-1" aria-hidden="true">
+              <Cover data={p.data} lang={lang} />
+            </a>
+            <div class="feature-text">
+              <p class="meta muted">
+                <span>{p.data.client}</span>
+                <span>{p.data.sector}</span>
+                {filled(p.data.year) && <span>{p.data.year}</span>}
+              </p>
+              <h3><a href={work(p.slug)}>{p.data.headline}</a></h3>
+              <p class="summary">{p.data.summary}</p>
+              {p.data.metrics.length > 0 && (
+                <dl class="mini-metrics">
+                  {p.data.metrics.slice(0, 2).map((m) => (
+                    <div><dt>{m.label}</dt><dd>{m.value}</dd></div>
+                  ))}
+                </dl>
+              )}
+              <a class="read" href={work(p.slug)}>{t.read(p.data.title)}</a>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="more">
+        {more.map((p) => (
+          <article class="tile">
+            <a href={work(p.slug)} class="tile-link">
+              <Cover data={p.data} size="small" lang={lang} />
+              <p class="meta muted">
+                <span>{p.data.title}</span>
+                {filled(p.data.year) && <span>{p.data.year}</span>}
+                {p.data.kind === 'side-project' && <span class="tag">{t.side}</span>}
+              </p>
+              <h3>{p.data.headline}</h3>
+            </a>
+          </article>
+        ))}
+      </div>
     </div>
 
-    <div class="more">
-      {more.map((p) => (
-        <article class="tile">
-          <a href={work(p.slug)} class="tile-link">
-            <Cover data={p.data} size="small" lang={lang} />
-            <p class="meta muted">
-              <span>{p.data.title}</span>
-              {filled(p.data.year) && <span>{p.data.year}</span>}
-              {p.data.kind === 'side-project' && <span class="tag">{t.side}</span>}
-            </p>
-            <h3>{p.data.headline}</h3>
-          </a>
-        </article>
-      ))}
+    <div id="panel-visual" role="tabpanel" aria-labelledby="tab-visual" hidden>
+      <p class="visual-intro muted">{t.visualIntro}</p>
+      <div class="gallery">
+        {visualCases.map((p) => (
+          <article class="shot shot--case">
+            <a href={work(p.slug)}>
+              <Cover data={p.data} size="small" lang={lang} />
+              <p class="meta muted"><span class="tag">{t.caseStudy}</span><span>{visualCategories.interface[lang]}</span>{filled(p.data.year) && <span>{p.data.year}</span>}</p>
+              <h3>{p.data.title}</h3>
+              <p class="shot-desc">{p.data.headline}</p>
+            </a>
+          </article>
+        ))}
+        {visualWork.map((v) => (
+          <article class="shot">
+            <a href={v.href} rel="noopener" target="_blank">
+              <figure class="shot-img"><img src={url(v.image)} alt="" loading="lazy" decoding="async" /></figure>
+              <p class="meta muted"><span>{visualCategories[v.category][lang]}</span>{v.year && <span>{v.year}</span>}<span class="ext">{t.viewBehance}</span></p>
+              <h3>{v.title}</h3>
+              <p class="shot-desc">{v.description[lang]}</p>
+            </a>
+          </article>
+        ))}
+      </div>
+      <p class="all-behance"><a href={behanceProfile} rel="noopener" target="_blank">{t.allBehance}</a></p>
     </div>
   </section>
 
@@ -195,6 +234,32 @@ const quote = recommendations[0];
   .tile h3 { font-size: var(--step-1); line-height: 1.25; }
   .tile-link:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; }
   .tag { color: var(--accent); }
+
+
+  .work-head { flex-wrap: wrap; align-items: center; }
+  .tabs { display: inline-flex; gap: 4px; padding: 4px; border-radius: 999px; background: var(--paper-2); flex-wrap: wrap; }
+  .tabs [role='tab'] {
+    font: inherit; font-weight: 600; font-size: var(--step--1); color: var(--muted);
+    border: 0; background: transparent; padding: 8px 16px; border-radius: 999px; cursor: pointer;
+    display: inline-flex; gap: 8px; align-items: center;
+  }
+  .tabs [role='tab']:hover { color: var(--ink); }
+  .tabs [role='tab'][aria-selected='true'] { background: var(--ink); color: var(--paper); }
+  .tabs .count { font-variant-numeric: tabular-nums; opacity: 0.7; font-weight: 500; }
+  [role='tabpanel']:focus-visible { outline-offset: 8px; }
+
+  .visual-intro { max-width: 60ch; margin-bottom: 32px; }
+  .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 300px), 1fr)); gap: 40px 28px; }
+  .shot a { display: block; text-decoration: none; }
+  .shot-img { margin: 0; aspect-ratio: 8 / 5; overflow: hidden; border-radius: var(--radius-lg); background: var(--paper-2); }
+  .shot-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .shot .meta { margin-top: 14px; margin-bottom: 4px; }
+  .shot h3 { font-size: var(--step-1); line-height: 1.25; }
+  .shot-desc { color: var(--muted); font-size: var(--step--1); margin-top: 4px; }
+  .shot a:hover h3 { text-decoration: underline; text-decoration-thickness: 1px; }
+  .ext { color: var(--accent); }
+  .ext::after { content: ' ↗'; }
+  .all-behance { margin-top: 40px; font-weight: 600; }
 
   .practices { margin-top: clamp(80px, 10vw, 140px); }
   .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }

@@ -109,6 +109,33 @@ const nav = [
         <p class="footer-meta muted">© {new Date().getFullYear()} {site.name}, {site.location[lang]}</p>
       </div>
     </footer>
+    <script is:inline data-global>
+      // Tabs (work section): click or arrow keys switch panels. Delegated, so it also
+      // works when page content is swapped in without a reload.
+      (function () {
+        function select(tab) {
+          var list = tab.closest('[role="tablist"]');
+          list.querySelectorAll('[role="tab"]').forEach(function (t) {
+            var on = t === tab;
+            t.setAttribute('aria-selected', on ? 'true' : 'false');
+            t.tabIndex = on ? 0 : -1;
+            var panel = document.getElementById(t.getAttribute('aria-controls'));
+            if (panel) panel.hidden = !on;
+          });
+        }
+        document.addEventListener('click', function (e) {
+          var tab = e.target.closest && e.target.closest('[role="tab"]');
+          if (tab) select(tab);
+        });
+        document.addEventListener('keydown', function (e) {
+          var tab = e.target.closest && e.target.closest('[role="tab"]');
+          if (!tab || (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft')) return;
+          var tabs = Array.prototype.slice.call(tab.closest('[role="tablist"]').querySelectorAll('[role="tab"]'));
+          var next = tabs[(tabs.indexOf(tab) + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+          select(next); next.focus(); e.preventDefault();
+        });
+      })();
+    </script>
   </body>
 </html>
 

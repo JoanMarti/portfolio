@@ -14,6 +14,7 @@ coverImage:
   alt: Six screens of the Smartstamp app showing an artwork record being edited, with size, weight and price pickers, medium selection and inline confirmations.
 featured: true
 order: 2
+discipline: [product, visual]
 tldr:
   - Smartstamp creates a unique digital fingerprint of an artwork with AI and computer vision. When I joined, the app’s structure was a sitemap still in progress, with one homepage, six branches, key actions buried several levels deep and many areas marked as work in progress.
   - I redefined the information architecture and every core flow, then redesigned the app twice. The first version went to TestFlight. The second is built around a lighter home and a central Actions hub that can grow with premium features.

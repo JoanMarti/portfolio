@@ -14,6 +14,7 @@ coverImage:
   alt: Seis pantallas de la app de Smartstamp editando la ficha de una obra, con selectores de tamaño, peso y precio, selección de técnica y confirmaciones en cada campo.
 featured: true
 order: 2
+discipline: [product, visual]
 tldr:
   - Smartstamp crea una huella digital única de cada obra de arte con IA y visión por ordenador. Cuando llegué, la estructura de la app era un sitemap a medias, con una home, seis ramas, las acciones clave escondidas varios niveles por debajo y muchas zonas marcadas como «work in progress».
   - Redefiní la arquitectura de la información y todos los flujos principales, y rediseñé la app dos veces. La primera versión llegó a TestFlight. La segunda se basa en una home más ligera y en un centro de acciones que puede crecer con funciones premium.
