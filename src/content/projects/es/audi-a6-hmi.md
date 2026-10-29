@@ -8,7 +8,7 @@ year: "2015"
 role: Senior UX y HMI Designer
 team: UX, ingeniería de HMI y equipos de software y hardware
 duration: "TODO"
-tools: [Arquitectura de la información, Diseño de interacción, Prototipos de alta fidelidad, Tests en simulador]
+tools: [Arquitectura de la información, Diseño de interacción, Interacción por voz, Prototipos de alta fidelidad, Tests en simulador]
 cover: hmi
 featured: false
 order: 8
@@ -18,6 +18,7 @@ tldr:
   - El resultado fue una estructura de HMI más plana y coherente, capaz de incorporar nuevos servicios conectados sin ganar profundidad, y un modelo común que alineó a diseño e ingeniería.
 metrics: []
 ---
+
 
 ## El problema
 
@@ -31,9 +32,30 @@ Diseñar para un coche no se parece a diseñar para la web o para un móvil:
 
 Por eso era tanto un proyecto de diseño de sistemas como de interfaz.
 
+![Diseñadores e ingenieros trabajando alrededor de un Audi prototipo en el taller de desarrollo](/projects/audi/workshop.webp "Los conceptos se comprobaban alrededor del coche real, no solo en una pantalla.")
+
 ## Qué hice
 
 Me centré en la experiencia a nivel de sistema: la arquitectura de la información, el modelo de navegación y la lógica de interacción, los principios del HMI, los layouts de pantalla y los componentes, y prototipos de alta fidelidad para probar dentro de la cabina. Gran parte del trabajo consistió en hacer de puente con ingeniería para que los conceptos funcionaran en el hardware real.
+
+## El HMI como sistema
+
+El HMI no es una pantalla. Está entre cuatro bloques, y una decisión en cualquiera de ellos repercute en todos los demás.
+
+<figure class="hmi-sys" aria-label="Diagrama del sistema HMI con sus entradas, salidas, sistemas del vehículo y plataforma">
+  <div class="node n-vs"><p>Sistemas del vehículo</p><ul><li>Navegación</li><li>Multimedia</li><li>Teléfono</li><li>Ajustes del vehículo</li><li>Asistencia a la conducción (ADAS)</li><li>Servicios conectados</li><li>Estado del vehículo</li></ul></div>
+  <span class="arr a-d1" aria-hidden="true"></span>
+  <div class="node n-in"><p>Entradas</p><ul><li>Mando giratorio</li><li>Botones del volante</li><li>Pantalla táctil</li><li>Control por voz</li></ul></div>
+  <span class="arr a-r1" aria-hidden="true"></span>
+  <div class="node n-hmi"><p>Sistema HMI</p><ul><li>Capa de UI</li><li>Lógica de interacción</li><li>Estados del sistema</li><li>Feedback del sistema</li><li>Modelo de navegación</li></ul></div>
+  <span class="arr a-r2" aria-hidden="true"></span>
+  <div class="node n-out"><p>Salidas</p><ul><li>Pantalla central</li><li>Cuadro de instrumentos</li><li>Head-up display</li><li>Feedback sonoro</li></ul></div>
+  <span class="arr a-d2" aria-hidden="true"></span>
+  <div class="node n-pf"><p>Plataforma</p><ul><li>Sistema embebido</li><li>Datos del vehículo y bus CAN</li><li>Sensores</li><li>Conectividad y nube</li></ul></div>
+  <figcaption>El contenido llega de los sistemas del vehículo, la plataforma marca los límites y el HMI convierte cuatro entradas en cuatro salidas.</figcaption>
+</figure>
+
+Los **sistemas del vehículo** aportan el contenido, cada uno con su propio ciclo de versiones. Las **entradas** llegan por cuatro vías: mando giratorio, botones del volante, pantalla táctil y voz. Las **salidas** van a la pantalla central, el cuadro de instrumentos, el head-up display y el audio. Por debajo, la **plataforma** (sistema embebido, datos del vehículo por el bus CAN, sensores y conectividad en la nube) impone límites estrictos de rendimiento y tiempos. Dibujar este mapa primero dio a diseño e ingeniería una sola imagen de dónde caía cada decisión.
 
 ## Primero los principios, después las pantallas
 
@@ -46,6 +68,24 @@ Antes de diseñar pantallas acordamos unos principios que cualquier equipo pudie
 - Primero el mando giratorio, después la pantalla táctil.
 - Que la mirada del conductor siga en la carretera.
 
+## Arquitectura de la información
+
+Cinco categorías agrupadas por lo que el conductor quiere hacer, cada una con cinco destinos como máximo. El árbol tiene solo dos niveles: inicio, una categoría y un destino.
+
+<figure class="tree" aria-label="Árbol de navegación del HMI desde el inicio hasta cinco categorías">
+  <p class="root">INICIO</p>
+  <div class="cols">
+    <div><p class="cat">Navegación</p><ul><li>Introducir destino</li><li>Destinos recientes</li><li>Favoritos</li><li>Ajustes del mapa</li></ul></div>
+    <div><p class="cat">Multimedia</p><ul><li>Radio</li><li>Biblioteca</li><li>Audio Bluetooth</li><li>USB</li><li>Ajustes multimedia</li></ul></div>
+    <div><p class="cat">Teléfono</p><ul><li>Contactos</li><li>Historial de llamadas</li><li>Teclado</li><li>Mensajes</li><li>Ajustes del teléfono</li></ul></div>
+    <div><p class="cat">Vehículo</p><ul><li>Ajustes de conducción</li><li>Asistencia a la conducción</li><li>Luces</li><li>Climatización</li><li>Estado del vehículo</li></ul></div>
+    <div><p class="cat">Ajustes</p><ul><li>Pantalla</li><li>Sonido</li><li>Conectividad</li><li>Sistema</li><li>Perfiles de usuario</li></ul></div>
+  </div>
+  <figcaption>Como mucho dos niveles por debajo del inicio. Los nuevos servicios conectados entran en una categoría existente en lugar de añadir profundidad.</figcaption>
+</figure>
+
+Los destinos más frecuentes están también en una barra fija a la izquierda de la pantalla, así el conductor salta a navegación, multimedia, teléfono o radio desde cualquier sitio sin volver al inicio.
+
 ## Decisiones clave
 
 **Menos categorías principales, agrupadas según lo que quiere hacer el conductor** y no según el sistema técnico responsable de cada función. Algunas responsabilidades de ingeniería quedaron menos claras, pero los conductores encontraban las cosas donde esperaban.
@@ -56,9 +96,41 @@ Antes de diseñar pantallas acordamos unos principios que cualquier equipo pudie
 
 **Personalización limitada.** Menos opciones significaban más fiabilidad y previsibilidad, la decisión correcta en un contexto donde la seguridad va primero.
 
+## Un modelo, cuatro entradas
+
+La misma estructura tenía que funcionar tanto si el conductor giraba el mando, pulsaba un botón del volante, tocaba la pantalla o hablaba. Por eso el foco, el feedback y las confirmaciones se diseñaron una sola vez y después se adaptaron a cada entrada, en lugar de diseñar cuatro interfaces distintas.
+
+La voz se diseñó para sonar natural y no como un lenguaje de comandos. En el contexto de climatización, la pantalla sugiere frases como “Mir ist zu warm” (tengo calor) y resalta las palabras que el sistema entiende, así el conductor aprende qué decir sin manual.
+
+![Pantalla de control por voz para climatización con frases sugeridas sobre los mandos de clima](/projects/audi/voice-climate.webp "Voz en contexto: frases sugeridas para climatización, con las palabras que el sistema entiende resaltadas. Los mandos de clima siguen en la pantalla inferior.")
+
+## La interfaz en el coche
+
+Dos pantallas táctiles se reparten el trabajo: la superior para infoentretenimiento y navegación, la inferior para climatización y confort. El conductor siempre sabe qué hace cada pantalla.
+
+![Puesto de conducción del Audi A6 con el cuadro de instrumentos y las dos pantallas táctiles centrales](/projects/audi/cockpit.webp "El puesto de conducción: cuadro de instrumentos, pantalla superior para infoentretenimiento e inferior para climatización.")
+
+La pantalla de inicio es una cuadrícula de mosaicos grandes con un color de acento por categoría, así cada destino se reconoce de un vistazo por su imagen y su color sin tener que leer. Una barra de estado mantiene la conectividad, el teléfono y el perfil siempre en el mismo sitio.
+
+<div class="compare compare--wide">
+  <figure>
+    <img src="/projects/audi/home-screen.webp" alt="La pantalla de inicio con ocho mosaicos grandes y la barra fija de la izquierda" />
+    <p class="compare-note">Inicio: mosaicos grandes, un color por categoría y la barra fija de la izquierda.</p>
+  </figure>
+  <figure>
+    <img src="/projects/audi/home-tiles.webp" alt="Detalle de los mosaicos de navegación, coche, teléfono y multimedia" />
+    <p class="compare-note">Mosaicos que se leen de un vistazo: icono, texto y color trabajan juntos.</p>
+  </figure>
+</div>
+
 ## Pruebas en la cabina
 
 Probamos prototipos de alta fidelidad en un simulador de cabina con tareas de navegación, multimedia, teléfono y ajustes, mientras observábamos la atención y el comportamiento de los conductores. Muchos problemas solo aparecían en una situación de conducción realista, y provocaron cambios en la estructura de navegación, los flujos, los layouts y los mensajes del sistema.
+
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/XGqnJOjWSzs" title="HMI conectado del Audi A6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+  <p class="video-caption">El HMI conectado del A6 en uso. <a href="https://youtu.be/XGqnJOjWSzs" target="_blank" rel="noopener">Ver en YouTube</a></p>
+</div>
 
 ## Resultado
 

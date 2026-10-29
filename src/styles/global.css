@@ -201,3 +201,40 @@ body { overflow-wrap: break-word; }
 .prose .glance dt { font-size: var(--step--1); font-weight: 650; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 0 0 6px; }
 .prose .glance dd { margin: 0; font-size: var(--step-0); line-height: 1.5; }
 .prose em { font-style: italic; }
+
+/* HMI system map: a hub with inputs, outputs, content and platform */
+.prose .hmi-sys { max-width: none; margin: 2.6em 0; padding: clamp(16px, 4vw, 32px); background: var(--paper-2); border-radius: var(--radius-lg);
+  display: grid; gap: 10px; align-items: center; justify-items: stretch;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  grid-template-areas: ". . vs . ." ". . d1 . ." "in r1 hmi r2 out" ". . d2 . ." ". . pf . ."; }
+.prose .hmi-sys .node { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 14px 16px; min-width: 0; background: var(--tint, var(--paper)); }
+.prose .hmi-sys .node p { margin: 0 0 8px; font-weight: 650; text-align: center; padding-bottom: 8px; border-bottom: 1.5px solid var(--ink); max-width: none; }
+.prose .hmi-sys .node ul { list-style: none; margin: 0; padding: 0; font-size: var(--step--1); }
+.prose .hmi-sys .node li { margin: 3px 0; }
+.prose .hmi-sys .n-in  { grid-area: in;  --tint: color-mix(in srgb, #3fae5a 16%, var(--paper)); }
+.prose .hmi-sys .n-vs  { grid-area: vs;  --tint: color-mix(in srgb, #8a8f98 16%, var(--paper)); }
+.prose .hmi-sys .n-hmi { grid-area: hmi; --tint: color-mix(in srgb, #3b82f6 18%, var(--paper)); border: 2px solid var(--ink); }
+.prose .hmi-sys .n-out { grid-area: out; --tint: color-mix(in srgb, #f59e0b 16%, var(--paper)); }
+.prose .hmi-sys .n-pf  { grid-area: pf;  --tint: color-mix(in srgb, #e5484d 14%, var(--paper)); }
+.prose .hmi-sys .arr { text-align: center; font-size: 1.4em; line-height: 1; color: var(--ink); }
+.prose .hmi-sys .a-d1 { grid-area: d1; } .prose .hmi-sys .a-d1::after { content: "↓"; }
+.prose .hmi-sys .a-d2 { grid-area: d2; } .prose .hmi-sys .a-d2::after { content: "↑"; }
+.prose .hmi-sys .a-r1 { grid-area: r1; } .prose .hmi-sys .a-r1::after { content: "→"; }
+.prose .hmi-sys .a-r2 { grid-area: r2; } .prose .hmi-sys .a-r2::after { content: "→"; }
+.prose .hmi-sys .n-vs, .prose .hmi-sys .n-pf { justify-self: center; width: min(100%, 260px); }
+.prose .hmi-sys figcaption { grid-column: 1 / -1; text-align: center; color: var(--muted); font-size: var(--step--1); margin-top: 10px; }
+@media (max-width: 720px) {
+  .prose .hmi-sys { grid-template-columns: 1fr; grid-template-areas: "in" "vs" "pf" "d1" "hmi" "r2" "out"; }
+  .prose .hmi-sys .a-r1, .prose .hmi-sys .a-d2 { display: none; }
+  .prose .hmi-sys .a-r2::after { content: "↓"; }
+  .prose .hmi-sys .n-vs, .prose .hmi-sys .n-pf { width: 100%; }
+}
+
+/* Navigation tree: root on top, one column per category */
+.prose .tree { max-width: none; margin: 2.6em 0; padding: clamp(16px, 4vw, 32px); background: var(--paper-2); border-radius: var(--radius-lg); }
+.prose .tree .root { margin: 0 auto 18px; width: fit-content; padding: 10px 28px; border-radius: var(--radius); background: color-mix(in srgb, #3b82f6 20%, var(--paper)); border: 1px solid var(--line); font-weight: 650; letter-spacing: .04em; max-width: none; }
+.prose .tree .cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 16px; border-top: 1.5px solid var(--ink); padding-top: 18px; }
+.prose .tree .cat { margin: 0 0 8px; font-weight: 650; padding: 6px 10px; border-radius: var(--radius); background: color-mix(in srgb, #e5484d 14%, var(--paper)); border: 1px solid var(--line); max-width: none; }
+.prose .tree ul { list-style: none; margin: 0; padding: 0 0 0 12px; border-left: 1.5px solid var(--ink); }
+.prose .tree li { margin: 6px 0; font-size: var(--step--1); padding: 5px 10px; border-radius: var(--radius); background: color-mix(in srgb, #3fae5a 12%, var(--paper)); border: 1px solid var(--line); }
+.prose .tree figcaption { margin-top: 16px; text-align: center; color: var(--muted); font-size: var(--step--1); }
