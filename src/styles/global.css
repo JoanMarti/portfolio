@@ -241,9 +241,9 @@ body { overflow-wrap: break-word; }
 
 /* Annotated UI anatomy */
 .prose .anatomy { max-width: none; margin: 2.6em 0; padding: clamp(16px, 4vw, 32px); background: var(--paper-2); border-radius: var(--radius-lg); display: block; }
-.prose .anatomy-screen svg { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 18px 40px rgb(0 0 0 / .18); }
-.prose .anatomy .mk circle { fill: var(--accent); stroke: #0c0d10; stroke-width: 3; }
-.prose .anatomy .mk text { fill: var(--on-accent); font-size: 13px; font-weight: 700; }
+.prose .anatomy-screen { position: relative; border-radius: var(--radius-lg); overflow: hidden; }
+.prose .anatomy-screen img { display: block; width: 100%; height: auto; }
+.prose .anatomy .pin { position: absolute; transform: translate(-50%, -50%); width: clamp(20px, 3vw, 30px); height: clamp(20px, 3vw, 30px); border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: clamp(11px, 1.4vw, 14px); display: grid; place-items: center; box-shadow: 0 0 0 3px rgb(255 255 255 / .9), 0 4px 12px rgb(0 0 0 / .4); }
 .prose .anatomy-legend { list-style: none; counter-reset: mk; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); gap: 14px 28px; max-width: none; }
 .prose .anatomy-legend li { counter-increment: mk; position: relative; padding-left: 36px; font-size: var(--step--1); line-height: 1.5; margin: 0; }
 .prose .anatomy-legend li::before { content: counter(mk); position: absolute; left: 0; top: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-weight: 700; font-size: 12px; display: grid; place-items: center; }
