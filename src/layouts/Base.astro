@@ -135,19 +135,6 @@ const nav = [
           select(next); next.focus(); e.preventDefault();
         });
       })();
-      // Click to load YouTube videos: nothing is requested from YouTube until the visitor presses play.
-      document.addEventListener('click', function (e) {
-        var btn = e.target.closest && e.target.closest('.video-play');
-        if (!btn) return;
-        var box = btn.closest('.video');
-        var f = document.createElement('iframe');
-        f.src = 'https://www.youtube-nocookie.com/embed/' + box.dataset.yt + '?autoplay=1&rel=0';
-        f.title = btn.getAttribute('aria-label') || 'Video';
-        f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-        f.allowFullscreen = true;
-        btn.replaceWith(f);
-        f.focus();
-      });
     </script>
   </body>
 </html>
