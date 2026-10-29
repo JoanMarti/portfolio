@@ -1,78 +1,208 @@
 ---
 title: Crealogix Design Hub
-headline: One design system, many banks
-summary: A SaaS-ready design system that let banking clients share one core while keeping their own brand, regulations and regional needs.
+headline: "One design system, many banks"
+summary: "A multi-brand design system and shared UX standards that let 5+ financial organisations in Switzerland, Europe and the Middle East share one core while keeping their own brand, markets and regulations."
 client: Crealogix
-sector: Banking software (SaaS)
-year: "TODO"
-role: Senior UX/UI Designer, Design Systems and Product Platform
-team: Innovation team, with designers and engineers in Switzerland, Germany, Austria, the UK, Spain, Saudi Arabia and Singapore
-duration: "TODO"
+sector: "Banking software (SaaS)"
+year: "2019 to 2021"
+role: "Senior UX/UI Designer, leading designers and the multi-brand design system"
+team: "Designers as direct reports, Product, Engineering and customer facing teams in Switzerland, Spain and Germany"
+duration: "2 years"
+# TODO (Joan): number of banks live on the system, time to onboard a new bank or brand theme before and after,
+#   how the four metrics were measured, and whether +35% is customer or designer satisfaction (the old site said designers).
 tools: [Figma, Storybook, Confluence, Design tokens]
 cover: tenants
 featured: true
 order: 3
+discipline: [product, visual]
 tldr:
-  - Crealogix builds digital banking channels for retail, private, corporate and wealth clients. Each office was building its own components, so delivery slowed down and quality varied from one client to the next.
-  - I defined a multi-tenant model with a shared core, brand themes driven by tokens and extensions for each banking segment, plus the documentation and governance that made teams actually adopt it.
-  - Handoff got 40% faster, designers were happier with their tools, and the system became the standard for every new product.
+  - "Crealogix sells digital banking to many banks at once. Each office was building its own components, so every new client meant more copies, slower delivery and uneven quality."
+  - "I led designers and helped establish shared UX standards and a multi-brand design system: brand themes driven by tokens on one core, extensions for each banking segment, and documentation teams trusted."
+  - "One system for 5+ financial organisations across Switzerland, Europe and the Middle East, with around 75% more adoption and efficiency and 50% more implementation efficiency."
 metrics:
-  - value: "40%"
-    label: less time for design handoff
-    method: "TODO: method, for example average days from design ready to development ready, before and after"
+  - value: "+75%"
+    label: "adoption and efficiency of the system"
+    method: "TODO"
   - value: "+35%"
-    label: designer satisfaction
-    method: Quarterly satisfaction survey of designers across offices
-  - value: "7"
-    label: countries adopting one core
-    method: Switzerland, Germany, Austria, UK, Spain, Saudi Arabia and Singapore
+    label: "customer satisfaction"
+    method: "TODO"
+  - value: "+50%"
+    label: "implementation efficiency"
+    method: "TODO"
+  - value: "5+"
+    label: "financial organisations on one system"
+    method: "TODO"
 ---
 
-## The problem
+## What was at stake
 
-As Crealogix grew, its offices in Switzerland, Germany, Austria, the UK, Spain, Saudi Arabia and Singapore each built their own component sets. The result was predictable: duplicated components, diverging patterns, documentation nobody trusted and slower customisation for every new bank.
+<dl class="glance">
+  <div><dt>Business risk</dt><dd>Crealogix sells the same digital banking platform to many banks. Without a shared core, every new client becomes a fork that slows delivery and multiplies risk in compliance, accessibility and brand trust.</dd></div>
+  <div><dt>Scope</dt><dd>5+ financial organisations in Switzerland, Europe and the Middle East, across retail, corporate, private banking and wealth management. Selected clients included Julius Baer, Credit Suisse and J. Safra Sarasin.</dd></div>
+  <div><dt>Key decision</dt><dd>Customise through tokens, not components. A new bank means a new theme on the same core, never a copy of a button.</dd></div>
+</dl>
 
-In banking software, inconsistency is not just a UX problem. It **multiplies risk**, because compliance, accessibility and brand trust all depend on predictable quality.
+## Context
+
+Crealogix builds digital banking channels for retail, corporate, private and wealth clients, and sells them as a platform. That business model only works if one product can look and behave like many banks at once.
+
+As the company grew, its offices in Switzerland, Germany, Austria, the UK, Spain, Saudi Arabia and Singapore each built their own component sets. The result was predictable: duplicated components, diverging patterns, documentation nobody trusted and slower customisation for every new bank.
+
+In banking software, inconsistency is not just a UX problem. It **multiplies risk**, because compliance, accessibility and brand trust all depend on predictable quality. And every week spent rebuilding a component for one bank is a week not spent on the product all of them pay for.
 
 The system had to be four things at once:
 
 - a **shared core** for every banking product,
-- a **white-label layer** so each client could apply its own brand,
-- a **regional layer** for European and Middle Eastern requirements,
+- a **white label layer** so each client could apply its own brand,
+- a **regional layer** for Swiss, European and Middle Eastern requirements,
 - something designers and developers would adopt **without being forced to**.
 
-## What I did
+## Discovery
 
-I worked across product definition and system architecture inside the innovation team, acting as owner of the system’s design, documentation and enablement.
+I started with interviews with designers, product managers and business stakeholders across regions, an audit mapping duplicated components, and a benchmark of Material, Carbon, Lightning and the Bloomberg Terminal. The last one was there because dense financial interfaces follow different rules. Four barriers came up:
 
-**Discovery first.** Interviews with designers, product managers and business stakeholders across regions, an audit mapping duplicated components, and a benchmark of Material, Carbon, Lightning and the Bloomberg Terminal. The last one was there because dense financial interfaces follow different rules. Four barriers came up:
+1. **Outdated documentation** led to low trust and rework.
+2. **No room for client or regional customisation**, so teams copied components.
+3. **Design and development tools were misaligned**, so implementations drifted.
+4. **Compliance and accessibility were applied unevenly** across markets.
 
-1. Outdated documentation led to low trust and rework.
-2. There was no room for client or regional customisation, so teams copied components.
-3. Design and development tools were misaligned, so implementations drifted.
-4. Compliance and accessibility were applied unevenly across markets.
+## The vision: one source of truth
 
-## Key decisions
+The goal was bigger than a component library. The design system sat at the centre, UX documentation explained how and why to use it, and together they became one source of truth for everyone who builds a banking product at Crealogix.
 
-**Customisation through tokens, not components.** This was the central decision. Each bank’s brand (colour, typography, shape and icon style) lived in a theme of token overrides on top of the same components. Nobody needed to copy a button to make it look like their bank. Themes are less expressive than custom components, but the core stays maintainable.
+<figure class="rings" aria-label="Three concentric circles: the design system inside UX documentation inside one source of truth">
+  <div class="ring r1"><span>One source of truth</span><div class="ring r2"><span>UX documentation</span><div class="ring r3"><span>Design system</span></div></div></div>
+  <figcaption>Each ring depends on the one inside it: no source of truth without documentation, no documentation without a system worth documenting.</figcaption>
+</figure>
 
-**Three layers with clear ownership.**
-- *Core:* foundations, base components and accessibility rules, owned centrally.
-- *Theme:* brand and market rules such as language, right-to-left readiness and legal content, configured per client.
-- *Extensions:* patterns for each segment, such as KYC, approvals and portfolio views for retail, private, corporate and wealth banking, contributed by product teams and reviewed.
+## Roadmap: the non-tangible first
 
-**Token names that match code.** Semantic tokens first, raw values never, and the same names in Figma and in code variables. That shared vocabulary removed a whole class of handoff questions.
+The roadmap deliberately started with what you cannot see. Without shared purpose, principles and identity, every component turns into a debate about taste. With them, components become decisions teams can check against.
 
-**Documentation as the engine of adoption.** It had two areas. *System fundamentals* covered principles, versioning, theming rules, the contribution workflow and onboarding for designers and developers. *Components* covered usage, variants, states, dos and don’ts, accessibility, a live Storybook demo, implementation notes and version history. I used AI for first drafts of component pages, naming checks, release note summaries and gap detection (comparing Figma properties with the documentation template), always reviewed before publishing.
+<div class="roadmap" role="group" aria-label="Roadmap in three phases">
+  <div class="phase"><p class="ph">Phase 1 <em>non-tangible</em></p><div class="cards"><div class="card soft"><strong>Purpose and values</strong><ul><li>Where are we going?</li><li>Why?</li><li>How?</li></ul></div><div class="card soft"><strong>Design principles</strong><ul><li>How to design for the web</li><li>Gesture design</li><li>Data visualisation</li></ul></div><div class="card soft"><strong>Identity and language</strong><ul><li>Colours, fonts, spaces</li><li>Shapes, icons, illustrations</li><li>Photography, animation</li><li>Voice and tone</li></ul></div></div></div>
+  <div class="phase"><p class="ph">Phase 2 <em>tangible</em></p><div class="cards"><div class="card hard"><strong>Tokens</strong><ul><li>Colour and opacity</li><li>Spacing units</li><li>Font size and family</li><li>Flex grid</li><li>Shadow and z-index</li></ul></div><div class="card hard"><strong>Atoms</strong><ul><li>Button</li><li>Badge</li><li>Input</li></ul></div></div></div>
+  <div class="phase"><p class="ph">Phase 3</p><div class="cards"><div class="card hard"><strong>Molecules</strong><ul><li>Basic behaviours</li><li>Navigation patterns</li><li>Segment patterns</li></ul></div></div></div>
+</div>
 
-## Rollout
+<p class="roadmap-cap">Phase 1 aligned the company on why and how. Phase 2 turned it into tokens and atoms. Phase 3 composed them into patterns.</p>
+
+## Hard decisions
+
+**1. Customise through tokens, not components.** This was the central decision. Each bank’s brand (colour, typography, shape and icon style) lived in a theme of token overrides on top of the same components. Nobody needed to copy a button to make it look like their bank.
+
+*Trade off:* themes are less expressive than custom components. *Gain:* one core to maintain, test and certify for accessibility, whatever the number of banks.
+
+**2. Principles before components.** Starting with purpose, principles and identity felt slow to teams who wanted buttons. But it gave every later debate a reference, from gesture design to data visualisation.
+
+*Trade off:* fewer visible deliverables in the first phase. *Gain:* component decisions that were argued once, not once per office.
+
+**3. Three layers with clear ownership.** A shared core, a theme per bank and market, and extensions per banking segment. Each layer had an owner, so autonomy did not mean fragmentation.
+
+*Trade off:* more governance work. *Gain:* product teams could move fast inside their segment without breaking the core.
+
+**4. Token names that match code.** Semantic tokens first, raw values never, and the same names in Figma and in code variables. That shared vocabulary removed a whole class of handoff questions.
+
+## Architecture: one core, many banks
+
+<figure class="arch" aria-label="Diagram of the three layers of the Crealogix design system">
+  <p class="arch-badge">One core, many banks</p>
+  <div class="arch-layer arch-core"><p class="arch-title">Core</p><p class="arch-sub">Foundations · Base components · Accessibility rules</p></div>
+  <p class="arch-arrow"><span aria-hidden="true">↓</span>Themed per bank and market</p>
+  <div class="arch-layer"><p class="arch-title">Theme</p>
+  <div class="arch-cols">
+    <div><strong>Brand</strong><ul><li>Colour</li><li>Typography</li><li>Shape</li><li>Icon style</li></ul></div>
+    <div><strong>Market</strong><ul><li>Language</li><li>Right to left readiness</li><li>Legal content</li></ul></div>
+  </div></div>
+  <p class="arch-arrow"><span aria-hidden="true">↓</span>Extended per banking segment</p>
+  <div class="arch-layer"><p class="arch-title">Extensions</p><p class="arch-sub">Retail · Corporate · Private banking · Wealth management</p>
+  <div class="arch-cols">
+    <div><strong>KYC</strong><ul><li>Onboarding and identity checks</li></ul></div>
+    <div><strong>Approvals</strong><ul><li>Multi step sign off</li></ul></div>
+    <div><strong>Portfolio views</strong><ul><li>Dense financial data</li></ul></div>
+  </div></div>
+  <figcaption>The core is owned centrally, themes are configured per client, and extensions are contributed by product teams and reviewed.</figcaption>
+</figure>
+
+The **core** holds foundations, base components and accessibility rules, owned centrally. The **theme** layer carries each bank’s brand and each market’s rules, such as language, right to left readiness for the Middle East and legal content. **Extensions** add patterns for each segment, such as KYC, approvals and portfolio views, contributed by product teams and reviewed before they enter the system.
+
+## The system in detail
+
+The decisions above only hold if the craft does. This is what designers and developers used every day.
+
+### Foundations
+
+Colour and typography were built for many brands from the start. Five palettes (two brand colours, primary, secondary and tertiary) each run in nine tones, four lighter and four darker than the base, plus transparent steps from 8% to 48% for overlays, hover and selection states. A bank changes the base values in its theme, and every tone and state follows.
+
+Typography uses one named scale from XXXBig to XXXSmall plus caps, checked in three contexts: black on light, white on dark and disabled. Named sizes instead of pixel values meant themes could change the typeface without renaming anything in code.
+
+![Colour UI page with brand, primary, secondary and tertiary palettes in nine tones and transparent steps](/projects/crealogix/color-ui.webp "Colour: five palettes in nine tones each, plus transparent steps for overlays and states.")
+
+![Typography page with the size scale shown in black, white and disabled](/projects/crealogix/typography.webp "Typography: one named scale, tested in black, white and disabled.")
+
+### Components, documented as decisions
+
+Every component had two pages: a **definition** and an **interaction pattern**. The button shows the level of detail.
+
+The definition covers status and version, three types (solid, outline and flat), the four style properties (typography, outline, shape and shadow), five states (default, hover, active, focus and disabled), sizes per device (48 px on mobile, 48 and 32 px on tablet, 48, 32 and 24 px on desktop) and every semantic variant.
+
+The interaction pattern explains how to use it, with dos and don’ts:
+
+- **One primary button per page**, and it always marks the happy path.
+- **A descriptive label** such as “Transfer” or “Send”, with “Next” only for generic steps.
+- **A fixed position:** at the bottom on mobile and on the right on desktop.
+- **Disabled until mandatory fields are filled**, with the missing field highlighted, instead of an error after clicking.
+- **Always a way out:** “Cancel” on independent forms and on the first step of a process, “Back” on later steps.
+
+<div class="compare compare--wide">
+  <figure>
+    <img src="/projects/crealogix/button-definition.webp" alt="Button definition page with types, structure, states, sizes and variants" />
+    <p class="compare-note">Definition: types, structure, states, sizes per device and variants.</p>
+  </figure>
+  <figure>
+    <img src="/projects/crealogix/button-pattern.webp" alt="Button interaction pattern page with general guidelines and dos and don’ts" />
+    <p class="compare-note">Interaction pattern: usage rules, dos and don’ts and behaviour in forms.</p>
+  </figure>
+</div>
+
+## Documentation as the engine of adoption
+
+Documentation had two areas. **System fundamentals** covered principles, versioning, theming rules, the contribution workflow and onboarding for designers and developers. **Components** covered usage, variants, states, dos and don’ts, accessibility, a live Storybook demo, implementation notes and version history.
+
+I used AI for first drafts of component pages, naming checks, release note summaries and gap detection (comparing Figma properties with the documentation template), always reviewed before publishing.
+
+<div class="video">
+  <iframe src="https://www.youtube.com/embed/FUA0fpCOTEc" title="Crealogix Design Hub" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+  <p class="video-caption">The Crealogix Design Hub in use. <a href="https://youtu.be/FUA0fpCOTEc" target="_blank" rel="noopener">Watch on YouTube</a></p>
+</div>
+
+## Leading the team
+
+I managed designers as formal direct reports across several international programmes: setting priorities, mentoring, giving feedback, supporting their development and holding the bar on design quality. The design system was also a team tool. It gave everyone the same standards to review against, so feedback was about decisions, not personal taste.
+
+## Rollout and governance
 
 The rollout was iterative and social rather than mandated: workshops and onboarding sessions for each office, a regular rhythm for triage and releases, and feedback collected from teams using the system on live projects. Adoption was tracked through Figma library analytics, handoff time measurements and satisfaction surveys.
+
+## Business impact
+
+- **One system for 5+ financial organisations** in Switzerland, Europe and the Middle East, each with its own brand on the same core.
+- **Around 75% more adoption and efficiency** as teams moved from local copies to the shared system.
+- **50% more implementation efficiency**, through reusable patterns and token names shared by design and code.
+- **35% higher customer satisfaction**, through more consistent journeys across products and brands.
+- **A new bank meant a new theme, not a new fork**, which is what makes a platform business scale.
+
+## What changed in the organisation
+
+- **One vocabulary across offices.** Designers and developers in different countries used the same names for the same things.
+- **Contribution instead of copies.** Product teams extended the system through a reviewed workflow instead of forking it.
+- **Shared UX standards.** Reviews across programmes were held against the same principles and patterns.
 
 ## What I learned
 
 - Multi-tenant systems work when customisation is driven by tokens. Customisation through components always ends in copies.
+- Start with the non-tangible. Principles and identity save more time than any component.
 - Governance has to be light but explicit, or teams go back to local copies.
-- Documentation is the main lever for adoption. Once it’s out of date, trust collapses fast.
+- Documentation is the main lever for adoption. Once it is out of date, trust collapses fast.
 
 **Next time** I would invest earlier in automated parity between Figma and code (linting and token sync pipelines) and in patterns for wealth and corporate banking.

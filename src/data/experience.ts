@@ -48,12 +48,13 @@ export const experience: Role[] = [
   },
   {
     company: 'Crealogix',
-    role: 'Senior UX/UI Designer, Design Systems',
+    period: '2019 to 2021',
+    role: 'Senior UX/UI Designer, Design Systems and Team Lead',
     sector: { en: 'Banking software (SaaS)', de: 'Banking-Software (SaaS)', es: 'Software bancario (SaaS)' },
     note: {
-      en: 'White-label, multi-tenant design system across Europe and the Middle East.',
-      de: 'Mandantenfähiges White-Label-Designsystem für Europa und den Nahen Osten.',
-      es: 'Design system marca blanca y multicliente para Europa y Oriente Medio.',
+      en: 'Multi-brand design system for 5+ financial organisations in Switzerland, Europe and the Middle East. Managed designers as direct reports. Clients included Julius Baer, Credit Suisse and J. Safra Sarasin.',
+      de: 'Multi-Brand-Designsystem für 5+ Finanzinstitute in der Schweiz, Europa und dem Nahen Osten. Führung von Designern als direkte Mitarbeitende. Kunden u. a. Julius Bär, Credit Suisse und J. Safra Sarasin.',
+      es: 'Design system multimarca para más de 5 entidades financieras de Suiza, Europa y Oriente Medio. Diseñadores a mi cargo. Clientes como Julius Baer, Credit Suisse y J. Safra Sarasin.',
     },
   },
   {
