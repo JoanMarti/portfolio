@@ -10,7 +10,7 @@ team: "Diseñadores a mi cargo, Producto, Ingeniería y equipos de cliente en Su
 duration: "2 años"
 # TODO (Joan): number of banks live on the system, time to onboard a new bank or brand theme before and after,
 #   how the four metrics were measured, and whether +35% is customer or designer satisfaction (the old site said designers).
-tools: [Figma, Storybook, Confluence, Design tokens]
+tools: [Figma, Storybook, Confluence, Design tokens, CSS, Angular]
 cover: tenants
 featured: true
 order: 3
@@ -164,6 +164,88 @@ El patrón de interacción explica cómo usarlo, con lo que sí y lo que no:
     <p class="compare-note">Patrón de interacción: reglas de uso, lo que sí y lo que no, y comportamiento en formularios.</p>
   </figure>
 </div>
+
+### De Figma a CSS y Angular
+
+El sistema se diseñó para construirse. Cada decisión en Figma tenía su equivalente directo en CSS y en la librería de componentes de Angular. Trabajé con ingeniería en cómo se implementaba cada una y revisaba la paridad entre ambos.
+
+| En Figma | En CSS | En Angular |
+| --- | --- | --- |
+| Estilos de color, tipografía y espaciado | Tokens semánticos como CSS custom properties | Un archivo de tema común que importa cada app |
+| El tema de un banco | Un conjunto de tokens sobrescritos en una clase de tema | El tema del cliente aplicado al arrancar la app |
+| Variantes: tipo y tamaño | Clases modificadoras que solo leen tokens | Inputs del componente con los mismos nombres |
+| Estados: hover, foco, deshabilitado | `:hover`, `:focus-visible`, `[disabled]` | Estado deshabilitado ligado a la validez del formulario |
+| Diseños de derecha a izquierda | Propiedades lógicas como `padding-inline` | Atributo `dir` según el idioma |
+
+Tres reglas sostenían esa correspondencia:
+
+- **Los componentes nunca fijan un valor.** Solo leen tokens, así un tema puede cambiar toda la imagen de un banco sin tocar el código del componente.
+- **Los nombres viajan sin cambios.** Una variante “outline” en Figma es `type="outline"` en Angular y `cx-button--outline` en CSS, así diseño y desarrollo hablan de lo mismo.
+- **El comportamiento es parte del componente.** Los estilos de foco, la lógica de deshabilitado y los tamaños mínimos viven en el propio componente, así cada banco hereda la accesibilidad en lugar de rehacerla.
+
+Un ejemplo simplificado del botón muestra cómo se encuentran las capas:
+
+<p class="code-label">Tokens, tema y componente en CSS</p>
+
+```css
+/* Core: semantic tokens, shared by every bank */
+:root {
+  --cx-color-primary: #1f6fe5;
+  --cx-color-focus: #7aa7ff;
+  --cx-radius-control: 4px;
+  --cx-space-md: 16px;
+}
+
+/* Theme: a bank overrides tokens, never components */
+.theme-bank-a {
+  --cx-color-primary: #0b3d91;
+  --cx-radius-control: 0;
+}
+
+/* Component: styled only through tokens */
+.cx-button {
+  min-block-size: var(--cx-button-height, 48px);
+  padding-inline: var(--cx-space-md);
+  border-radius: var(--cx-radius-control);
+  background: var(--cx-color-primary);
+}
+.cx-button--medium { --cx-button-height: 32px; }
+.cx-button--small { --cx-button-height: 24px; }
+.cx-button:focus-visible {
+  outline: 2px solid var(--cx-color-focus);
+  outline-offset: 2px;
+}
+```
+
+<p class="code-label">Las mismas variantes como inputs de Angular</p>
+
+```ts
+@Component({
+  selector: 'cx-button',
+  template: `
+    <button [class]="classes" [disabled]="disabled">
+      <ng-content></ng-content>
+    </button>`,
+})
+export class CxButtonComponent {
+  @Input() type: 'solid' | 'outline' | 'flat' = 'solid';
+  @Input() size: 'big' | 'medium' | 'small' = 'big';
+  @Input() disabled = false;
+
+  get classes(): string {
+    return `cx-button cx-button--${this.type} cx-button--${this.size}`;
+  }
+}
+```
+
+<p class="code-label">La regla de interacción en un formulario real</p>
+
+```html
+<!-- The primary action stays disabled until the form is valid -->
+<cx-button type="solid" [disabled]="transferForm.invalid">Transfer</cx-button>
+```
+
+Los ejemplos están simplificados para este caso de estudio, pero la estructura es la que seguía el sistema: tokens en el núcleo, temas como sobrescrituras y componentes cuya API refleja Figma.
 
 ## La documentación como motor de adopción
 

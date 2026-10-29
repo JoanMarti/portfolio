@@ -10,7 +10,7 @@ team: "Designers as direct reports, Product, Engineering and customer facing tea
 duration: "2 years"
 # TODO (Joan): number of banks live on the system, time to onboard a new bank or brand theme before and after,
 #   how the four metrics were measured, and whether +35% is customer or designer satisfaction (the old site said designers).
-tools: [Figma, Storybook, Confluence, Design tokens]
+tools: [Figma, Storybook, Confluence, Design tokens, CSS, Angular]
 cover: tenants
 featured: true
 order: 3
@@ -164,6 +164,88 @@ The interaction pattern explains how to use it, with dos and don’ts:
     <p class="compare-note">Interaction pattern: usage rules, dos and don’ts and behaviour in forms.</p>
   </figure>
 </div>
+
+### From Figma to CSS and Angular
+
+The system was designed to be built. Every decision in Figma had a direct counterpart in CSS and in the Angular component library, and I worked with engineering on how each one was implemented and reviewed parity between them.
+
+| In Figma | In CSS | In Angular |
+| --- | --- | --- |
+| Colour, type and spacing styles | Semantic tokens as CSS custom properties | One shared theme file imported by every app |
+| A bank’s theme | A set of token overrides on a theme class | The client theme applied when the app starts |
+| Variants: type and size | Modifier classes that only read tokens | Component inputs with the same names |
+| States: hover, focus, disabled | `:hover`, `:focus-visible`, `[disabled]` | Disabled state bound to form validity |
+| Right to left layouts | Logical properties such as `padding-inline` | `dir` attribute set per locale |
+
+Three rules made that mapping hold:
+
+- **Components never hardcode a value.** They only read tokens, so a theme can change a bank’s whole look without touching component code.
+- **Names travel unchanged.** A variant called “outline” in Figma is `type="outline"` in Angular and `cx-button--outline` in CSS, so designers and developers talk about the same thing.
+- **Behaviour is part of the component.** Focus styles, disabled logic and minimum sizes live in the component itself, so every bank inherits accessibility instead of rebuilding it.
+
+A simplified example of the button, showing how the layers meet:
+
+<p class="code-label">Tokens, theme and component in CSS</p>
+
+```css
+/* Core: semantic tokens, shared by every bank */
+:root {
+  --cx-color-primary: #1f6fe5;
+  --cx-color-focus: #7aa7ff;
+  --cx-radius-control: 4px;
+  --cx-space-md: 16px;
+}
+
+/* Theme: a bank overrides tokens, never components */
+.theme-bank-a {
+  --cx-color-primary: #0b3d91;
+  --cx-radius-control: 0;
+}
+
+/* Component: styled only through tokens */
+.cx-button {
+  min-block-size: var(--cx-button-height, 48px);
+  padding-inline: var(--cx-space-md);
+  border-radius: var(--cx-radius-control);
+  background: var(--cx-color-primary);
+}
+.cx-button--medium { --cx-button-height: 32px; }
+.cx-button--small { --cx-button-height: 24px; }
+.cx-button:focus-visible {
+  outline: 2px solid var(--cx-color-focus);
+  outline-offset: 2px;
+}
+```
+
+<p class="code-label">The same variants as Angular inputs</p>
+
+```ts
+@Component({
+  selector: 'cx-button',
+  template: `
+    <button [class]="classes" [disabled]="disabled">
+      <ng-content></ng-content>
+    </button>`,
+})
+export class CxButtonComponent {
+  @Input() type: 'solid' | 'outline' | 'flat' = 'solid';
+  @Input() size: 'big' | 'medium' | 'small' = 'big';
+  @Input() disabled = false;
+
+  get classes(): string {
+    return `cx-button cx-button--${this.type} cx-button--${this.size}`;
+  }
+}
+```
+
+<p class="code-label">The interaction rule in a real form</p>
+
+```html
+<!-- The primary action stays disabled until the form is valid -->
+<cx-button type="solid" [disabled]="transferForm.invalid">Transfer</cx-button>
+```
+
+The examples are simplified for this case study, but the structure is the one the system followed: tokens at the core, themes as overrides, and components whose API mirrors Figma.
 
 ## Documentation as the engine of adoption
 

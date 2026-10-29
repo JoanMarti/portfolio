@@ -33,7 +33,14 @@ for p in sorted(dist.rglob('index.html')):
             IMGS[key] = f'data:{mime};base64,{base64.b64encode(f.read_bytes()).decode()}'
         return f'data-img="{key}"'
     main = re.sub(r'<a href="/projects/[^"]+"', '<a', main).replace(' loading="lazy"', '')
-    main = re.sub(r'(src)="(/(?:projects|images|visual)/[^"]+)"', inline, main)
+    # The demo viewer blocks third party frames, so YouTube iframes become a thumbnail card that opens the video.
+    def yt_card(m):
+        vid = m.group(1)
+        return (f'<a class="video-card" href="https://youtu.be/{vid}" target="_blank" rel="noopener">'
+                f'<img src="/video/{vid}.webp" alt="" /><span class="video-icon" aria-hidden="true"></span>'
+                f'<span class="video-badge">YouTube ↗</span></a>')
+    main = re.sub(r'<iframe src="https://www\.youtube\.com/embed/([\w-]+)"[^>]*></iframe>', yt_card, main)
+    main = re.sub(r'(src)="(/(?:projects|images|visual|video)/[^"]+)"', inline, main)
     header = re.search(r'(<header class="site-header.*?</header>)', html, re.S).group(1)
     footer = re.search(r'(<footer id="contact".*?</footer>)', html, re.S).group(1)
     lang = re.search(r'<html lang="([a-z]+)"', html).group(1)
