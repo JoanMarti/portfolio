@@ -4,10 +4,10 @@ headline: Rediseñar la autenticación de arte
 summary: "Me hice cargo de la app de iOS y Android de Smartstamp con una arquitectura de la información sin terminar, redefiní su estructura y sus flujos, y rediseñé la experiencia en torno a cuatro acciones: registrar, verificar, transferir y certificar."
 client: Smartstamp
 sector: Arte y autenticación
-year: "2025"            # TODO: confirm start and end dates
-role: Product Designer  # TODO: confirm exact title
+year: "2025"
+role: "Senior Product Designer"
 team: "TODO"
-duration: "TODO"
+duration: "6 meses"
 tools: [Figma, User flows, Arquitectura de la información, Librería de UI, Especificaciones de diseño, TestFlight]
 cover: ia
 featured: true

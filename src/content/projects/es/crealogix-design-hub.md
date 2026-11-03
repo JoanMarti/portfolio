@@ -5,9 +5,9 @@ summary: "Un design system multimarca y unos estándares de UX compartidos con l
 client: Crealogix
 sector: "Software bancario (SaaS)"
 year: "2019 a 2021"
-role: "Senior UX/UI Designer, al frente de diseñadores y del design system multimarca"
+role: "Lead UX/UI Designer and Design Systems Specialist"
 team: "Diseñadores a mi cargo, Producto, Ingeniería y equipos de cliente en Suiza, España y Alemania"
-duration: "2 años"
+duration: "2 años y 2 meses"
 # TODO (Joan): number of banks live on the system, time to onboard a new bank or brand theme before and after,
 #   how the four metrics were measured, and whether +35% is customer or designer satisfaction (the old site said designers).
 tools: [Figma, Storybook, Confluence, Design tokens, CSS, Angular]

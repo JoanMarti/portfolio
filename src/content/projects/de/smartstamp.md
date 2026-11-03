@@ -4,10 +4,10 @@ headline: Echtheitsprüfung für Kunst neu gestaltet
 summary: "Ich übernahm die iOS- und Android-App von Smartstamp mit einer unfertigen Informationsarchitektur, definierte Struktur und Abläufe neu und gestaltete das Erlebnis rund um vier Kernaktionen: registrieren, prüfen, übertragen und zertifizieren."
 client: Smartstamp
 sector: Kunst und Echtheitsprüfung
-year: "2025"            # TODO: confirm start and end dates
-role: Product Designer  # TODO: confirm exact title
+year: "2025"
+role: "Senior Product Designer"
 team: "TODO"
-duration: "TODO"
+duration: "6 Monate"
 tools: [Figma, User Flows, Informationsarchitektur, UI-Bibliothek, Designspezifikationen, TestFlight]
 cover: ia
 featured: true

@@ -5,9 +5,9 @@ summary: An adaptive onboarding proof of concept for high-net-worth clients, val
 client: Julius Baer (through IBM iX Switzerland)
 sector: Private banking
 year: "2022"
-role: Lead UX/UI Designer
+role: "Senior UX/UI Designer, IBM iX"
 team: Four-person cross-functional innovation team
-duration: "TODO"
+duration: "5 months"
 tools: [Figma, Interview synthesis, Journey mapping, Moderated usability testing]
 cover: branching
 featured: true

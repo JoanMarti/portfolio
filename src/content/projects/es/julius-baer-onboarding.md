@@ -5,9 +5,9 @@ summary: Una prueba de concepto de onboarding adaptativo para clientes de alto p
 client: Julius Baer (a través de IBM iX Suiza)
 sector: Banca privada
 year: "2022"
-role: Lead UX/UI Designer
+role: "Senior UX/UI Designer, IBM iX"
 team: Equipo de innovación multidisciplinar de cuatro personas
-duration: "TODO"
+duration: "5 meses"
 tools: [Figma, Síntesis de entrevistas, Journey mapping, Tests de usabilidad moderados]
 cover: branching
 featured: true

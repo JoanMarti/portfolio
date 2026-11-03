@@ -23,6 +23,11 @@ export default function rehypeFigures({ base = '/' } = {}) {
           return figure;
         }
       }
+      // Raw HTML blocks (figures, grids, diagrams written as HTML in Markdown) keep their markup as text.
+      if (child.type === 'raw' && prefix) {
+        child.value = child.value.replace(/\bsrc="\/(?!\/)/g, `src="${prefix}/`);
+        return child;
+      }
       if (child.type === 'element' && child.tagName === 'img' && child.properties?.src) {
         child.properties.src = fix(String(child.properties.src));
       }

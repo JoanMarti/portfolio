@@ -4,10 +4,10 @@ headline: From one visit to returning buyers
 summary: A personal space that remembers what each buyer was looking at (saved searches, favourites and comparisons) and brings them back to it.
 client: Coches.net (Adevinta)
 sector: Automotive marketplace
-year: "TODO"
-role: Senior UX/UI Designer
+year: "2017 to 2019"
+role: "Senior UI/UX Designer, User Growth and Retention"
 team: Product owner, engineering squad and analytics
-duration: "TODO"
+duration: "2 years"
 tools: [Adobe Analytics, Figma, Guerrilla testing, A/B testing]
 cover: loop
 featured: false

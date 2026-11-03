@@ -4,10 +4,10 @@ headline: De una visita a compradores que vuelven
 summary: Un espacio personal que recuerda lo que cada comprador estaba mirando (búsquedas guardadas, favoritos y comparaciones) y le devuelve a ello.
 client: Coches.net (Adevinta)
 sector: Marketplace de automoción
-year: "TODO"
-role: Senior UX/UI Designer
+year: "2017 a 2019"
+role: "Senior UI/UX Designer, User Growth and Retention"
 team: Product owner, equipo de desarrollo y analítica
-duration: "TODO"
+duration: "2 años"
 tools: [Adobe Analytics, Figma, Tests de guerrilla, Tests A/B]
 cover: loop
 featured: false

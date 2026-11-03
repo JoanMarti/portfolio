@@ -5,9 +5,9 @@ summary: Ein Proof of Concept für ein adaptives Onboarding vermögender Privatk
 client: Julius Bär (über IBM iX Schweiz)
 sector: Private Banking
 year: "2022"
-role: Lead UX/UI Designer
+role: "Senior UX/UI Designer, IBM iX"
 team: Interdisziplinäres Innovationsteam mit vier Personen
-duration: "TODO"
+duration: "5 Monate"
 tools: [Figma, Interviewauswertung, Journey Mapping, Moderierte Usability-Tests]
 cover: branching
 featured: true

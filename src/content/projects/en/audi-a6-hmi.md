@@ -4,10 +4,10 @@ headline: Eyes on the road
 summary: Information architecture and interaction model for the connected Audi A6 infotainment system, tested in a driving simulator.
 client: Audi (Volkswagen Group)
 sector: Automotive
-year: "2015"
-role: Senior UX and HMI Designer
+year: "2015 to 2016"
+role: "Senior User Interface Designer (HMI), Uedelhoven for Audi"
 team: UX, HMI engineering, software and hardware teams
-duration: "TODO"
+duration: "8 months"
 tools: [Information architecture, Interaction design, Voice interaction, High-fidelity prototyping, Simulator testing]
 cover: hmi
 featured: false

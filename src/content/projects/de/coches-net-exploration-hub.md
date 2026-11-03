@@ -4,10 +4,10 @@ headline: Vom einmaligen Besuch zum Stammkunden
 summary: Ein persönlicher Bereich, der sich merkt, was jede Käuferin und jeder Käufer angeschaut hat (gespeicherte Suchen, Favoriten und Vergleiche), und dorthin zurückführt.
 client: Coches.net (Adevinta)
 sector: Automarktplatz
-year: "TODO"
-role: Senior UX/UI Designer
+year: "2017 bis 2019"
+role: "Senior UI/UX Designer, User Growth and Retention"
 team: Product Owner, Entwicklungsteam und Analytics
-duration: "TODO"
+duration: "2 Jahre"
 tools: [Adobe Analytics, Figma, Guerrilla-Tests, A/B-Tests]
 cover: loop
 featured: false

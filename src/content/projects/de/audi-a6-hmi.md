@@ -4,10 +4,10 @@ headline: Den Blick auf der Strasse
 summary: Informationsarchitektur und Interaktionsmodell für das vernetzte Infotainmentsystem des Audi A6, getestet in einem Fahrsimulator.
 client: Audi (Volkswagen Konzern)
 sector: Automobil
-year: "2015"
-role: Senior UX und HMI Designer
+year: "2015 bis 2016"
+role: "Senior User Interface Designer (HMI), Uedelhoven für Audi"
 team: UX, HMI-Entwicklung sowie Software- und Hardware-Teams
-duration: "TODO"
+duration: "8 Monate"
 tools: [Informationsarchitektur, Interaktionsdesign, Sprachinteraktion, High-Fidelity-Prototyping, Tests im Simulator]
 cover: hmi
 featured: false

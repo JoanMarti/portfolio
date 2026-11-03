@@ -1,105 +1,227 @@
-// Career timeline shown on the About page.
-// TODO: add the years (period) for each role and confirm titles. LinkedIn hides them
-// without login, so these come from your case studies and Malt profile only.
+// Career timeline shown on the About page, copied from LinkedIn (titles, companies, places and dates).
 import type { Lang } from '../lib/i18n';
 
 type T = Record<Lang, string>;
 
 export type Role = {
+  role: string; // title as on LinkedIn
   company: string;
-  role: string;
-  sector: T;
-  period?: string; // for example '2023 to 2025'
-  note: T;
+  place: T;
+  start: string; // YYYY-MM
+  end: string; // YYYY-MM
+  type?: T; // employment type when LinkedIn shows it
+  note?: T;
+  caseStudy?: string; // slug of the related case study
+  group?: string; // roles at the same company share a group name
 };
 
+const ch = { en: 'Switzerland', de: 'Schweiz', es: 'Suiza' };
+const zurich: T = { en: 'Zurich, ' + ch.en, de: 'Zürich, ' + ch.de, es: 'Zúrich, ' + ch.es };
+const barcelona: T = { en: 'Barcelona, Spain', de: 'Barcelona, Spanien', es: 'Barcelona, España' };
+const contract: T = { en: 'Contract', de: 'Vertrag', es: 'Contrato' };
+const fullTime: T = { en: 'Full time', de: 'Vollzeit', es: 'Jornada completa' };
+
+// Product, UX and UI roles, newest first (ordered by end date, as on LinkedIn).
 export const experience: Role[] = [
   {
-    company: 'Smartstamp',
-    role: 'Product Designer',
-    period: '2025',
-    sector: { en: 'Art tech and authentication', de: 'Kunst und Echtheitsprüfung', es: 'Arte y autenticación' },
+    role: 'Senior Product Designer',
+    company: 'VendueTech',
+    place: { en: 'Steinhausen, Zug (remote)', de: 'Steinhausen, Zug (remote)', es: 'Steinhausen, Zug (remoto)' },
+    start: '2025-03', end: '2026-06',
+    type: { en: 'Part time', de: 'Teilzeit', es: 'Media jornada' },
     note: {
-      en: 'Redefined the information architecture and redesigned an iOS and Android app for artwork authentication.',
-      de: 'Informationsarchitektur neu definiert und eine iOS- und Android-App zur Echtheitsprüfung von Kunstwerken neu gestaltet.',
-      es: 'Redefiní la arquitectura de la información y rediseñé una app de iOS y Android para autenticar obras de arte.',
+      en: 'Investment and property auction experiences for Bidsale, a European PropTech platform, including AI assisted property search and the product design system.',
+      de: 'Investment- und Immobilienauktions-Erlebnisse für Bidsale, eine europäische PropTech-Plattform, inklusive KI-gestützter Immobiliensuche und Designsystem.',
+      es: 'Experiencias de inversión y subastas inmobiliarias para Bidsale, una plataforma PropTech europea, incluida la búsqueda asistida por IA y el design system del producto.',
     },
   },
   {
+    role: 'Senior Product Designer',
+    company: 'SmartStamp',
+    place: { en: 'Zurich (hybrid)', de: 'Zürich (hybrid)', es: 'Zúrich (híbrido)' },
+    start: '2025-07', end: '2025-12',
+    type: fullTime,
+    caseStudy: 'smartstamp',
+    note: {
+      en: 'Led product design for a Swiss FinTech app for artwork authentication: a new information architecture, onboarding, KYC, transfers and payments, and design system foundations.',
+      de: 'Produktdesign für eine Schweizer FinTech-App zur Echtheitsprüfung von Kunstwerken: neue Informationsarchitektur, Onboarding, KYC, Transfers und Zahlungen sowie die Grundlagen des Designsystems.',
+      es: 'Lideré el diseño de producto de una app FinTech suiza para autenticar obras de arte: nueva arquitectura de la información, onboarding, KYC, transferencias y pagos, y las bases del design system.',
+    },
+  },
+  {
+    role: 'Design System Lead',
     company: 'Glencore',
-    role: 'Design System Lead, Senior UX Designer',
-    sector: { en: 'Commodities trading (CTRM)', de: 'Rohstoffhandel (CTRM)', es: 'Trading de materias primas (CTRM)' },
+    place: { en: 'Baar, Zug (on site)', de: 'Baar, Zug (vor Ort)', es: 'Baar, Zug (presencial)' },
+    start: '2022-12', end: '2025-03',
+    type: contract,
+    caseStudy: 'glencore-ctrm',
     note: {
-      en: 'Enterprise design system for a mission-critical copper trading platform.',
-      de: 'Enterprise-Designsystem für eine geschäftskritische Kupferhandelsplattform.',
-      es: 'Design system empresarial para una plataforma crítica de trading de cobre.',
+      en: 'Led the design system for an internal commodity trading and risk management platform.',
+      de: 'Leitung des Designsystems einer internen Plattform für Rohstoffhandel und Risikomanagement.',
+      es: 'Lideré el design system de una plataforma interna de trading y gestión de riesgos.',
     },
   },
   {
-    company: 'IBM iX Switzerland, for Julius Baer',
-    role: 'Lead UX/UI Designer',
-    period: '2022',
-    sector: { en: 'Private banking', de: 'Private Banking', es: 'Banca privada' },
-    note: {
-      en: 'Adaptive onboarding proof of concept for high-net-worth clients.',
-      de: 'Proof of Concept für ein adaptives Onboarding vermögender Privatkunden.',
-      es: 'Prueba de concepto de un onboarding adaptativo para clientes de alto patrimonio.',
-    },
-  },
-  {
-    company: 'Crealogix',
-    period: '2019 to 2021',
-    role: 'Senior UX/UI Designer, Design Systems and Team Lead',
-    sector: { en: 'Banking software (SaaS)', de: 'Banking-Software (SaaS)', es: 'Software bancario (SaaS)' },
-    note: {
-      en: 'Multi-brand design system for 5+ financial organisations in Switzerland, Europe and the Middle East. Managed designers as direct reports. Clients included Julius Baer, Credit Suisse and J. Safra Sarasin.',
-      de: 'Multi-Brand-Designsystem für 5+ Finanzinstitute in der Schweiz, Europa und dem Nahen Osten. Führung von Designern als direkte Mitarbeitende. Kunden u. a. Julius Bär, Credit Suisse und J. Safra Sarasin.',
-      es: 'Design system multimarca para más de 5 entidades financieras de Suiza, Europa y Oriente Medio. Diseñadores a mi cargo. Clientes como Julius Baer, Credit Suisse y J. Safra Sarasin.',
-    },
-  },
-  {
-    company: 'Webrepublic',
-    role: 'Senior UX Consultant',
-    sector: { en: 'Digital marketing and SEO', de: 'Digitales Marketing und SEO', es: 'Marketing digital y SEO' },
-    note: {
-      en: 'Set up the first UX team inside the SEO division.',
-      de: 'Aufbau des ersten UX-Teams innerhalb der SEO-Abteilung.',
-      es: 'Creé el primer equipo de UX dentro del área de SEO.',
-    },
-  },
-  {
-    company: 'Adevinta, Coches.net',
     role: 'Senior UX/UI Designer',
-    sector: { en: 'Automotive marketplace', de: 'Automarktplatz', es: 'Marketplace de automoción' },
+    company: 'IBM iX',
+    place: { en: 'Zurich (on site)', de: 'Zürich (vor Ort)', es: 'Zúrich (presencial)' },
+    start: '2022-05', end: '2022-09',
+    type: contract,
+    caseStudy: 'julius-baer-onboarding',
     note: {
-      en: 'Growth and retention for Spain’s leading car marketplace.',
-      de: 'Wachstum und Kundenbindung für den führenden Automarktplatz Spaniens.',
-      es: 'Crecimiento y retención para el marketplace de coches líder en España.',
+      en: 'Digital experiences for Julius Baer’s private banking and wealth management clients, from research to journeys and usability testing.',
+      de: 'Digitale Erlebnisse für Private-Banking- und Wealth-Management-Kunden von Julius Bär, von der Forschung über Journeys bis zu Usability-Tests.',
+      es: 'Experiencias digitales para clientes de banca privada y gestión patrimonial de Julius Baer, desde la investigación hasta los recorridos y los tests de usabilidad.',
     },
   },
   {
-    company: 'Musiclist (Instamusic)',
-    role: 'Product Design Lead',
-    period: '2019',
-    sector: { en: 'Consumer music startup', de: 'Musik-Startup', es: 'Startup de música' },
+    role: 'Senior UX/UI Designer',
+    company: 'Webrepublic AG',
+    place: { en: 'Zurich (on site)', de: 'Zürich (vor Ort)', es: 'Zúrich (presencial)' },
+    start: '2021-11', end: '2022-03',
+    type: fullTime,
     note: {
-      en: 'Took a mood-based discovery app from idea to MVP in three months.',
-      de: 'Eine stimmungsbasierte Musik-App in drei Monaten von der Idee zum MVP gebracht.',
-      es: 'Llevé una app de descubrimiento musical basada en el estado de ánimo de la idea al MVP en tres meses.',
+      en: 'Founded and led the first UX team inside the SEO division, joining UX strategy and SEO practice.',
+      de: 'Aufbau und Leitung des ersten UX-Teams in der SEO-Abteilung, als Brücke zwischen UX-Strategie und SEO.',
+      es: 'Creé y lideré el primer equipo de UX dentro del área de SEO, uniendo estrategia de UX y SEO.',
     },
   },
   {
-    company: 'Audi, Volkswagen Group',
-    role: 'Senior UX / HMI Designer',
-    period: '2015',
-    sector: { en: 'Automotive', de: 'Automobil', es: 'Automoción' },
+    role: 'Lead UX/UI Designer and Design Systems Specialist',
+    company: 'Crealogix Group',
+    group: 'crealogix',
+    place: barcelona,
+    start: '2020-04', end: '2021-11',
+    type: fullTime,
+    caseStudy: 'crealogix-design-hub',
     note: {
-      en: 'Information architecture and interaction model for the connected Audi A6 infotainment system.',
-      de: 'Informationsarchitektur und Interaktionsmodell für das vernetzte Infotainmentsystem des Audi A6.',
-      es: 'Arquitectura de la información y modelo de interacción del sistema de infoentretenimiento conectado del Audi A6.',
+      en: 'Multi-brand design system for private, wealth, retail and corporate banking in Europe and the Middle East. Managed designers as direct reports. Clients included Julius Baer, Credit Suisse and J. Safra Sarasin.',
+      de: 'Multi-Brand-Designsystem für Private, Wealth, Retail und Corporate Banking in Europa und dem Nahen Osten. Führung von Designern als direkte Mitarbeitende. Kunden u. a. Julius Bär, Credit Suisse und J. Safra Sarasin.',
+      es: 'Design system multimarca para banca privada, patrimonial, minorista y corporativa en Europa y Oriente Medio. Diseñadores a mi cargo. Clientes como Julius Baer, Credit Suisse y J. Safra Sarasin.',
+    },
+  },
+  {
+    role: 'Senior UX/UI and Product Designer',
+    company: 'Crealogix Group',
+    group: 'crealogix',
+    place: zurich,
+    start: '2019-10', end: '2020-03',
+    type: fullTime,
+    note: {
+      en: 'User research and a modular design system for private and retail banking platforms, later adopted by several banking clients.',
+      de: 'Nutzerforschung und ein modulares Designsystem für Private- und Retail-Banking-Plattformen, später von mehreren Bankkunden übernommen.',
+      es: 'Investigación con usuarios y un design system modular para plataformas de banca privada y minorista, adoptado después por varios bancos.',
+    },
+  },
+  {
+    role: 'Senior Product Designer and Product Manager',
+    company: 'MusicList',
+    place: barcelona,
+    start: '2019-08', end: '2019-10',
+    type: { en: 'Freelance', de: 'Freelance', es: 'Freelance' },
+    caseStudy: 'instamusic',
+    note: {
+      en: 'Design and product for a music streaming app, taken from idea to MVP in three months.',
+      de: 'Design und Produkt für eine Musik-Streaming-App, in drei Monaten von der Idee zum MVP.',
+      es: 'Diseño y producto de una app de música en streaming, llevada de la idea al MVP en tres meses.',
+    },
+  },
+  {
+    role: 'Digital Design Programme Coordinator and UI Lecturer',
+    company: 'EAD Sant Cugat',
+    place: { en: 'Sant Cugat del Vallès, Spain', de: 'Sant Cugat del Vallès, Spanien', es: 'Sant Cugat del Vallès, España' },
+    start: '2017-09', end: '2019-09',
+    note: {
+      en: 'Coordinated the Digital Design programme and taught interactive design, UX, Agile and prototyping.',
+      de: 'Koordination des Studiengangs Digital Design und Unterricht in Interaktionsdesign, UX, Agile und Prototyping.',
+      es: 'Coordiné el ciclo de Diseño Digital e impartí clases de diseño interactivo, UX, Agile y prototipado.',
+    },
+  },
+  {
+    role: 'Senior UI/UX Designer, User Growth and Retention',
+    company: 'Adevinta Spain',
+    place: barcelona,
+    start: '2017-06', end: '2019-05',
+    type: fullTime,
+    caseStudy: 'coches-net-exploration-hub',
+    note: {
+      en: 'Acquisition, onboarding and retention across web, iOS and Android for Coches.net, one of Spain’s leading car marketplaces.',
+      de: 'Akquise, Onboarding und Kundenbindung über Web, iOS und Android für Coches.net, einen der führenden Automarktplätze Spaniens.',
+      es: 'Captación, onboarding y retención en web, iOS y Android para Coches.net, uno de los marketplaces de coches líderes en España.',
+    },
+  },
+  {
+    role: 'Senior UX/UI Consultant, Retail Banking',
+    company: 'Codiwans',
+    place: barcelona,
+    start: '2018-09', end: '2018-11',
+    note: {
+      en: 'UX and rapid prototyping of an MVP for a retail bank targeting users under 16.',
+      de: 'UX und Rapid Prototyping eines MVP für eine Retailbank mit Zielgruppe unter 16 Jahren.',
+      es: 'UX y prototipado rápido de un MVP para un banco minorista dirigido a menores de 16 años.',
+    },
+  },
+  {
+    role: 'Lead UI/UX Designer, Business Intelligence',
+    company: 'MontrixSoft',
+    place: { en: 'Barcelona area, Spain', de: 'Region Barcelona, Spanien', es: 'Área de Barcelona, España' },
+    start: '2016-09', end: '2017-12',
+    note: {
+      en: 'Data dense business intelligence tools built on QlikView, Power BI and Tableau, made clearer and easier to use.',
+      de: 'Datenreiche Business-Intelligence-Werkzeuge auf Basis von QlikView, Power BI und Tableau, klarer und einfacher gemacht.',
+      es: 'Herramientas de business intelligence con muchos datos, sobre QlikView, Power BI y Tableau, más claras y fáciles de usar.',
+    },
+  },
+  {
+    role: 'Senior User Interface Designer',
+    company: 'Uedelhoven GmbH & Co. KG',
+    place: { en: 'Munich, Germany', de: 'München, Deutschland', es: 'Múnich, Alemania' },
+    start: '2015-11', end: '2016-06',
+    caseStudy: 'audi-a6-hmi',
+    note: {
+      en: 'HMI for connected Audi vehicles: navigation, media, phone and system interactions across touch, voice and physical controls.',
+      de: 'HMI für vernetzte Audi-Fahrzeuge: Navigation, Medien, Telefon und Systeminteraktionen über Touch, Sprache und physische Bedienelemente.',
+      es: 'HMI para vehículos Audi conectados: navegación, multimedia, teléfono e interacciones del sistema con táctil, voz y mandos físicos.',
     },
   },
 ];
+
+// Earlier career in art direction and digital creative work, shown as a compact list.
+export const earlier: Role[] = [
+  { role: 'Digital Art Director, Creative', company: 'Twice', place: { en: 'Guadalajara, Mexico', de: 'Guadalajara, Mexiko', es: 'Guadalajara, México' }, start: '2014-02', end: '2015-08' },
+  { role: 'Head of Digital Media', company: 'C&A México', place: { en: 'Guadalajara, Mexico', de: 'Guadalajara, Mexiko', es: 'Guadalajara, México' }, start: '2013-01', end: '2014-01' },
+  { role: 'Creative Director', company: 'katalog', place: { en: 'Guadalajara, Mexico', de: 'Guadalajara, Mexiko', es: 'Guadalajara, México' }, start: '2012-09', end: '2013-01' },
+  { role: 'Senior Art Director', company: 'Oveja Negra Lowe', place: { en: 'Mexico City, Mexico', de: 'Mexiko-Stadt, Mexiko', es: 'Ciudad de México, México' }, start: '2011-06', end: '2012-09' },
+  { role: 'Senior Art Director', company: 'La Despensa', place: { en: 'Mexico', de: 'Mexiko', es: 'México' }, start: '2011-01', end: '2011-05' },
+  { role: 'Art Direction, Creative', company: '9mk Agencia de publicitat', place: { en: 'Andorra', de: 'Andorra', es: 'Andorra' }, start: '2008-01', end: '2010-12' },
+  { role: 'Art Director', company: 'Shackleton Group', place: { en: 'Barcelona, Spain', de: 'Barcelona, Spanien', es: 'Barcelona, España' }, start: '2006-01', end: '2007-12' },
+];
+
+const months: Record<Lang, string[]> = {
+  en: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+  de: ['Jan.', 'Feb.', 'März', 'Apr.', 'Mai', 'Juni', 'Juli', 'Aug.', 'Sept.', 'Okt.', 'Nov.', 'Dez.'],
+  es: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sept', 'oct', 'nov', 'dic'],
+};
+const to: T = { en: 'to', de: 'bis', es: 'a' };
+const fmt = (ym: string, lang: Lang) => {
+  const [y, m] = ym.split('-').map(Number);
+  return `${months[lang][m - 1]} ${y}`;
+};
+// "Mar 2025 to Jun 2026"
+export const period = (r: Role, lang: Lang) => `${fmt(r.start, lang)} ${to[lang]} ${fmt(r.end, lang)}`;
+// "1 yr 4 mos", counted the way LinkedIn does (both months included)
+export const duration = (r: Role, lang: Lang) => {
+  const [sy, sm] = r.start.split('-').map(Number);
+  const [ey, em] = r.end.split('-').map(Number);
+  const total = (ey - sy) * 12 + (em - sm) + 1;
+  const y = Math.floor(total / 12), m = total % 12;
+  const w = {
+    en: [(n: number) => `${n} yr${n > 1 ? 's' : ''}`, (n: number) => `${n} mo${n > 1 ? 's' : ''}`],
+    de: [(n: number) => `${n} J.`, (n: number) => `${n} Mon.`],
+    es: [(n: number) => `${n} año${n > 1 ? 's' : ''}`, (n: number) => `${n} mes${n > 1 ? 'es' : ''}`],
+  }[lang];
+  return [y ? w[0](y) : '', m ? w[1](m) : ''].filter(Boolean).join(' ');
+};
 
 export const education: Record<Lang, string[]> = {
   en: ['Master’s in Advertising and Marketing Strategies', 'Graphic and Multimedia Design', 'Trend Analysis and Qualitative Research'],

@@ -4,10 +4,10 @@ headline: Redesigning art authentication
 summary: "I took over Smartstamp’s iOS and Android app with an unfinished information architecture, redefined its structure and flows, and redesigned the experience around four core actions: register, verify, transfer and certify."
 client: Smartstamp
 sector: Art tech and authentication
-year: "2025"            # TODO: confirm start and end dates
-role: Product Designer  # TODO: confirm exact title (Lead or Senior Product Designer?)
+year: "2025"
+role: "Senior Product Designer"
 team: "TODO"            # TODO: founders, engineers, marketing. Who did you work with?
-duration: "TODO"
+duration: "6 months"
 tools: [Figma, User flows, Information architecture, UI library, Design specs, TestFlight]
 cover: ia
 featured: true

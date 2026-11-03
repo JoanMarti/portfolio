@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro';
 import { site } from '../data/site';
-import { experience, education, recommendations } from '../data/experience';
+import { experience, earlier, education, recommendations, period, duration } from '../data/experience';
 import { url } from '../lib/url';
 import { ui, href, type Lang } from '../lib/i18n';
 
@@ -30,12 +30,25 @@ const athleteos = `<a href="${href(lang, '/work/athleteos/')}">AthleteOS</a>`;
     <ol class="timeline">
       {experience.map((r) => (
         <li>
-          <span class="t-period muted">{r.period ?? ''}</span>
+          <p class="t-period">
+            <span>{period(r, lang)}</span>
+            <span class="muted">{duration(r, lang)}</span>
+          </p>
           <div>
             <p class="t-role">{r.role}</p>
-            <p class="t-company">{r.company}<span class="muted">, {r.sector[lang]}</span></p>
-            <p class="t-note muted">{r.note[lang]}</p>
+            <p class="t-company">{r.company}<span class="muted">{r.type ? `, ${r.type[lang]}` : ''}, {r.place[lang]}</span></p>
+            {r.note && <p class="t-note muted">{r.note[lang]}</p>}
+            {r.caseStudy && <a class="t-case" href={href(lang, `/work/${r.caseStudy}/`)}>{t.viewCase}</a>}
           </div>
+        </li>
+      ))}
+    </ol>
+    <h3 class="earlier-h">{t.earlier}</h3>
+    <ol class="earlier">
+      {earlier.map((r) => (
+        <li>
+          <span class="muted">{period(r, lang)}</span>
+          <span><strong>{r.role}</strong>, {r.company}<span class="muted">, {r.place[lang]}</span></span>
         </li>
       ))}
     </ol>
@@ -81,10 +94,16 @@ const athleteos = `<a href="${href(lang, '/work/athleteos/')}">AthleteOS</a>`;
 
   .block { margin-top: clamp(72px, 10vw, 128px); }
   .timeline { list-style: none; margin: 0; padding: 0; }
-  .timeline li { display: grid; grid-template-columns: 8rem 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .timeline li { display: grid; grid-template-columns: 11rem 1fr; gap: 24px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+  .t-period { display: grid; align-content: start; gap: 2px; font-size: var(--step--1); font-variant-numeric: tabular-nums; }
+  .t-company { margin-top: 2px; }
+  .t-case { display: inline-block; margin-top: 8px; font-size: var(--step--1); font-weight: 600; }
+  .earlier-h { margin: 40px 0 12px; font-size: var(--step-0); }
+  .earlier { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .earlier li { display: grid; grid-template-columns: 11rem 1fr; gap: 24px; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: var(--step--1); }
   .t-role { font-weight: 650; }
   .t-note { margin-top: 4px; font-size: var(--step--1); }
-  @media (max-width: 600px) { .timeline li { grid-template-columns: 1fr; gap: 4px; } }
+  @media (max-width: 600px) { .timeline li, .earlier li { grid-template-columns: 1fr; gap: 4px; } .t-period { grid-auto-flow: column; justify-content: start; gap: 8px; } }
 
   .recs { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
   .recs blockquote { margin: 0; padding: 28px; background: var(--paper-2); border-radius: var(--radius-lg); }

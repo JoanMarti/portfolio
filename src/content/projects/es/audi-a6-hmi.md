@@ -4,10 +4,10 @@ headline: La mirada en la carretera
 summary: Arquitectura de la información y modelo de interacción del sistema de infoentretenimiento conectado del Audi A6, probado en un simulador de conducción.
 client: Audi (Grupo Volkswagen)
 sector: Automoción
-year: "2015"
-role: Senior UX y HMI Designer
+year: "2015 a 2016"
+role: "Senior User Interface Designer (HMI), Uedelhoven para Audi"
 team: UX, ingeniería de HMI y equipos de software y hardware
-duration: "TODO"
+duration: "8 meses"
 tools: [Arquitectura de la información, Diseño de interacción, Interacción por voz, Prototipos de alta fidelidad, Tests en simulador]
 cover: hmi
 featured: false
