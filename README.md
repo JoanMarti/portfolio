@@ -75,3 +75,13 @@ Añade una entrada al principio de `src/data/writing.ts` con título, extracto, 
 ## Pendiente
 
 Ver la lista de TODO en `docs/ESTRATEGIA.md` §5, o busca `TODO` en el proyecto.
+
+## Secciones protegidas (por ejemplo, un caso de estudio protegido)
+
+El contenido protegido se escribe en `private/` (no se sube al repositorio) y se cifra con AES-GCM:
+
+```bash
+LOCK_PASSWORD='tu contraseña' node scripts/lock.mjs
+```
+
+Eso genera `src/data/locked/<caso>.<idioma>.json`, que solo contiene el texto público de la tarjeta y el contenido cifrado. Sin la contraseña no se puede leer, ni siquiera mirando el código de la página. Para cambiar la contraseña, vuelve a ejecutar el comando con la nueva.

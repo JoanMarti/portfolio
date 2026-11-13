@@ -1,0 +1,35 @@
+---
+// A case study section whose content is encrypted (AES-GCM, key from the password with PBKDF2).
+// Only the teaser below is public. The unlock script lives in Base.astro so it also works in the demo bundle.
+interface Payload {
+  teaser: { eyebrow: string; title: string; text: string };
+  ui: { label: string; button: string; error: string; ask: string; unlocked: string };
+  iter: number; salt: string; iv: string; ct: string;
+}
+interface Props { id: string; payload: Payload; askHref: string }
+const { id, payload, askHref } = Astro.props;
+const { teaser, ui } = payload;
+const data = JSON.stringify({ iter: payload.iter, salt: payload.salt, iv: payload.iv, ct: payload.ct });
+---
+
+<section class="locked" data-locked={id} aria-labelledby={`${id}-h`}>
+  <div class="locked-card">
+    <p class="locked-eyebrow">
+      <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a5 5 0 0 0-5 5v3H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-1V7a5 5 0 0 0-5-5Zm-3 8V7a3 3 0 1 1 6 0v3H9Z"/></svg>
+      <span class="locked-state" data-unlocked={ui.unlocked}>{teaser.eyebrow}</span>
+    </p>
+    <h2 id={`${id}-h`}>{teaser.title}</h2>
+    <p class="locked-text">{teaser.text}</p>
+    <form class="locked-form">
+      <label>
+        <span>{ui.label}</span>
+        <input type="password" name="password" autocomplete="current-password" required />
+      </label>
+      <button type="submit">{ui.button}</button>
+      <p class="locked-error" role="alert" hidden>{ui.error}</p>
+    </form>
+    <p class="locked-ask"><a href={askHref}>{ui.ask}</a></p>
+  </div>
+  <script type="application/json" class="locked-data" set:html={data} />
+  <div class="locked-content" hidden></div>
+</section>

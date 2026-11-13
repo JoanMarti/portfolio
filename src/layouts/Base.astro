@@ -135,6 +135,49 @@ const nav = [
           select(next); next.focus(); e.preventDefault();
         });
       })();
+      // Protected sections: decrypt in the browser with the password (AES-GCM, PBKDF2 SHA-256).
+      (function () {
+        var fromB64 = function (s) { return Uint8Array.from(atob(s), function (c) { return c.charCodeAt(0); }); };
+        async function unlock(section, pass) {
+          var d = JSON.parse(section.querySelector('.locked-data').textContent);
+          var enc = new TextEncoder();
+          var base = await crypto.subtle.importKey('raw', enc.encode(pass), 'PBKDF2', false, ['deriveKey']);
+          var key = await crypto.subtle.deriveKey({ name: 'PBKDF2', salt: fromB64(d.salt), iterations: d.iter, hash: 'SHA-256' },
+            base, { name: 'AES-GCM', length: 256 }, false, ['decrypt']);
+          var html = new TextDecoder().decode(await crypto.subtle.decrypt({ name: 'AES-GCM', iv: fromB64(d.iv) }, key, fromB64(d.ct)));
+          var box = section.querySelector('.locked-content');
+          box.innerHTML = html;
+          box.hidden = false;
+          section.classList.add('is-unlocked');
+          var st = section.querySelector('.locked-state');
+          if (st) st.textContent = st.dataset.unlocked;
+          var f = section.querySelector('.locked-form'); if (f) f.hidden = true;
+          var a = section.querySelector('.locked-ask'); if (a) a.hidden = true;
+          try { sessionStorage.setItem('lock:' + section.dataset.locked, pass); } catch (e) {}
+        }
+        document.addEventListener('submit', async function (e) {
+          var form = e.target.closest && e.target.closest('.locked-form');
+          if (!form) return;
+          e.preventDefault();
+          var section = form.closest('.locked');
+          var err = form.querySelector('.locked-error');
+          var btn = form.querySelector('button');
+          btn.disabled = true; err.hidden = true;
+          try { await unlock(section, form.password.value); }
+          catch (x) { err.hidden = false; form.password.select(); }
+          finally { btn.disabled = false; }
+        });
+        function auto() {
+          document.querySelectorAll('.locked:not(.is-unlocked):not(.is-busy)').forEach(function (s) {
+            var p = null; try { p = sessionStorage.getItem('lock:' + s.dataset.locked); } catch (e) {}
+            if (!p) return;
+            s.classList.add('is-busy');
+            unlock(s, p).catch(function () {}).finally(function () { s.classList.remove('is-busy'); });
+          });
+        }
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', auto); else auto();
+        new MutationObserver(auto).observe(document.documentElement, { childList: true, subtree: true });
+      })();
     </script>
   </body>
 </html>

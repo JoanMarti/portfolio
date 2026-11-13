@@ -289,3 +289,28 @@ body { overflow-wrap: break-word; }
 .prose pre code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; background: none; padding: 0; }
 .prose :not(pre) > code { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .88em; background: var(--paper-2); padding: 1px 5px; border-radius: 4px; }
 .prose .code-label { font-size: var(--step--1); color: var(--muted); margin: 1.6em 0 -1em; font-weight: 600; }
+
+/* Protected section */
+.prose .locked { max-width: none; margin: clamp(48px, 7vw, 88px) 0 0; }
+.prose .locked-card { border: 1px solid var(--line); border-radius: var(--radius-lg); padding: clamp(20px, 4vw, 36px); background: var(--paper-2); }
+.prose .locked-eyebrow { display: inline-flex; align-items: center; gap: 6px; margin: 0 0 10px; font-size: var(--step--1); font-weight: 650; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.prose .locked-card h2 { margin: 0 0 8px; }
+.prose .locked-text { margin: 0 0 20px; max-width: 62ch; }
+.prose .locked-form { display: flex; flex-wrap: wrap; align-items: end; gap: 10px; margin: 0; }
+.prose .locked-form label { display: grid; gap: 6px; font-size: var(--step--1); font-weight: 600; flex: 1 1 220px; max-width: 320px; }
+.prose .locked-form input { font: inherit; font-weight: 400; padding: 10px 12px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); color: var(--ink); min-height: 44px; }
+.prose .locked-form input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.prose .locked-form button { font: inherit; font-weight: 650; min-height: 44px; padding: 0 20px; border: 0; border-radius: var(--radius); background: var(--ink); color: var(--paper); cursor: pointer; }
+.prose .locked-form button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.prose .locked-form button:disabled { opacity: .6; cursor: progress; }
+.prose .locked-error { flex-basis: 100%; margin: 4px 0 0; color: #c2410c; font-size: var(--step--1); }
+.prose .locked-ask { margin: 14px 0 0; font-size: var(--step--1); }
+.prose .locked.is-unlocked .locked-card { background: none; border: 0; padding: 0; }
+.prose .locked-content { margin-top: 24px; }
+.prose .locked-note { color: var(--muted); font-size: var(--step--1); border-left: 3px solid var(--accent); padding-left: 12px; }
+.prose .pb-stats { list-style: none; margin: 1.6em 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 10px; max-width: none; }
+.prose .pb-stats li { margin: 0; border: 1px solid var(--line); border-radius: var(--radius); padding: 14px 16px; display: grid; gap: 2px; }
+.prose .pb-stats strong { font-size: var(--step-2); line-height: 1.1; }
+.prose .pb-stats span { font-size: var(--step--1); color: var(--muted); }
+.prose .locked-content figure img { border-radius: var(--radius); border: 1px solid var(--line); }
+.prose .locked [hidden] { display: none !important; }

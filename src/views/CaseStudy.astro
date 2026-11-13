@@ -2,6 +2,8 @@
 import { render } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Cover from '../components/Cover.astro';
+import Locked from '../components/Locked.astro';
+import { site } from '../data/site';
 import { writing } from '../data/writing';
 import { filled } from '../lib/url';
 import { ui, href, langs, type Lang } from '../lib/i18n';
@@ -16,6 +18,8 @@ const i = all.findIndex((p) => p.slug === project.slug);
 const next = all[(i + 1) % all.length];
 
 const { Content } = await render(project);
+const lockedFiles = import.meta.glob('../data/locked/*.json', { eager: true, import: 'default' }) as Record<string, any>;
+const locked = lockedFiles[`../data/locked/${project.slug}.${lang}.json`] ?? lockedFiles[`../data/locked/${project.slug}.en.json`];
 const d = project.data;
 
 const facts = [
@@ -83,6 +87,7 @@ const related = writing.filter((a) => a.relatedProject === project.slug);
     <div class="body wrap">
       <div class="prose">
         <Content />
+        {locked && <Locked id={`${project.slug}-private`} payload={locked} askHref={`mailto:${site.email}?subject=${encodeURIComponent(locked.teaser.title)}`} />}
       </div>
     </div>
 

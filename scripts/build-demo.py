@@ -52,6 +52,7 @@ for p in sorted(dist.rglob('index.html')):
 def token(r):  # bare hash token for each view
     return 'home' if r == '/' else r.strip('/').replace('/', '-')
 
+routes_json = json.dumps(routes, ensure_ascii=False).replace('</', '<\\/')  # keep "</script>" inside route data from closing the tag
 page = f'''<title>Joan Martí Díez Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +70,7 @@ html {{ scroll-behavior: smooth; }}
 {chrome[1]}
 <script>{gscript}</script>
 <script>
-const ROUTES = {json.dumps(routes, ensure_ascii=False)};
+const ROUTES = {routes_json};
 const IMGS = {json.dumps(IMGS)};
 const TOKENS = {json.dumps({token(r): r for r in routes})};
 const tokenOf = r => r === '/' ? 'home' : r.replace(/^\\/|\\/$/g, '').replace(/\\//g, '-');
