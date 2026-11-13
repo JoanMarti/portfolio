@@ -52,6 +52,14 @@ for p in sorted(dist.rglob('index.html')):
 def token(r):  # bare hash token for each view
     return 'home' if r == '/' else r.strip('/').replace('/', '-')
 
+# The demo viewer runs inside a sandboxed frame: a mailto link there replaces the page with a blank frame.
+# Opening it in a new window hands it to the mail app instead and keeps the demo on screen.
+def mail_new_window(h):
+    return re.sub(r'<a ([^>]*?)href="mailto:', r'<a target="_blank" rel="noopener" \1href="mailto:', h)
+for r in routes.values():
+    for f in ('html', 'header', 'footer'):
+        r[f] = mail_new_window(r[f])
+chrome = [mail_new_window(c) for c in chrome]
 routes_json = json.dumps(routes, ensure_ascii=False).replace('</', '<\\/')  # keep "</script>" inside route data from closing the tag
 page = f'''<title>Joan Martí Díez Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">

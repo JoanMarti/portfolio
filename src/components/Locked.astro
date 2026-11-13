@@ -6,8 +6,8 @@ interface Payload {
   ui: { label: string; button: string; error: string; ask: string; unlocked: string };
   iter: number; salt: string; iv: string; ct: string;
 }
-interface Props { id: string; payload: Payload; askHref: string }
-const { id, payload, askHref } = Astro.props;
+interface Props { id: string; payload: Payload; askHref: string; email: string }
+const { id, payload, askHref, email } = Astro.props;
 const { teaser, ui } = payload;
 const data = JSON.stringify({ iter: payload.iter, salt: payload.salt, iv: payload.iv, ct: payload.ct });
 ---
@@ -28,7 +28,7 @@ const data = JSON.stringify({ iter: payload.iter, salt: payload.salt, iv: payloa
       <button type="submit">{ui.button}</button>
       <p class="locked-error" role="alert" hidden>{ui.error}</p>
     </form>
-    <p class="locked-ask"><a href={askHref}>{ui.ask}</a></p>
+    <p class="locked-ask">{ui.ask}: <a href={askHref}>{email}</a></p>
   </div>
   <script type="application/json" class="locked-data" set:html={data} />
   <div class="locked-content" hidden></div>

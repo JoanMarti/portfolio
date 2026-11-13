@@ -87,7 +87,7 @@ const related = writing.filter((a) => a.relatedProject === project.slug);
     <div class="body wrap">
       <div class="prose">
         <Content />
-        {locked && <Locked id={`${project.slug}-private`} payload={locked} askHref={`mailto:${site.email}?subject=${encodeURIComponent(locked.teaser.title)}`} />}
+        {locked && <Locked id={`${project.slug}-private`} payload={locked} askHref={`mailto:${site.email}?subject=${encodeURIComponent(locked.teaser.title)}`} email={site.email} />}
       </div>
     </div>
 
