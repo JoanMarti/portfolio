@@ -187,6 +187,35 @@ Die aktuelle Version, im Vergleich oben rechts zu sehen, verbesserte Version 2 i
 - **Barrierefreiheit.** Grössere Tippflächen für die Schnellaktionen, eine Beschriftung unter jedem Icon und ein aktiver Tab, der durch Farbe, eine Markierungslinie und seine Beschriftung erkennbar ist und nicht nur durch Farbe. Hinweise verbinden ein Icon, einen Titel und einen erklärenden Satz und sind damit ebenfalls nicht auf Farbe angewiesen.
 - **Informationsarchitektur.** Die Navigation wurde zu Home, Actions, Feedback und Profile. Prüfen wanderte vom eigenen Tab in die Schnellaktionen der Startseite, wo man es zuerst sucht, und ein Feedback-Tab gibt Nutzern einen direkten Draht zum Team. Die Startseite gliedert die Inhalte jetzt in Kunstwerke und Übertragene Werke, jeweils mit einem Link zur vollständigen Liste.
 
+## Ein Ablauf im Detail: ein Provenienzdokument hinzufügen
+
+Die Provenienz gibt einem zertifizierten Kunstwerk seinen Wert, und ein schlecht abgelegtes Dokument ist ein verlorenes Dokument. In der letzten Version habe ich mehrere Abläufe gestaltet, um einem Kunstwerk Dokumente und zusätzliche Informationen hinzuzufügen. Dieser, ein Eigentumsdokument per Scan hinzufügen, zeigt, wie aus einem Use Case Screens werden.
+
+<dl class="usecase"><dt>Nutzer</dt><dd>Registrierte Nutzer: Künstler, Sammler oder Unternehmen</dd><dt>Ziel</dt><dd>Ein Eigentumsdokument zu einem bestimmten Kunstwerk hochladen, damit die Provenienz vollständig bleibt</dd><dt>Plattform</dt><dd>iOS und Android</dd><dt>Einstieg</dt><dd>Kunstwerkdetails, Tab Dokumente, Dokument hinzufügen</dd><dt>Ergebnis</dt><dd>Das Dokument ist klassifiziert, dem Kunstwerk zugeordnet und später für die Provenienz leicht zu finden</dd></dl>
+
+### 1. Den richtigen Ort finden
+
+<ol class="flow-steps" style="--start:0"><li><img src="/projects/smartstamp/doc-flow/01-artwork.webp" alt="Kunstwerkdetails mit den Tabs Kunstwerk und Dokumente und Schnellaktionen" loading="lazy" /><p><strong>Kunstwerkdetails.</strong> Dokumente haben einen eigenen Tab neben den Kunstwerkdaten, einen Tipp entfernt.</p></li><li><img src="/projects/smartstamp/doc-flow/02-documents-empty.webp" alt="Leerer Tab Dokumente, der erklärt, warum Dokumente wichtig sind, mit Button Dokument hinzufügen" loading="lazy" /><p><strong>Ein leerer Zustand, der erklärt.</strong> Er sagt, warum Dokumente wichtig sind, und bietet eine einzige Hauptaktion.</p></li></ol>
+
+### 2. Klassifizieren und beschreiben
+
+<ol class="flow-steps" style="--start:2"><li><img src="/projects/smartstamp/doc-flow/04-title.webp" alt="Formular mit dem Titel, vorausgefüllt mit dem Namen des Eigentümers" loading="lazy" /><p><strong>Sinnvolle Vorgaben.</strong> Der Titel beginnt mit dem Namen des Eigentümers und lässt sich ändern.</p></li><li><img src="/projects/smartstamp/doc-flow/05-type.webp" alt="Raster der Dokumenttypen mit ausgewähltem Eigentum" loading="lazy" /><p><strong>Typ vor Datei.</strong> Acht Typen mit Icon und Beschriftung. Die Auswahl wird gefüllt dargestellt und hängt nie nur an der Farbe.</p></li><li><img src="/projects/smartstamp/doc-flow/06-description.webp" alt="Formular mit ausgefüllter optionaler Beschreibung" loading="lazy" /><p><strong>Optionaler Kontext.</strong> Eine Beschreibung mit Zeichenzähler, die nie blockiert.</p></li></ol>
+
+### 3. Passend anhängen
+
+<ol class="flow-steps" style="--start:5"><li><img src="/projects/smartstamp/doc-flow/07-attach-options.webp" alt="Upload-Optionen: Dokument scannen, Foto aufnehmen, Bild wählen oder Datei anhängen" loading="lazy" /><p><strong>Vier Wege.</strong> Scannen ist die empfohlene erste Option, Foto, Bild und Datei sind Alternativen.</p></li><li><img src="/projects/smartstamp/doc-flow/08-scan.webp" alt="Scanner in der App rahmt ein Zertifikat mit einem Hinweis ein" loading="lazy" /><p><strong>Geführtes Scannen.</strong> Die Kamera rahmt die Seite ein, mit Farb- und Automatikmodus.</p></li><li><img src="/projects/smartstamp/doc-flow/09-scan-capture.webp" alt="Scanner mit erkanntem Dokument und Speichern-Button" loading="lazy" /><p><strong>Aufnehmen und bestätigen.</strong> Der Nutzer prüft das Ergebnis vor dem Anhängen oder nimmt es neu auf.</p></li></ol>
+
+### 4. Prüfen und speichern
+
+<ol class="flow-steps" style="--start:8"><li><img src="/projects/smartstamp/doc-flow/10-attached.webp" alt="Formular mit angehängtem Dokument und der Möglichkeit, es zu entfernen" loading="lazy" /><p><strong>Alles auf einen Blick.</strong> Titel, Typ, Beschreibung und Datei zusammen, mit einer klaren Möglichkeit, die Datei vor dem Speichern zu entfernen.</p></li></ol>
+
+Die Entscheide dahinter:
+
+- **Am Ursprung klassifizieren.** Wer den Typ vor der Datei wählt, legt jedes Dokument von Anfang an richtig ab. So lässt sich die Provenienz später nach Typ filtern und gruppieren, statt ein Haufen Anhänge zu sein.
+- **Scannen statt fotografieren.** Ein Scanner in der App mit Rahmenhilfe liefert gerade, lesbare Dokumente, die auch Jahre später als Nachweis taugen.
+- **Wenig Aufwand.** Ein vorausgefüllter Titel, eine optionale Beschreibung und eine Hauptaktion pro Screen halten eine Aufgabe kurz, die man sonst gern aufschiebt.
+- **Zugängliche Auswahl.** Jede Typ-Kachel kombiniert Icon und Beschriftung, und die Auswahl ändert Füllung und Iconfarbe, nicht nur den Rahmen.
+
 ## Die Details gestalten
 
 Werkdaten ändern sich oft (Preise, Inventarnummern, Serien). Deshalb wird jedes Feld direkt bearbeitet und einzeln bestätigt. Grösse, Gewicht und Preis nutzen Auswahlfelder mit Einheiten (Zentimeter oder Zoll, Kilogramm oder Pfund, CHF, EUR oder USD), damit internationale Sammler Daten auf ihre Art erfassen und die Einträge trotzdem einheitlich bleiben.

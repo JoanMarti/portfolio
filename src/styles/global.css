@@ -314,3 +314,18 @@ body { overflow-wrap: break-word; }
 .prose .pb-stats span { font-size: var(--step--1); color: var(--muted); }
 .prose .locked-content figure img { border-radius: var(--radius); border: 1px solid var(--line); }
 .prose .locked [hidden] { display: none !important; }
+
+/* Use case card */
+.prose .usecase { max-width: none; margin: 1.6em 0 2.4em; display: grid; grid-template-columns: max-content 1fr; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+.prose .usecase dt, .prose .usecase dd { margin: 0; padding: 12px 16px; border-bottom: 1px solid var(--line); font-size: var(--step--1); }
+.prose .usecase dt { font-weight: 650; background: var(--paper-2); }
+.prose .usecase dt:last-of-type, .prose .usecase dd:last-of-type { border-bottom: 0; }
+@media (max-width: 560px) { .prose .usecase { grid-template-columns: 1fr; } .prose .usecase dt { border-bottom: 0; padding-bottom: 4px; } .prose .usecase dd { padding-top: 0; } }
+
+/* Step by step phone flow */
+.prose .flow-steps { max-width: none; margin: 1.4em 0 2.4em; padding: 0; list-style: none; counter-reset: step var(--start, 0); display: grid; gap: 20px 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 170px), 220px)); justify-content: start; }
+.prose .flow-steps li { margin: 0; counter-increment: step; display: grid; gap: 10px; align-content: start; }
+.prose .flow-steps img { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 14px; background: #fff; }
+.prose .flow-steps p { margin: 0; font-size: var(--step--1); line-height: 1.45; color: var(--muted); }
+.prose .flow-steps p::before { content: counter(step); display: inline-grid; place-items: center; width: 20px; height: 20px; margin-right: 6px; border-radius: 50%; background: var(--accent); color: var(--on-accent); font-size: 11px; font-weight: 700; vertical-align: 1px; }
+.prose .flow-steps strong { color: var(--ink); }

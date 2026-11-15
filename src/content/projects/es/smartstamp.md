@@ -187,6 +187,35 @@ La versión actual, a la derecha en la comparación de arriba, mejoró la versi�
 - **Accesibilidad.** Áreas táctiles más grandes en las acciones rápidas, una etiqueta de texto debajo de cada icono y una pestaña activa marcada con color, una línea indicadora y su etiqueta, no solo con color. Los avisos combinan un icono, un título y una frase de explicación, así que tampoco dependen del color.
 - **Arquitectura de la información.** La navegación pasó a ser Home, Actions, Feedback y Profile. Verificar salió de su propia pestaña y se integró en las acciones rápidas de la home, que es donde la gente lo busca primero, y una pestaña de Feedback da a los usuarios un canal directo con el equipo. La home agrupa ahora el contenido en Obras y Transferidas, cada una con un enlace para ver la lista completa.
 
+## Un flujo en detalle: añadir un documento de procedencia
+
+La procedencia es lo que da valor a una obra certificada, y un documento mal archivado es un documento perdido. En la última versión diseñé varios flujos para añadir documentos e información adicional a una obra. Este, añadir un documento de propiedad escaneándolo, muestra cómo un caso de uso se convierte en pantallas.
+
+<dl class="usecase"><dt>Usuario</dt><dd>Usuario registrado: artista, coleccionista o empresa</dd><dt>Objetivo</dt><dd>Subir un documento de propiedad de una obra concreta para mantener completo su historial de procedencia</dd><dt>Plataforma</dt><dd>iOS y Android</dd><dt>Punto de entrada</dt><dd>Detalle de la obra, pestaña Documentos, Añadir documento</dd><dt>Resultado</dt><dd>El documento queda clasificado, asociado a la obra y fácil de encontrar para seguir su procedencia</dd></dl>
+
+### 1. Encontrar su sitio
+
+<ol class="flow-steps" style="--start:0"><li><img src="/projects/smartstamp/doc-flow/01-artwork.webp" alt="Detalle de la obra con las pestañas Obra y Documentos y acciones rápidas" loading="lazy" /><p><strong>Detalle de la obra.</strong> Los documentos tienen su propia pestaña junto a los datos de la obra, a un toque.</p></li><li><img src="/projects/smartstamp/doc-flow/02-documents-empty.webp" alt="Pestaña Documentos vacía que explica por qué importan los documentos, con el botón Añadir documento" loading="lazy" /><p><strong>Un estado vacío que enseña.</strong> Explica por qué importan los documentos y ofrece una sola acción principal.</p></li></ol>
+
+### 2. Clasificar y describir
+
+<ol class="flow-steps" style="--start:2"><li><img src="/projects/smartstamp/doc-flow/04-title.webp" alt="Formulario con el título rellenado con el nombre del propietario" loading="lazy" /><p><strong>Valores por defecto con sentido.</strong> El título empieza con el nombre del propietario y se puede editar.</p></li><li><img src="/projects/smartstamp/doc-flow/05-type.webp" alt="Cuadrícula de tipos de documento con Propiedad seleccionado" loading="lazy" /><p><strong>El tipo antes que el archivo.</strong> Ocho tipos con icono y texto. El seleccionado se rellena, así nunca depende solo del color.</p></li><li><img src="/projects/smartstamp/doc-flow/06-description.webp" alt="Formulario con la descripción opcional rellenada" loading="lazy" /><p><strong>Contexto opcional.</strong> Una descripción con contador de caracteres que nunca bloquea.</p></li></ol>
+
+### 3. Adjuntarlo como mejor encaje
+
+<ol class="flow-steps" style="--start:5"><li><img src="/projects/smartstamp/doc-flow/07-attach-options.webp" alt="Opciones de subida: escanear documento, hacer foto, elegir imagen o adjuntar archivo" loading="lazy" /><p><strong>Cuatro formas.</strong> Escanear es la primera opción recomendada, con foto, imagen y archivo como alternativas.</p></li><li><img src="/projects/smartstamp/doc-flow/08-scan.webp" alt="Escáner de la app encuadrando un certificado con un mensaje de guía" loading="lazy" /><p><strong>Escaneo guiado.</strong> La cámara encuadra la página, con modo color y automático.</p></li><li><img src="/projects/smartstamp/doc-flow/09-scan-capture.webp" alt="Escáner con el documento detectado y un botón de guardar" loading="lazy" /><p><strong>Capturar y confirmar.</strong> El usuario revisa el resultado antes de adjuntarlo o lo repite.</p></li></ol>
+
+### 4. Revisar y guardar
+
+<ol class="flow-steps" style="--start:8"><li><img src="/projects/smartstamp/doc-flow/10-attached.webp" alt="Formulario con el documento adjunto y la opción de quitarlo" loading="lazy" /><p><strong>Todo en una vista.</strong> Título, tipo, descripción y archivo juntos, con una forma clara de quitar el archivo antes de guardar.</p></li></ol>
+
+Las decisiones detrás:
+
+- **Clasificar en origen.** Pedir el tipo antes que el archivo hace que cada documento quede bien archivado desde el principio, así el historial de procedencia se puede filtrar y agrupar por tipo en lugar de ser un montón de adjuntos.
+- **Escanear en lugar de fotografiar.** Un escáner dentro de la app con guías de encuadre da documentos rectos y legibles que siguen sirviendo como prueba años después.
+- **Poco esfuerzo.** Un título ya rellenado, una descripción opcional y una sola acción principal por pantalla hacen corta una tarea que la gente suele dejar para más tarde.
+- **Selección accesible.** Cada tipo combina icono y texto, y al seleccionarlo cambian el relleno y el color del icono, no solo el borde.
+
 ## Diseñar los detalles
 
 Los datos de una obra cambian a menudo (precios, números de inventario, series), así que cada campo de la ficha se edita en su sitio y se confirma por separado. El tamaño, el peso y el precio usan selectores con unidades (centímetros o pulgadas, kilos o libras, CHF, EUR o USD), para que los coleccionistas de cualquier país introduzcan los datos a su manera y las fichas sigan siendo coherentes.

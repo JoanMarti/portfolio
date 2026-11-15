@@ -188,6 +188,35 @@ The latest version, shown on the right in the comparison above, refined version 
 - **Accessibility.** Larger touch targets for quick actions, a text label under every icon, and an active tab marked by colour, an indicator line and its label rather than by colour alone. Warnings combine an icon, a title and a sentence of explanation, so they don’t rely on colour either.
 - **Information architecture.** The navigation became Home, Actions, Feedback and Profile. Verify moved from its own tab into the home quick actions, where people look for it first, and a Feedback tab gives users a direct channel to the team. The home now groups content into Artworks and Transferred, each with a See all link.
 
+## One flow in depth: adding a provenance document
+
+Provenance is what gives a certified artwork its value, and a document that is added badly is a document that gets lost. In the latest version I designed several flows for adding documents and additional information to an artwork. This one, adding an ownership document by scanning it, shows how a use case becomes screens.
+
+<dl class="usecase"><dt>User</dt><dd>Registered user: artist, collector or enterprise</dd><dt>Goal</dt><dd>Upload an ownership document for a specific artwork, to keep its provenance record complete</dd><dt>Platform</dt><dd>iOS and Android</dd><dt>Entry point</dt><dd>Artwork details, Documents tab, Add document</dd><dt>Outcome</dt><dd>The document is classified, attached to the artwork and easy to find for provenance tracking later</dd></dl>
+
+### 1. Find the place for it
+
+<ol class="flow-steps" style="--start:0"><li><img src="/projects/smartstamp/doc-flow/01-artwork.webp" alt="Artwork details with the Artwork and Documents tabs and quick actions" loading="lazy" /><p><strong>Artwork details.</strong> Documents get their own tab next to the artwork data, one tap away.</p></li><li><img src="/projects/smartstamp/doc-flow/02-documents-empty.webp" alt="Empty Documents tab explaining why documents matter, with an Add document button" loading="lazy" /><p><strong>An empty state that teaches.</strong> It explains why documents matter and offers a single primary action.</p></li></ol>
+
+### 2. Classify and describe
+
+<ol class="flow-steps" style="--start:2"><li><img src="/projects/smartstamp/doc-flow/04-title.webp" alt="Add document form with the title prefilled with the owner name" loading="lazy" /><p><strong>Sensible defaults.</strong> The title starts with the owner’s name, editable if needed.</p></li><li><img src="/projects/smartstamp/doc-flow/05-type.webp" alt="Document type grid with Ownership selected" loading="lazy" /><p><strong>Type before file.</strong> Eight types with icon and label. The selected one is filled, so it never relies on colour alone.</p></li><li><img src="/projects/smartstamp/doc-flow/06-description.webp" alt="Form with an optional description filled in" loading="lazy" /><p><strong>Optional context.</strong> A description with a character counter, never blocking.</p></li></ol>
+
+### 3. Attach it the way that fits
+
+<ol class="flow-steps" style="--start:5"><li><img src="/projects/smartstamp/doc-flow/07-attach-options.webp" alt="Upload options: scan document, take photo, choose image or attach file" loading="lazy" /><p><strong>Four ways in.</strong> Scan is the recommended first option, with photo, image and file as alternatives.</p></li><li><img src="/projects/smartstamp/doc-flow/08-scan.webp" alt="In-app scanner framing a certificate with a guide message" loading="lazy" /><p><strong>Guided scanning.</strong> The camera frames the page, with colour and automatic modes.</p></li><li><img src="/projects/smartstamp/doc-flow/09-scan-capture.webp" alt="Scanner with the document detected and a save button" loading="lazy" /><p><strong>Capture and confirm.</strong> The user checks the result before it is attached, or retakes it.</p></li></ol>
+
+### 4. Review and save
+
+<ol class="flow-steps" style="--start:8"><li><img src="/projects/smartstamp/doc-flow/10-attached.webp" alt="Form with the document attached and the option to remove it" loading="lazy" /><p><strong>Everything in one view.</strong> Title, type, description and file together, with a clear way to remove the file before saving.</p></li></ol>
+
+The decisions behind it:
+
+- **Classify at the source.** Asking for the type before the file means every document is filed correctly from the start, so the provenance record can later be filtered and grouped by type instead of being a pile of attachments.
+- **Scan instead of photograph.** An in-app scanner with framing guides gives straight, legible documents that stay readable as evidence years later.
+- **Keep the effort low.** A prefilled title, an optional description and one primary action per screen keep a task that people tend to postpone short enough to finish.
+- **Accessible selection.** Every type tile combines an icon and a label, and the selected state changes fill and icon colour, not only the border.
+
 ## Designing the details
 
 Artwork data changes often (prices, inventory numbers, series), so every field in the artwork record is edited in place and confirmed on its own. Size, weight and price use pickers with units (centimetres or inches, kilograms or pounds, CHF, EUR or USD), so international collectors enter data their own way and records stay consistent.
