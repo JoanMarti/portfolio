@@ -340,3 +340,29 @@ body { overflow-wrap: break-word; }
 /* Anchor targets for the case study index */
 .prose h2 { scroll-margin-top: 96px; }
 @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+
+/* Governance flow: three stages with gates */
+.prose .gov { max-width: none; margin: 2.6em 0; padding: clamp(16px, 4vw, 32px); background: var(--paper-2); border-radius: var(--radius-lg); display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 12px; align-items: stretch; }
+.prose .gov-stage { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 18px 20px; min-width: 0; display: flex; flex-direction: column; }
+.prose .gov-k { margin: 0; font-size: var(--step--1); color: var(--accent); font-weight: 650; }
+.prose .gov-t { margin: 4px 0 0; font-weight: 650; }
+.prose .gov ol { margin: 12px 0 0; padding-left: 1.2em; font-size: var(--step--1); flex: 1; }
+.prose .gov li { margin: 6px 0; }
+.prose .gov-gate { margin: 14px 0 0; padding-top: 10px; border-top: 1px dashed var(--line); font-size: var(--step--1); color: var(--muted); }
+.prose .gov-arrow { align-self: center; color: var(--ink); font-size: 1.4em; }
+.prose .gov figcaption { grid-column: 1 / -1; justify-self: center; max-width: 60ch; margin-top: 8px; text-align: center; color: var(--muted); font-size: var(--step--1); }
+.prose .gov p { max-width: none; }
+@media (max-width: 900px) {
+  .prose .gov { grid-template-columns: 1fr; }
+  .prose .gov-arrow { justify-self: center; transform: rotate(90deg); }
+}
+
+/* Decision fork: one question, two outcomes */
+.prose .fork { max-width: none; margin: 2em 0; padding: clamp(16px, 4vw, 28px); background: var(--paper-2); border-radius: var(--radius-lg); }
+.prose .fork-q { margin: 0 auto; max-width: 440px; text-align: center; font-weight: 650; background: var(--paper); border: 2px solid var(--ink); border-radius: var(--radius-lg); padding: 14px 18px; }
+.prose .fork-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 12px; margin-top: 28px; position: relative; }
+.prose .fork-cols::before { content: ''; position: absolute; top: -20px; left: 25%; right: 25%; height: 12px; border: 1px solid var(--ink); border-bottom: 0; border-radius: 8px 8px 0 0; }
+.prose .fork-cols > div { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius-lg); padding: 16px 18px; min-width: 0; }
+.prose .fork-cols p { margin: 0; font-size: var(--step--1); max-width: none; }
+.prose .fork-cols .fork-k { font-size: var(--step-0); font-weight: 650; margin-bottom: 6px; }
+@media (max-width: 560px) { .prose .fork-cols::before { display: none; } .prose .fork-cols { margin-top: 12px; } }
