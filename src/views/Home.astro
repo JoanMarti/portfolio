@@ -43,7 +43,7 @@ const quote = recommendations[0];
       )}
       <div class="hero-actions">
         <a class="btn btn--primary" href="#work">{t.seeWork}</a>
-        {site.calendar && <a class="btn" href={site.calendar} rel="noopener" data-track="calendar">{t.bookCall}</a>}
+        {site.calendar && <a class="btn" href={site.calendar} rel="noopener" target="_blank" data-track="calendar">{t.bookCall}</a>}
         <a class="btn" href={`mailto:${site.email}`}>{t.emailMe}</a>
       </div>
     </div>

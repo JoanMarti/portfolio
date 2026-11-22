@@ -136,7 +136,7 @@ const hasCv = existsSync(`public/${site.cv}`);
         </div>
         <div class="footer-actions">
           <a class="btn btn--primary" href={`mailto:${site.email}`}>{t.footer.email} {site.email}</a>
-          {site.calendar && <a class="btn" href={site.calendar}>{t.footer.call}</a>}
+          {site.calendar && <a class="btn" href={site.calendar} rel="noopener" target="_blank" data-track="calendar">{t.footer.call}</a>}
           {hasCv && <a class="btn" href={url(`/${site.cv}`)} download>{t.footer.cv}</a>}
           <a class="btn" href={site.social[0].href} rel="me noopener">LinkedIn</a>
         </div>

@@ -35,8 +35,7 @@ export const site = {
   ga4: 'G-RKGB7FGH91',
 
   email: 'joanmartidiez@gmail.com',
-  // TODO: add your Calendly or Cal.com link, or leave empty to hide the button.
-  calendar: '',
+  calendar: 'https://calendly.com/joanmartidiez/30min',
   // TODO: drop your CV at public/joan-marti-diez-cv.pdf
   cv: 'joan-marti-diez-cv.pdf',
 

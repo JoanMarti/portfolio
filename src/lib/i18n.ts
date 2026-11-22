@@ -22,7 +22,7 @@ const en = {
   footer: {
     title: 'Have a complex product that needs to feel simple?',
     email: 'Email',
-    call: 'Book a 20-minute call',
+    call: 'Book a 30-minute call',
     cv: 'Download CV (PDF)',
     elsewhere: 'Elsewhere',
   },
@@ -134,7 +134,7 @@ const de: Dict = {
   footer: {
     title: 'Ein komplexes Produkt, das sich einfach anfühlen soll?',
     email: 'E-Mail',
-    call: 'Gespräch von 20 Minuten buchen',
+    call: 'Gespräch von 30 Minuten buchen',
     cv: 'Lebenslauf herunterladen (PDF)',
     elsewhere: 'Weitere Profile',
   },
@@ -244,7 +244,7 @@ const es: Dict = {
   footer: {
     title: '¿Tienes un producto complejo que debería sentirse sencillo?',
     email: 'Escribir a',
-    call: 'Reservar una llamada de 20 minutos',
+    call: 'Reservar una llamada de 30 minutos',
     cv: 'Descargar CV (PDF)',
     elsewhere: 'En otras webs',
   },
