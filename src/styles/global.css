@@ -336,3 +336,7 @@ body { overflow-wrap: break-word; }
 .consent p { margin: 0; font-size: var(--step--1); line-height: 1.5; }
 .consent-actions { display: flex; gap: 10px; justify-content: flex-end; flex-wrap: wrap; }
 .linklike { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-decoration: underline; cursor: pointer; }
+
+/* Anchor targets for the case study index */
+.prose h2 { scroll-margin-top: 96px; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }

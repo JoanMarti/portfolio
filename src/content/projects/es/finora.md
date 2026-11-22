@@ -15,9 +15,9 @@ order: 2.5
 kind: side-project
 discipline: [product, visual]
 tldr:
-  - "En Suiza la gente reparte su dinero entre varios bancos, un fondo de pensiones y el Pilar 3a, y ninguna app muestra el conjunto a la manera suiza."
-  - "Definí el producto, diseñé un modelo de datos que convierte cualquier banco en una sola vista y construí la app en Flutter para iOS, Android y web, con un plan de negocio basado en cross-selling con consentimiento y un plan freemium."
-  - "Un producto que funciona en 31 sprints: una versión 1.0 para Android, una demo web en cuatro idiomas, un backend de referencia y 219 tests automáticos."
+  - "En Suiza el dinero está repartido entre varios bancos, el fondo de pensiones, el Pilar 3a y la caja médica, cada uno con su app. Ningún producto suizo los reúne."
+  - "Estrategia de producto, plan de negocio, modelo de datos, diseño y código, en solitario: un agregador de solo lectura para hogares suizos que se financia con cross-selling con consentimiento y un plan freemium."
+  - "Android 1.0 y una demo web en cuatro idiomas tras 31 sprints, 219 tests automáticos y un plan de negocio de unos CHF 10,6 por usuario al año, listo para un piloto."
 metrics:
   - value: "0 → 1"
     label: "de la idea a una versión 1.0 para Android"

@@ -59,7 +59,11 @@ const hasCv = existsSync(`public/${site.cv}`);
       name: site.name,
       jobTitle: site.role,
       address: { '@type': 'PostalAddress', addressLocality: 'Zug', addressCountry: 'CH' },
-      knowsLanguage: ['es', 'ca', 'en', 'de', 'fr'],
+      url: new URL('/', Astro.site).href,
+      image: new URL('/joan-marti-diez.webp', Astro.site).href,
+      email: `mailto:${site.email}`,
+      knowsLanguage: ['es', 'ca', 'en', 'de', 'fr', 'it'],
+      knowsAbout: ['Product design', 'UX design', 'Design systems', 'Fintech', 'Trading platforms', 'Figma', 'Angular', 'Flutter'],
       sameAs: site.social.filter((s) => s.href).map((s) => s.href),
     })} />
     {site.gtm && (

@@ -15,9 +15,9 @@ order: 2.5
 kind: side-project
 discipline: [product, visual]
 tldr:
-  - "People in Switzerland keep their money across several banks, a pension fund and Pillar 3a, and no app shows the whole picture in a Swiss way."
-  - "I defined the product, designed a data model that normalises any bank into one view, and built the app in Flutter for iOS, Android and the web, with a business plan built on consent based cross-selling and a freemium tier."
-  - "A working product in 31 sprints: a 1.0 Android build, a live web demo in four languages, a reference backend and 219 automated tests."
+  - "In Switzerland money sits across several banks, a pension fund, Pillar 3a and the health insurer, each with its own app. No Swiss product brings them together."
+  - "Product strategy, business plan, data model, design and code, on my own: a read-only aggregator for Swiss households that earns through consent based cross-selling and a freemium plan."
+  - "Android 1.0 and a live web demo in four languages after 31 sprints, 219 automated tests, and a business plan of about CHF 10.6 per user a year, ready for a pilot."
 metrics:
   - value: "0 → 1"
     label: "from idea to an Android 1.0 build"

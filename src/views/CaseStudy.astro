@@ -17,7 +17,8 @@ const all = await getProjects(lang);
 const i = all.findIndex((p) => p.slug === project.slug);
 const next = all[(i + 1) % all.length];
 
-const { Content } = await render(project);
+const { Content, headings } = await render(project);
+const toc = headings.filter((h) => h.depth === 2);
 const lockedFiles = import.meta.glob('../data/locked/*.json', { eager: true, import: 'default' }) as Record<string, any>;
 const locked = lockedFiles[`../data/locked/${project.slug}.${lang}.json`] ?? lockedFiles[`../data/locked/${project.slug}.en.json`];
 const d = project.data;
@@ -84,6 +85,15 @@ const related = writing.filter((a) => a.relatedProject === project.slug);
       </section>
     )}
 
+    {toc.length >= 6 && (
+      <nav class="toc wrap" aria-labelledby="toc-h">
+        <h2 id="toc-h">{t.toc}</h2>
+        <ol>
+          {toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}
+        </ol>
+      </nav>
+    )}
+
     <div class="body wrap">
       <div class="prose">
         <Content />
@@ -140,6 +150,13 @@ const related = writing.filter((a) => a.relatedProject === project.slug);
   .m-label { font-weight: 600; }
   .m-method { font-size: var(--step--1); line-height: 1.45; }
 
+  .toc { margin-top: clamp(48px, 7vw, 80px); }
+  .toc h2 { font-size: var(--step-2); padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  .toc ol { margin: 20px 0 0; padding: 0; list-style: none; counter-reset: toc; columns: 2 280px; column-gap: 48px; }
+  .toc li { counter-increment: toc; break-inside: avoid; display: flex; gap: 12px; padding: 7px 0; font-size: var(--step--1); }
+  .toc li::before { content: counter(toc, decimal-leading-zero); color: var(--muted); font-variant-numeric: tabular-nums; }
+  .toc a { text-decoration: none; font-weight: 550; }
+  .toc a:hover { text-decoration: underline; }
   .body { margin-top: clamp(32px, 5vw, 48px); }
 
   .related { margin-top: 64px; display: grid; gap: 8px; }

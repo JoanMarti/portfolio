@@ -16,13 +16,15 @@ const hasCv = existsSync(`public/${site.cv}`);
 
 <Base lang={lang} path="/about/" title={t.title} description={t.meta} current="about">
   <section class="intro wrap">
-    <h1>{t.hi}</h1>
+    <div class="intro-side">
+      <h1>{t.hi}</h1>
+      <figure class="portrait"><img src={url('/joan-marti-diez.webp')} alt={ui[lang].home.portrait} width="640" height="800" /></figure>
+    </div>
     <div class="intro-text">
       {t.paras.map((p, i) => (
         <p class={i === 0 ? 'big' : ''} set:html={p.replace('{athleteos}', athleteos)} />
       ))}
     </div>
-    <!-- TODO: add a portrait at public/images/joan.jpg and show it here. -->
   </section>
 
   <section class="wrap block" aria-labelledby="exp-h">
@@ -90,6 +92,9 @@ const hasCv = existsSync(`public/${site.cv}`);
 
 <style>
   .intro { display: grid; grid-template-columns: 4fr 8fr; gap: clamp(24px, 5vw, 72px); padding-top: clamp(32px, 6vw, 88px); }
+  .intro-side { display: grid; gap: 28px; align-content: start; }
+  .portrait { margin: 0; max-width: 280px; }
+  .portrait img { width: 100%; height: auto; display: block; border-radius: var(--radius-lg); }
   .intro h1 { font-size: var(--step-4); letter-spacing: -0.035em; }
   .intro-text { display: grid; gap: 1.1em; max-width: var(--measure); }
   .big { font-size: var(--step-1); line-height: 1.45; font-weight: 500; }

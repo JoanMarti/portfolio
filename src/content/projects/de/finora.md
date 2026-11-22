@@ -15,9 +15,9 @@ order: 2.5
 kind: side-project
 discipline: [product, visual]
 tldr:
-  - "Menschen in der Schweiz verteilen ihr Geld auf mehrere Banken, eine Pensionskasse und die Säule 3a, und keine App zeigt das Ganze auf Schweizer Art."
-  - "Ich habe das Produkt definiert, ein Datenmodell gestaltet, das jede Bank in eine Ansicht übersetzt, und die App in Flutter für iOS, Android und Web gebaut, mit einem Businessplan aus Cross-Selling mit Einwilligung und einem Freemium-Abo."
-  - "Ein funktionierendes Produkt in 31 Sprints: ein Android-1.0-Build, eine Live-Demo im Web in vier Sprachen, ein Referenz-Backend und 219 automatisierte Tests."
+  - "In der Schweiz liegt das Geld bei mehreren Banken, der Pensionskasse, der Säule 3a und der Krankenkasse, jede mit eigener App. Kein Schweizer Produkt führt sie zusammen."
+  - "Produktstrategie, Businessplan, Datenmodell, Design und Code, allein: ein Aggregator mit reinen Leserechten für Schweizer Haushalte, finanziert durch Cross-Selling mit Einwilligung und ein Freemium-Abo."
+  - "Android 1.0 und eine Live-Demo im Web in vier Sprachen nach 31 Sprints, 219 automatisierte Tests und ein Businessplan mit rund CHF 10.60 pro Person und Jahr, bereit für einen Pilot."
 metrics:
   - value: "0 → 1"
     label: "von der Idee zum Android-1.0-Build"

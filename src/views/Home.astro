@@ -35,6 +35,7 @@ const quote = recommendations[0];
 <Base lang={lang} path="/">
   <section class="hero wrap">
     <div class="hero-text">
+      <p class="byline"><img src={url('/joan-marti-diez-square.webp')} alt={t.portrait} width="56" height="56" /><span><strong>{site.name}</strong><span class="muted">Senior Product Designer · {site.location[lang]}</span></span></p>
       <h1>{t.title}</h1>
       <p class="hero-sub">{t.sub}</p>
       {site.availability.open && (
@@ -42,6 +43,7 @@ const quote = recommendations[0];
       )}
       <div class="hero-actions">
         <a class="btn btn--primary" href="#work">{t.seeWork}</a>
+        {site.calendar && <a class="btn" href={site.calendar} rel="noopener" data-track="calendar">{t.bookCall}</a>}
         <a class="btn" href={`mailto:${site.email}`}>{t.emailMe}</a>
       </div>
     </div>
@@ -212,6 +214,9 @@ const quote = recommendations[0];
     display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 5vw, 72px);
     align-items: center; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 6vw, 80px);
   }
+  .byline { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; font-size: var(--step--1); }
+  .byline img { width: 56px; height: 56px; border-radius: 50%; object-fit: cover; flex: none; }
+  .byline > span { display: grid; gap: 2px; }
   .hero h1 { font-size: var(--step-4); letter-spacing: -0.035em; line-height: 1.02; max-width: 16ch; hyphens: manual; }
   .hero-sub { font-size: var(--step-1); line-height: 1.45; margin-top: 28px; max-width: 42ch; color: var(--muted); }
   .availability { display: flex; gap: 10px; align-items: baseline; margin-top: 24px; max-width: 52ch; font-size: var(--step--1); }
