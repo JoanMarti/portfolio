@@ -44,22 +44,25 @@ I started with Adobe Analytics (session duration, feature usage, devices, page f
 - **60%** regularly went back to cars they had saved.
 - **85%** wanted to compare cars.
 
-<div class="compare compare--wide">
-  <figure>
-    <img src="/projects/coches-net/home-v1.webp" alt="The first version of the new Coches.net home on a laptop, with large entry points to used, new and Km 0 cars" />
-    <p class="compare-note">The first version of the new home: large, image led entry points to each section, worked together with SEO so search traffic reached the listings and users were guided into the right section.</p>
-  </figure>
-  <figure>
-    <img src="/projects/coches-net/adobe-analytics.webp" alt="Adobe Analytics workspace with top pages, visits and unique visitors" />
-    <p class="compare-note">Working in Adobe Analytics: page flows, entry points and segments by device showed where users dropped off and which patterns were worth designing for. Illustrative view with sample data.</p>
-  </figure>
-</div>
+Coches.net was a data driven company: product, marketing and engineering decided with numbers, and design had to earn its place the same way. I worked in Adobe Analytics every week, building my own views of page flows, entry points and device segments to find the patterns worth designing for, and agreeing the success metric with product before any screen existed.
+
+![Adobe Analytics workspace with top pages, visits and unique visitors](/projects/coches-net/adobe-analytics.webp "A typical Adobe Analytics workspace: top pages, visits and unique visitors, segmented by device. Illustrative view with sample data.")
 
 Then I ran interviews, usability tests, surveys and benchmarking to understand why. The pattern was clear. Buyers wanted continuity between sessions. They needed to compare and revisit to feel confident, and they valued platforms that remembered them.
 
 That reframed the challenge:
 
 > Retention wasn’t a search problem. It was a memory problem.
+
+## First step: a home that routes
+
+Before the hub, the home page had to do a better job of getting people to the right place. Most visits arrived from search engines and landed on a generic page that sent everyone to the same search form.
+
+Together with the SEO team I redesigned the first version of the home as a grid of large entry points, one for each way people buy: used cars, new cars, Km 0, extended warranty, motorbikes, vans and road tests. Each tile matched a search intent people already had, so search traffic reached the listings in fewer steps and users went straight into the section that fitted them, instead of starting from an empty search.
+
+It also gave the analytics a clearer signal: which section each visitor chose became the first piece of context the hub could later build on.
+
+![The first version of the new Coches.net home on a laptop, with large entry points by buying intent](/projects/coches-net/home-v1.webp "The first version of the new home: one large entry point per buying intent, designed with SEO so search traffic reached the listings and users went straight into the right section.")
 
 ## The solution
 

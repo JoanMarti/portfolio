@@ -44,22 +44,25 @@ Ich begann mit Adobe Analytics (Sitzungsdauer, Nutzung von Funktionen, Geräte, 
 - **60%** kehrten regelmässig zu gespeicherten Autos zurück.
 - **85%** wollten Autos vergleichen.
 
-<div class="compare compare--wide">
-  <figure>
-    <img src="/projects/coches-net/home-v1.webp" alt="Die erste Version der neuen Coches.net-Startseite auf einem Laptop, mit grossen Einstiegen zu Gebraucht-, Neu- und Km-0-Fahrzeugen" />
-    <p class="compare-note">Die erste Version der neuen Startseite: grosse, bildstarke Einstiege in jeden Bereich, gemeinsam mit SEO erarbeitet, damit Suchtraffic die Inserate erreicht und Nutzer in den richtigen Bereich geführt werden.</p>
-  </figure>
-  <figure>
-    <img src="/projects/coches-net/adobe-analytics.webp" alt="Adobe-Analytics-Workspace mit Top-Seiten, Besuchen und Unique Visitors" />
-    <p class="compare-note">Arbeit in Adobe Analytics: Seitenflüsse, Einstiege und Segmente nach Gerät zeigten, wo Nutzer abspringen und welche Muster sich zu gestalten lohnen. Beispielansicht mit Beispieldaten.</p>
-  </figure>
-</div>
+Coches.net war ein datengetriebenes Unternehmen: Produkt, Marketing und Engineering entschieden anhand von Zahlen, und Design musste sich auf dieselbe Weise behaupten. Ich arbeitete jede Woche in Adobe Analytics, baute eigene Auswertungen zu Seitenflüssen, Einstiegen und Gerätesegmenten, um die Muster zu finden, für die sich Gestaltung lohnt, und legte die Erfolgskennzahl mit dem Produkt fest, bevor es einen einzigen Screen gab.
+
+![Adobe-Analytics-Workspace mit Top-Seiten, Besuchen und Unique Visitors](/projects/coches-net/adobe-analytics.webp "Ein typischer Workspace in Adobe Analytics: Top-Seiten, Besuche und Unique Visitors, nach Gerät segmentiert. Beispielansicht mit Beispieldaten.")
 
 Danach führte ich Interviews, Usability-Tests, Umfragen und einen Wettbewerbsvergleich durch, um das Warum zu verstehen. Das Muster war klar. Käufer wollten Kontinuität zwischen den Besuchen. Sie mussten vergleichen und wiederkommen, um sich sicher zu fühlen, und schätzten Plattformen, die sich an sie erinnern.
 
 Damit stellte sich die Aufgabe neu:
 
 > Kundenbindung war kein Suchproblem. Es war ein Gedächtnisproblem.
+
+## Erster Schritt: eine Startseite, die lenkt
+
+Vor dem Hub musste die Startseite Menschen besser an den richtigen Ort bringen. Die meisten Besuche kamen über Suchmaschinen und landeten auf einer allgemeinen Seite, die alle zum selben Suchformular schickte.
+
+Gemeinsam mit dem SEO-Team gestaltete ich die erste Version der Startseite als Raster grosser Einstiege, einer für jede Art zu kaufen: Gebrauchtwagen, Neuwagen, Km 0, erweiterte Garantie, Motorräder, Nutzfahrzeuge und Testberichte. Jede Kachel entsprach einer Suchabsicht, die Menschen bereits hatten. So erreichte der Suchtraffic die Inserate in weniger Schritten, und Nutzer gelangten direkt in den passenden Bereich, statt bei einer leeren Suche zu beginnen.
+
+Das gab auch der Analyse ein klareres Signal: Welchen Bereich jemand wählte, wurde zum ersten Kontext, auf dem der Hub später aufbauen konnte.
+
+![Die erste Version der neuen Coches.net-Startseite auf einem Laptop mit grossen Einstiegen nach Kaufabsicht](/projects/coches-net/home-v1.webp "Die erste Version der neuen Startseite: ein grosser Einstieg pro Kaufabsicht, mit SEO gestaltet, damit Suchtraffic die Inserate erreicht und Nutzer direkt in den richtigen Bereich gelangen.")
 
 ## Die Lösung
 

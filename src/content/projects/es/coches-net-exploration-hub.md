@@ -44,22 +44,25 @@ Empecé con Adobe Analytics (duración de las sesiones, uso de funciones, dispos
 - El **60%** volvía a menudo a los coches que había guardado.
 - El **85%** quería comparar coches.
 
-<div class="compare compare--wide">
-  <figure>
-    <img src="/projects/coches-net/home-v1.webp" alt="La primera versión de la nueva home de Coches.net en un portátil, con grandes accesos a coches de segunda mano, nuevos y Km 0" />
-    <p class="compare-note">La primera versión de la nueva home: accesos grandes y visuales a cada sección, trabajados junto a SEO para que el tráfico de buscadores llegara a los anuncios y guiar a cada usuario a la sección adecuada.</p>
-  </figure>
-  <figure>
-    <img src="/projects/coches-net/adobe-analytics.webp" alt="Workspace de Adobe Analytics con páginas principales, visitas y visitantes únicos" />
-    <p class="compare-note">Trabajando en Adobe Analytics: los flujos de páginas, los puntos de entrada y los segmentos por dispositivo mostraban dónde abandonaban los usuarios y qué patrones merecía la pena diseñar. Vista ilustrativa con datos de ejemplo.</p>
-  </figure>
-</div>
+Coches.net era una empresa data driven: producto, marketing e ingeniería decidían con números, y diseño tenía que ganarse su sitio de la misma forma. Trabajaba en Adobe Analytics cada semana, montando mis propias vistas de recorridos, puntos de entrada y segmentos por dispositivo para encontrar los patrones que merecía la pena diseñar, y acordaba la métrica de éxito con producto antes de que existiera una sola pantalla.
+
+![Workspace de Adobe Analytics con páginas principales, visitas y visitantes únicos](/projects/coches-net/adobe-analytics.webp "Un workspace típico de Adobe Analytics: páginas principales, visitas y visitantes únicos, segmentados por dispositivo. Vista ilustrativa con datos de ejemplo.")
 
 Después hice entrevistas, tests de usabilidad, encuestas y un análisis de la competencia para entender el porqué. El patrón estaba claro. Los compradores querían continuidad entre sesiones. Necesitaban comparar y volver a mirar para sentirse seguros, y valoraban las plataformas que se acordaban de ellos.
 
 Eso cambió el planteamiento:
 
 > La retención no era un problema de búsqueda. Era un problema de memoria.
+
+## Primer paso: una home que reparte
+
+Antes del hub, la home tenía que llevar mejor a cada persona a su sitio. La mayoría de las visitas llegaban desde buscadores y aterrizaban en una página genérica que mandaba a todos al mismo formulario de búsqueda.
+
+Junto al equipo de SEO rediseñé la primera versión de la home como una parrilla de accesos grandes, uno por cada forma de comprar: segunda mano, coches nuevos, Km 0, garantía superior, motos, vehículos industriales y pruebas. Cada acceso respondía a una intención de búsqueda que la gente ya tenía, así el tráfico de buscadores llegaba a los anuncios en menos pasos y cada usuario entraba directamente en la sección que le encajaba, en lugar de empezar con una búsqueda vacía.
+
+Además daba una señal más clara a la analítica: la sección que elegía cada visitante se convertía en el primer contexto sobre el que el hub podría construir después.
+
+![La primera versión de la nueva home de Coches.net en un portátil, con accesos grandes por intención de compra](/projects/coches-net/home-v1.webp "La primera versión de la nueva home: un acceso grande por cada intención de compra, diseñada con SEO para que el tráfico de buscadores llegara a los anuncios y cada usuario entrara directamente en su sección.")
 
 ## La solución
 
