@@ -44,7 +44,15 @@ Als Product Design Lead verantwortete ich Produktdefinition und UX: Discovery-Pl
 
 **Zwei Einstiege gegeneinander testen.** Variante A nutzte das Selfie, Variante B schnelle Stimmungs-Chips und Schieberegler. Wir testeten Tempo, Verständlichkeit, Spass im Vergleich zu Unbehagen, Erwartungen an die Einwilligung und die Bereitschaft, ein Streamingkonto zu verbinden.
 
+Flow A, mit dem wir weitergingen, in vier Schritten:
+
+<ol class="flow-steps" style="--start:0"><li><img src="/projects/instamusic/screens/home.webp" alt="Startseite mit grossem Kamera-Button und dem Titel Entdecke Musik mit deinen Fotos" loading="lazy" /><p><strong>Eine klare Aktion.</strong> Die Startseite ist eine einzige Einladung: Foto machen und Musik entdecken.</p></li><li><img src="/projects/instamusic/screens/camera.webp" alt="Kameraansicht mit einem Selfie" loading="lazy" /><p><strong>Ein spielerischer Stimmungscheck.</strong> Das Selfie erfasst mit einem Tipp, wie man sich gerade fühlt.</p></li><li><img src="/projects/instamusic/screens/photo.webp" alt="Fotovorschau mit Weiter-Button" loading="lazy" /><p><strong>Bestätigen, bevor etwas passiert.</strong> Die Person sieht das Foto und entscheidet, ob sie weitermacht.</p></li><li><img src="/projects/instamusic/screens/tags-selected.webp" alt="Erkannte Tags zu Stimmung, Genre und Kontext, teils ausgewählt, mit Button Playlist erstellen" loading="lazy" /><p><strong>Die Kontrolle bleibt beim Nutzer.</strong> Die App schlägt Tags zu Stimmung, Genre und Kontext vor; der Nutzer behält nur die passenden.</p></li></ol>
+
 **Eine Ebene, kein Katalog.** Statt Musik zu lizenzieren, verbanden Nutzer Spotify oder Apple Music und hörten die Titel dort. So konzentrierte sich das MVP auf das Neue, also auf das Entdecken und die Bindung.
+
+Die Musik bleibt dort, wo Nutzer ohnehin hören: Spotify verbinden, Playlist erhalten und mit einem Tipp exportieren.
+
+<ol class="flow-steps" style="--start:4"><li><img src="/projects/instamusic/screens/connect.webp" alt="Willkommensscreen mit Mit Spotify verbinden und freiem Zugang" loading="lazy" /><p><strong>Verbinden oder frei erkunden.</strong> Spotify ist der Hauptweg, mit einer freien Option für alle, die kein Konto verbinden wollen.</p></li><li><img src="/projects/instamusic/screens/playlist.webp" alt="Erstellte Playlist mit ihren Tags und dem Button Nach Spotify exportieren" loading="lazy" /><p><strong>Eine Playlist für den Moment.</strong> Die Tags, aus denen sie entstand, bleiben über der Liste sichtbar.</p></li><li><img src="/projects/instamusic/screens/exported.webp" alt="Bestätigung, dass die Playlist exportiert wurde, mit Spotify öffnen" loading="lazy" /><p><strong>Zurück in den eigenen Player.</strong> Die Playlist wird exportiert und öffnet sich in Spotify.</p></li></ol>
 
 **Verantwortungsvolle KI von Anfang an.** Weil das Konzept Emotionen aus einem Gesicht liest, waren Schutzmassnahmen Teil des Designs und kein juristischer Nachtrag:
 - Das Selfie ist freiwillig, die manuelle Auswahl ist immer verfügbar.
@@ -52,6 +60,11 @@ Als Product Design Lead verantwortete ich Produktdefinition und UX: Discovery-Pl
 - Standardmässig werden keine Bilder gespeichert, die Verarbeitung auf dem Gerät hat Vorrang.
 - Überspringen, Widerrufen und Löschen sind einfach.
 - Die Stimmung gilt als weiches Signal, nie als Diagnose.
+
+
+In der Oberfläche sehen diese Schutzmassnahmen so aus:
+
+<ol class="flow-steps" style="--start:7"><li><img src="/projects/instamusic/screens/tags.webp" alt="Erkannte Tags als nicht ausgewählte Vorschläge" loading="lazy" /><p><strong>Vorschläge, keine Urteile.</strong> Erkannte Tags sind anfangs nicht ausgewählt; über den Nutzer wird nichts angenommen.</p></li><li><img src="/projects/instamusic/screens/tags-info.webp" alt="Dialog, der erklärt, was Tags sind und wofür sie dienen" loading="lazy" /><p><strong>Das Warum erklären.</strong> Eine kurze Erklärung, was Tags sind und wie sie die Suche verbessern.</p></li><li><img src="/projects/instamusic/screens/preferences.webp" alt="Einstellungen mit Sprache, Datenschutz und Hilfe" loading="lazy" /><p><strong>Datenschutz in einem Tipp.</strong> Datenschutz und Hilfe sind in den Einstellungen immer erreichbar.</p></li></ol>
 
 ## Ergebnisse
 

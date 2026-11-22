@@ -44,7 +44,15 @@ Como Product Design Lead me ocupé de la definición de producto y de la UX: el 
 
 **Probar dos entradas, una contra otra.** El flujo A usaba el selfie y el flujo B, etiquetas de estado de ánimo y controles deslizantes. Probamos la rapidez, la claridad, la diversión frente a la incomodidad, las expectativas sobre el consentimiento y las ganas de conectar una cuenta de streaming.
 
+El flujo A, el que seguimos adelante, en cuatro pasos:
+
+<ol class="flow-steps" style="--start:0"><li><img src="/projects/instamusic/screens/home.webp" alt="Pantalla de inicio con un gran botón de cámara y el titular Descubre música con tus fotos" loading="lazy" /><p><strong>Una sola acción clara.</strong> La home es una única invitación: haz una foto y descubre música.</p></li><li><img src="/projects/instamusic/screens/camera.webp" alt="Vista de cámara encuadrando un selfie" loading="lazy" /><p><strong>Una forma divertida de captar el ánimo.</strong> El selfie recoge cómo te sientes ahora mismo, con un toque.</p></li><li><img src="/projects/instamusic/screens/photo.webp" alt="Vista previa de la foto con el botón Continuar" loading="lazy" /><p><strong>Confirmar antes de que pase nada.</strong> El usuario ve la foto y decide si continúa.</p></li><li><img src="/projects/instamusic/screens/tags-selected.webp" alt="Tags detectados de ánimo, género y contexto, algunos seleccionados, con el botón Crear tu playlist" loading="lazy" /><p><strong>El control es del usuario.</strong> La app sugiere tags de ánimo, género y contexto; el usuario se queda solo con los que encajan.</p></li></ol>
+
 **Ser una capa, no un catálogo.** En lugar de licenciar música, los usuarios conectaban Spotify o Apple Music y escuchaban allí las canciones. Así el MVP se centró en lo nuevo, que era descubrir y volver.
+
+La música vive donde la gente ya escucha: conecta Spotify, recibe una playlist y la exporta con un toque.
+
+<ol class="flow-steps" style="--start:4"><li><img src="/projects/instamusic/screens/connect.webp" alt="Pantalla de bienvenida con Conectar con Spotify y una opción de acceso libre" loading="lazy" /><p><strong>Conectar o explorar libremente.</strong> Spotify es el camino principal, con una opción libre para quien no quiere conectar una cuenta.</p></li><li><img src="/projects/instamusic/screens/playlist.webp" alt="Playlist generada con sus tags y el botón Exportar a Spotify" loading="lazy" /><p><strong>Una playlist para el momento.</strong> Los tags que la crearon siguen visibles encima de la lista.</p></li><li><img src="/projects/instamusic/screens/exported.webp" alt="Confirmación de que la playlist se ha exportado, con Abrir Spotify" loading="lazy" /><p><strong>De vuelta a su reproductor.</strong> La playlist se exporta y se abre en Spotify.</p></li></ol>
 
 **Diseñar una IA responsable desde el principio.** Como el concepto implica leer emociones en una cara, las salvaguardas formaron parte del diseño y no fueron un añadido legal:
 - El selfie es opcional y la selección manual siempre está disponible.
@@ -52,6 +60,11 @@ Como Product Design Lead me ocupé de la definición de producto y de la UX: el 
 - Por defecto no se guardan imágenes y se prioriza el procesamiento en el propio dispositivo.
 - Es fácil saltar el paso, retirar el permiso y borrar los datos.
 - El estado de ánimo se trata como una señal orientativa, nunca como un diagnóstico.
+
+
+En la interfaz, esas salvaguardas se ven así:
+
+<ol class="flow-steps" style="--start:7"><li><img src="/projects/instamusic/screens/tags.webp" alt="Tags detectados mostrados como sugerencias sin seleccionar" loading="lazy" /><p><strong>Sugerencias, no veredictos.</strong> Los tags detectados empiezan sin seleccionar; no se da nada por hecho del usuario.</p></li><li><img src="/projects/instamusic/screens/tags-info.webp" alt="Diálogo que explica qué son los tags y para qué sirven" loading="lazy" /><p><strong>Explicar el porqué.</strong> Una explicación breve de qué son los tags y cómo mejoran la búsqueda.</p></li><li><img src="/projects/instamusic/screens/preferences.webp" alt="Pantalla de preferencias con idioma, privacidad y ayuda" loading="lazy" /><p><strong>La privacidad a un toque.</strong> La privacidad y la ayuda siempre están accesibles desde preferencias.</p></li></ol>
 
 ## Resultados
 

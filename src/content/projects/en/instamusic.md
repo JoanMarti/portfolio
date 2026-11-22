@@ -44,7 +44,15 @@ As Product Design Lead I owned product definition and UX: the discovery plan, re
 
 **Test two entry flows against each other.** Flow A used the selfie and flow B used quick mood chips and sliders. We tested speed, clarity, fun compared with creepiness, expectations around consent and willingness to connect a streaming account.
 
+Flow A, the one we took forward, in four steps:
+
+<ol class="flow-steps" style="--start:0"><li><img src="/projects/instamusic/screens/home.webp" alt="Home screen with a large camera button and the headline Discover music with your photos" loading="lazy" /><p><strong>One clear action.</strong> The home is a single invitation: take a photo and discover music.</p></li><li><img src="/projects/instamusic/screens/camera.webp" alt="Camera view framing a selfie" loading="lazy" /><p><strong>A playful mood check.</strong> The selfie captures how you feel right now, in one tap.</p></li><li><img src="/projects/instamusic/screens/photo.webp" alt="Photo preview with a Continue button" loading="lazy" /><p><strong>Confirm before anything happens.</strong> The user sees the photo and decides whether to continue.</p></li><li><img src="/projects/instamusic/screens/tags-selected.webp" alt="Detected tags for mood, genre and context, some selected, with a Create your playlist button" loading="lazy" /><p><strong>You stay in control.</strong> The app suggests tags for mood, genre and context; the user keeps only the ones that fit.</p></li></ol>
+
 **Be a layer, not a catalogue.** Instead of licensing music, users connected Spotify or Apple Music and played tracks there. That kept the MVP focused on what was new, which was discovery and the engagement loop.
+
+The music lives where users already listen: they connect Spotify, get a playlist and export it in one tap.
+
+<ol class="flow-steps" style="--start:4"><li><img src="/projects/instamusic/screens/connect.webp" alt="Welcome screen with Connect with Spotify and a free access option" loading="lazy" /><p><strong>Connect or explore freely.</strong> Spotify is the main path, with a free option for people who don’t want to connect an account.</p></li><li><img src="/projects/instamusic/screens/playlist.webp" alt="Generated playlist with its tags and an Export to Spotify button" loading="lazy" /><p><strong>A playlist for the moment.</strong> The tags that built it stay visible above the list.</p></li><li><img src="/projects/instamusic/screens/exported.webp" alt="Confirmation dialog saying the playlist was exported, with Open Spotify" loading="lazy" /><p><strong>Back to their player.</strong> The playlist is exported and opens in Spotify.</p></li></ol>
 
 **Design responsible AI from the start.** Because the concept involves reading emotion from a face, safeguards were part of the design, not a legal afterthought:
 - The selfie is opt-in, and manual mood selection is always available.
@@ -52,6 +60,11 @@ As Product Design Lead I owned product definition and UX: the discovery plan, re
 - No images are stored by default, and processing on the device is preferred.
 - It is easy to skip, revoke and delete.
 - Mood is treated as a soft signal, never as a diagnosis.
+
+
+In the interface, those safeguards look like this:
+
+<ol class="flow-steps" style="--start:7"><li><img src="/projects/instamusic/screens/tags.webp" alt="Detected tags shown as unselected suggestions" loading="lazy" /><p><strong>Suggestions, not verdicts.</strong> Detected tags start unselected; nothing is assumed about the user.</p></li><li><img src="/projects/instamusic/screens/tags-info.webp" alt="Dialog explaining what tags are and how they are used" loading="lazy" /><p><strong>Explain the why.</strong> A short explanation of what tags are and how they improve the search.</p></li><li><img src="/projects/instamusic/screens/preferences.webp" alt="Preferences screen with language, privacy and help" loading="lazy" /><p><strong>Privacy one tap away.</strong> Privacy and help are always reachable from preferences.</p></li></ol>
 
 ## Results
 
