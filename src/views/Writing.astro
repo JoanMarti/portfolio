@@ -9,7 +9,7 @@ const { lang } = Astro.props;
 const t = ui[lang].writing;
 const fmt = (d?: string) =>
   d ? new Date(d).toLocaleDateString(locales[lang], { month: 'short', year: 'numeric' }) : '';
-const outlets = site.social.filter((s) => ['Medium', 'Substack', 'LinkedIn'].includes(s.label));
+const outlets = site.social.filter((s) => s.href && ['Medium', 'Substack', 'LinkedIn'].includes(s.label));
 const joiner = { en: 'and', de: 'und', es: 'y' }[lang];
 ---
 

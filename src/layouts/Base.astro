@@ -22,6 +22,9 @@ const nav = [
   { href: href(lang, '/about/'), label: t.nav.about, key: 'about' },
   { href: href(lang, '/writing/'), label: t.nav.writing, key: 'writing' },
 ];
+import { existsSync } from 'node:fs';
+// Only offer the CV download once the PDF is in /public.
+const hasCv = existsSync(`public/${site.cv}`);
 ---
 
 <!doctype html>
@@ -57,7 +60,7 @@ const nav = [
       jobTitle: site.role,
       address: { '@type': 'PostalAddress', addressLocality: 'Zug', addressCountry: 'CH' },
       knowsLanguage: ['es', 'ca', 'en', 'de', 'fr'],
-      sameAs: site.social.map((s) => s.href),
+      sameAs: site.social.filter((s) => s.href).map((s) => s.href),
     })} />
   </head>
   <body>
@@ -99,10 +102,10 @@ const nav = [
         <div class="footer-actions">
           <a class="btn btn--primary" href={`mailto:${site.email}`}>{t.footer.email} {site.email}</a>
           {site.calendar && <a class="btn" href={site.calendar}>{t.footer.call}</a>}
-          <a class="btn" href={url(`/${site.cv}`)} download>{t.footer.cv}</a>
+          {hasCv && <a class="btn" href={url(`/${site.cv}`)} download>{t.footer.cv}</a>}
         </div>
         <ul class="footer-links" aria-label={t.footer.elsewhere}>
-          {site.social.map((s) => (
+          {site.social.filter((s) => s.href).map((s) => (
             <li><a href={s.href} rel="me noopener">{s.label}</a></li>
           ))}
         </ul>

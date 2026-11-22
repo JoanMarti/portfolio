@@ -9,6 +9,9 @@ interface Props { lang: Lang }
 const { lang } = Astro.props;
 const t = ui[lang].about;
 const athleteos = `<a href="${href(lang, '/work/athleteos/')}">AthleteOS</a>`;
+import { existsSync } from 'node:fs';
+// Only offer the CV download once the PDF is in /public.
+const hasCv = existsSync(`public/${site.cv}`);
 ---
 
 <Base lang={lang} path="/about/" title={t.title} description={t.meta} current="about">
@@ -25,7 +28,7 @@ const athleteos = `<a href="${href(lang, '/work/athleteos/')}">AthleteOS</a>`;
   <section class="wrap block" aria-labelledby="exp-h">
     <div class="section-head">
       <h2 id="exp-h">{t.experience}</h2>
-      <a href={url(`/${site.cv}`)} download>{t.cv}</a>
+      {hasCv && <a href={url(`/${site.cv}`)} download>{t.cv}</a>}
     </div>
     <ol class="timeline">
       {experience.map((r) => (

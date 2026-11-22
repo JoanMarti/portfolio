@@ -38,8 +38,8 @@ export const site = {
   social: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/joan-marti-productdesigner/' },
     { label: 'Medium', href: 'https://medium.com/@campecha' },
-    // TODO: replace with your Substack URL, for example https://campecha.substack.com
-    { label: 'Substack', href: 'https://substack.com/' },
+    // TODO: add your Substack URL, for example https://campecha.substack.com (links without href are hidden)
+    { label: 'Substack', href: '' },
     { label: 'GitHub', href: 'https://github.com/JoanMarti' },
     { label: 'Behance', href: 'https://www.behance.net/campecha' },
   ],
