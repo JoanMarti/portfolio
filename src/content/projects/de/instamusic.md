@@ -36,6 +36,8 @@ Als Product Design Lead verantwortete ich Produktdefinition und UX: Discovery-Pl
 
 **Discovery.** Hotjar und Google Analytics, um besonders gefragte Einstiege zu finden, eine verzweigte Umfrage mit Typeform, um Motivationen zu segmentieren, und Tiefeninterviews zum Frust über Wiederholungen und dazu, wie Menschen nach Neuem suchen. Die Erkenntnis: Es fehlte nicht an Empfehlungen, sondern an **Neuheit** und an **Bezug zum Moment**.
 
+![Joan moderiert eine Fokusgruppe, Teilnehmende ordnen ausgedruckte Nutzerprofile mit Haftnotizen an der Wand](/projects/instamusic/focus-group.webp "Moderation einer Fokusgruppe: Die Teilnehmenden ordneten ausgedruckte Hörerprofile nach Stimmung und Moment, ihre Notizen an der Wand prägten die ersten Hypothesen.")
+
 **Ideenfindung.** How-might-we-Fragen, Crazy 8s und eine Bewertung nach Wirkung und Aufwand führten zur zentralen Idee: ein optionales Selfie als spielerischer Stimmungscheck, der in Sekunden eine Auswahl an Empfehlungen liefert.
 
 ## Wichtige Entscheidungen

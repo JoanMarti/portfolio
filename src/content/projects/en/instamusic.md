@@ -36,6 +36,8 @@ As Product Design Lead I owned product definition and UX: the discovery plan, re
 
 **Discovery.** Hotjar and Google Analytics to find high-interest entry points, a branching Typeform survey to segment motivations, and in-depth interviews about frustration with repetition and how people look for something new. The insight was that the problem wasn’t a lack of recommendations. It was a lack of **novelty** and of **relevance to the moment**.
 
+![Joan facilitating a focus group, participants sorting printed user profiles with sticky notes on the wall](/projects/instamusic/focus-group.webp "Running a focus group: participants sorted printed listener profiles by mood and moment, and their notes on the wall shaped the first hypotheses.")
+
 **Ideation.** How might we questions, Crazy 8s and impact and effort mapping led to the key idea: an optional selfie as a playful mood check that produces a set of recommendations in seconds.
 
 ## Key decisions

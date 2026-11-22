@@ -36,6 +36,8 @@ Como Product Design Lead me ocupé de la definición de producto y de la UX: el 
 
 **Discovery.** Hotjar y Google Analytics para encontrar los puntos de entrada con más interés, una encuesta con ramificaciones en Typeform para segmentar motivaciones y entrevistas en profundidad sobre la frustración con la repetición y cómo busca la gente algo nuevo. La conclusión fue que el problema no era la falta de recomendaciones. Era la falta de **novedad** y de **relación con el momento**.
 
+![Joan moderando un focus group, con participantes ordenando perfiles de usuario impresos con post-its en la pared](/projects/instamusic/focus-group.webp "Moderando un focus group: los participantes ordenaron perfiles de oyentes impresos por estado de ánimo y momento, y sus notas en la pared dieron forma a las primeras hipótesis.")
+
 **Ideación.** Preguntas «¿cómo podríamos…?», Crazy 8s y un mapa de impacto y esfuerzo llevaron a la idea clave: un selfie opcional como forma divertida de captar el estado de ánimo que genera recomendaciones en segundos.
 
 ## Decisiones clave
