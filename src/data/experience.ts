@@ -28,11 +28,11 @@ export const experience: Role[] = [
     company: 'Independent',
     place: { en: 'Remote', de: 'Remote', es: 'En remoto' },
     start: '2026-07', end: '',
-    caseStudy: 'athleteos',
+    caseStudy: 'finora',
     note: {
-      en: 'Design and build my own products in code with Claude Code and Cursor, including AthleteOS, a data heavy insights app in React, and projects in Next.js. Built an AI assisted design system playbook connected to Figma, with tokens, light and dark modes and automatic contrast checks.',
-      de: 'Ich gestalte und baue eigene Produkte in Code mit Claude Code und Cursor, darunter AthleteOS, eine datenreiche Insights-App in React, und Projekte in Next.js. Dazu ein KI-gestütztes Designsystem-Playbook, verbunden mit Figma, mit Tokens, hellem und dunklem Modus und automatischen Kontrastprüfungen.',
-      es: 'Diseño y construyo mis propios productos en código con Claude Code y Cursor, como AthleteOS, una app de datos en React, y proyectos en Next.js. Creé un playbook de design system asistido por IA y conectado a Figma, con tokens, modo claro y oscuro y revisiones automáticas de contraste.',
+      en: 'Design and build my own products in code with Claude Code and Cursor, including Finora, a Swiss wealth app in Flutter taken from zero to an Android 1.0 build, and AthleteOS, a data heavy insights app in React. Built an AI assisted design system playbook connected to Figma, with tokens, light and dark modes and automatic contrast checks.',
+      de: 'Ich gestalte und baue eigene Produkte in Code mit Claude Code und Cursor, darunter Finora, eine Schweizer Vermögens-App in Flutter, von null bis zum Android-1.0-Build, und AthleteOS, eine datenreiche Insights-App in React. Dazu ein KI-gestütztes Designsystem-Playbook, verbunden mit Figma, mit Tokens, hellem und dunklem Modus und automatischen Kontrastprüfungen.',
+      es: 'Diseño y construyo mis propios productos en código con Claude Code y Cursor, como Finora, una app suiza de patrimonio en Flutter llevada de cero a una versión 1.0 para Android, y AthleteOS, una app de datos en React. Creé un playbook de design system asistido por IA y conectado a Figma, con tokens, modo claro y oscuro y revisiones automáticas de contraste.',
     },
   },
   {
