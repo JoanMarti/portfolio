@@ -9,9 +9,7 @@ role: "Fundador, product designer y desarrollador"
 team: "En solitario, diseñando y construyendo con Claude Code"
 duration: "Sept. a oct. 2026, 31 sprints"
 tools: [Figma, Flutter, Riverpod, Claude Code, GitHub Actions]
-coverImage:
-  src: /projects/finora/cover.webp
-  alt: "Dashboard de Finora en escritorio con patrimonio total, evolución, salud financiera y próximos recibos"
+cover: wealth
 featured: true
 order: 2.5
 kind: side-project

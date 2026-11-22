@@ -17,7 +17,7 @@ const projects = defineCollection({
     duration: z.string().optional(),
     tools: z.array(z.string()).default([]),
     // Which diagram cover to draw (see src/components/ProjectCover.astro).
-    cover: z.enum(['layers', 'tenants', 'branching', 'loop', 'hmi', 'mood', 'signals', 'ia']).optional(),
+    cover: z.enum(['layers', 'tenants', 'branching', 'loop', 'hmi', 'mood', 'signals', 'ia', 'wealth']).optional(),
     // A real image cover overrides the diagram. Path inside /public, e.g. /projects/smartstamp/cover.webp
     coverImage: z.object({ src: z.string(), alt: z.string() }).optional(),
     featured: z.boolean().default(false),
