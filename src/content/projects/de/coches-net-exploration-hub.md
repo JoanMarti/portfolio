@@ -44,6 +44,17 @@ Ich begann mit Adobe Analytics (Sitzungsdauer, Nutzung von Funktionen, Geräte, 
 - **60%** kehrten regelmässig zu gespeicherten Autos zurück.
 - **85%** wollten Autos vergleichen.
 
+<div class="compare compare--wide">
+  <figure>
+    <img src="/projects/coches-net/home-v1.webp" alt="Die erste Version der neuen Coches.net-Startseite auf einem Laptop, mit grossen Einstiegen zu Gebraucht-, Neu- und Km-0-Fahrzeugen" />
+    <p class="compare-note">Die erste Version der neuen Startseite: grosse, bildstarke Einstiege in jeden Bereich, gemeinsam mit SEO erarbeitet, damit Suchtraffic die Inserate erreicht und Nutzer in den richtigen Bereich geführt werden.</p>
+  </figure>
+  <figure>
+    <img src="/projects/coches-net/adobe-analytics.webp" alt="Adobe-Analytics-Workspace mit Top-Seiten, Besuchen und Unique Visitors" />
+    <p class="compare-note">Arbeit in Adobe Analytics: Seitenflüsse, Einstiege und Segmente nach Gerät zeigten, wo Nutzer abspringen und welche Muster sich zu gestalten lohnen. Beispielansicht mit Beispieldaten.</p>
+  </figure>
+</div>
+
 Danach führte ich Interviews, Usability-Tests, Umfragen und einen Wettbewerbsvergleich durch, um das Warum zu verstehen. Das Muster war klar. Käufer wollten Kontinuität zwischen den Besuchen. Sie mussten vergleichen und wiederkommen, um sich sicher zu fühlen, und schätzten Plattformen, die sich an sie erinnern.
 
 Damit stellte sich die Aufgabe neu:

@@ -44,6 +44,17 @@ I started with Adobe Analytics (session duration, feature usage, devices, page f
 - **60%** regularly went back to cars they had saved.
 - **85%** wanted to compare cars.
 
+<div class="compare compare--wide">
+  <figure>
+    <img src="/projects/coches-net/home-v1.webp" alt="The first version of the new Coches.net home on a laptop, with large entry points to used, new and Km 0 cars" />
+    <p class="compare-note">The first version of the new home: large, image led entry points to each section, worked together with SEO so search traffic reached the listings and users were guided into the right section.</p>
+  </figure>
+  <figure>
+    <img src="/projects/coches-net/adobe-analytics.webp" alt="Adobe Analytics workspace with top pages, visits and unique visitors" />
+    <p class="compare-note">Working in Adobe Analytics: page flows, entry points and segments by device showed where users dropped off and which patterns were worth designing for. Illustrative view with sample data.</p>
+  </figure>
+</div>
+
 Then I ran interviews, usability tests, surveys and benchmarking to understand why. The pattern was clear. Buyers wanted continuity between sessions. They needed to compare and revisit to feel confident, and they valued platforms that remembered them.
 
 That reframed the challenge:

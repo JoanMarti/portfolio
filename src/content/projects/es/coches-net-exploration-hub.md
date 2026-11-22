@@ -44,6 +44,17 @@ Empecé con Adobe Analytics (duración de las sesiones, uso de funciones, dispos
 - El **60%** volvía a menudo a los coches que había guardado.
 - El **85%** quería comparar coches.
 
+<div class="compare compare--wide">
+  <figure>
+    <img src="/projects/coches-net/home-v1.webp" alt="La primera versión de la nueva home de Coches.net en un portátil, con grandes accesos a coches de segunda mano, nuevos y Km 0" />
+    <p class="compare-note">La primera versión de la nueva home: accesos grandes y visuales a cada sección, trabajados junto a SEO para que el tráfico de buscadores llegara a los anuncios y guiar a cada usuario a la sección adecuada.</p>
+  </figure>
+  <figure>
+    <img src="/projects/coches-net/adobe-analytics.webp" alt="Workspace de Adobe Analytics con páginas principales, visitas y visitantes únicos" />
+    <p class="compare-note">Trabajando en Adobe Analytics: los flujos de páginas, los puntos de entrada y los segmentos por dispositivo mostraban dónde abandonaban los usuarios y qué patrones merecía la pena diseñar. Vista ilustrativa con datos de ejemplo.</p>
+  </figure>
+</div>
+
 Después hice entrevistas, tests de usabilidad, encuestas y un análisis de la competencia para entender el porqué. El patrón estaba claro. Los compradores querían continuidad entre sesiones. Necesitaban comparar y volver a mirar para sentirse seguros, y valoraban las plataformas que se acordaban de ellos.
 
 Eso cambió el planteamiento:
