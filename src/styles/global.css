@@ -366,3 +366,11 @@ body { overflow-wrap: break-word; }
 .prose .fork-cols p { margin: 0; font-size: var(--step--1); max-width: none; }
 .prose .fork-cols .fork-k { font-size: var(--step-0); font-weight: 650; margin-bottom: 6px; }
 @media (max-width: 560px) { .prose .fork-cols::before { display: none; } .prose .fork-cols { margin-top: 12px; } }
+
+/* Phases in a sprint: a row of steps with a loop note */
+.prose .phases { max-width: none; list-style: none; margin: 2em 0 0.6em; padding: clamp(16px, 4vw, 28px); background: var(--paper-2); border-radius: var(--radius-lg); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 140px), 1fr)); gap: 10px; counter-reset: ph; }
+.prose .phases li { counter-increment: ph; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 14px; margin: 0; display: grid; gap: 4px; align-content: start; }
+.prose .phases li::before { content: counter(ph, decimal-leading-zero); font-size: var(--step--1); color: var(--accent); font-weight: 650; }
+.prose .phases strong { font-size: var(--step-0); }
+.prose .phases span { font-size: var(--step--1); color: var(--muted); }
+.prose .phases-note { text-align: center; color: var(--muted); font-size: var(--step--1); margin: 0 auto 2em; }
