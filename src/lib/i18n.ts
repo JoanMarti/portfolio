@@ -16,6 +16,7 @@ export function href(lang: Lang, path = '/'): string {
 }
 
 const en = {
+  consent: { label: 'Cookie consent', text: 'I use Google Analytics to understand which pages are useful. Analytics cookies are only set if you accept.', accept: 'Accept', decline: 'Decline', settings: 'Cookie settings' },
   nav: { work: 'Work', about: 'About', writing: 'Writing', contact: 'Contact', language: 'Language' },
   skip: 'Skip to content',
   footer: {
@@ -117,6 +118,7 @@ const en = {
 type Dict = typeof en;
 
 const de: Dict = {
+  consent: { label: 'Cookie-Einwilligung', text: 'Ich nutze Google Analytics, um zu sehen, welche Seiten hilfreich sind. Analyse-Cookies werden nur gesetzt, wenn du zustimmst.', accept: 'Akzeptieren', decline: 'Ablehnen', settings: 'Cookie-Einstellungen' },
   nav: { work: 'Projekte', about: 'Über mich', writing: 'Artikel', contact: 'Kontakt', language: 'Sprache' },
   skip: 'Zum Inhalt springen',
   footer: {
@@ -216,6 +218,7 @@ const de: Dict = {
 };
 
 const es: Dict = {
+  consent: { label: 'Consentimiento de cookies', text: 'Uso Google Analytics para saber qué páginas resultan útiles. Las cookies de analítica solo se guardan si aceptas.', accept: 'Aceptar', decline: 'Rechazar', settings: 'Configurar cookies' },
   nav: { work: 'Proyectos', about: 'Sobre mí', writing: 'Artículos', contact: 'Contacto', language: 'Idioma' },
   skip: 'Saltar al contenido',
   footer: {

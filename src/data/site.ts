@@ -29,6 +29,9 @@ export const site = {
     } as T,
   },
 
+  // Google Tag Manager container. GA4 is configured inside GTM. Leave empty to disable.
+  gtm: 'GTM-K25MLZ7C',
+
   email: 'joanmartidiez@gmail.com',
   // TODO: add your Calendly or Cal.com link, or leave empty to hide the button.
   calendar: '',

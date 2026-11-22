@@ -62,8 +62,31 @@ const hasCv = existsSync(`public/${site.cv}`);
       knowsLanguage: ['es', 'ca', 'en', 'de', 'fr'],
       sameAs: site.social.filter((s) => s.href).map((s) => s.href),
     })} />
+    {site.gtm && (
+      <script is:inline define:vars={{ gtmId: site.gtm }}>
+        // Consent Mode v2: nothing is stored until the visitor accepts analytics cookies.
+        window.dataLayer = window.dataLayer || [];
+        // define:vars wraps this script in a function, so expose gtag globally for the consent banner.
+        window.gtag = function () { window.dataLayer.push(arguments); };
+        var gtag = window.gtag;
+        var choice = null;
+        try { choice = localStorage.getItem('consent-analytics'); } catch (e) {}
+        gtag('consent', 'default', {
+          ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+          analytics_storage: choice === 'granted' ? 'granted' : 'denied',
+          wait_for_update: 500,
+        });
+        // Official Google Tag Manager snippet
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || []; w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', gtmId);
+      </script>
+    )}
   </head>
   <body>
+    {site.gtm && <noscript><iframe src={`https://www.googletagmanager.com/ns.html?id=${site.gtm}`} height="0" width="0" style="display:none;visibility:hidden" title="Google Tag Manager"></iframe></noscript>}
     <a class="skip" href="#main">{t.skip}</a>
     <header class="site-header wrap">
       <a href={href(lang, '/')} class="brand">
@@ -109,9 +132,18 @@ const hasCv = existsSync(`public/${site.cv}`);
             <li><a href={s.href} rel="me noopener">{s.label}</a></li>
           ))}
         </ul>
-        <p class="footer-meta muted">© {new Date().getFullYear()} {site.name}, {site.location[lang]}</p>
+        <p class="footer-meta muted">© {new Date().getFullYear()} {site.name}, {site.location[lang]}{site.gtm && <> · <button type="button" class="linklike consent-open">{t.consent.settings}</button></>}</p>
       </div>
     </footer>
+    {site.gtm && (
+      <div class="consent" role="region" aria-label={t.consent.label} hidden>
+        <p>{t.consent.text}</p>
+        <div class="consent-actions">
+          <button type="button" class="btn" data-consent="denied">{t.consent.decline}</button>
+          <button type="button" class="btn btn--primary" data-consent="granted">{t.consent.accept}</button>
+        </div>
+      </div>
+    )}
     <script is:inline data-global>
       // Tabs (work section): click or arrow keys switch panels. Delegated, so it also
       // works when page content is swapped in without a reload.
@@ -136,6 +168,25 @@ const hasCv = existsSync(`public/${site.cv}`);
           var tabs = Array.prototype.slice.call(tab.closest('[role="tablist"]').querySelectorAll('[role="tab"]'));
           var next = tabs[(tabs.indexOf(tab) + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
           select(next); next.focus(); e.preventDefault();
+        });
+      })();
+      // Cookie consent banner for analytics (Consent Mode v2).
+      (function () {
+        var box = document.querySelector('.consent');
+        if (!box || typeof gtag !== 'function') return;
+        var stored = null;
+        try { stored = localStorage.getItem('consent-analytics'); } catch (e) {}
+        if (!stored) box.hidden = false;
+        document.addEventListener('click', function (e) {
+          var b = e.target.closest && e.target.closest('[data-consent]');
+          if (b) {
+            var v = b.dataset.consent;
+            gtag('consent', 'update', { analytics_storage: v });
+            try { localStorage.setItem('consent-analytics', v); } catch (x) {}
+            box.hidden = true;
+            return;
+          }
+          if (e.target.closest && e.target.closest('.consent-open')) { box.hidden = false; box.querySelector('[data-consent=granted]').focus(); }
         });
       })();
       // Protected sections: decrypt in the browser with the password (AES-GCM, PBKDF2 SHA-256).
