@@ -27,12 +27,10 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          # Defaults work for GitHub Pages out of the box:
-          #   repo "<user>.github.io" -> https://<user>.github.io/
-          #   any other repo          -> https://<user>.github.io/<repo>/
-          # For a custom domain, set the repo variables SITE_URL (your domain) and BASE_PATH ("/").
-          SITE_URL: ${{ vars.SITE_URL || format('https://{0}.github.io', github.repository_owner) }}
-          BASE_PATH: ${{ vars.BASE_PATH || (endsWith(github.event.repository.name, '.github.io') && '/' || format('/{0}/', github.event.repository.name)) }}
+          # The site is served from the custom domain campecha.com (Settings > Pages > Custom domain).
+          # Without a custom domain, set the repo variables SITE_URL=https://<user>.github.io and BASE_PATH=/<repo>/
+          SITE_URL: ${{ vars.SITE_URL || 'https://campecha.com' }}
+          BASE_PATH: ${{ vars.BASE_PATH || '/' }}
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
