@@ -16,7 +16,7 @@ kind: side-project
 discipline: [product, visual]
 tldr:
   - "En Suiza la gente reparte su dinero entre varios bancos, un fondo de pensiones y el Pilar 3a, y ninguna app muestra el conjunto a la manera suiza."
-  - "Definí el producto, diseñé un modelo de datos que convierte cualquier banco en una sola vista y construí la app en Flutter para iOS, Android y web, con un modelo freemium y el consentimiento por delante en las ofertas de partners."
+  - "Definí el producto, diseñé un modelo de datos que convierte cualquier banco en una sola vista y construí la app en Flutter para iOS, Android y web, con un plan de negocio basado en cross-selling con consentimiento y un plan freemium."
   - "Un producto que funciona en 31 sprints: una versión 1.0 para Android, una demo web en cuatro idiomas, un backend de referencia y 219 tests automáticos."
 metrics:
   - value: "0 → 1"
@@ -53,6 +53,22 @@ Un hogar típico en Suiza reparte su dinero entre dos o tres bancos, una platafo
 Existen agregadores internacionales, pero no hablan suizo: no tienen Pilar 3a, ni AHV, ni impuestos por cantón, ni importes como CHF 1’248.40. Y la confianza es frágil. Nadie da acceso a su banco a una app que parece que podría mover su dinero o vender sus datos.
 
 > La oportunidad no era otra app de presupuestos. Era una visión tranquila, suiza y de solo lectura de todo lo que alguien tiene, con próximos pasos claros.
+
+## El objetivo: el agregador suizo que falta
+
+Hoy un hogar en Suiza necesita una app por banco, otra para el bróker, un portal para el fondo de pensiones, otra para el Pilar 3a y otra más para la caja médica. Cada app responde preguntas sobre su propio producto. Ninguna responde preguntas sobre el hogar, y ningún producto suizo las reúne.
+
+<dl class="glance">
+  <div><dt>Hoy</dt><dd>Una app o un portal por proveedor, cada uno con su login, sus cifras y solo una parte del conjunto.</dd></div>
+  <div><dt>Con Finora</dt><dd>Todas las cuentas en una sola vista de solo lectura, en CHF, con las reglas suizas del Pilar 3a, la AHV, los impuestos y la vivienda.</dd></div>
+  <div><dt>Por qué importa</dt><dd>La visión de conjunto crea el hábito. El hábito permite a Finora mostrar ahorros que ningún proveedor por separado señalaría.</dd></div>
+</dl>
+
+Fijé tres objetivos de producto, en este orden:
+
+1. **Agregar.** Conectar cada banco y gestor de patrimonio mediante SIX bLink y OpenWealth, más activos manuales como un inmueble.
+2. **Explicar.** Convertir la visión de conjunto en respuestas: ¿voy bien?, ¿puedo comprar una casa?, ¿me llegará la jubilación?
+3. **Actuar.** Cuando los datos muestran que alguien paga de más, conectarlo con un producto mejor, solo con su consentimiento.
 
 ## Principios de producto
 
@@ -131,16 +147,58 @@ Cuando a Finora le faltan datos para un área, lo dice y sugiere qué añadir en
 
 En la planificación es donde Finora se vuelve suiza: una previsión de jubilación con los tres pilares (AHV con la 13.ª pensión, fondo de pensiones y Pilar 3a), un resumen fiscal por año con exportación en CSV, un calendario financiero con los plazos suizos y simuladores de compra de vivienda y ahorro fiscal.
 
-## Un modelo de negocio que no traiciona al usuario
+## Cross-selling a partir de los datos del usuario
 
-Una app gratuita que analiza el dinero tiene que ganar algo, y las formas fáciles destruyen la confianza. Diseñé el modelo de negocio con el mismo cuidado que las pantallas.
+Ver todas las cuentas a la vez es también la ventaja de negocio. Finora puede justificar una oferta con una cifra del propio usuario, «pagas CHF 348 al mes a tu caja médica», en lugar de publicidad genérica. El motor funciona con 15 reglas explicables. Cada una parte de una señal en los datos y estima un ahorro anual prudente.
+
+| Oportunidad | Se activa cuando | Ahorro estimado al año | Cómo cobra Finora |
+| --- | --- | --- | --- |
+| Cambiar de seguro básico | Hay una prima de caja médica en los recibos, en temporada de cambio (hasta el 30 de noviembre) | 5 a 15% de la prima | Tarifa por contrato, máximo CHF 70 por persona |
+| Revisar seguros | Dos o más seguros en los recibos | CHF 420 a 840 | Parte de la comisión |
+| Liquidez ociosa | Más de 3 meses de gasto en cuentas corrientes | 0,4 a 0,8% del exceso | Tarifa por cuenta abierta |
+| Aprovechar el Pilar 3a | Queda margen hasta CHF 7’258, con prioridad en el último trimestre | 20 a 30% del margen, en impuestos | Tarifa por cuenta o aportación |
+| Renovar la hipoteca | Hay una hipoteca conectada | 0,1 a 0,3% de la deuda | Parte de la comisión del bróker |
+| Comisiones de tarjeta y banco | Una tarjeta de crédito, o cuentas corrientes en dos o más bancos | CHF 50 a 240 | Tarifa por tarjeta o cuenta |
+| Teléfono e internet | Recibo de telecom de más de CHF 60 al mes | 20 a 40% del recibo | Tarifa por contrato |
+| Revisar suscripciones | Dos o más suscripciones | Hasta la mitad del total | Nada: no hay partner, genera confianza |
+
+Los ahorros se muestran como «un rango, no una promesa» y se calibrarán con los primeros partners. Con el perfil demo suman unos CHF 3’250 al año.
 
 <ol class="flow-steps" style="--start:8"><li><img src="/projects/finora/offers.webp" alt="Formas de ahorrar con 13 oportunidades basadas en datos y el ahorro anual estimado" loading="lazy" /><p><strong>Ofertas a partir de los propios datos.</strong> Cada una sale de una regla explicable y muestra el ahorro anual estimado.</p></li><li><img src="/projects/finora/plus.webp" alt="Plan Finora Premium a CHF 4.92 al mes con pago anual y 14 días de prueba gratis" loading="lazy" /><p><strong>Freemium, dicho claramente.</strong> Premium quita límites y añade planificación más profunda. Antes de que acabe la prueba llega un aviso.</p></li></ol>
 
-- **El análisis del día a día nunca pasa a ser de pago.** Premium añade bancos ilimitados, 24 meses de historial y planificación más profunda. Bajar de plan nunca borra nada.
-- **La comisión nunca decide el orden.** Cómo cobraría Finora de un partner aparece en cada oferta, y nunca influye en qué ofertas aparecen ni en su orden.
-- **El consentimiento es una funcionalidad.** Analizar los datos para hacer ofertas cuenta como perfilado de alto riesgo según la nueva ley suiza de protección de datos, así que requiere consentimiento expreso, guardado con la versión del texto aceptado.
-- **Métricas de negocio sin datos personales.** El embudo de ofertas se reporta como recuentos anónimos por tipo de oferta, sin nombres, importes ni fechas por persona.
+La experiencia de las ofertas sigue una regla: una oferta solo aparece si se puede explicar con los datos del usuario y si el usuario ha dicho que quiere verlas.
+
+- **Una pregunta antes de analizar nada.** «¿Buscamos formas de ahorrar?» Hasta que la respuesta es sí, no se analiza nada para ofertas. Según la nueva ley suiza de protección de datos es un perfilado de alto riesgo, así que el consentimiento se guarda con la versión del texto.
+- **Por qué lo ves.** Cada oferta muestra la cifra del usuario que la justifica, cómo se ha estimado el ahorro y cómo cobraría Finora.
+- **Consentimiento por partner.** El botón para continuar solo se activa cuando el usuario acepta compartir su nombre, su e-mail y esos datos con ese partner concreto.
+- **La comisión nunca decide el orden.** Las ofertas se ordenan por fecha límite y tamaño del ahorro. Como mucho aparecen dos en el dashboard, y «No me interesa» oculta una para siempre.
+- **El análisis del día a día nunca pasa a ser de pago.** Finora Premium (CHF 59 al año) levanta límites y añade planificación avanzada. Nunca cambia qué ofertas aparecen.
+
+## El plan de negocio
+
+Finora gana dinero cuando ayuda a ahorrar. Modelé el plan por cada 10’000 usuarios activos con supuestos explícitos, para que el primer piloto pueda confirmar o tumbar cada uno.
+
+<ul class="pb-stats"><li><strong>CHF 10,6</strong><span>de ingreso por usuario activo y año, escenario base</span></li><li><strong>60%</strong><span>de usuarios que aceptan ofertas, el supuesto con más impacto</span></li><li><strong>CHF 59</strong><span>Premium al año, o CHF 6,90 al mes</span></li><li><strong>T2 2027</strong><span>piloto propuesto, tras cerrar partners y revisión legal</span></li></ul>
+
+| Fuente de ingresos | Conversión anual (supuesto) | Ingreso por conversión | Ingreso anual |
+| --- | --- | --- | --- |
+| Hipotecas | 0,3% de 6’000 usuarios con consentimiento → 18 | CHF 1’500 | CHF 27’000 |
+| Seguro básico | 4% → 240 | CHF 70 (tope legal) | CHF 16’800 |
+| Banca: ahorro, tarjetas, cuentas | 3% → 180 | CHF 80 | CHF 14’400 |
+| Otros seguros | 1,5% → 90 | CHF 150 | CHF 13’500 |
+| Pilar 3a | 2% → 120 | CHF 100 | CHF 12’000 |
+| Telecom | 2% → 120 | CHF 40 | CHF 4’800 |
+| Finora Premium | 3% de 10’000 usuarios → 300 | CHF 59 | CHF 17’700 |
+| **Total** | | | **CHF 106’200, unos CHF 10,6 por usuario** |
+
+Todas las tasas y tarifas, salvo el tope de CHF 70, son supuestos a validar con partners. Las hipotecas aportan una cuarta parte del ingreso con muy pocas conversiones, así que un solo acuerdo con un bróker cambia el resultado.
+
+- **Por qué ahora.** Las primas del seguro básico suben un 5,0% de media en 2027 y el plazo para cambiar acaba el 30 de noviembre. Es el momento del año en que más gente busca ahorrar.
+- **Partners en tres olas.** Primero, programas abiertos con comisión conocida (tasación de inmuebles y tarifas móviles vía Awin, un comparador de seguros de salud). Después, un piloto para gastos en el extranjero e inversión. Por último, acuerdos directos con un proveedor de Pilar 3a y un bróker hipotecario, donde el ahorro para el usuario es mayor.
+- **La regulación da forma al modelo.** Para cobrar comisiones de seguros, Finora debe registrarse en la FINMA como intermediario no vinculado o trabajar con uno registrado. Las comisiones del seguro básico están limitadas a CHF 70 por persona desde septiembre de 2024. Remitir a productos financieros necesita una revisión jurídica según la LSFin antes del lanzamiento.
+- **Un embudo medible sin datos personales.** La app ya registra visualizaciones, clics al partner y descartes como recuentos anónimos. Objetivos del piloto: 60% de consentimiento, 15% de clics al partner, 25% de conversión en el partner y menos del 20% de descartes.
+
+Falta para cerrar el plan: el coste de adquisición por usuario, la retención a 12 meses y las tarifas reales de los primeros partners.
 
 ## Diseñado y construido con IA
 

@@ -16,7 +16,7 @@ kind: side-project
 discipline: [product, visual]
 tldr:
   - "People in Switzerland keep their money across several banks, a pension fund and Pillar 3a, and no app shows the whole picture in a Swiss way."
-  - "I defined the product, designed a data model that normalises any bank into one view, and built the app in Flutter for iOS, Android and the web, with a freemium model and a consent first approach to partner offers."
+  - "I defined the product, designed a data model that normalises any bank into one view, and built the app in Flutter for iOS, Android and the web, with a business plan built on consent based cross-selling and a freemium tier."
   - "A working product in 31 sprints: a 1.0 Android build, a live web demo in four languages, a reference backend and 219 automated tests."
 metrics:
   - value: "0 → 1"
@@ -53,6 +53,22 @@ A typical household in Switzerland splits its money across two or three banks, a
 International aggregators exist, but they don’t speak Swiss: no Pillar 3a, no AHV, no cantonal taxes, no prices written as CHF 1’248.40. And trust is fragile. People will not hand over banking access to an app that looks like it might move their money or sell their data.
 
 > The opportunity was not another budgeting app. It was a calm, Swiss, read-only view of everything someone owns, with clear next steps.
+
+## The goal: the Swiss aggregator that is missing
+
+Today a household in Switzerland needs one app per bank, another for the broker, a portal for the pension fund, one more for Pillar 3a and another for the health insurer. Each app answers questions about its own product. None answers questions about the household, and no Swiss product brings them together.
+
+<dl class="glance">
+  <div><dt>Today</dt><dd>An app or portal per provider, each with its own login, its own numbers and its own slice of the picture.</dd></div>
+  <div><dt>With Finora</dt><dd>Every account in one read-only view, in CHF, with Swiss rules for Pillar 3a, AHV, taxes and housing.</dd></div>
+  <div><dt>Why it matters</dt><dd>The overview builds the habit. The habit lets Finora show savings that no single provider would ever point out.</dd></div>
+</dl>
+
+I set three product objectives, in this order:
+
+1. **Aggregate.** Connect every bank and wealth provider through SIX bLink and OpenWealth, plus manual assets such as property.
+2. **Explain.** Turn the overview into answers: am I okay, can I buy a home, will my pension be enough.
+3. **Act.** When the data shows someone pays too much, connect them with a better product, only with their consent.
 
 ## Product principles
 
@@ -131,16 +147,58 @@ When Finora lacks the data for an area, it says so and suggests what to add, ins
 
 Planning is where Finora becomes Swiss: a three pillar retirement outlook (AHV including the 13th pension, pension fund and Pillar 3a), a tax summary for each year with CSV export, a financial calendar of Swiss deadlines, and simulators for home buying and tax savings.
 
-## A business model that does not betray the user
+## Cross-selling from the user’s own data
 
-A free app that analyses money has to earn somehow, and the easy ways destroy trust. I designed the business model with the same care as the screens.
+Seeing every account at once is also the business advantage. Finora can justify an offer with the user’s own number, “you pay CHF 348 a month to your health insurer”, instead of generic advertising. The engine runs on 15 explainable rules. Each one starts from a signal in the data and estimates a cautious yearly saving.
+
+| Opportunity | Triggered when | Estimated yearly saving | How Finora earns |
+| --- | --- | --- | --- |
+| Switch basic health insurance | A health premium in the bills, during switching season (until 30 November) | 5 to 15% of the premium | Fee per contract, capped at CHF 70 per person |
+| Review insurance | Two or more insurance policies in the bills | CHF 420 to 840 | Share of the commission |
+| Idle cash | More than 3 months of spending sitting in current accounts | 0.4 to 0.8% of the excess | Fee per opened account |
+| Use Pillar 3a room | Room left up to CHF 7’258, with priority in the last quarter | 20 to 30% of the room, in taxes | Fee per account or contribution |
+| Renew the mortgage | A connected mortgage | 0.1 to 0.3% of the debt | Share of the broker commission |
+| Card and bank fees | A credit card, or current accounts at two or more banks | CHF 50 to 240 | Fee per card or account |
+| Phone and internet | A telecom bill above CHF 60 a month | 20 to 40% of the bill | Fee per contract |
+| Review subscriptions | Two or more subscriptions | Up to half of their total | Nothing: there is no partner, it builds trust |
+
+Savings are shown as “a range, not a promise” and will be calibrated with the first partners. With the demo profile they add up to about CHF 3’250 a year.
 
 <ol class="flow-steps" style="--start:8"><li><img src="/projects/finora/offers.webp" alt="Ways to save, listing 13 data based opportunities with estimated yearly savings" loading="lazy" /><p><strong>Offers from the user’s own data.</strong> Each one comes from an explainable rule and shows the estimated yearly saving.</p></li><li><img src="/projects/finora/plus.webp" alt="Finora Premium plan at CHF 4.92 a month billed yearly, with a 14 day free trial" loading="lazy" /><p><strong>Freemium, stated plainly.</strong> Premium lifts limits and adds deeper planning. The trial reminds people before it ends.</p></li></ol>
 
-- **Everyday analysis never moves behind the paywall.** Premium adds unlimited banks, 24 months of history and deeper planning. Downgrading never deletes anything.
-- **The commission never decides the ranking.** How Finora would be paid by a partner is disclosed on every offer, and it never affects which offers appear or in which order.
-- **Consent is a feature.** Analysing data for offers counts as high risk profiling under the revised Swiss data protection act, so it needs express consent, stored with the version of the text that was accepted.
-- **Business metrics without personal data.** The offer funnel is reported as anonymous counts per offer type, with no names, amounts or timestamps per person.
+The offer experience follows one rule: an offer only appears if it can be explained with the user’s data and the user has said they want to see offers.
+
+- **One question before any analysis.** “Shall we look for ways to save?” Until the answer is yes, nothing is analysed for offers. Under the revised Swiss data protection act this is high risk profiling, so consent is stored with the version of the text.
+- **Why you see this.** Every offer shows the user’s own figure behind it, how the saving was estimated and how Finora would be paid.
+- **Consent per partner.** The continue button only activates once the user agrees to share their name, email and that data with that specific partner.
+- **The commission never decides the ranking.** Offers are ordered by deadline and size of the saving. At most two appear on the dashboard, and “Not interested” hides one for good.
+- **Everyday analysis never moves behind the paywall.** Finora Premium (CHF 59 a year) lifts limits and adds deeper planning. It never changes which offers appear.
+
+## The business plan
+
+Finora earns when it helps people save. I modelled the plan per 10,000 active users with explicit assumptions, so the first pilot can prove or break each one.
+
+<ul class="pb-stats"><li><strong>CHF 10.6</strong><span>revenue per active user and year, base case</span></li><li><strong>60%</strong><span>of users accepting offers, the assumption with most impact</span></li><li><strong>CHF 59</strong><span>Premium per year, or CHF 6.90 a month</span></li><li><strong>Q2 2027</strong><span>proposed pilot, after partners and legal review</span></li></ul>
+
+| Revenue source | Conversion a year (assumption) | Revenue per conversion | Revenue a year |
+| --- | --- | --- | --- |
+| Mortgages | 0.3% of 6’000 users with consent → 18 | CHF 1’500 | CHF 27’000 |
+| Basic health insurance | 4% → 240 | CHF 70 (legal cap) | CHF 16’800 |
+| Banking: savings, cards, accounts | 3% → 180 | CHF 80 | CHF 14’400 |
+| Other insurance | 1.5% → 90 | CHF 150 | CHF 13’500 |
+| Pillar 3a | 2% → 120 | CHF 100 | CHF 12’000 |
+| Telecom | 2% → 120 | CHF 40 | CHF 4’800 |
+| Finora Premium | 3% of 10’000 users → 300 | CHF 59 | CHF 17’700 |
+| **Total** | | | **CHF 106’200, about CHF 10.6 per user** |
+
+Every rate and fee except the CHF 70 cap is an assumption to validate with partners. Mortgages bring a quarter of the revenue from very few conversions, so a single broker agreement changes the result.
+
+- **Why now.** Basic health insurance premiums rise by 5.0% on average in 2027 and the deadline to switch is 30 November. It is the moment of the year when most people look for savings.
+- **Partners in three waves.** First, programmes that are open with a known fee (real estate valuation and mobile plans through Awin, a health insurance comparison site). Then a pilot for spending abroad and investing. Finally, direct deals with a Pillar 3a provider and a mortgage broker, where the saving for the user is largest.
+- **Regulation shapes the model.** To earn insurance commissions, Finora must register with FINMA as an untied intermediary or work with one that is. Health insurance commissions are capped at CHF 70 per person since September 2024. Referrals to financial products need a legal review under the Financial Services Act before launch.
+- **A funnel that can be measured without personal data.** The app already records views, partner clicks and dismissals as anonymous counts. Pilot targets: 60% consent, 15% click to partner, 25% partner conversion, fewer than 20% dismissals.
+
+Still open to close the plan: acquisition cost per user, 12 month retention and the real fees of the first partners.
 
 ## Designed and built with AI
 
