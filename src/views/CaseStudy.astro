@@ -1,5 +1,7 @@
 ---
 import { render } from 'astro:content';
+import { existsSync } from 'node:fs';
+import { caseJsonLd } from '../lib/seo';
 import Base from '../layouts/Base.astro';
 import Cover from '../components/Cover.astro';
 import Locked from '../components/Locked.astro';
@@ -33,9 +35,18 @@ const facts = [
 ].filter(([, v]) => filled(v)) as [string, string][];
 
 const related = writing.filter((a) => a.relatedProject === project.slug);
+
+const seoTitle = {
+  en: `${d.title} case study: ${d.sector} | ${site.name}`,
+  de: `Fallstudie ${d.title}: ${d.sector} | ${site.name}`,
+  es: `Caso de estudio ${d.title}: ${d.sector} | ${site.name}`,
+}[lang];
+const ogImage = existsSync(`public/og/${project.slug}.png`) ? `/og/${project.slug}.png` : undefined;
+const pageUrl = new URL(href(lang, `/work/${project.slug}/`), Astro.site).href;
+const jsonLd = caseJsonLd({ d, lang, pageUrl, image: new URL(ogImage ?? '/og.png', Astro.site).href, home: new URL(href(lang, '/'), Astro.site).href, site: Astro.site! });
 ---
 
-<Base lang={lang} path={`/work/${project.slug}/`} title={d.title} description={d.summary} current="work" alternates={[...langs]}>
+<Base lang={lang} path={`/work/${project.slug}/`} title={d.title} seoTitle={seoTitle} description={d.summary} current="work" alternates={[...langs]} image={ogImage} imageAlt={`${d.title}: ${d.headline}`} ogType="article" jsonLd={jsonLd}>
   <article lang={project.lang}>
     <header class="cs-head wrap">
       <a class="back muted" href={href(lang, '/') + '#work'}>{t.allWork}</a>

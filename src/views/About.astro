@@ -14,7 +14,7 @@ import { existsSync } from 'node:fs';
 const hasCv = existsSync(`public/${site.cv}`);
 ---
 
-<Base lang={lang} path="/about/" title={t.title} description={t.meta} current="about">
+<Base lang={lang} path="/about/" title={t.title} description={t.meta} current="about" ogType="profile" jsonLd={{ '@type': 'ProfilePage', mainEntity: { '@type': 'Person', name: site.name, jobTitle: site.role, image: new URL('/joan-marti-diez.webp', Astro.site).href } }}>
   <section class="intro wrap">
     <div class="intro-side">
       <h1>{t.hi}</h1>
