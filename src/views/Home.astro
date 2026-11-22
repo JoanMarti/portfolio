@@ -22,11 +22,12 @@ const visualCases = projects.filter((p) => p.data.discipline.includes('visual'))
 const bySlug = Object.fromEntries(projects.map((p) => [p.slug, p]));
 const work = (slug: string) => href(lang, `/work/${slug}/`);
 
-const clients = ['Glencore', 'Julius Baer', 'Crealogix', 'Smartstamp', 'Audi', 'Adevinta', 'IBM iX', 'Webrepublic'];
+const clients = ['Glencore', 'Julius Baer', 'Credit Suisse', 'J. Safra Sarasin', 'IBM iX', 'Adevinta', 'Crealogix', 'Smartstamp', 'Audi'];
 const seen = [
   ['glencore-ctrm', 'crealogix-design-hub'],
   ['julius-baer-onboarding', 'smartstamp'],
   ['coches-net-exploration-hub', 'instamusic'],
+  ['athleteos', 'glencore-ctrm'],
 ];
 const quote = recommendations[0];
 ---
@@ -47,6 +48,14 @@ const quote = recommendations[0];
     <div class="hero-visual">
       <HeroLayers layers={t.layers} label={t.layersLabel} />
     </div>
+  </section>
+
+  <section class="wrap" aria-label={t.proofLabel}>
+    <ul class="proof">
+      {t.proof.map((p) => (
+        <li><strong>{p.value}</strong><span>{p.label}</span></li>
+      ))}
+    </ul>
   </section>
 
   <section class="wrap" aria-label={t.clients}>
@@ -189,6 +198,16 @@ const quote = recommendations[0];
 </Base>
 
 <style>
+  .proof { list-style: none; margin: 0 0 clamp(32px, 5vw, 56px); padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .proof li { padding: 20px 20px 20px 0; display: grid; gap: 4px; align-content: start; }
+  .proof li + li { padding-left: 20px; border-left: 1px solid var(--line); }
+  .proof strong { font-size: var(--step-3); line-height: 1; letter-spacing: -0.02em; }
+  .proof span { font-size: var(--step--1); color: var(--muted); max-width: 26ch; }
+  @media (max-width: 820px) {
+    .proof { grid-template-columns: 1fr 1fr; }
+    .proof li + li:nth-child(3) { padding-left: 0; border-left: 0; }
+    .proof li:nth-child(n+3) { border-top: 1px solid var(--line); }
+  }
   .hero {
     display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 5vw, 72px);
     align-items: center; padding-top: clamp(32px, 6vw, 88px); padding-bottom: clamp(40px, 6vw, 80px);
@@ -262,7 +281,7 @@ const quote = recommendations[0];
   .all-behance { margin-top: 40px; font-weight: 600; }
 
   .practices { margin-top: clamp(80px, 10vw, 140px); }
-  .practice-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+  .practice-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 40px 56px; }
   .practice h3 { font-size: var(--step-1); }
   .practice p { margin-top: 12px; }
   .seen { font-size: var(--step--1); }

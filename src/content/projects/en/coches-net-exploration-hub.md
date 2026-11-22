@@ -10,7 +10,7 @@ team: Product owner, engineering squad and analytics
 duration: "2 years"
 tools: [Adobe Analytics, Figma, Guerrilla testing, A/B testing]
 cover: loop
-featured: false
+featured: true
 order: 5
 tldr:
   - Car buyers on Coches.net searched, looked at a listing and left. Buying a car takes weeks of comparing, but the platform made people start from zero on every visit.

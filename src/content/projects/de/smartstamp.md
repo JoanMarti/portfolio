@@ -21,6 +21,9 @@ metrics:
   - value: "5 → 1"
     label: Ebenen bis zur Übertragung eines Kunstwerks
     method: Übernommene Sitemap (Start › Spaces › Space › Werkliste › Werk › Übertragen) im Vergleich zum Tab Actions in der neuen Navigation
+  - value: "90%"
+    label: "abgeschlossene Identitätsprüfungen"
+    method: "TODO"
   - value: "7"
     label: Kernfunktionen in einem Aktionsbereich
     method: Registrieren, Prüfen, Übertragen, Entwürfe fortsetzen, Zertifikat, Ausstellungsetikett und Preisliste

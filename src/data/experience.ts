@@ -8,7 +8,7 @@ export type Role = {
   company: string;
   place: T;
   start: string; // YYYY-MM
-  end: string; // YYYY-MM
+  end: string; // YYYY-MM, or '' for a current role
   type?: T; // employment type when LinkedIn shows it
   note?: T;
   caseStudy?: string; // slug of the related case study
@@ -24,15 +24,27 @@ const fullTime: T = { en: 'Full time', de: 'Vollzeit', es: 'Jornada completa' };
 // Product, UX and UI roles, newest first (ordered by end date, as on LinkedIn).
 export const experience: Role[] = [
   {
-    role: 'Senior Product Designer',
+    role: 'Independent AI and Product Design Projects',
+    company: 'Independent',
+    place: { en: 'Remote', de: 'Remote', es: 'En remoto' },
+    start: '2026-07', end: '',
+    caseStudy: 'athleteos',
+    note: {
+      en: 'Design and build my own products in code with Claude Code and Cursor, including AthleteOS, a data heavy insights app in React, and projects in Next.js. Built an AI assisted design system playbook connected to Figma, with tokens, light and dark modes and automatic contrast checks.',
+      de: 'Ich gestalte und baue eigene Produkte in Code mit Claude Code und Cursor, darunter AthleteOS, eine datenreiche Insights-App in React, und Projekte in Next.js. Dazu ein KI-gestütztes Designsystem-Playbook, verbunden mit Figma, mit Tokens, hellem und dunklem Modus und automatischen Kontrastprüfungen.',
+      es: 'Diseño y construyo mis propios productos en código con Claude Code y Cursor, como AthleteOS, una app de datos en React, y proyectos en Next.js. Creé un playbook de design system asistido por IA y conectado a Figma, con tokens, modo claro y oscuro y revisiones automáticas de contraste.',
+    },
+  },
+  {
+    role: 'Senior Product Design Consultant',
     company: 'VendueTech',
     place: { en: 'Steinhausen, Zug (remote)', de: 'Steinhausen, Zug (remote)', es: 'Steinhausen, Zug (remoto)' },
     start: '2025-03', end: '2026-06',
     type: { en: 'Part time', de: 'Teilzeit', es: 'Media jornada' },
     note: {
-      en: 'Investment and property auction experiences for Bidsale, a European PropTech platform, including AI assisted property search and the product design system.',
-      de: 'Investment- und Immobilienauktions-Erlebnisse für Bidsale, eine europäische PropTech-Plattform, inklusive KI-gestützter Immobiliensuche und Designsystem.',
-      es: 'Experiencias de inversión y subastas inmobiliarias para Bidsale, una plataforma PropTech europea, incluida la búsqueda asistida por IA y el design system del producto.',
+      en: 'Set the product design direction for Bidsale, an AI enabled real estate investment platform, with the founders: AI assisted semantic search with sources and controls, and complex financial data turned into clear, comparable views. 30% faster design to development.',
+      de: 'Produktdesign-Richtung für Bidsale, eine KI-gestützte Immobilien-Investmentplattform, gemeinsam mit den Gründern: KI-gestützte semantische Suche mit Quellen und Steuerung sowie komplexe Finanzdaten in klaren, vergleichbaren Ansichten. 30% schneller vom Design zur Entwicklung.',
+      es: 'Definí con los fundadores la dirección de diseño de Bidsale, una plataforma de inversión inmobiliaria con IA: búsqueda semántica asistida por IA con fuentes y controles, y datos financieros complejos convertidos en vistas claras y comparables. Un 30% más rápido del diseño al desarrollo.',
     },
   },
   {
@@ -43,26 +55,26 @@ export const experience: Role[] = [
     type: fullTime,
     caseStudy: 'smartstamp',
     note: {
-      en: 'Led product design for a Swiss FinTech app for artwork authentication: a new information architecture, onboarding, KYC, transfers and payments, and design system foundations.',
-      de: 'Produktdesign für eine Schweizer FinTech-App zur Echtheitsprüfung von Kunstwerken: neue Informationsarchitektur, Onboarding, KYC, Transfers und Zahlungen sowie die Grundlagen des Designsystems.',
-      es: 'Lideré el diseño de producto de una app FinTech suiza para autenticar obras de arte: nueva arquitectura de la información, onboarding, KYC, transferencias y pagos, y las bases del design system.',
+      en: 'Led product design for a Swiss app for artwork authentication on iOS, Android and iPad: information architecture, onboarding, identity verification, payments and transfers, through three versions. 90% completion of the identity verification journey. Built the design system in Flutter with the developers, testing components and approving pull requests.',
+      de: 'Leitung des Produktdesigns einer Schweizer App zur Echtheitsprüfung von Kunstwerken auf iOS, Android und iPad: Informationsarchitektur, Onboarding, Identitätsprüfung, Zahlungen und Transfers, über drei Versionen. 90% abgeschlossene Identitätsprüfungen. Designsystem in Flutter gemeinsam mit den Entwicklern gebaut, inklusive Komponententests und Freigabe von Pull Requests.',
+      es: 'Lideré el diseño de producto de una app suiza para autenticar obras de arte en iOS, Android y iPad: arquitectura de la información, onboarding, verificación de identidad, pagos y transferencias, a lo largo de tres versiones. 90% de verificaciones de identidad completadas. Construí el design system en Flutter con los desarrolladores, probando componentes y aprobando pull requests.',
     },
   },
   {
-    role: 'Design System Lead',
+    role: 'Design System Lead (acting Principal Designer)',
     company: 'Glencore',
     place: { en: 'Baar, Zug (on site)', de: 'Baar, Zug (vor Ort)', es: 'Baar, Zug (presencial)' },
     start: '2022-12', end: '2025-03',
     type: contract,
     caseStudy: 'glencore-ctrm',
     note: {
-      en: 'Led the design system for an internal commodity trading and risk management platform.',
-      de: 'Leitung des Designsystems einer internen Plattform für Rohstoffhandel und Risikomanagement.',
-      es: 'Lideré el design system de una plataforma interna de trading y gestión de riesgos.',
+      en: 'Owned key product and design decisions for an internal trading and risk platform. Led 3 designers day to day, presented progress to business leaders every quarter, designed the deal capture MVP and built the design system with the Angular team.',
+      de: 'Verantwortung für zentrale Produkt- und Designentscheide bei einer internen Plattform für Handel und Risikomanagement. Tägliche Führung von 3 Designern, quartalsweise Präsentationen vor der Geschäftsleitung, Design des Deal-Capture-MVP und Aufbau des Designsystems mit dem Angular-Team.',
+      es: 'Tomé las decisiones clave de producto y diseño en una plataforma interna de trading y riesgos. Lideré a diario a 3 diseñadores, presenté avances a la dirección cada trimestre, diseñé el MVP de captura de operaciones y construí el design system con el equipo de Angular.',
     },
   },
   {
-    role: 'Senior UX/UI Designer',
+    role: 'Senior UX Designer',
     company: 'IBM iX',
     place: { en: 'Zurich (on site)', de: 'Zürich (vor Ort)', es: 'Zúrich (presencial)' },
     start: '2022-05', end: '2022-09',
@@ -138,16 +150,16 @@ export const experience: Role[] = [
     },
   },
   {
-    role: 'Senior UI/UX Designer, User Growth and Retention',
+    role: 'Senior Product Designer, Growth and Retention',
     company: 'Adevinta Spain',
     place: barcelona,
     start: '2017-06', end: '2019-05',
     type: fullTime,
     caseStudy: 'coches-net-exploration-hub',
     note: {
-      en: 'Acquisition, onboarding and retention across web, iOS and Android for Coches.net, one of Spain’s leading car marketplaces.',
-      de: 'Akquise, Onboarding und Kundenbindung über Web, iOS und Android für Coches.net, einen der führenden Automarktplätze Spaniens.',
-      es: 'Captación, onboarding y retención en web, iOS y Android para Coches.net, uno de los marketplaces de coches líderes en España.',
+      en: 'Designed the first Coches.net home across iOS, Android and web and ran continuous experiments with product and engineering: +25% direct leads while monthly traffic grew from 3M to 14M. Co-built SUI Components, Adevinta’s open source React library.',
+      de: 'Gestaltung der ersten Coches.net-Startseite für iOS, Android und Web und laufende Experimente mit Produkt und Engineering: +25% direkte Leads, während der monatliche Traffic von 3 auf 14 Millionen wuchs. Mitentwicklung von SUI Components, der Open-Source-React-Bibliothek von Adevinta.',
+      es: 'Diseñé la primera home de Coches.net en iOS, Android y web y lancé experimentos continuos con producto e ingeniería: +25% de leads directos mientras el tráfico mensual crecía de 3 a 14 millones. Co-construí SUI Components, la librería React de código abierto de Adevinta.',
     },
   },
   {
@@ -162,14 +174,14 @@ export const experience: Role[] = [
     },
   },
   {
-    role: 'Lead UI/UX Designer, Business Intelligence',
+    role: 'Co-founder and Lead UX/UI Designer',
     company: 'MontrixSoft',
     place: { en: 'Barcelona area, Spain', de: 'Region Barcelona, Spanien', es: 'Área de Barcelona, España' },
     start: '2016-09', end: '2017-12',
     note: {
-      en: 'Data dense business intelligence tools built on QlikView, Power BI and Tableau, made clearer and easier to use.',
-      de: 'Datenreiche Business-Intelligence-Werkzeuge auf Basis von QlikView, Power BI und Tableau, klarer und einfacher gemacht.',
-      es: 'Herramientas de business intelligence con muchos datos, sobre QlikView, Power BI y Tableau, más claras y fáciles de usar.',
+      en: 'Co-founded a business intelligence start-up and designed its dashboards and data analysis tools on QlikView, Power BI and Tableau.',
+      de: 'Mitgründung eines Business-Intelligence-Start-ups und Gestaltung seiner Dashboards und Datenanalyse-Werkzeuge auf Basis von QlikView, Power BI und Tableau.',
+      es: 'Cofundé una start-up de business intelligence y diseñé sus dashboards y herramientas de análisis de datos sobre QlikView, Power BI y Tableau.',
     },
   },
   {
@@ -203,16 +215,18 @@ const months: Record<Lang, string[]> = {
   es: ['ene', 'feb', 'mar', 'abr', 'may', 'jun', 'jul', 'ago', 'sept', 'oct', 'nov', 'dic'],
 };
 const to: T = { en: 'to', de: 'bis', es: 'a' };
+const present: T = { en: 'present', de: 'heute', es: 'actualidad' };
+const nowYm = () => { const d = new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`; };
 const fmt = (ym: string, lang: Lang) => {
   const [y, m] = ym.split('-').map(Number);
   return `${months[lang][m - 1]} ${y}`;
 };
 // "Mar 2025 to Jun 2026"
-export const period = (r: Role, lang: Lang) => `${fmt(r.start, lang)} ${to[lang]} ${fmt(r.end, lang)}`;
+export const period = (r: Role, lang: Lang) => `${fmt(r.start, lang)} ${to[lang]} ${r.end ? fmt(r.end, lang) : present[lang]}`;
 // "1 yr 4 mos", counted the way LinkedIn does (both months included)
 export const duration = (r: Role, lang: Lang) => {
   const [sy, sm] = r.start.split('-').map(Number);
-  const [ey, em] = r.end.split('-').map(Number);
+  const [ey, em] = (r.end || nowYm()).split('-').map(Number);
   const total = (ey - sy) * 12 + (em - sm) + 1;
   const y = Math.floor(total / 12), m = total % 12;
   const w = {

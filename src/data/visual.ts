@@ -60,17 +60,6 @@ export const visualWork: VisualWork[] = [
     href: 'https://www.behance.net/gallery/47218769/Madrona-Dermatology',
   },
   {
-    title: 'Industry Hefesto',
-    category: 'web',
-    image: '/visual/hefesto.webp',
-    description: {
-      en: 'Responsive website for an industrial steel company.',
-      de: 'Responsive Website für ein Industrieunternehmen im Stahlbau.',
-      es: 'Web adaptable para una empresa industrial del acero.',
-    },
-    href: 'https://www.behance.net/gallery/23967197/Industry-Hefesto',
-  },
-  {
     title: 'Polis Architecture',
     category: 'brand',
     image: '/visual/polis.webp',
@@ -80,39 +69,5 @@ export const visualWork: VisualWork[] = [
       es: 'Identidad visual para un estudio de arquitectura.',
     },
     href: 'https://www.behance.net/gallery/23891767/Polis-Architecture',
-  },
-  {
-    title: 'Urrea',
-    category: 'advertising',
-    image: '/visual/urrea.webp',
-    year: '2014',
-    description: {
-      en: 'Print and outdoor campaign for a bathroom brand.',
-      de: 'Print- und Aussenwerbekampagne für eine Badmarke.',
-      es: 'Campaña en prensa y exterior para una marca de baño.',
-    },
-    href: 'https://www.behance.net/gallery/27823501/Advertising-Urrea-2014',
-  },
-  {
-    title: 'Supraterra',
-    category: 'advertising',
-    image: '/visual/supraterra.webp',
-    description: {
-      en: 'Outdoor advertising campaign.',
-      de: 'Kampagne für Aussenwerbung.',
-      es: 'Campaña de publicidad exterior.',
-    },
-    href: 'https://www.behance.net/gallery/27947463/Supraterra',
-  },
-  {
-    title: 'Del Valle',
-    category: 'advertising',
-    image: '/visual/del-valle.webp',
-    description: {
-      en: 'Advertising for a fruit juice brand.',
-      de: 'Werbung für eine Fruchtsaftmarke.',
-      es: 'Publicidad para una marca de zumos.',
-    },
-    href: 'https://www.behance.net/gallery/27985747/The-secret-is-in-the-affection',
   },
 ];

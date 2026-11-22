@@ -10,22 +10,22 @@ export const site = {
 
   // Shown in the <title> of each home page and in search results.
   metaTitle: {
-    en: 'Joan Martí Díez, Senior Product Designer for design systems',
-    de: 'Joan Martí Díez, Senior Product Designer für Designsysteme',
-    es: 'Joan Martí Díez, Senior Product Designer especializado en design systems',
+    en: 'Joan Martí Díez, Senior Product Designer for complex, data-heavy products',
+    de: 'Joan Martí Díez, Senior Product Designer für komplexe, datenreiche Produkte',
+    es: 'Joan Martí Díez, Senior Product Designer de productos complejos y con muchos datos',
   } as T,
   metaDescription: {
-    en: 'Senior Product Designer with 16 years in banking, trading platforms, marketplaces and automotive. I build design systems and products for regulated, high-stakes environments. Based in Zug, Switzerland.',
-    de: 'Senior Product Designer mit 16 Jahren Erfahrung in Banking, Handelsplattformen, Marktplätzen und der Automobilbranche. Ich baue Designsysteme und Produkte für regulierte, anspruchsvolle Umgebungen. Wohnhaft in Zug.',
-    es: 'Senior Product Designer con 16 años de experiencia en banca, plataformas de trading, marketplaces y automoción. Creo design systems y productos para entornos regulados y exigentes. Vivo en Zug, Suiza.',
+    en: 'Senior Product Designer with 16 years in fintech, trading platforms and marketplaces. I own complex, data-heavy products end to end, build design systems and design with AI. Based in Zug, Switzerland, open to Europe and remote roles with US companies.',
+    de: 'Senior Product Designer mit 16 Jahren Erfahrung in Fintech, Handelsplattformen und Marktplätzen. Ich verantworte komplexe, datenreiche Produkte von Anfang bis Ende, baue Designsysteme und gestalte mit KI. Wohnhaft in Zug, offen für Europa und Remote-Rollen bei US-Unternehmen.',
+    es: 'Senior Product Designer con 16 años en fintech, plataformas de trading y marketplaces. Me ocupo de productos complejos y con muchos datos de principio a fin, creo design systems y diseño con IA. Vivo en Zug, Suiza, y estoy abierto a Europa y a empresas de EE. UU. en remoto.',
   } as T,
 
   availability: {
     open: true,
     text: {
-      en: 'Open to senior product design roles and contracts in Switzerland and Europe: on-site, hybrid or remote.',
-      de: 'Offen für Senior-Rollen und Mandate im Produktdesign in der Schweiz und in Europa: vor Ort, hybrid oder remote.',
-      es: 'Disponible para puestos y proyectos senior de diseño de producto en Suiza y Europa: presencial, híbrido o en remoto.',
+      en: 'Open to senior product design roles in Switzerland and Europe, and remote roles with US companies (overlap with the US East Coast until 19:00 CET). As an employee or contractor.',
+      de: 'Offen für Senior-Rollen im Produktdesign in der Schweiz und in Europa sowie für Remote-Rollen bei US-Unternehmen (Überschneidung mit der US-Ostküste bis 19:00 MEZ). Festanstellung oder Mandat.',
+      es: 'Disponible para puestos senior de diseño de producto en Suiza y Europa, y en remoto para empresas de EE. UU. (solapamiento con la costa este hasta las 19:00 CET). Como empleado o contractor.',
     } as T,
   },
 
@@ -53,24 +53,24 @@ export const site = {
     en: [
       ['Spanish', 'Native'],
       ['Catalan', 'Native'],
-      ['English', 'Professional'],
-      ['German', 'Limited working'],
+      ['English', 'C1'],
+      ['German', 'A2, improving'],
       ['French', 'B2'],
       ['Italian', 'A2'],
     ],
     de: [
       ['Spanisch', 'Muttersprache'],
       ['Katalanisch', 'Muttersprache'],
-      ['Englisch', 'Verhandlungssicher'],
-      ['Deutsch', 'Grundkenntnisse im Beruf'],
+      ['Englisch', 'C1'],
+      ['Deutsch', 'A2, in Verbesserung'],
       ['Französisch', 'B2'],
       ['Italienisch', 'A2'],
     ],
     es: [
       ['Español', 'Nativo'],
       ['Catalán', 'Nativo'],
-      ['Inglés', 'Profesional'],
-      ['Alemán', 'Nivel básico profesional'],
+      ['Inglés', 'C1'],
+      ['Alemán', 'A2, mejorando'],
       ['Francés', 'B2'],
       ['Italiano', 'A2'],
     ],

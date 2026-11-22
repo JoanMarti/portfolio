@@ -10,7 +10,7 @@ team: Product owner, equipo de desarrollo y analítica
 duration: "2 años"
 tools: [Adobe Analytics, Figma, Tests de guerrilla, Tests A/B]
 cover: loop
-featured: false
+featured: true
 order: 5
 tldr:
   - En Coches.net los compradores buscaban, miraban un anuncio y se iban. Comprar un coche lleva semanas de comparar, pero la plataforma les hacía empezar de cero en cada visita.

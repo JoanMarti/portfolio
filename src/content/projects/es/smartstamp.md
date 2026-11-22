@@ -21,6 +21,9 @@ metrics:
   - value: "5 → 1"
     label: niveles hasta Transferir obra
     method: Sitemap recibido (Inicio › Spaces › Space › Lista de obras › Obra › Transferir) comparado con la pestaña Actions de la nueva navegación
+  - value: "90%"
+    label: "de verificaciones de identidad completadas"
+    method: "TODO"
   - value: "7"
     label: funciones clave en un único centro de acciones
     method: Registrar, Verificar, Transferir, Retomar borradores, Certificado, Etiqueta de exposición y Lista de precios

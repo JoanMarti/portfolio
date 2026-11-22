@@ -10,7 +10,7 @@ team: Product Owner, Entwicklungsteam und Analytics
 duration: "2 Jahre"
 tools: [Adobe Analytics, Figma, Guerrilla-Tests, A/B-Tests]
 cover: loop
-featured: false
+featured: true
 order: 5
 tldr:
   - Auf Coches.net suchten Käufer, schauten ein Inserat an und gingen wieder. Ein Autokauf dauert Wochen mit vielen Vergleichen, aber die Plattform liess bei jedem Besuch bei null beginnen.

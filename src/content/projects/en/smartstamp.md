@@ -21,6 +21,9 @@ metrics:
   - value: "5 → 1"
     label: levels to reach Transfer artwork
     method: Received sitemap (Home › Spaces › Space › Artwork list › Artwork › Transfer) compared with the Actions tab in the new navigation
+  - value: "90%"
+    label: "completion of the identity verification journey"
+    method: "TODO"
   - value: "7"
     label: core features in one Actions hub
     method: Register, Verify, Transfer, Resume drafts, Certificate, Exhibition label and Price list
