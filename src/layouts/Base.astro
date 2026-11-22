@@ -63,7 +63,7 @@ const hasCv = existsSync(`public/${site.cv}`);
       sameAs: site.social.filter((s) => s.href).map((s) => s.href),
     })} />
     {site.gtm && (
-      <script is:inline define:vars={{ gtmId: site.gtm }}>
+      <script is:inline define:vars={{ gtmId: site.gtm, ga4Id: site.ga4 }}>
         // Consent Mode v2: nothing is stored until the visitor accepts analytics cookies.
         window.dataLayer = window.dataLayer || [];
         // define:vars wraps this script in a function, so expose gtag globally for the consent banner.
@@ -82,6 +82,14 @@ const hasCv = existsSync(`public/${site.cv}`);
           var f = d.getElementsByTagName(s)[0], j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
           j.async = true; j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', gtmId);
+        // Google Analytics 4 (respects the consent state above)
+        if (ga4Id) {
+          var g = document.createElement('script');
+          g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + ga4Id;
+          document.head.appendChild(g);
+          gtag('js', new Date());
+          gtag('config', ga4Id);
+        }
       </script>
     )}
   </head>

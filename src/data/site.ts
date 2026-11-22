@@ -31,6 +31,8 @@ export const site = {
 
   // Google Tag Manager container. GA4 is configured inside GTM. Leave empty to disable.
   gtm: 'GTM-K25MLZ7C',
+  // Google Analytics 4, loaded directly (do not add a second GA4 tag inside GTM, or visits count twice).
+  ga4: 'G-RKGB7FGH91',
 
   email: 'joanmartidiez@gmail.com',
   // TODO: add your Calendly or Cal.com link, or leave empty to hide the button.
