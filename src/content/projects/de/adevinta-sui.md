@@ -96,6 +96,16 @@ Der Schlüsselentscheid war, Gemeinsames von Marke zu trennen. Verhalten, Strukt
 
 So sieht Coches.net weiterhin aus wie Coches.net und Fotocasa wie Fotocasa, aber eine Korrektur oder Verbesserung an einer Komponente erreicht alle auf einmal.
 
+## Nah am Frontend
+
+Während des ganzen Projekts arbeitete ich sehr eng mit den Frontend-Entwicklern. Dabei lernte ich, wie sie Dinge brauchten und wie das Design vorbereitet sein musste, damit die Übergabe weniger Reibung erzeugte. Das veränderte, wie ich Arbeit lieferte:
+
+- **Dieselben Namen wie im Code**, damit eine Komponente oder Variable in Sketch und in React dasselbe bedeutete.
+- **Werte aus dem Theme, nie lose Werte**, damit das, was die Entwicklung erhielt, schon zu ihren Variablen passte.
+- **Jeder Zustand und Grenzfall in der Definition**, damit während der Entwicklung weniger Fragen zurückkamen.
+
+Diese Nähe machte auch den Wechsel von Sketch zu React-Komponenten möglich, ohne zu verlieren, was das Design definiert hatte.
+
 ## Offen als Standard
 
 SUI ist Open Source. Code, Historie und Marken-Themes sind öffentlich auf GitHub, und SUI Studio zeigt den Live-Katalog. Diese Offenheit war Teil des Modells: Vorschläge und Fehler wurden offen besprochen, und jedes Paket hatte seine eigene Version, sodass ein Team eine Komponente aktualisieren konnte, ohne auf ein globales Release zu warten.
@@ -108,3 +118,4 @@ Der Code ist die Arbeit der Frontend-Community von Adevinta Spain. Mein Teil lag
 - **Versionskontrolle ist auch ein Designproblem.** Solange das Design keine Historie und keine Branches hatte, war jede andere Verbesserung fragil.
 - **Marke früh von Verhalten trennen.** Themes erlauben mehreren Marken, ein System zu teilen, ohne ihre Identität aufzugeben.
 - **Schritt für Schritt vorgehen.** Jeder Schritt erleichterte die Arbeit des Teams sofort, und genau das hielt die Leute beim System, während es noch entstand.
+- **Nah beim Frontend sitzen.** Zu verstehen, wie Entwickler Dinge brauchen, ist der schnellste Weg, Reibung zwischen Design und Code zu beseitigen.

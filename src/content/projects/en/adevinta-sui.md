@@ -96,6 +96,16 @@ The key decision was to separate what is shared from what is brand. Behaviour, s
 
 That way Coches.net still looks like Coches.net and Fotocasa like Fotocasa, but a fix or an improvement to a component reaches all of them at once.
 
+## Close to frontend
+
+Throughout the project I worked very closely with the frontend developers. That taught me how they needed things and how design had to be prepared so the handover caused less friction. It changed the way I delivered work:
+
+- **The same names as the code**, so a component or a variable meant the same thing in Sketch and in React.
+- **Values from the theme, never loose values**, so what developers received already matched the variables they used.
+- **Every state and edge case in the definition**, so fewer questions came back during development.
+
+That closeness is also what made the move from Sketch to React components possible without losing what design had defined.
+
 ## Open by default
 
 SUI is open source. The code, the history and the brand themes are public on GitHub, and SUI Studio shows the live catalogue. That openness was part of the model: proposals and bugs were discussed in the open, and every package had its own version, so a team could upgrade a component without waiting for a global release.
@@ -108,3 +118,4 @@ The code is the work of Adevinta Spain’s frontend community. My part was on th
 - **Version control is a design problem too.** Until design had history and branches, every other improvement was fragile.
 - **Separate brand from behaviour early.** Themes let several brands share one system without anyone giving up their identity.
 - **Move step by step.** Each step made the team’s work easier right away, which is what kept people using the system while it was still being built.
+- **Sit with frontend.** Understanding how developers need things is the fastest way to remove friction between design and code.

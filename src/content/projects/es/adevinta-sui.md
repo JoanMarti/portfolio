@@ -96,6 +96,16 @@ La decisión clave fue separar lo compartido de lo que es marca. El comportamien
 
 Así Coches.net seguía pareciendo Coches.net y Fotocasa, Fotocasa, pero una corrección o mejora en un componente llegaba a todos a la vez.
 
+## Cerca de frontend
+
+Durante todo el proyecto trabajé muy cerca de los desarrolladores frontend. Eso me ayudó a entender cómo necesitaban las cosas y cómo teníamos que preparar el diseño para que la entrega tuviera menos fricciones. Cambió mi forma de entregar el trabajo:
+
+- **Los mismos nombres que en el código**, para que un componente o una variable significara lo mismo en Sketch y en React.
+- **Valores del tema, nunca valores sueltos**, para que lo que recibía desarrollo ya coincidiera con las variables que usaban.
+- **Cada estado y caso límite en la definición**, para que llegaran menos preguntas durante el desarrollo.
+
+Esa cercanía es también lo que permitió pasar de Sketch a componentes React sin perder lo que diseño había definido.
+
 ## Abierto por defecto
 
 SUI es de código abierto. El código, el historial y los temas de marca son públicos en GitHub, y SUI Studio muestra el catálogo en vivo. Esa apertura formaba parte del modelo: las propuestas y los errores se discutían en abierto, y cada paquete tenía su propia versión, así un equipo podía actualizar un componente sin esperar a un release global.
@@ -108,3 +118,4 @@ El código es obra de la comunidad frontend de Adevinta Spain. Mi parte estaba e
 - **El control de versiones también es un problema de diseño.** Hasta que diseño tuvo historial y ramas, cualquier otra mejora era frágil.
 - **Separar marca y comportamiento pronto.** Los temas permiten que varias marcas compartan un sistema sin renunciar a su identidad.
 - **Avanzar paso a paso.** Cada paso facilitaba el trabajo del equipo desde el primer día, y eso es lo que mantenía a la gente usando el sistema mientras todavía se construía.
+- **Trabajar al lado de frontend.** Entender cómo necesitan las cosas los desarrolladores es la forma más rápida de quitar fricción entre diseño y código.
