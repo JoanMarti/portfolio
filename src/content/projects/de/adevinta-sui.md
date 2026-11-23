@@ -14,7 +14,7 @@ featured: true
 order: 2.8
 tldr:
   - "Coches.net stellte Web, iOS und Android auf eine neue Technologie um, und das Design arbeitete mit einem UI-Kit in Sketch ohne Versionskontrolle. Design und Entwicklung drifteten auseinander, und jeder Marktplatz löste dieselben Probleme für sich."
-  - "Neben meiner Arbeit in Growth und Retention war ich einer der Verantwortlichen für das Designsystem im Motor-Vertical: Ich startete es in Sketch mit Abstract für die Versionierung und entwickelte es Schritt für Schritt weiter, bis die Komponenten vollständig angepasste React-Komponenten in SUI waren, mit einem Theme pro Marke."
+  - "Neben meiner Arbeit in Growth und Retention war ich einer der Verantwortlichen für das Designsystem im Motor-Vertical: Mit Researchern und Designern aller Plattformen führten wir mehrere Systeme zu einem zusammen, aufgebaut auf einem umgekehrten Dreieck, das ich vorschlug, und entwickelten es von Sketch mit Abstract Schritt für Schritt weiter, bis die Komponenten vollständig angepasste React-Komponenten in SUI waren, mit einem Theme pro Marke."
   - "Ein gemeinsames System diente Coches.net, Fotocasa, Milanuncios und Habitaclia. Zwischen 2017 und 2019 wuchs die öffentliche Bibliothek von rund 24 losen Komponenten auf etwa 42, geordnet in Atome und Moleküle, jede Marke mit eigenem Theme."
 metrics:
   - value: "4"
@@ -38,6 +38,8 @@ Coches.net steckte mitten in der technologischen Transformation von Web, iOS und
 
 Bei den spanischen Marktplätzen von Adevinta war es genauso. Coches.net, Fotocasa, Milanuncios und Habitaclia hatten verschiedene Marken, aber sehr ähnliche Bedürfnisse: Inserate, Suche, Filter, Formulare, Alerts. Jeder löste sie für sich.
 
+Dazu kam, dass jedes Plattformteam sein eigenes Designsystem begonnen hatte. Web, iOS und Android hatten jeweils gute Ideen, aber keines davon war die Referenz.
+
 > Wie teilen sich vier Marken ein System, ohne gleich auszusehen?
 
 ## Meine Rolle
@@ -49,6 +51,26 @@ Ich war Senior UX/UI Designer im Team Growth and Retention. Neben dieser Produkt
 - **Bibliothek und Plattformen:** Ist sie korrekt in der gemeinsamen Bibliothek, und funktioniert sie im Einsatz auf Web, iOS und Android?
 
 Ich habe Komponenten gegen diese Prüfungen validiert, verwaltet und getestet, bevor sie in die Produkte kamen.
+
+## Von mehreren Systemen zu einem
+
+Ich war Teil eines Teams aus Researchern, Interaction Designern und UX-Designern der verschiedenen Plattformen. Jeder von uns hatte ein Designsystem für die eigene Plattform gebaut, und eine Zeit lang verbesserten wir sie parallel. Nach vielen Gesprächen und gemeinsamen Reviews einigten wir uns auf ein einziges System, und die Frage wurde, wie man es so strukturiert, dass alle Designer es gleich nutzen.
+
+## Das umgekehrte Dreieck
+
+Ich schlug eine Struktur aus CSS vor: das umgekehrte Dreieck. Die breiteste Ebene oben erreicht alles und ändert sich selten; jede Ebene darunter ist spezifischer und baut auf der darüber auf. In der Praxis war eine Foundation-Bibliothek in Sketch mit den Komponenten verknüpft, und jede Komponente übernahm ihre Attribute aus diesen Foundations, statt eigene zu definieren.
+
+<figure class="tri"><div><strong>Foundations</strong><span>Farbe, Typografie, Abstände und Elevation in einer Sketch-Bibliothek</span></div><div><strong>Komponenten</strong><span>Übernehmen jedes Attribut aus den Foundations, nie eigene Werte</span></div><div><strong>Barrierefreiheit</strong><span>Kontrast, Fokus, Grössen und Labels bei jeder Komponente geprüft</span></div><div><strong>Allgemeine Muster</strong><span>Wie Suche, Filter, Formulare und Alerts überall funktionieren</span></div><div><strong>Vertikale Muster</strong><span>Was nur Nutzer von Motor, Immobilien oder Kleinanzeigen brauchen</span></div><figcaption>Das umgekehrte Dreieck, das ich für das gemeinsame System vorschlug: breit und stabil oben, spezifisch für jedes Vertical unten.</figcaption></figure>
+
+Weil alle Designer dieselben Foundations nutzten, brachte das System das Team schnell auf eine Linie: Eine Änderung an einer Farbe oder einem Abstand erreichte jede Komponente, die sie nutzte, auf jeder Plattform.
+
+Mit der vereinbarten Struktur arbeiteten wir uns das Dreieck in dieser Reihenfolge hinunter:
+
+<ol class="phases"><li><strong>Komponenten definieren</strong><span>Wofür jede Komponente da ist, ihre Zustände, Varianten und ihr Verhalten</span></li><li><strong>Barrierefreiheit</strong><span>Kontrast, Fokuszustände, Touch-Grössen und Labels als Teil jeder Definition</span></li><li><strong>Interaktionsmuster</strong><span>Allgemeine Muster für alle Produkte, dann die besonderen jedes Verticals</span></li></ol>
+
+<p class="phases-note">Von der gemeinsamen Basis zu dem, was jedes Vertical braucht.</p>
+
+Der letzte Schritt war der wichtigste. Wer ein Auto kauft, wer eine Wohnung sucht und wer ein gebrauchtes Sofa verkauft, sind verschiedene Nutzer mit verschiedenen Bedürfnissen. Das gemeinsame System gab allen dieselbe Qualität und Konsistenz, und die vertikalen Muster liessen jedes Produkt auf seine eigenen Nutzer eingehen.
 
 ## Vom UI-Kit zum System in drei Schritten
 
@@ -82,6 +104,7 @@ Der Code ist die Arbeit der Frontend-Community von Adevinta Spain. Mein Teil lag
 
 ## Was ich gelernt habe
 
+- **Abstimmung entsteht in Gesprächen, nicht in Dateien.** Ein gemeinsames System funktionierte erst, als jedes Plattformteam es mitgestaltet hatte.
 - **Versionskontrolle ist auch ein Designproblem.** Solange das Design keine Historie und keine Branches hatte, war jede andere Verbesserung fragil.
 - **Marke früh von Verhalten trennen.** Themes erlauben mehreren Marken, ein System zu teilen, ohne ihre Identität aufzugeben.
 - **Schritt für Schritt vorgehen.** Jeder Schritt erleichterte die Arbeit des Teams sofort, und genau das hielt die Leute beim System, während es noch entstand.

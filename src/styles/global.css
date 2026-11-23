@@ -386,3 +386,17 @@ body { overflow-wrap: break-word; }
 .prose details.more > .more-body { padding: 0 0 8px; }
 .prose details.more > .more-body > :first-child { margin-top: 1.2em; }
 .prose details.more + details.more { margin-top: -0.4em; }
+
+/* Inverted triangle: broad foundations at the top, specific patterns at the bottom */
+.prose .tri { max-width: none; margin: 2em 0; padding: clamp(16px, 4vw, 32px); background: var(--paper-2); border-radius: var(--radius-lg); display: grid; gap: 8px; justify-items: center; }
+.prose .tri > div { box-sizing: border-box; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; text-align: center; display: grid; gap: 2px; }
+.prose .tri > div:nth-child(1) { width: 100%; background: var(--accent); border-color: var(--accent); color: #fff; }
+.prose .tri > div:nth-child(1) span { color: rgba(255,255,255,.85); }
+.prose .tri > div:nth-child(2) { width: 84%; }
+.prose .tri > div:nth-child(3) { width: 68%; }
+.prose .tri > div:nth-child(4) { width: 52%; }
+.prose .tri > div:nth-child(5) { width: 38%; }
+.prose .tri strong { font-size: var(--step-0); }
+.prose .tri span { font-size: var(--step--1); color: var(--muted); }
+.prose .tri figcaption { margin-top: 8px; text-align: center; color: var(--muted); font-size: var(--step--1); max-width: 60ch; }
+@media (max-width: 560px) { .prose .tri > div:nth-child(2) { width: 92%; } .prose .tri > div:nth-child(3) { width: 84%; } .prose .tri > div:nth-child(4) { width: 76%; } .prose .tri > div:nth-child(5) { width: 68%; } }
