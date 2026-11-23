@@ -66,7 +66,6 @@ export const experience: Role[] = [
     place: { en: 'Baar, Zug (on site)', de: 'Baar, Zug (vor Ort)', es: 'Baar, Zug (presencial)' },
     start: '2022-12', end: '2025-03',
     type: contract,
-    caseStudy: 'glencore-ctrm',
     note: {
       en: 'Owned key product and design decisions for an internal trading and risk platform. Led 3 designers day to day, presented progress to business leaders every quarter, designed the deal capture MVP and built the design system with the Angular team.',
       de: 'Verantwortung für zentrale Produkt- und Designentscheide bei einer internen Plattform für Handel und Risikomanagement. Tägliche Führung von 3 Designern, quartalsweise Präsentationen vor der Geschäftsleitung, Design des Deal-Capture-MVP und Aufbau des Designsystems mit dem Angular-Team.',
