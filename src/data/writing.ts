@@ -16,6 +16,18 @@ export type Article = {
 
 export const writing: Article[] = [
   {
+    title: '13 Years, 4,700 People, Zero Generative AI: What GTA VI Teaches Us About Product Design',
+    excerpt: {
+      en: 'What a game built over 13 years by 4,700 people, without generative AI, can teach product designers about craft, scale and where AI really fits.',
+      de: 'Was ein Spiel, das 4’700 Menschen über 13 Jahre ohne generative KI gebaut haben, Product Designern über Handwerk, Skalierung und den richtigen Platz von KI lehrt.',
+      es: 'Lo que un juego construido durante 13 años por 4.700 personas, sin IA generativa, puede enseñar a los product designers sobre el oficio, la escala y dónde encaja de verdad la IA.',
+    },
+    source: 'Medium',
+    url: 'https://medium.com/@campecha/13-years-4-700-people-zero-generative-ai-what-gta-vi-teaches-us-about-product-design-ba7ab374c48c',
+    date: '2026-11-24',
+    topic: { en: 'Product design and AI', de: 'Produktdesign und KI', es: 'Diseño de producto e IA' },
+  },
+  {
     title: 'Designing Access to Information',
     excerpt: {
       en: 'What Switzerland and Spain can teach us about the future of digital news: discovery, paywalls, personalisation and the move from design systems to experience systems.',
