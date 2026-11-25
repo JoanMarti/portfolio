@@ -209,6 +209,14 @@ const hasCv = existsSync(`public/${site.cv}`);
         if (!box || typeof gtag !== 'function') return;
         var stored = null;
         try { stored = localStorage.getItem('consent-analytics'); } catch (e) {}
+        // While the banner is open, keep room for it so no content or focused control sits behind it.
+        function room() {
+          var h = box.hidden ? 0 : box.offsetHeight + 32;
+          document.documentElement.style.scrollPaddingBottom = h ? h + 'px' : '';
+          document.body.style.paddingBottom = h ? h + 'px' : '';
+        }
+        new MutationObserver(room).observe(box, { attributes: true, attributeFilter: ['hidden'] });
+        window.addEventListener('resize', room);
         if (!stored) box.hidden = false;
         document.addEventListener('click', function (e) {
           var b = e.target.closest && e.target.closest('[data-consent]');
@@ -300,7 +308,12 @@ const hasCv = existsSync(`public/${site.cv}`);
   .langs a { color: var(--muted); }
   .langs a:hover { color: var(--ink); background: var(--paper-2); }
   @media (max-width: 640px) {
-    .site-header { flex-direction: column; align-items: flex-start; gap: 12px; }
+    .site-header { display: grid; grid-template-columns: 1fr auto; grid-template-areas: 'brand langs' 'nav nav'; align-items: center; gap: 12px 16px; padding-top: 16px; padding-bottom: 16px; }
+    .brand { grid-area: brand; }
+    .brand-role { display: none; }
+    .header-right { display: contents; }
+    .header-right > nav:first-child { grid-area: nav; gap: 20px; }
+    .langs { grid-area: langs; justify-self: end; }
   }
 
   .site-footer {
