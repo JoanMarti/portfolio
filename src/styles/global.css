@@ -1,18 +1,19 @@
 /* Design tokens — the portfolio's own small design system. */
 :root {
-  --paper: #f2f3ef;      /* cool off-white, like enterprise UI greys */
-  --paper-2: #e6e8e2;    /* recessed surfaces: covers, quotes */
-  --ink: #18212b;        /* text and lines */
-  --muted: #5a6570;      /* secondary text */
-  --line: #cfd4cc;       /* hairlines */
-  --accent: #2446c8;     /* cobalt: links, the one bright signal */
-  --accent-soft: #d9e0f7;
+  --paper: #0c1117;      /* night: the page */
+  --paper-2: #131a22;    /* raised surfaces: covers, panels */
+  --ink: #f2f3ef;        /* text and lines */
+  --muted: #8f9aa5;      /* secondary text */
+  --line: #26303a;       /* hairlines */
+  --accent: #5b7cff;     /* cobalt light: links, the one bright signal */
+  --accent-soft: #1b2654;
   --on-accent: #ffffff;
-  --ok: #1f7a4d;
+  --accent-strong: #2f57ff; /* button fill, keeps white text readable */
+  --ok: #5fd39a;
 
   --font: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;
   /* Editorial display face for page and section titles; the grotesk stays for reading and UI. */
-  --font-display: 'Newsreader Variable', 'Newsreader', 'Iowan Old Style', Georgia, serif;
+  --font-display: var(--font);
 
   /* Type scale (perfect fourth) */
   --step--1: 0.875rem;
@@ -28,35 +29,9 @@
   --wrap: 1180px;
   --gutter: clamp(16px, 4vw, 40px);
 
-  color-scheme: light;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme='light']) {
-    --paper: #12171d;
-    --paper-2: #1b222a;
-    --ink: #e6e9e3;
-    --muted: #9aa4ae;
-    --line: #2c353f;
-    --accent: #8ea2f5;
-    --accent-soft: #24305a;
-    --on-accent: #0e1420;
-    --ok: #6fcf9b;
-    color-scheme: dark;
-  }
-}
-:root[data-theme='dark'] {
-  --paper: #12171d;
-  --paper-2: #1b222a;
-  --ink: #e6e9e3;
-  --muted: #9aa4ae;
-  --line: #2c353f;
-  --accent: #8ea2f5;
-  --accent-soft: #24305a;
-  --on-accent: #0e1420;
-  --ok: #6fcf9b;
   color-scheme: dark;
 }
+
 
 *, *::before, *::after { box-sizing: border-box; }
 
@@ -82,7 +57,7 @@ a:hover { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
 h1, h2, h3 { line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
-h1, h2 { font-family: var(--font-display); font-weight: 420; font-optical-sizing: auto; letter-spacing: -0.015em; }
+h1, h2 { font-weight: 640; letter-spacing: -0.03em; }
 p { margin: 0; text-wrap: pretty; }
 
 .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
@@ -97,7 +72,7 @@ p { margin: 0; text-wrap: pretty; }
   border: 1.5px solid var(--ink); color: var(--ink); background: transparent;
 }
 .btn:hover { background: var(--ink); color: var(--paper); }
-.btn--primary { background: var(--accent); border-color: var(--accent); color: var(--on-accent); }
+.btn--primary { background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
 .btn--primary:hover { background: var(--ink); border-color: var(--ink); color: var(--paper); }
 
 .muted { color: var(--muted); }
@@ -393,7 +368,7 @@ body { overflow-wrap: break-word; }
 /* Inverted triangle: broad foundations at the top, specific patterns at the bottom */
 .prose .tri { max-width: none; margin: 2em 0; padding: clamp(16px, 4vw, 32px); background: var(--paper-2); border-radius: var(--radius-lg); display: grid; gap: 8px; justify-items: center; }
 .prose .tri > div { box-sizing: border-box; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 12px 16px; text-align: center; display: grid; gap: 2px; }
-.prose .tri > div:nth-child(1) { width: 100%; background: var(--accent); border-color: var(--accent); color: #fff; }
+.prose .tri > div:nth-child(1) { width: 100%; background: var(--accent-strong); border-color: var(--accent-strong); color: #fff; }
 .prose .tri > div:nth-child(1) span { color: rgba(255,255,255,.85); }
 .prose .tri > div:nth-child(2) { width: 84%; }
 .prose .tri > div:nth-child(3) { width: 68%; }
@@ -403,3 +378,13 @@ body { overflow-wrap: break-word; }
 .prose .tri span { font-size: var(--step--1); color: var(--muted); }
 .prose .tri figcaption { margin-top: 8px; text-align: center; color: var(--muted); font-size: var(--step--1); max-width: 60ch; }
 @media (max-width: 560px) { .prose .tri > div:nth-child(2) { width: 92%; } .prose .tri > div:nth-child(3) { width: 84%; } .prose .tri > div:nth-child(4) { width: 76%; } .prose .tri > div:nth-child(5) { width: 68%; } }
+
+/* Cover diagrams on dark: light lines, the idea glows in the case colour */
+.cover .c-plane--accent, .cover .c-accent { filter: drop-shadow(0 0 14px color-mix(in srgb, var(--accent) 65%, transparent)); }
+.cover .c-on-accent { fill: #0c1117 !important; }
+
+/* Case page cover: the same light-on-dark drawing as on the home, in the case colour */
+.cs-art { --paper-2: #0f151c; --ink: #dce3e9; --muted: #7f8a95; --line: rgb(242 243 239 / .16); --accent-soft: color-mix(in srgb, var(--accent) 22%, transparent); }
+.cs-art .cover { box-shadow: inset 0 0 0 1px rgb(242 243 239 / .08); background: radial-gradient(60% 80% at 70% 50%, color-mix(in srgb, var(--accent) 14%, transparent), transparent), #0f151c; }
+.cs-art svg * { vector-effect: non-scaling-stroke; }
+.cs-art .c-bg { fill: transparent !important; }

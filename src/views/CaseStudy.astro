@@ -10,6 +10,7 @@ import { writing } from '../data/writing';
 import { filled } from '../lib/url';
 import { ui, href, langs, type Lang } from '../lib/i18n';
 import { getProjects, type Project } from '../lib/projects';
+import { accentFor } from '../data/accents';
 
 interface Props { lang: Lang; project: Project }
 const { lang, project } = Astro.props;
@@ -54,7 +55,7 @@ const jsonLd = caseJsonLd({ d, lang, pageUrl, image: new URL(ogImage ?? '/og.png
       <p class="lede">{d.summary}</p>
     </header>
 
-    <div class="wrap">
+    <div class="wrap cs-art" style={`--accent: ${accentFor(project.slug)}`}>
       <Cover data={d} lang={lang} />
     </div>
 

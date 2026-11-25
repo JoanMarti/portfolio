@@ -28,7 +28,9 @@ const en = {
   },
   home: {
     title: 'Design where mistakes are expensive.',
-    sub: 'Senior Product Designer with 16 years designing complex, data-heavy products in fintech, trading and marketplaces. I own products end to end, from research to shipped code, build the design systems they run on, and design with AI every day.',
+    role: 'Senior Product Designer.',
+    sub: '16 years designing complex, data-heavy products in fintech, trading and marketplaces, from research to shipped code.',
+    statement: 'I own products end to end, from the first interview to shipped code. I build the design systems they run on, align teams across brands and platforms, and design with AI every day, so ideas get tested with real data before they cost money.',
     proofLabel: 'Highlights',
     proof: [{ value: '4', label: 'marketplaces on one shared design system at Adevinta' }, { value: '5+', label: 'banks on one multi-brand design system' }, { value: '90%', label: 'completion of identity verification at SmartStamp' }, { value: '16', label: 'years designing digital products' }],
     seeWork: 'See selected work',
@@ -140,7 +142,9 @@ const de: Dict = {
   },
   home: {
     title: 'Design, wo Fehler teuer sind.',
-    sub: 'Senior Product Designer mit 16 Jahren Erfahrung mit komplexen, datenreichen Produkten in Fintech, Rohstoffhandel und Marktplätzen. Ich verantworte Produkte von der Forschung bis zum ausgelieferten Code, baue die Designsysteme dahinter und gestalte täglich mit KI.',
+    role: 'Senior Product Designer.',
+    sub: '16 Jahre Erfahrung mit komplexen, datenreichen Produkten in Fintech, Rohstoffhandel und Marktplätzen, von der Forschung bis zum ausgelieferten Code.',
+    statement: 'Ich verantworte Produkte vom ersten Interview bis zum ausgelieferten Code. Ich baue die Designsysteme, auf denen sie laufen, bringe Teams über Marken und Plattformen hinweg zusammen und gestalte täglich mit KI, damit Ideen mit echten Daten getestet werden, bevor sie Geld kosten.',
     proofLabel: 'Auf einen Blick',
     proof: [{ value: '4', label: 'Marktplätze auf einem gemeinsamen Designsystem bei Adevinta' }, { value: '5+', label: 'Banken auf einem Multi-Brand-Designsystem' }, { value: '90%', label: 'abgeschlossene Identitätsprüfungen bei SmartStamp' }, { value: '16', label: 'Jahre Produktdesign' }],
     seeWork: 'Ausgewählte Projekte ansehen',
@@ -250,7 +254,9 @@ const es: Dict = {
   },
   home: {
     title: 'Diseño donde un error sale caro.',
-    sub: 'Senior Product Designer con 16 años diseñando productos complejos y con muchos datos en fintech, trading y marketplaces. Me ocupo del producto de principio a fin, de la investigación al código en producción, construyo los design systems que lo sostienen y diseño con IA a diario.',
+    role: 'Senior Product Designer.',
+    sub: '16 años diseñando productos complejos y con muchos datos en fintech, trading y marketplaces, de la investigación al código en producción.',
+    statement: 'Me ocupo del producto de principio a fin, de la primera entrevista al código en producción. Construyo los design systems que lo sostienen, alineo equipos entre marcas y plataformas y diseño con IA a diario, para que las ideas se prueben con datos reales antes de costar dinero.',
     proofLabel: 'En cifras',
     proof: [{ value: '4', label: 'marketplaces con un mismo design system en Adevinta' }, { value: '5+', label: 'bancos con un solo design system multimarca' }, { value: '90%', label: 'de verificaciones de identidad completadas en SmartStamp' }, { value: '16', label: 'años diseñando productos digitales' }],
     seeWork: 'Ver proyectos',
