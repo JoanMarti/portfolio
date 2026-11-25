@@ -126,7 +126,7 @@ Three principles guided the new structure:
 
 With the structure settled, I mapped every flow end to end. The first version deliberately exposed what was missing, with undefined areas in blue and questions for marketing in pink.
 
-![First version of the Smartstamp user flow. Blue blocks mark parts of the product that were not yet defined, and a pink block marks onboarding content that needed clarification with marketing.](/projects/smartstamp/userflow-v1.webp "Flow v1.0: undefined areas in blue and open questions with marketing in pink, so the gaps were visible to everyone.")
+![First version of the Smartstamp user flow. Blue blocks mark parts of the product that were not yet defined, and a pink block marks onboarding content that needed clarification with marketing.](/projects/smartstamp/userflow-v1.svg "Flow v1.0: undefined areas in blue and open questions with marketing in pink, so the gaps were visible to everyone.")
 
 That map became the agenda for decisions with the founders, marketing and engineering. In version 1.2 every branch had an answer.
 

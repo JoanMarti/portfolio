@@ -1,0 +1,286 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2576 846" width="2576" height="846" role="img" aria-label="Smartstamp user flow v1.0, with undefined areas marked in blue and open questions with marketing in pink">
+<style>
+  /* Change the look here */
+  svg { --bg: #0f151c; --node: #1a222c; --stroke: #a7b1bb; --text: #e6e9e3; --muted: #8f9aa5; --edge: #6b7682;
+        --link: #ff6fb1; --nd: #4ba3ff; --mkt: #ff5f7a; --ai: #f2b84b; }
+  .bg { fill: var(--bg); }
+  .n { fill: var(--node); stroke: var(--stroke); stroke-width: .9; }
+  .notch, .bar { fill: var(--stroke); }
+  .tl { fill: var(--text); font: 650 4.6px/1 "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .tp { fill: var(--muted); font: 600 2.6px/1 system-ui, sans-serif; letter-spacing: .04em; }
+  .tn { fill: var(--muted); font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  .tt { fill: var(--text); font: 700 9px/1 system-ui, sans-serif; }
+  .tb { fill: var(--text); font-family: system-ui, sans-serif; font-weight: 700; }
+  .e { fill: none; stroke: var(--edge); stroke-width: .9; }
+  .e.pink { stroke: var(--link); }
+  .dot { fill: var(--edge); } .dot.pink { fill: var(--link); }
+  .nd rect { fill: color-mix(in srgb, var(--nd) 22%, var(--bg)); stroke: color-mix(in srgb, var(--nd) 60%, var(--bg)); stroke-width: .8; }
+  .mkt rect { fill: color-mix(in srgb, var(--mkt) 12%, var(--bg)); stroke: color-mix(in srgb, var(--mkt) 45%, var(--bg)); stroke-width: .8; stroke-dasharray: 3 2; }
+  .ai rect { fill: color-mix(in srgb, var(--ai) 14%, var(--bg)); stroke: color-mix(in srgb, var(--ai) 55%, var(--bg)); stroke-width: .8; }
+  #a path { fill: var(--edge); } #ap path { fill: var(--link); }
+</style>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 1L10 5L0 9Z"/></marker>
+<marker id="ap" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 1L10 5L0 9Z"/></marker></defs>
+<rect class="bg" width="2576" height="846"/>
+<path class="e" d="M84.5 385.0H111.0" marker-end="url(#a)"/>
+<circle class="dot" cx="84.5" cy="385.0" r="1.6"/>
+<path class="e" d="M127 370V340Q127 332 135 332H175" marker-end="url(#a)"/>
+<path class="e" d="M127 400V430Q127 438 135 438H177" marker-end="url(#a)"/>
+<path class="e" d="M223.8 332.0H228.2" marker-end="url(#a)"/>
+<circle class="dot" cx="223.8" cy="332.0" r="1.6"/>
+<path class="e" d="M281.8 332.0H286.2" marker-end="url(#a)"/>
+<circle class="dot" cx="281.8" cy="332.0" r="1.6"/>
+<path class="e" d="M339.8 332.0H350.0" marker-end="url(#a)"/>
+<circle class="dot" cx="339.8" cy="332.0" r="1.6"/>
+<path class="e" d="M360 323V290Q360 282 368 282H378" marker-end="url(#a)"/>
+<path class="e" d="M360 341V375Q360 383 368 383H378" marker-end="url(#a)"/>
+<path class="e" d="M425.8 282.0H437.5" marker-end="url(#a)"/>
+<circle class="dot" cx="425.8" cy="282.0" r="1.6"/>
+<path class="e" d="M420.0 383.0H423.9" marker-end="url(#a)"/>
+<circle class="dot" cx="420.0" cy="383.0" r="1.6"/>
+<path class="e" d="M484.1 383.0H487.1" marker-end="url(#a)"/>
+<circle class="dot" cx="484.1" cy="383.0" r="1.6"/>
+<path class="e" d="M530.9 383.0H535.2" marker-end="url(#a)"/>
+<circle class="dot" cx="530.9" cy="383.0" r="1.6"/>
+<path class="e" d="M588.8 383.0H595.0" marker-end="url(#a)"/>
+<circle class="dot" cx="588.8" cy="383.0" r="1.6"/>
+<path class="e" d="M637.0 383.0H649.0" marker-end="url(#a)"/>
+<circle class="dot" cx="637.0" cy="383.0" r="1.6"/>
+<path class="e" d="M691.0 383.0H696.5" marker-end="url(#a)"/>
+<circle class="dot" cx="691.0" cy="383.0" r="1.6"/>
+<path class="e" d="M753.5 383.0H760.0" marker-end="url(#a)"/>
+<circle class="dot" cx="753.5" cy="383.0" r="1.6"/>
+<path class="e" d="M802.0 383.0H817.6V385.0H832.1" marker-end="url(#a)"/>
+<circle class="dot" cx="802.0" cy="383.0" r="1.6"/>
+<path class="e" d="M790 284Q811 284 811 300V370Q811 385 831 385" marker-end="url(#a)"/>
+<circle class="dot" cx="787.0" cy="284.0" r="1.6"/>
+<path class="e" d="M219 440H795Q811 440 811 425V400Q811 385 831 385" marker-end="url(#a)"/>
+<circle class="dot" cx="219.0" cy="440.0" r="1.6"/>
+<path class="e" d="M875.9 385.0H916.0" marker-end="url(#a)"/>
+<circle class="dot" cx="875.9" cy="385.0" r="1.6"/>
+<path class="e" d="M947 385H954Q962 385 962 377V305Q962 297 970 297"/><path class="e" d="M962 385V716Q962 724 970 724"/>
+<path class="e" d="M962 289Q962 297 970 297H977.2" marker-end="url(#a)"/>
+<path class="e" d="M962 347Q962 355 970 355H977.2" marker-end="url(#a)"/>
+<path class="e" d="M962 404Q962 412 970 412H983.0" marker-end="url(#a)"/>
+<path class="e" d="M962 481Q962 489 970 489H983.0" marker-end="url(#a)"/>
+<path class="e" d="M962 604Q962 612 970 612H983.0" marker-end="url(#a)"/>
+<path class="e" d="M962 716Q962 724 970 724H972.6" marker-end="url(#a)"/>
+<path class="e" d="M1025 297Q1040 297 1040 285V110Q1040 94 1054 94" marker-end="url(#a)"/>
+<circle class="dot" cx="1025.0" cy="297.0" r="1.6"/>
+<path class="e" d="M1086 94Q1100 94 1100 80V260"/>
+<path class="e" d="M1100 74Q1100 68 1108 68H1119" marker-end="url(#a)"/>
+<path class="e" d="M1100 98Q1100 104 1108 104H1119" marker-end="url(#a)"/>
+<path class="e" d="M1100 132Q1100 138 1108 138H1119" marker-end="url(#a)"/>
+<path class="e" d="M1100 167Q1100 173 1108 173H1119" marker-end="url(#a)"/>
+<path class="e" d="M1100 199Q1100 205 1108 205H1119" marker-end="url(#a)"/>
+<path class="e" d="M1100 232Q1100 238 1108 238H1119" marker-end="url(#a)"/>
+<path class="e" d="M1100 261Q1100 267 1108 267H1119" marker-end="url(#a)"/>
+<path class="e" d="M1181.0 68.0H1290.0" marker-end="url(#a)"/>
+<circle class="dot" cx="1181.0" cy="68.0" r="1.6"/>
+<path class="e" d="M1181 104H1228Q1236 104 1236 112V124Q1236 132 1244 132H1393Q1401 132 1401 124V76Q1401 68 1409 68H1419" marker-end="url(#a)"/>
+<circle class="dot" cx="1181.0" cy="104.0" r="1.6"/>
+<path class="e" d="M1181 138H1494Q1502 138 1502 130V76Q1502 68 1510 68H1518" marker-end="url(#a)"/>
+<circle class="dot" cx="1181.0" cy="138.0" r="1.6"/>
+<path class="e" d="M1181 173H1598Q1606 173 1606 165V76Q1606 68 1614 68H1623" marker-end="url(#a)"/>
+<circle class="dot" cx="1181.0" cy="173.0" r="1.6"/>
+<path class="e" d="M1181 205H1722Q1730 205 1730 197V76Q1730 68 1738 68H1750" marker-end="url(#a)"/>
+<circle class="dot" cx="1181.0" cy="205.0" r="1.6"/>
+<path class="e pink" d="M1831 104H1852Q1870 104 1870 88V76Q1870 68 1878 68H1882" marker-end="url(#ap)"/>
+<circle class="dot pink" cx="1831.0" cy="104.0" r="1.6"/>
+<path class="e" d="M1181.0 238.0H1321.0" marker-end="url(#a)"/>
+<circle class="dot" cx="1181.0" cy="238.0" r="1.6"/>
+<path class="e pink" d="M1181 267H1197" marker-end="url(#ap)"/>
+<circle class="dot pink" cx="1181.0" cy="267.0" r="1.6"/>
+<path class="e pink" d="M1190 267H1182" marker-end="url(#ap)"/>
+<path class="e pink" d="M1025 355H1197" marker-end="url(#ap)"/>
+<circle class="dot pink" cx="1025.0" cy="355.0" r="1.6"/>
+<path class="e" d="M1025 412H1037" marker-end="url(#a)"/>
+<circle class="dot" cx="1025.0" cy="412.0" r="1.6"/>
+<path class="e" d="M1090 412H1112" marker-end="url(#a)"/>
+<circle class="dot" cx="1090.0" cy="412.0" r="1.6"/>
+<path class="e" d="M1025.0 489.0H1038.0" marker-end="url(#a)"/>
+<circle class="dot" cx="1025.0" cy="489.0" r="1.6"/>
+<path class="e" d="M1054 474V465Q1054 457 1062 457H1069" marker-end="url(#a)"/>
+<path class="e" d="M1054 504V514Q1054 522 1062 522H1069" marker-end="url(#a)"/>
+<path class="e" d="M1170.2 457.0H1179.0" marker-end="url(#a)"/>
+<circle class="dot" cx="1170.2" cy="457.0" r="1.6"/>
+<path class="e" d="M1235.0 457.0H1234.5" marker-end="url(#a)"/>
+<circle class="dot" cx="1235.0" cy="457.0" r="1.6"/>
+<path class="e" d="M1281.5 457.0H1308.2" marker-end="url(#a)"/>
+<circle class="dot" cx="1281.5" cy="457.0" r="1.6"/>
+<path class="e" d="M1361.8 457.0H1391.0" marker-end="url(#a)"/>
+<circle class="dot" cx="1361.8" cy="457.0" r="1.6"/>
+<path class="e" d="M1433 457H1470" marker-end="url(#a)"/>
+<circle class="dot" cx="1433.0" cy="457.0" r="1.6"/>
+<path class="e" d="M1659 457H1697" marker-end="url(#a)"/>
+<circle class="dot" cx="1659.0" cy="457.0" r="1.6"/>
+<path class="e" d="M1746.5 457.0H1770.2" marker-end="url(#a)"/>
+<circle class="dot" cx="1746.5" cy="457.0" r="1.6"/>
+<path class="e" d="M1823.8 457.0H1854.0" marker-end="url(#a)"/>
+<circle class="dot" cx="1823.8" cy="457.0" r="1.6"/>
+<path class="e" d="M1896.0 457.0H1927.5" marker-end="url(#a)"/>
+<circle class="dot" cx="1896.0" cy="457.0" r="1.6"/>
+<path class="e" d="M1974.5 457.0H1997.9" marker-end="url(#a)"/>
+<circle class="dot" cx="1974.5" cy="457.0" r="1.6"/>
+<path class="e" d="M2058.1 457.0H2076.9" marker-end="url(#a)"/>
+<circle class="dot" cx="2058.1" cy="457.0" r="1.6"/>
+<path class="e" d="M2137.1 457.0H2165.0" marker-end="url(#a)"/>
+<circle class="dot" cx="2137.1" cy="457.0" r="1.6"/>
+<path class="e" d="M2207.0 457.0H2233.2" marker-end="url(#a)"/>
+<circle class="dot" cx="2207.0" cy="457.0" r="1.6"/>
+<path class="e" d="M2296.8 457.0H2315.2" marker-end="url(#a)"/>
+<circle class="dot" cx="2296.8" cy="457.0" r="1.6"/>
+<path class="e" d="M2368.8 457.0H2398.0" marker-end="url(#a)"/>
+<circle class="dot" cx="2368.8" cy="457.0" r="1.6"/>
+<path class="e" d="M2440.0 457.0H2475.2" marker-end="url(#a)"/>
+<circle class="dot" cx="2440.0" cy="457.0" r="1.6"/>
+<path class="e" d="M1025.0 612.0H1036.8" marker-end="url(#a)"/>
+<circle class="dot" cx="1025.0" cy="612.0" r="1.6"/>
+<path class="e" d="M1087.2 612.0H1097.0" marker-end="url(#a)"/>
+<circle class="dot" cx="1087.2" cy="612.0" r="1.6"/>
+<path class="e" d="M1113 597V588Q1113 580 1121 580H1131" marker-end="url(#a)"/>
+<path class="e" d="M1113 627V638Q1113 646 1121 646H1131" marker-end="url(#a)"/>
+<path class="e" d="M1171.6 580.0H1191.0" marker-end="url(#a)"/>
+<circle class="dot" cx="1171.6" cy="580.0" r="1.6"/>
+<path class="e" d="M1233.0 580.0H1256.2" marker-end="url(#a)"/>
+<circle class="dot" cx="1233.0" cy="580.0" r="1.6"/>
+<path class="e" d="M1172.7 646.0H1188.5" marker-end="url(#a)"/>
+<circle class="dot" cx="1172.7" cy="646.0" r="1.6"/>
+<path class="e" d="M1302 580H1669Q1677 582 1677 574V465Q1677 457 1685 457H1697" marker-end="url(#a)"/>
+<circle class="dot" cx="1302.0" cy="580.0" r="1.6"/>
+<path class="e" d="M1234 646H1669Q1677 646 1677 638V590" marker-end="url(#a)"/>
+<circle class="dot" cx="1234.0" cy="646.0" r="1.6"/>
+<path class="e" d="M1049.3 724.0H1057.0" marker-end="url(#a)"/>
+<circle class="dot" cx="1049.3" cy="724.0" r="1.6"/>
+<path class="e" d="M1073 709V700Q1073 692 1081 692H1086" marker-end="url(#a)"/>
+<path class="e" d="M1073 739V749Q1073 757 1081 757H1086" marker-end="url(#a)"/>
+<path class="e" d="M1135.8 692.0H1154.0" marker-end="url(#a)"/>
+<circle class="dot" cx="1135.8" cy="692.0" r="1.6"/>
+<path class="e" d="M1196.0 692.0H1208.5" marker-end="url(#a)"/>
+<circle class="dot" cx="1196.0" cy="692.0" r="1.6"/>
+<path class="e" d="M1255.5 692.0H1265.5" marker-end="url(#a)"/>
+<circle class="dot" cx="1255.5" cy="692.0" r="1.6"/>
+<path class="e" d="M1312.5 692.0H1323.5" marker-end="url(#a)"/>
+<circle class="dot" cx="1312.5" cy="692.0" r="1.6"/>
+<path class="e" d="M1136.8 757.0H1144.9" marker-end="url(#a)"/>
+<circle class="dot" cx="1136.8" cy="757.0" r="1.6"/>
+<g class="scr"><rect class="n" x="28.6" y="374.0" width="52.9" height="22" rx="3"/><rect class="notch" x="50.0" y="374.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="51.0" y="393.0" width="8" height=".9"/><text class="tl" x="55.0" y="386.8" text-anchor="middle">Splash screen</text></g>
+<g class="dia"><path class="n" d="M112 385L127 370L142 385L127 400Z"/><text class="tp" x="127" y="386.3" text-anchor="middle">Actions</text></g>
+<g class="mkt"><rect x="170" y="310" width="172" height="46"/><text class="tb" style="font-size:9px" x="256.0" y="336.1" text-anchor="middle"><tspan x="256.0" dy="0.0"></tspan></text></g>
+<g class="scr"><rect class="n" x="171.2" y="321.0" width="49.6" height="22" rx="3"/><rect class="notch" x="191.0" y="321.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="192.0" y="340.0" width="8" height=".9"/><text class="tl" x="196.0" y="333.8" text-anchor="middle">Onboarding 1</text></g>
+<g class="scr"><rect class="n" x="229.2" y="321.0" width="49.6" height="22" rx="3"/><rect class="notch" x="249.0" y="321.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="250.0" y="340.0" width="8" height=".9"/><text class="tl" x="254.0" y="333.8" text-anchor="middle">Onboarding 2</text></g>
+<g class="scr"><rect class="n" x="287.2" y="321.0" width="49.6" height="22" rx="3"/><rect class="notch" x="307.0" y="321.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="308.0" y="340.0" width="8" height=".9"/><text class="tl" x="312.0" y="333.8" text-anchor="middle">Onboarding 3</text></g>
+<g class="dia"><path class="n" d="M351 332L360 323L369 332L360 341Z"/><text class="tp" x="360" y="333.3" text-anchor="middle">Actions</text></g>
+<g class="scr"><rect class="n" x="373.2" y="271.0" width="49.6" height="22" rx="3"/><rect class="notch" x="393.0" y="271.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="394.0" y="290.0" width="8" height=".9"/><text class="tl" x="398.0" y="283.8" text-anchor="middle">Social login</text></g>
+<g class="scr"><rect class="n" x="438.5" y="271.0" width="43.0" height="22" rx="3"/><rect class="notch" x="455.0" y="271.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="456.0" y="290.0" width="8" height=".9"/><text class="tl" x="460.0" y="283.8" text-anchor="middle">Validation</text></g>
+<g class="nd"><rect x="495" y="257" width="289" height="44"/><text class="tb" style="font-size:10px" x="639.5" y="282.5" text-anchor="middle"><tspan x="639.5" dy="0.0">Not defined</tspan></text></g>
+<g class="scr"><rect class="n" x="379.0" y="372.0" width="38.0" height="22" rx="3"/><rect class="notch" x="393.0" y="372.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="394.0" y="391.0" width="8" height=".9"/><text class="tl" x="398.0" y="384.8" text-anchor="middle">Sing Up</text></g>
+<g class="scr"><rect class="n" x="424.9" y="372.0" width="56.2" height="22" rx="3"/><rect class="notch" x="448.0" y="372.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="449.0" y="391.0" width="8" height=".9"/><text class="tl" x="453.0" y="384.8" text-anchor="middle">Create Account</text></g>
+<g class="scr"><rect class="n" x="488.1" y="372.0" width="39.7" height="22" rx="3"/><rect class="notch" x="503.0" y="372.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="504.0" y="391.0" width="8" height=".9"/><text class="tl" x="508.0" y="384.8" text-anchor="middle">Add email</text></g>
+<g class="scr"><rect class="n" x="536.2" y="372.0" width="49.6" height="22" rx="3"/><rect class="notch" x="556.0" y="372.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="557.0" y="391.0" width="8" height=".9"/><text class="tl" x="561.0" y="384.8" text-anchor="middle">Phone Number</text></g>
+<g class="scr"><rect class="n" x="596.0" y="372.0" width="38.0" height="22" rx="3"/><rect class="notch" x="610.0" y="372.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="611.0" y="391.0" width="8" height=".9"/><text class="tl" x="615.0" y="384.8" text-anchor="middle">Password</text></g>
+<g class="scr"><rect class="n" x="650.0" y="372.0" width="38.0" height="22" rx="3"/><rect class="notch" x="664.0" y="372.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="665.0" y="391.0" width="8" height=".9"/><text class="tl" x="669.0" y="384.8" text-anchor="middle">Password</text></g>
+<g class="scr"><rect class="n" x="697.5" y="372.0" width="52.9" height="22" rx="3"/><rect class="notch" x="719.0" y="372.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="720.0" y="391.0" width="8" height=".9"/><text class="tl" x="724.0" y="384.8" text-anchor="middle">Confirm email</text></g>
+<g class="scr"><rect class="n" x="761.0" y="372.0" width="38.0" height="22" rx="3"/><rect class="notch" x="775.0" y="372.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="776.0" y="391.0" width="8" height=".9"/><text class="tl" x="780.0" y="384.8" text-anchor="middle">Log in</text></g>
+<g class="scr"><rect class="n" x="833.1" y="374.0" width="39.7" height="22" rx="3"/><rect class="notch" x="848.0" y="374.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="849.0" y="393.0" width="8" height=".9"/><text class="tl" x="853.0" y="386.8" text-anchor="middle">Dashboard</text></g>
+<g class="scr"><rect class="n" x="178.0" y="427.0" width="38.0" height="22" rx="3"/><rect class="notch" x="192.0" y="427.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="193.0" y="446.0" width="8" height=".9"/><text class="tl" x="197.0" y="439.8" text-anchor="middle">Log in</text></g>
+<g class="dia"><path class="n" d="M917 385L932 370L947 385L932 400Z"/><text class="tp" x="932" y="386.3" text-anchor="middle">Actions</text></g>
+<g class="scr"><rect class="n" x="978.2" y="286.0" width="49.6" height="22" rx="3"/><rect class="notch" x="998.0" y="286.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="999.0" y="305.0" width="8" height=".9"/><text class="tl" x="1003.0" y="298.8" text-anchor="middle">User profile</text></g>
+<g class="scr"><rect class="n" x="978.2" y="344.0" width="49.6" height="22" rx="3"/><rect class="notch" x="998.0" y="344.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="999.0" y="363.0" width="8" height=".9"/><text class="tl" x="1003.0" y="356.8" text-anchor="middle">Notification</text></g>
+<g class="scr"><rect class="n" x="984.0" y="401.0" width="38.0" height="22" rx="3"/><rect class="notch" x="998.0" y="401.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="999.0" y="420.0" width="8" height=".9"/><text class="tl" x="1003.0" y="413.8" text-anchor="middle">Search</text></g>
+<g class="scr"><rect class="n" x="984.0" y="478.0" width="38.0" height="22" rx="3"/><rect class="notch" x="998.0" y="478.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="999.0" y="497.0" width="8" height=".9"/><text class="tl" x="1003.0" y="490.8" text-anchor="middle">Register</text></g>
+<g class="scr"><rect class="n" x="984.0" y="601.0" width="38.0" height="22" rx="3"/><rect class="notch" x="998.0" y="601.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="999.0" y="620.0" width="8" height=".9"/><text class="tl" x="1003.0" y="613.8" text-anchor="middle">Verify</text></g>
+<g class="scr"><rect class="n" x="973.6" y="713.0" width="72.7" height="22" rx="3"/><rect class="notch" x="1005.0" y="713.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1006.0" y="732.0" width="8" height=".9"/><text class="tl" x="1010.0" y="725.8" text-anchor="middle">Transferred artwork</text></g>
+<g class="dia"><path class="n" d="M1055 94L1070 79L1085 94L1070 109Z"/><text class="tp" x="1070" y="95.3" text-anchor="middle">Actions</text></g>
+<g class="scr"><rect class="n" x="1120.0" y="57.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1144.0" y="57.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1145.0" y="76.0" width="8" height=".9"/><text class="tl" x="1149.0" y="69.8" text-anchor="middle">Personal Information</text></g>
+<g class="scr"><rect class="n" x="1120.0" y="93.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1144.0" y="93.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1145.0" y="112.0" width="8" height=".9"/><text class="tl" x="1149.0" y="105.8" text-anchor="middle">Account Settings</text></g>
+<g class="scr"><rect class="n" x="1120.0" y="127.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1144.0" y="127.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1145.0" y="146.0" width="8" height=".9"/><text class="tl" x="1149.0" y="139.8" text-anchor="middle">Customer Support</text></g>
+<g class="scr"><rect class="n" x="1120.0" y="162.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1144.0" y="162.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1145.0" y="181.0" width="8" height=".9"/><text class="tl" x="1149.0" y="174.8" text-anchor="middle">About Us</text></g>
+<g class="scr"><rect class="n" x="1120.0" y="194.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1144.0" y="194.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1145.0" y="213.0" width="8" height=".9"/><text class="tl" x="1149.0" y="206.8" text-anchor="middle">Invite a Friend</text></g>
+<g class="scr"><rect class="n" x="1120.0" y="227.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1144.0" y="227.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1145.0" y="246.0" width="8" height=".9"/><text class="tl" x="1149.0" y="239.8" text-anchor="middle">Upgrade your account</text></g>
+<g class="scr"><rect class="n" x="1120.0" y="256.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1144.0" y="256.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1145.0" y="275.0" width="8" height=".9"/><text class="tl" x="1149.0" y="268.8" text-anchor="middle">Log Out</text></g>
+<g class="scr"><rect class="n" x="1291.0" y="57.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1315.0" y="57.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1316.0" y="76.0" width="8" height=".9"/><text class="tl" x="1320.0" y="69.8" text-anchor="middle">Personal Information</text></g>
+<g class="scr"><rect class="n" x="1421.0" y="57.0" width="44.0" height="22" rx="3"/><rect class="notch" x="1438.0" y="57.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1439.0" y="76.0" width="8" height=".9"/><text class="tl" x="1443.0" y="69.8" text-anchor="middle">Settings</text></g>
+<g class="scr"><rect class="n" x="1520.0" y="57.0" width="48.0" height="22" rx="3"/><rect class="notch" x="1539.0" y="57.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1540.0" y="76.0" width="8" height=".9"/><text class="tl" x="1544.0" y="69.8" text-anchor="middle">Customer Support</text></g>
+<g class="scr"><rect class="n" x="1625.0" y="57.0" width="48.0" height="22" rx="3"/><rect class="notch" x="1644.0" y="57.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1645.0" y="76.0" width="8" height=".9"/><text class="tl" x="1649.0" y="69.8" text-anchor="middle">About Us</text></g>
+<g class="scr"><rect class="n" x="1752.0" y="57.0" width="48.0" height="22" rx="3"/><rect class="notch" x="1771.0" y="57.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1772.0" y="76.0" width="8" height=".9"/><text class="tl" x="1776.0" y="69.8" text-anchor="middle">Invite a Friend</text></g>
+<g class="scr"><rect class="n" x="1884.0" y="57.0" width="48.0" height="22" rx="3"/><rect class="notch" x="1903.0" y="57.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1904.0" y="76.0" width="8" height=".9"/><text class="tl" x="1908.0" y="69.8" text-anchor="middle">Invite a Friend</text></g>
+<g class="scr"><rect class="n" x="1322.0" y="227.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1346.0" y="227.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1347.0" y="246.0" width="8" height=".9"/><text class="tl" x="1351.0" y="239.8" text-anchor="middle">Select your plan</text></g>
+<g class="scr"><rect class="n" x="1199.0" y="256.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1223.0" y="256.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1224.0" y="275.0" width="8" height=".9"/><text class="tl" x="1228.0" y="268.8" text-anchor="middle">Log out confirmation</text></g>
+<g class="scr"><rect class="n" x="1199.0" y="344.0" width="58.0" height="22" rx="3"/><rect class="notch" x="1223.0" y="344.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1224.0" y="363.0" width="8" height=".9"/><text class="tl" x="1228.0" y="356.8" text-anchor="middle">Notifications</text></g>
+<g class="nd"><rect x="1115" y="399" width="111" height="27"/><text class="tb" style="font-size:9px" x="1170.5" y="415.6" text-anchor="middle"><tspan x="1170.5" dy="0.0">Not defined</tspan></text></g>
+<g class="dia"><path class="n" d="M1039 489L1054 474L1069 489L1054 504Z"/><text class="tp" x="1054" y="490.3" text-anchor="middle">If</text></g>
+<g class="nd"><rect x="1123" y="506" width="103" height="27"/><text class="tb" style="font-size:9px" x="1174.5" y="522.6" text-anchor="middle"><tspan x="1174.5" dy="0.0">Not defined</tspan></text></g>
+<g class="scr"><rect class="n" x="1120.8" y="446.0" width="46.3" height="22" rx="3"/><rect class="notch" x="1139.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1140.0" y="465.0" width="8" height=".9"/><text class="tl" x="1144.0" y="458.8" text-anchor="middle">Empty state</text></g>
+<g class="pill"><rect class="n" x="1180.0" y="452.0" width="52.1" height="10" rx="5"/><text class="tp" x="1206.0" y="458.3" text-anchor="middle">ACTION OF REGISTERING</text></g>
+<g class="scr"><rect class="n" x="1235.5" y="446.0" width="43.0" height="22" rx="3"/><rect class="notch" x="1252.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1253.0" y="465.0" width="8" height=".9"/><text class="tl" x="1257.0" y="458.8" text-anchor="middle">Start Scan</text></g>
+<g class="scr"><rect class="n" x="1309.2" y="446.0" width="49.6" height="22" rx="3"/><rect class="notch" x="1329.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1330.0" y="465.0" width="8" height=".9"/><text class="tl" x="1334.0" y="458.8" text-anchor="middle">Take picture</text></g>
+<g class="scr"><rect class="n" x="1392.0" y="446.0" width="38.0" height="22" rx="3"/><rect class="notch" x="1406.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1407.0" y="465.0" width="8" height=".9"/><text class="tl" x="1411.0" y="458.8" text-anchor="middle">Confirm</text></g>
+<g class="ai"><rect x="1473" y="444" width="183" height="26"/><text class="tb" style="font-size:7px" x="1564.5" y="455.2" text-anchor="middle"><tspan x="1564.5" dy="0.0">Image capture and artwork size recognition</tspan><tspan x="1564.5" dy="8.4">process using AI.</tspan></text></g>
+<g class="scr"><rect class="n" x="1690.5" y="446.0" width="52.9" height="22" rx="3"/><rect class="notch" x="1712.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1713.0" y="465.0" width="8" height=".9"/><text class="tl" x="1717.0" y="458.8" text-anchor="middle">Artwork Info.</text></g>
+<g class="scr"><rect class="n" x="1771.2" y="446.0" width="49.6" height="22" rx="3"/><rect class="notch" x="1791.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1792.0" y="465.0" width="8" height=".9"/><text class="tl" x="1796.0" y="458.8" text-anchor="middle">Take picture</text></g>
+<g class="scr"><rect class="n" x="1855.0" y="446.0" width="38.0" height="22" rx="3"/><rect class="notch" x="1869.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1870.0" y="465.0" width="8" height=".9"/><text class="tl" x="1874.0" y="458.8" text-anchor="middle">Confirm</text></g>
+<g class="scr"><rect class="n" x="1928.5" y="446.0" width="43.0" height="22" rx="3"/><rect class="notch" x="1945.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1946.0" y="465.0" width="8" height=".9"/><text class="tl" x="1950.0" y="458.8" text-anchor="middle">Onboarding</text></g>
+<g class="scr"><rect class="n" x="1998.9" y="446.0" width="56.2" height="22" rx="3"/><rect class="notch" x="2022.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="2023.0" y="465.0" width="8" height=".9"/><text class="tl" x="2027.0" y="458.8" text-anchor="middle">Fingerprints 1</text></g>
+<g class="scr"><rect class="n" x="2077.9" y="446.0" width="56.2" height="22" rx="3"/><rect class="notch" x="2101.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="2102.0" y="465.0" width="8" height=".9"/><text class="tl" x="2106.0" y="458.8" text-anchor="middle">Fingerprints 2</text></g>
+<g class="scr"><rect class="n" x="2166.0" y="446.0" width="38.0" height="22" rx="3"/><rect class="notch" x="2180.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="2181.0" y="465.0" width="8" height=".9"/><text class="tl" x="2185.0" y="458.8" text-anchor="middle">Overview</text></g>
+<g class="scr"><rect class="n" x="2234.2" y="446.0" width="59.5" height="22" rx="3"/><rect class="notch" x="2259.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="2260.0" y="465.0" width="8" height=".9"/><text class="tl" x="2264.0" y="458.8" text-anchor="middle">Details Artwork</text></g>
+<g class="scr"><rect class="n" x="2316.2" y="446.0" width="49.6" height="22" rx="3"/><rect class="notch" x="2336.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="2337.0" y="465.0" width="8" height=".9"/><text class="tl" x="2341.0" y="458.8" text-anchor="middle">Select space</text></g>
+<g class="scr"><rect class="n" x="2399.0" y="446.0" width="38.0" height="22" rx="3"/><rect class="notch" x="2413.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="2414.0" y="465.0" width="8" height=".9"/><text class="tl" x="2418.0" y="458.8" text-anchor="middle">Loading</text></g>
+<g class="scr"><rect class="n" x="2476.2" y="446.0" width="39.7" height="22" rx="3"/><rect class="notch" x="2491.0" y="446.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="2492.0" y="465.0" width="8" height=".9"/><text class="tl" x="2496.0" y="458.8" text-anchor="middle">Completed</text></g>
+<g class="scr"><rect class="n" x="1037.8" y="601.0" width="46.3" height="22" rx="3"/><rect class="notch" x="1056.0" y="601.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1057.0" y="620.0" width="8" height=".9"/><text class="tl" x="1061.0" y="613.8" text-anchor="middle">Empty state</text></g>
+<g class="dia"><path class="n" d="M1098 612L1113 597L1128 612L1113 627Z"/><text class="tp" x="1113" y="613.3" text-anchor="middle">Action</text></g>
+<g class="pill"><rect class="n" x="1135.4" y="575.0" width="33.2" height="10" rx="5"/><text class="tp" x="1152.0" y="581.3" text-anchor="middle">SCAN QR CODE</text></g>
+<g class="pill"><rect class="n" x="1134.3" y="641.0" width="35.3" height="10" rx="5"/><text class="tp" x="1152.0" y="647.3" text-anchor="middle">BY ARTWORK ID</text></g>
+<g class="scr"><rect class="n" x="1192.0" y="569.0" width="38.0" height="22" rx="3"/><rect class="notch" x="1206.0" y="569.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1207.0" y="588.0" width="8" height=".9"/><text class="tl" x="1211.0" y="581.8" text-anchor="middle">Verify 1</text></g>
+<g class="scr"><rect class="n" x="1257.2" y="569.0" width="39.7" height="22" rx="3"/><rect class="notch" x="1272.0" y="569.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1273.0" y="588.0" width="8" height=".9"/><text class="tl" x="1277.0" y="581.8" text-anchor="middle">Completed</text></g>
+<g class="scr"><rect class="n" x="1189.5" y="635.0" width="43.0" height="22" rx="3"/><rect class="notch" x="1206.0" y="635.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1207.0" y="654.0" width="8" height=".9"/><text class="tl" x="1211.0" y="647.8" text-anchor="middle">Artwork ID</text></g>
+<g class="dia"><path class="n" d="M1058 724L1073 709L1088 724L1073 739Z"/><text class="tp" x="1073" y="725.3" text-anchor="middle">Action</text></g>
+<g class="pill"><rect class="n" x="1091.2" y="687.0" width="41.6" height="10" rx="5"/><text class="tp" x="1112.0" y="693.3" text-anchor="middle">TRANSFER ARTWORK</text></g>
+<g class="pill"><rect class="n" x="1090.2" y="752.0" width="43.7" height="10" rx="5"/><text class="tp" x="1112.0" y="758.3" text-anchor="middle">PENDING TRANSFERS</text></g>
+<g class="scr"><rect class="n" x="1155.0" y="681.0" width="38.0" height="22" rx="3"/><rect class="notch" x="1169.0" y="681.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1170.0" y="700.0" width="8" height=".9"/><text class="tl" x="1174.0" y="693.8" text-anchor="middle">Select</text></g>
+<g class="scr"><rect class="n" x="1209.5" y="681.0" width="43.0" height="22" rx="3"/><rect class="notch" x="1226.0" y="681.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1227.0" y="700.0" width="8" height=".9"/><text class="tl" x="1231.0" y="693.8" text-anchor="middle">Transfer 1</text></g>
+<g class="scr"><rect class="n" x="1266.5" y="681.0" width="43.0" height="22" rx="3"/><rect class="notch" x="1283.0" y="681.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1284.0" y="700.0" width="8" height=".9"/><text class="tl" x="1288.0" y="693.8" text-anchor="middle">Transfer 2</text></g>
+<g class="scr"><rect class="n" x="1324.5" y="681.0" width="43.0" height="22" rx="3"/><rect class="notch" x="1341.0" y="681.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1342.0" y="700.0" width="8" height=".9"/><text class="tl" x="1346.0" y="693.8" text-anchor="middle">Transfer 2</text></g>
+<g class="scr"><rect class="n" x="1145.9" y="746.0" width="56.2" height="22" rx="3"/><rect class="notch" x="1169.0" y="746.0" width="10" height="1.8" rx=".9"/><rect class="bar" x="1170.0" y="765.0" width="8" height=".9"/><text class="tl" x="1174.0" y="758.8" text-anchor="middle">List transfers</text></g>
+<text class="tt" x="256" y="303" text-anchor="middle">Clarification with Mkt</text>
+<text class="tn" style="font-size:3.4px" x="178" y="362"><tspan x="178.0" dy="0.00">Text:</tspan><tspan x="178.0" dy="4.42">Organize All Your Art</tspan></text>
+<text class="tn" style="font-size:3.4px" x="237" y="362"><tspan x="237.0" dy="0.00">Text:</tspan><tspan x="237.0" dy="4.42">Confidence in Every Piece</tspan></text>
+<text class="tn" style="font-size:3.4px" x="294" y="362"><tspan x="294.0" dy="0.00">Text:</tspan><tspan x="294.0" dy="4.42">Your Collection, Shared Your Way</tspan></text>
+<text class="tn" style="font-size:3.4px" x="441" y="400"><tspan x="441.0" dy="0.00">Data request:</tspan><tspan x="444.0" dy="4.42">• First Name</tspan><tspan x="444.0" dy="4.42">• Last Name</tspan><tspan x="444.0" dy="4.42">• Birthday</tspan></text>
+<text class="tn" style="font-size:3.4px" x="834" y="404"><tspan x="834.0" dy="0.00">Primary action?</tspan><tspan x="837.0" dy="4.42">• Register artwork</tspan><tspan x="837.0" dy="4.42">• Verify artwork</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1295" y="86"><tspan x="1295.0" dy="0.00">Request for user info:</tspan><tspan x="1298.0" dy="3.90">• First name on ID</tspan><tspan x="1298.0" dy="3.90">• Last name on ID</tspan><tspan x="1298.0" dy="3.90">• Email</tspan><tspan x="1298.0" dy="3.90">• Phone Number</tspan><tspan x="1298.0" dy="3.90">• User type</tspan><tspan x="1305.5" dy="3.90">• Artist ( It is not defined how to change the user type)</tspan><tspan x="1313.0" dy="3.90">• Artist Name</tspan><tspan x="1298.0" dy="3.90">• Your plan (Access to another page)</tspan><tspan x="1298.0" dy="3.90">• User ID (Share the ID)</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1423" y="86"><tspan x="1423.0" dy="0.00">Authentication (Access to another page)</tspan><tspan x="1423.0" dy="3.90">Face ID</tspan><tspan x="1423.0" dy="3.90">Verified User (Access to another page)</tspan><tspan x="1423.0" dy="3.90"></tspan><tspan x="1423.0" dy="3.90">Preferences</tspan><tspan x="1426.0" dy="3.90">• Notification (Access to another page)</tspan><tspan x="1426.0" dy="3.90">• Language</tspan><tspan x="1426.0" dy="3.90">• Currency (Access to another page)</tspan><tspan x="1426.0" dy="3.90">• Unit of measure</tspan><tspan x="1426.0" dy="3.90">• Version</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1523" y="90"><tspan x="1523.0" dy="0.00">FAQs (Access to another page) (not defined)</tspan><tspan x="1523.0" dy="3.90">General Documentation (Access to another</tspan><tspan x="1523.0" dy="3.90">page) (not defined)</tspan><tspan x="1523.0" dy="3.90"></tspan><tspan x="1523.0" dy="3.90">Contact SmartStamp</tspan><tspan x="1526.0" dy="3.90">• Email (not defined)</tspan><tspan x="1526.0" dy="3.90">• Chat (not defined)</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1626" y="90"><tspan x="1626.0" dy="0.00">Rate us on the store (Access to another page) (not defined)</tspan><tspan x="1626.0" dy="3.90">Our blog (Access to another page) (not defined)</tspan><tspan x="1626.0" dy="3.90">Instagram (Access to another page) (not defined)</tspan><tspan x="1626.0" dy="3.90">Linkedin (Access to another page) (not defined)</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1753" y="88"><tspan x="1753.0" dy="0.00">Discover Current Promotions (Access to another page) (not</tspan><tspan x="1753.0" dy="3.90">defined)</tspan><tspan x="1753.0" dy="3.90">Unique Code (Access to another page) (not defined)</tspan><tspan x="1753.0" dy="3.90">Create referral link (Access to another page) (not defined)</tspan><tspan x="1753.0" dy="3.90">View your referrals (Access to another page)</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1885" y="86"><tspan x="1885.0" dy="0.00">Modal where to invite a friends (Bottom</tspan><tspan x="1885.0" dy="3.90">modal)</tspan><tspan x="1885.0" dy="3.90"></tspan><tspan x="1885.0" dy="3.90">All active invitations and pending validation</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1327" y="256"><tspan x="1327.0" dy="0.00">Plan Selection (Chips)</tspan><tspan x="1327.0" dy="3.90">Banner with access to more information</tspan><tspan x="1327.0" dy="3.90">Plan Details</tspan><tspan x="1327.0" dy="3.90">Get art info</tspan><tspan x="1327.0" dy="3.90">Change / Edit Plan</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1201" y="285"><tspan x="1201.0" dy="0.00">Modal where to confirm log out</tspan><tspan x="1201.0" dy="3.90">(Bottom modal)</tspan></text>
+<text class="tn" style="font-size:3.0px" x="984" y="372"><tspan x="984.0" dy="0.00">What notifications do we have defined?</tspan><tspan x="987.0" dy="3.90">• User profile</tspan><tspan x="987.0" dy="3.90">• Validation certificate</tspan><tspan x="987.0" dy="3.90">• Upgrade account</tspan><tspan x="987.0" dy="3.90">• Transfer complete</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1201" y="372"><tspan x="1201.0" dy="0.00">Modal where you can view and</tspan><tspan x="1201.0" dy="3.90">interact with notifications.</tspan><tspan x="1201.0" dy="3.90">Main action (Mark all read)</tspan><tspan x="1201.0" dy="3.90">Swipe left (Archive notification)</tspan><tspan x="1201.0" dy="3.90">Swipe right (Delete notification)</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1042" y="410"><tspan x="1042.0" dy="0.00">It is only defined how the search</tspan><tspan x="1042.0" dy="3.90">engine appears but not how to</tspan><tspan x="1042.0" dy="3.90">interact with it.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1072" y="455"><tspan x="1072.0" dy="0.00">The user does not have any</tspan><tspan x="1072.0" dy="3.90">registered artwork</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1072" y="520"><tspan x="1072.0" dy="0.00">If the user has registered</tspan><tspan x="1072.0" dy="3.90">artwork</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1123" y="538"><tspan x="1123.0" dy="0.00">It is necessary to know if there is a read only version of the</tspan><tspan x="1123.0" dy="3.90">registered pieces or to be able to access the registered</tspan><tspan x="1123.0" dy="3.90">pieces whether they are located in different spaces.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1125" y="477"><tspan x="1125.0" dy="0.00">Illustration with explanation</tspan><tspan x="1125.0" dy="3.90">Primary action (Scan Artwork)</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1392" y="477"><tspan x="1392.0" dy="0.00">Modal to confirm that the</tspan><tspan x="1392.0" dy="3.90">photo is correct</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1698" y="476"><tspan x="1698.0" dy="0.00">Intermediate page of the</tspan><tspan x="1698.0" dy="3.90">process where details are</tspan><tspan x="1698.0" dy="3.90">requested and the</tspan><tspan x="1698.0" dy="3.90">fingerprinting process is</tspan><tspan x="1698.0" dy="3.90">started.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1855" y="476"><tspan x="1855.0" dy="0.00">Modal to confirm that the</tspan><tspan x="1855.0" dy="3.90">photo is correct</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1931" y="476"><tspan x="1931.0" dy="0.00">An animation is presented to</tspan><tspan x="1931.0" dy="3.90">explain how to create</tspan><tspan x="1931.0" dy="3.90">fingerprints on the screen.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="2008" y="476"><tspan x="2008.0" dy="0.00">After creating the</tspan><tspan x="2008.0" dy="3.90">identification points, the</tspan><tspan x="2008.0" dy="3.90">fingerprinting process</tspan><tspan x="2008.0" dy="3.90">begins.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="2087" y="476"><tspan x="2087.0" dy="0.00">To create the fingerprint, it</tspan><tspan x="2087.0" dy="3.90">is necessary to take an</tspan><tspan x="2087.0" dy="3.90">additional photo but with a</tspan><tspan x="2087.0" dy="3.90">specific distance, focus and</tspan><tspan x="2087.0" dy="3.90">position.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="2166" y="476"><tspan x="2166.0" dy="0.00">After capturing all the</tspan><tspan x="2166.0" dy="3.90">fingerprints, a summary</tspan><tspan x="2166.0" dy="3.90">screen is displayed with all</tspan><tspan x="2166.0" dy="3.90">captured ones.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="2245" y="476"><tspan x="2245.0" dy="0.00">Information shown in the</tspan><tspan x="2245.0" dy="3.90">Artwork detail:</tspan><tspan x="2245.0" dy="3.90">Overview photo</tspan><tspan x="2245.0" dy="3.90">Fingerprints (everyone's</tspan><tspan x="2245.0" dy="3.90">carousel)</tspan><tspan x="2245.0" dy="3.90">*Artwork title</tspan><tspan x="2245.0" dy="3.90">*Artis Name</tspan><tspan x="2245.0" dy="3.90">Year of creation</tspan><tspan x="2245.0" dy="3.90">Size</tspan><tspan x="2245.0" dy="3.90">Weight</tspan><tspan x="2245.0" dy="3.90">Price</tspan><tspan x="2245.0" dy="3.90">Medium</tspan><tspan x="2245.0" dy="3.90">Inventory number</tspan><tspan x="2245.0" dy="3.90">Series Name</tspan><tspan x="2245.0" dy="3.90">Registered on</tspan><tspan x="2245.0" dy="3.90">notes</tspan></text>
+<text class="tn" style="font-size:3.0px" x="2322" y="476"><tspan x="2322.0" dy="0.00">Select the space to place</tspan><tspan x="2322.0" dy="3.90">the artwork</tspan></text>
+<text class="tn" style="font-size:3.0px" x="2477" y="476"><tspan x="2477.0" dy="0.00">Message and final page of</tspan><tspan x="2477.0" dy="3.90">the registration process</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1042" y="632"><tspan x="1042.0" dy="0.00">Illustration with explanation</tspan><tspan x="1042.0" dy="3.90">Two secondary actions:</tspan><tspan x="1042.0" dy="3.90">Scan QR code</tspan><tspan x="1042.0" dy="3.90">By Artwork ID</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1192" y="599"><tspan x="1192.0" dy="0.00">Screen with the reference</tspan><tspan x="1192.0" dy="3.90">rectangle to focus the QR.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1258" y="599"><tspan x="1258.0" dy="0.00">The QR has been scanned</tspan><tspan x="1258.0" dy="3.90">successfully.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1192" y="665"><tspan x="1192.0" dy="0.00">A modal opens on the</tspan><tspan x="1192.0" dy="3.90">verification page</tspan><tspan x="1192.0" dy="3.90">requesting the artwork ID.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1155" y="711"><tspan x="1155.0" dy="0.00">Select the artwork</tspan><tspan x="1155.0" dy="3.90">you want to transfer</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1212" y="711"><tspan x="1212.0" dy="0.00">Visualization of the</tspan><tspan x="1212.0" dy="3.90">artwork detail.</tspan><tspan x="1212.0" dy="3.90"></tspan><tspan x="1212.0" dy="3.90">Primary action:</tspan><tspan x="1212.0" dy="3.90">transfer</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1269" y="711"><tspan x="1269.0" dy="0.00">Modal where the</tspan><tspan x="1269.0" dy="3.90">user's email is</tspan><tspan x="1269.0" dy="3.90">requested to transfer</tspan><tspan x="1269.0" dy="3.90">the Artwork</tspan><tspan x="1269.0" dy="3.90"></tspan><tspan x="1269.0" dy="3.90">Primary action:</tspan><tspan x="1269.0" dy="3.90">Transfer</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1327" y="711"><tspan x="1327.0" dy="0.00">Extra modal</tspan><tspan x="1327.0" dy="3.90">confirming the</tspan><tspan x="1327.0" dy="3.90">transfer action.</tspan></text>
+<text class="tn" style="font-size:3.0px" x="1155" y="776"><tspan x="1155.0" dy="0.00">List of artwork transfers made by</tspan><tspan x="1155.0" dy="3.90">the user.</tspan><tspan x="1155.0" dy="3.90">Pending artwork transfers have a</tspan><tspan x="1155.0" dy="3.90">timer if they expire. (no definition)</tspan></text>
+</svg>

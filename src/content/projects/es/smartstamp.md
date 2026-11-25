@@ -126,7 +126,7 @@ Tres principios guiaron la nueva estructura:
 
 Con la estructura decidida, dibujé todos los flujos de principio a fin. La primera versión enseñaba a propósito lo que faltaba: las zonas sin definir en azul y las preguntas para marketing en rosa.
 
-![Primera versión del user flow de Smartstamp. Los bloques azules marcan partes del producto aún sin definir, y un bloque rosa marca contenido del onboarding que había que aclarar con marketing.](/projects/smartstamp/userflow-v1.webp "Flow v1.0: zonas sin definir en azul y preguntas abiertas con marketing en rosa, para que todo el mundo viera los huecos.")
+![Primera versión del user flow de Smartstamp. Los bloques azules marcan partes del producto aún sin definir, y un bloque rosa marca contenido del onboarding que había que aclarar con marketing.](/projects/smartstamp/userflow-v1.svg "Flow v1.0: zonas sin definir en azul y preguntas abiertas con marketing en rosa, para que todo el mundo viera los huecos.")
 
 Ese mapa se convirtió en el orden del día para decidir con los fundadores, marketing y desarrollo. En la versión 1.2 cada rama tenía una respuesta.
 

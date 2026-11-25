@@ -126,7 +126,7 @@ Drei Prinzipien leiteten die neue Struktur:
 
 Mit der neuen Struktur zeichnete ich jeden Ablauf vollständig auf. Die erste Version machte bewusst sichtbar, was fehlte: undefinierte Bereiche in Blau, offene Fragen an das Marketing in Rosa.
 
-![Erste Version des User Flows von Smartstamp. Blaue Blöcke markieren noch nicht definierte Bereiche, ein rosa Block Onboarding-Inhalte, die mit dem Marketing zu klären waren.](/projects/smartstamp/userflow-v1.webp "Flow v1.0: undefinierte Bereiche in Blau und offene Fragen an das Marketing in Rosa, damit die Lücken für alle sichtbar waren.")
+![Erste Version des User Flows von Smartstamp. Blaue Blöcke markieren noch nicht definierte Bereiche, ein rosa Block Onboarding-Inhalte, die mit dem Marketing zu klären waren.](/projects/smartstamp/userflow-v1.svg "Flow v1.0: undefinierte Bereiche in Blau und offene Fragen an das Marketing in Rosa, damit die Lücken für alle sichtbar waren.")
 
 Diese Karte wurde zur Agenda für Entscheidungen mit den Gründern, dem Marketing und der Entwicklung. In Version 1.2 hatte jeder Ast eine Antwort.
 
