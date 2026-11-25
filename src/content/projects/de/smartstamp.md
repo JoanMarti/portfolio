@@ -130,7 +130,7 @@ Mit der neuen Struktur zeichnete ich jeden Ablauf vollständig auf. Die erste Ve
 
 Diese Karte wurde zur Agenda für Entscheidungen mit den Gründern, dem Marketing und der Entwicklung. In Version 1.2 hatte jeder Ast eine Antwort.
 
-![Version 1.2 des User Flows mit Onboarding für Sammler, allen definierten Ästen und Fingerabdruck-Sequenzen mit drei, sechs, sieben und neun Aufnahmen.](/projects/smartstamp/userflow-v2.webp "Flow v1.2: Onboarding für Sammler, definierte Nutzertypen und Zahlung, und eine Auswahl von 3, 6, 7 oder 9 Fingerabdruck-Aufnahmen.")
+![Version 1.2 des User Flows mit Onboarding für Sammler, allen definierten Ästen und Fingerabdruck-Sequenzen mit drei, sechs, sieben und neun Aufnahmen.](/projects/smartstamp/userflow-v2.svg "Flow v1.2: Onboarding für Sammler, definierte Nutzertypen und Zahlung, und eine Auswahl von 3, 6, 7 oder 9 Fingerabdruck-Aufnahmen.")
 
 Die wichtigsten Änderungen zwischen den beiden Versionen:
 

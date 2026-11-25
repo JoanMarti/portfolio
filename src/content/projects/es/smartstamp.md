@@ -130,7 +130,7 @@ Con la estructura decidida, dibujé todos los flujos de principio a fin. La prim
 
 Ese mapa se convirtió en el orden del día para decidir con los fundadores, marketing y desarrollo. En la versión 1.2 cada rama tenía una respuesta.
 
-![Versión 1.2 del user flow con onboarding para coleccionistas, todas las ramas definidas y secuencias de huella con tres, seis, siete y nueve capturas.](/projects/smartstamp/userflow-v2.webp "Flow v1.2: onboarding pensado para coleccionistas, tipos de usuario y pagos definidos, y elección de 3, 6, 7 o 9 capturas de huella.")
+![Versión 1.2 del user flow con onboarding para coleccionistas, todas las ramas definidas y secuencias de huella con tres, seis, siete y nueve capturas.](/projects/smartstamp/userflow-v2.svg "Flow v1.2: onboarding pensado para coleccionistas, tipos de usuario y pagos definidos, y elección de 3, 6, 7 o 9 capturas de huella.")
 
 Los cambios principales entre las dos versiones:
 

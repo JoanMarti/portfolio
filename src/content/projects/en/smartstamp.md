@@ -130,7 +130,7 @@ With the structure settled, I mapped every flow end to end. The first version de
 
 That map became the agenda for decisions with the founders, marketing and engineering. In version 1.2 every branch had an answer.
 
-![Version 1.2 of the user flow with onboarding for collectors, all branches defined and fingerprint sequences of three, six, seven and nine captures.](/projects/smartstamp/userflow-v2.webp "Flow v1.2: onboarding written for collectors, user types and payment defined, and a choice of 3, 6, 7 or 9 fingerprint captures.")
+![Version 1.2 of the user flow with onboarding for collectors, all branches defined and fingerprint sequences of three, six, seven and nine captures.](/projects/smartstamp/userflow-v2.svg "Flow v1.2: onboarding written for collectors, user types and payment defined, and a choice of 3, 6, 7 or 9 fingerprint captures.")
 
 The main changes between the two versions:
 
