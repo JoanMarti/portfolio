@@ -43,7 +43,7 @@ The technology worked. The app around it didn’t yet. It had to let four kinds 
 
 I inherited a sitemap that described the product as one homepage with six branches: profile, notifications, search, spaces, register and verify.
 
-![The information architecture I received: a colour-coded sitemap with one homepage and six branches, deep nesting under Spaces and many sticky notes marked work in progress.](/projects/smartstamp/ia-received.webp "The sitemap I received. Each colour is a branch from the homepage, and the orange notes say “work in progress”.")
+![The information architecture I received: a colour-coded sitemap with one homepage and six branches, deep nesting under Spaces and many sticky notes marked work in progress.](/projects/smartstamp/ia-received.svg "The sitemap I received. Each colour is a branch from the homepage, and the orange notes say “work in progress”.")
 
 It was a useful starting point, but it had three structural problems:
 

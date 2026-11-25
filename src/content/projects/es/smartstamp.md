@@ -43,7 +43,7 @@ La tecnología funcionaba. La app que la rodeaba, todavía no. Tenía que permit
 
 Heredé un sitemap que describía el producto como una home con seis ramas: perfil, notificaciones, búsqueda, spaces, registrar y verificar.
 
-![La arquitectura de la información que recibí: un sitemap con colores, una home con seis ramas, mucha profundidad bajo Spaces y muchas notas marcadas como work in progress.](/projects/smartstamp/ia-received.webp "El sitemap que recibí. Cada color es una rama de la home, y las notas naranjas dicen «work in progress».")
+![La arquitectura de la información que recibí: un sitemap con colores, una home con seis ramas, mucha profundidad bajo Spaces y muchas notas marcadas como work in progress.](/projects/smartstamp/ia-received.svg "El sitemap que recibí. Cada color es una rama de la home, y las notas naranjas dicen «work in progress».")
 
 Era un buen punto de partida, pero tenía tres problemas de estructura:
 

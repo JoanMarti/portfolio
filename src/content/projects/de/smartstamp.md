@@ -43,7 +43,7 @@ Die Technologie funktionierte. Die App drumherum noch nicht. Sie musste vier Art
 
 Ich übernahm eine Sitemap, die das Produkt als eine Startseite mit sechs Ästen beschrieb: Profil, Mitteilungen, Suche, Spaces, Registrieren und Prüfen.
 
-![Die übernommene Informationsarchitektur: eine farbcodierte Sitemap mit einer Startseite und sechs Ästen, tiefer Verschachtelung unter Spaces und vielen Notizen mit dem Vermerk work in progress.](/projects/smartstamp/ia-received.webp "Die übernommene Sitemap. Jede Farbe ist ein Ast der Startseite, die orangen Notizen bedeuten «work in progress».")
+![Die übernommene Informationsarchitektur: eine farbcodierte Sitemap mit einer Startseite und sechs Ästen, tiefer Verschachtelung unter Spaces und vielen Notizen mit dem Vermerk work in progress.](/projects/smartstamp/ia-received.svg "Die übernommene Sitemap. Jede Farbe ist ein Ast der Startseite, die orangen Notizen bedeuten «work in progress».")
 
 Sie war ein brauchbarer Ausgangspunkt, hatte aber drei strukturelle Probleme:
 
