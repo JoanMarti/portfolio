@@ -1,4 +1,8 @@
 ---
+// Self-hosted fonts: no request to Google, so no visitor data leaves the site for typography.
+import '@fontsource-variable/newsreader/opsz.css';
+import '@fontsource-variable/schibsted-grotesk/wght.css';
+import '@fontsource-variable/schibsted-grotesk/wght-italic.css';
 import '../styles/global.css';
 import { site } from '../data/site';
 import { url } from '../lib/url';
@@ -66,12 +70,6 @@ const hasCv = existsSync(`public/${site.cv}`);
     <meta name="twitter:image" content={new URL(url(image), Astro.site)} />
     <link rel="sitemap" href={url('/sitemap.xml')} />
     <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&display=swap"
-      rel="stylesheet"
-    />
     <script type="application/ld+json" set:html={JSON.stringify({
       '@context': 'https://schema.org',
       '@type': 'Person',

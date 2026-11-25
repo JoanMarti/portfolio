@@ -10,7 +10,9 @@
   --on-accent: #ffffff;
   --ok: #1f7a4d;
 
-  --font: 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;
+  --font: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', ui-sans-serif, system-ui, sans-serif;
+  /* Editorial display face for page and section titles; the grotesk stays for reading and UI. */
+  --font-display: 'Newsreader Variable', 'Newsreader', 'Iowan Old Style', Georgia, serif;
 
   /* Type scale (perfect fourth) */
   --step--1: 0.875rem;
@@ -18,7 +20,7 @@
   --step-1: 1.333rem;
   --step-2: 1.777rem;
   --step-3: 2.369rem;
-  --step-4: clamp(2.4rem, 1.4rem + 4vw, 4.2rem);
+  --step-4: clamp(2.6rem, 1.4rem + 5vw, 5.4rem);
 
   --radius: 6px;
   --radius-lg: 14px;
@@ -80,6 +82,7 @@ a:hover { color: var(--accent); }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 2px; }
 
 h1, h2, h3 { line-height: 1.12; font-weight: 700; letter-spacing: -0.02em; margin: 0; text-wrap: balance; }
+h1, h2 { font-family: var(--font-display); font-weight: 420; font-optical-sizing: auto; letter-spacing: -0.015em; }
 p { margin: 0; text-wrap: pretty; }
 
 .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
@@ -104,7 +107,7 @@ p { margin: 0; text-wrap: pretty; }
   display: flex; justify-content: space-between; align-items: baseline; gap: 16px;
   padding-bottom: 16px; border-bottom: 1px solid var(--line); margin-bottom: 32px;
 }
-.section-head h2 { font-size: var(--step-2); }
+.section-head h2 { font-size: var(--step-3); line-height: 1.05; }
 
 /* Long-form text inside case studies */
 .prose { max-width: none; }
