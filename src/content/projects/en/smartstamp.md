@@ -228,9 +228,36 @@ Artwork data changes often (prices, inventory numbers, series), so every field i
 
 ## A system behind the screens
 
-I organised the work so it could grow with the product: one Figma file per feature (Home, Register, Verify, Transfer, Space, Search, Profile, Event log, Archive, emails and in-app promotions), all built on a shared UI library with documented components.
+I organised the work so it could grow with the product: one Figma file per feature (Home, Register, Verify, Transfer, Space, Search, Profile, Event log, Archive, emails and in-app promotions), all built on a shared UI library with documented components. Every file follows the same three rules.
 
-![The Smartstamp Figma workspace: more than 20 files, one per feature, including UI Library, Foundations CSS, User flow and Proto-Persona.](/projects/smartstamp/figma-files.webp "One file per feature, all built on the same UI library and foundations.")
+### One cover, one label
+
+I normalised the covers so every file looks the same in the workspace: brand colour, logo and a label with what the file contains, plus a version chip. Nobody has to open a file to know what is inside, and the version shows which one is current.
+
+![The Smartstamp Figma workspace: more than 20 files with identical covers, each labelled with its content, such as Home, UI Library, Userflow, Verify Artwork, Register Artwork and Archive, and a version chip.](/projects/smartstamp/figma-files.webp "Same cover everywhere. Only the label changes: Home, UI Library, Verify Artwork, Archive.")
+
+### The same pages in every file
+
+Inside, every file has the same page structure, separated into groups, so anyone on the team can find their way around a file they have never opened.
+
+<div class="pages" role="group" aria-label="Page structure of a feature file">
+  <div class="pg"><ul><li>Cover</li><li>Changelog</li></ul><p><strong>Context.</strong> The cover and a changelog of what changed, when and why.</p></div>
+  <div class="pg"><ul><li><span>Dashboard</span><span>Home</span><span>Iteration 1</span></li><li><span>Dashboard</span><span>Home</span><span>Iteration 2</span></li><li><span>Home</span><span>Home</span><span>Iteration 1</span></li></ul><p><strong>Work in progress.</strong> One page per iteration, named by area, screen and iteration number. Earlier iterations stay next to the current one, so the evolution is easy to follow.</p></div>
+  <div class="pg"><ul><li><span>Home</span><span>Tablet</span></li></ul><p><strong>Devices.</strong> Adaptations to other screen sizes, kept apart from the phone work.</p></div>
+  <div class="pg"><ul><li>Archive</li></ul><p><strong>Archive.</strong> Discarded explorations. Out of the way but never deleted, so every decision can be traced back.</p></div>
+</div>
+
+### Every flow starts with a spec
+
+Each flow is a frame with the same parts: a spec on the left and the screens in order on the right. The spec answers why before the screens show what.
+
+<dl class="spec-fields"><div><dt>Who and where</dt><dd>User type, platform and entry point</dd></div><div><dt>Why</dt><dd>User case and expected outcome</dd></div><div><dt>What happens</dt><dd>Trigger logic and primary action</dd></div><div><dt>How it looks</dt><dd>Design reference: the patterns and components the flow relies on</dd></div></dl>
+
+![Spec for the artwork transfer flow from the home screen quick actions: a table with title, user case, user type, platform, entry point, trigger logic, primary action, expected outcome and design reference, next to the home screen and the Choose artwork screen.](/projects/smartstamp/flow-spec-transfer.webp "Example: transferring an artwork from the quick actions on the home screen. Spec first, then the screens in order.")
+
+### One library underneath
+
+All files use the same UI library, and every component in it is documented.
 
 <div class="compare">
   <figure>
@@ -245,7 +272,7 @@ I organised the work so it could grow with the product: one Figma file per featu
 
 ## Working with engineering after launch
 
-Once the app was in testing, I delivered improvements as short specs engineering could ship in the next version. Each one had the same fields: the problem, which users and platforms it affects, the entry point, what triggers it and the expected outcome.
+Once the app was in testing, I delivered improvements as short specs engineering could ship in the next version, using the same template as the flows: the problem, which users and platforms it affects, the entry point, what triggers it and the expected outcome.
 
 ![A design spec for reducing the bottom navigation height from 83 to 56 pixels, next to the updated Smartstamp home screen.](/projects/smartstamp/spec-bottom-nav.webp "Example spec: reducing the bottom navigation from 83 px to 56 px, in line with Material Design and Apple’s guidelines.")
 

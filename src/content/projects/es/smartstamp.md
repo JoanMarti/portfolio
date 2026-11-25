@@ -227,9 +227,36 @@ Los datos de una obra cambian a menudo (precios, números de inventario, series)
 
 ## Un sistema detrás de las pantallas
 
-Organicé el trabajo para que pudiera crecer con el producto: un archivo de Figma por funcionalidad (Home, Registrar, Verificar, Transferir, Space, Búsqueda, Perfil, Registro de eventos, Archivo, emails y promociones dentro de la app), todos construidos sobre una librería de UI común con componentes documentados.
+Organicé el trabajo para que pudiera crecer con el producto: un archivo de Figma por funcionalidad (Home, Registrar, Verificar, Transferir, Space, Búsqueda, Perfil, Registro de eventos, Archivo, emails y promociones dentro de la app), todos construidos sobre una librería de UI común con componentes documentados. Todos los archivos siguen las mismas tres reglas.
 
-![El espacio de trabajo de Smartstamp en Figma: más de 20 archivos, uno por funcionalidad, entre ellos UI Library, Foundations CSS, User flow y Proto-Persona.](/projects/smartstamp/figma-files.webp "Un archivo por funcionalidad, todos sobre la misma librería de UI y los mismos fundamentos.")
+### Una cover, una etiqueta
+
+Normalicé las covers para que todos los archivos se vieran igual en el espacio de trabajo: color de marca, logo y una etiqueta con lo que contiene el archivo, más un chip de versión. Nadie tiene que abrir un archivo para saber qué hay dentro, y la versión indica cuál es la vigente.
+
+![El espacio de trabajo de Smartstamp en Figma: más de 20 archivos con covers idénticas, cada una con una etiqueta de su contenido, como Home, UI Library, Userflow, Verify Artwork, Register Artwork y Archive, y un chip de versión.](/projects/smartstamp/figma-files.webp "La misma cover en todos los archivos. Solo cambia la etiqueta: Home, UI Library, Verify Artwork, Archive.")
+
+### Las mismas páginas en cada archivo
+
+Por dentro, todos los archivos tienen la misma estructura de páginas, separada en grupos, para que cualquiera del equipo se oriente en un archivo que nunca ha abierto.
+
+<div class="pages" role="group" aria-label="Estructura de páginas de un archivo de funcionalidad">
+  <div class="pg"><ul><li>Cover</li><li>Changelog</li></ul><p><strong>Contexto.</strong> La cover y un changelog con qué cambió, cuándo y por qué.</p></div>
+  <div class="pg"><ul><li><span>Dashboard</span><span>Home</span><span>Iteration 1</span></li><li><span>Dashboard</span><span>Home</span><span>Iteration 2</span></li><li><span>Home</span><span>Home</span><span>Iteration 1</span></li></ul><p><strong>Trabajo en curso.</strong> Una página por iteración, con el nombre del área, la pantalla y el número de iteración. Las iteraciones anteriores se quedan junto a la actual, así la evolución se sigue fácilmente.</p></div>
+  <div class="pg"><ul><li><span>Home</span><span>Tablet</span></li></ul><p><strong>Dispositivos.</strong> Adaptaciones a otros tamaños de pantalla, separadas del trabajo para móvil.</p></div>
+  <div class="pg"><ul><li>Archive</li></ul><p><strong>Archivo.</strong> Exploraciones descartadas. Fuera de la vista pero nunca borradas, para poder rastrear cada decisión.</p></div>
+</div>
+
+### Cada flujo empieza con una especificación
+
+Cada flujo es un frame con las mismas partes: a la izquierda una especificación y a la derecha las pantallas en orden. La especificación responde al porqué antes de que las pantallas enseñen el qué.
+
+<dl class="spec-fields"><div><dt>Quién y dónde</dt><dd>Tipo de usuario, plataforma y punto de entrada</dd></div><div><dt>Por qué</dt><dd>Caso de uso y resultado esperado</dd></div><div><dt>Qué pasa</dt><dd>Lógica de activación y acción principal</dd></div><div><dt>Cómo se ve</dt><dd>Referencia de diseño: los patrones y componentes en los que se apoya el flujo</dd></div></dl>
+
+![Especificación del flujo de transferir una obra desde las acciones rápidas de la home: una tabla con título, caso de uso, tipo de usuario, plataforma, punto de entrada, lógica de activación, acción principal, resultado esperado y referencia de diseño, junto a la home y la pantalla Choose Artwork.](/projects/smartstamp/flow-spec-transfer.webp "Ejemplo: transferir una obra desde las acciones rápidas de la home. Primero la especificación, después las pantallas en orden.")
+
+### Una librería debajo
+
+Todos los archivos usan la misma librería de UI, y cada componente está documentado.
 
 <div class="compare">
   <figure>
@@ -244,7 +271,7 @@ Organicé el trabajo para que pudiera crecer con el producto: un archivo de Figm
 
 ## Trabajar con desarrollo después del lanzamiento
 
-Cuando la app ya estaba en pruebas, entregué las mejoras como especificaciones breves que desarrollo podía incluir en la siguiente versión. Todas tenían los mismos campos: el problema, a qué usuarios y plataformas afecta, el punto de entrada, qué lo activa y el resultado esperado.
+Cuando la app ya estaba en pruebas, entregué las mejoras como especificaciones breves que desarrollo podía incluir en la siguiente versión, con la misma plantilla que los flujos: el problema, a qué usuarios y plataformas afecta, el punto de entrada, qué lo activa y el resultado esperado.
 
 ![Una especificación de diseño para reducir la altura de la barra de navegación de 83 a 56 píxeles, junto a la home actualizada de Smartstamp.](/projects/smartstamp/spec-bottom-nav.webp "Ejemplo de especificación: reducir la barra de navegación de 83 px a 56 px, en línea con Material Design y las guías de Apple.")
 

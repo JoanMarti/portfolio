@@ -388,3 +388,20 @@ body { overflow-wrap: break-word; }
 .cs-art .cover { box-shadow: inset 0 0 0 1px rgb(242 243 239 / .08); background: radial-gradient(60% 80% at 70% 50%, color-mix(in srgb, var(--accent) 14%, transparent), transparent), #0f151c; }
 .cs-art svg * { vector-effect: non-scaling-stroke; }
 .cs-art .c-bg { fill: transparent !important; }
+
+/* Page structure of a Figma file: the panel on the left, what each group is for on the right */
+.prose .pages { margin: 2.2em 0; max-width: none; border-radius: var(--radius-lg); background: var(--paper-2); padding: 8px 24px; }
+.prose .pg { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 8px 40px; padding: 18px 0; align-items: start; }
+.prose .pg + .pg { border-top: 1px solid var(--line); }
+.prose .pg ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.prose .pg li { margin: 0; font-size: var(--step--1); font-weight: 600; display: flex; flex-wrap: wrap; align-items: center; gap: 4px 8px; }
+.prose .pg li span + span::before { content: ''; display: inline-block; width: 4px; height: 4px; border-radius: 50%; background: var(--muted); margin-right: 8px; vertical-align: middle; }
+.prose .pg p { margin: 0; font-size: var(--step--1); color: var(--muted); max-width: 46ch; }
+.prose .pg p strong { color: var(--ink); }
+@media (max-width: 640px) { .prose .pg { grid-template-columns: 1fr; } }
+
+/* The four questions a flow spec answers */
+.prose .spec-fields { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 16px 28px; margin: 1.6em 0; max-width: none; }
+.prose .spec-fields div { border-top: 2px solid var(--accent); padding-top: 12px; }
+.prose .spec-fields dt { font-weight: 650; }
+.prose .spec-fields dd { margin: 4px 0 0; font-size: var(--step--1); color: var(--muted); }

@@ -227,9 +227,36 @@ Werkdaten ändern sich oft (Preise, Inventarnummern, Serien). Deshalb wird jedes
 
 ## Ein System hinter den Screens
 
-Ich organisierte die Arbeit so, dass sie mit dem Produkt wachsen konnte: eine Figma-Datei pro Funktion (Home, Registrieren, Prüfen, Übertragen, Space, Suche, Profil, Ereignisprotokoll, Archiv, E-Mails und Promotionen in der App), alle auf einer gemeinsamen UI-Bibliothek mit dokumentierten Komponenten.
+Ich organisierte die Arbeit so, dass sie mit dem Produkt wachsen konnte: eine Figma-Datei pro Funktion (Home, Registrieren, Prüfen, Übertragen, Space, Suche, Profil, Ereignisprotokoll, Archiv, E-Mails und Promotionen in der App), alle auf einer gemeinsamen UI-Bibliothek mit dokumentierten Komponenten. Jede Datei folgt denselben drei Regeln.
 
-![Der Figma-Arbeitsbereich von Smartstamp: über 20 Dateien, eine pro Funktion, darunter UI Library, Foundations CSS, User Flow und Proto-Persona.](/projects/smartstamp/figma-files.webp "Eine Datei pro Funktion, alle auf derselben UI-Bibliothek und denselben Grundlagen.")
+### Ein Cover, ein Label
+
+Ich vereinheitlichte die Covers, damit jede Datei im Arbeitsbereich gleich aussieht: Markenfarbe, Logo und ein Label mit dem Inhalt der Datei, dazu ein Versions-Chip. Niemand muss eine Datei öffnen, um zu wissen, was darin ist, und die Version zeigt, welche aktuell ist.
+
+![Der Figma-Arbeitsbereich von Smartstamp: über 20 Dateien mit identischen Covers, jede mit ihrem Inhalt beschriftet, etwa Home, UI Library, Userflow, Verify Artwork, Register Artwork und Archive, dazu ein Versions-Chip.](/projects/smartstamp/figma-files.webp "Überall dasselbe Cover. Nur das Label ändert sich: Home, UI Library, Verify Artwork, Archive.")
+
+### Dieselben Seiten in jeder Datei
+
+Innen hat jede Datei dieselbe Seitenstruktur, in Gruppen getrennt, damit sich alle im Team auch in einer Datei zurechtfinden, die sie noch nie geöffnet haben.
+
+<div class="pages" role="group" aria-label="Seitenstruktur einer Funktionsdatei">
+  <div class="pg"><ul><li>Cover</li><li>Changelog</li></ul><p><strong>Kontext.</strong> Das Cover und ein Changelog: was sich geändert hat, wann und warum.</p></div>
+  <div class="pg"><ul><li><span>Dashboard</span><span>Home</span><span>Iteration 1</span></li><li><span>Dashboard</span><span>Home</span><span>Iteration 2</span></li><li><span>Home</span><span>Home</span><span>Iteration 1</span></li></ul><p><strong>In Arbeit.</strong> Eine Seite pro Iteration, benannt nach Bereich, Screen und Iterationsnummer. Frühere Iterationen bleiben neben der aktuellen, so lässt sich die Entwicklung leicht nachvollziehen.</p></div>
+  <div class="pg"><ul><li><span>Home</span><span>Tablet</span></li></ul><p><strong>Geräte.</strong> Anpassungen an andere Bildschirmgrössen, getrennt von der Arbeit fürs Telefon.</p></div>
+  <div class="pg"><ul><li>Archive</li></ul><p><strong>Archiv.</strong> Verworfene Ansätze. Aus dem Weg, aber nie gelöscht, damit sich jede Entscheidung zurückverfolgen lässt.</p></div>
+</div>
+
+### Jeder Flow beginnt mit einer Spezifikation
+
+Jeder Flow ist ein Frame mit denselben Teilen: links eine Spezifikation, rechts die Screens in ihrer Reihenfolge. Die Spezifikation beantwortet das Warum, bevor die Screens das Was zeigen.
+
+<dl class="spec-fields"><div><dt>Wer und wo</dt><dd>Nutzertyp, Plattform und Einstiegspunkt</dd></div><div><dt>Warum</dt><dd>Anwendungsfall und erwartetes Ergebnis</dd></div><div><dt>Was passiert</dt><dd>Auslöser und Hauptaktion</dd></div><div><dt>Wie es aussieht</dt><dd>Designreferenz: die Muster und Komponenten, auf denen der Flow aufbaut</dd></div></dl>
+
+![Spezifikation des Flows zum Übertragen eines Werks über die Schnellaktionen der Startseite: eine Tabelle mit Titel, Anwendungsfall, Nutzertyp, Plattform, Einstiegspunkt, Auslöser, Hauptaktion, erwartetem Ergebnis und Designreferenz, daneben die Startseite und der Screen Choose Artwork.](/projects/smartstamp/flow-spec-transfer.webp "Beispiel: ein Werk über die Schnellaktionen der Startseite übertragen. Zuerst die Spezifikation, dann die Screens in ihrer Reihenfolge.")
+
+### Eine Bibliothek darunter
+
+Alle Dateien nutzen dieselbe UI-Bibliothek, und jede Komponente darin ist dokumentiert.
 
 <div class="compare">
   <figure>
@@ -244,7 +271,7 @@ Ich organisierte die Arbeit so, dass sie mit dem Produkt wachsen konnte: eine Fi
 
 ## Zusammenarbeit mit der Entwicklung nach dem Launch
 
-Sobald die App im Test war, lieferte ich Verbesserungen als kurze Spezifikationen, die die Entwicklung in der nächsten Version umsetzen konnte. Jede hatte dieselben Felder: das Problem, betroffene Nutzer und Plattformen, Einstiegspunkt, Auslöser und erwartetes Ergebnis.
+Sobald die App im Test war, lieferte ich Verbesserungen als kurze Spezifikationen, die die Entwicklung in der nächsten Version umsetzen konnte, mit derselben Vorlage wie die Flows: das Problem, betroffene Nutzer und Plattformen, Einstiegspunkt, Auslöser und erwartetes Ergebnis.
 
 ![Eine Designspezifikation, die die Höhe der Navigationsleiste von 83 auf 56 Pixel reduziert, neben der aktualisierten Startseite von Smartstamp.](/projects/smartstamp/spec-bottom-nav.webp "Beispiel einer Spezifikation: die Navigationsleiste von 83 px auf 56 px verkleinern, im Einklang mit Material Design und den Richtlinien von Apple.")
 
