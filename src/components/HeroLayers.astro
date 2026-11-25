@@ -1,5 +1,7 @@
 ---
 // Hero visual: how Joan works, drawn as the three layers of a design system.
+// Each plane is drawn flat on a 100x100 grid and projected to isometric with one matrix,
+// so the product, the components and the foundations read as real interface, not icons.
 // The layers separate once on page load (skipped with reduced motion).
 interface Props {
   layers: { name: string; note: string }[]; // top to bottom
@@ -7,64 +9,151 @@ interface Props {
 }
 const { layers: text, label } = Astro.props;
 
-const iso = (cx: number, cy: number, w: number, h: number) =>
-  `${cx},${cy - h} ${cx + w},${cy} ${cx},${cy + h} ${cx - w},${cy}`;
+const W = 200; // half width of a plane
+const H = 100; // half height (2:1 isometric)
+const CX = 225;
+const diamond = (cy: number) => `${CX},${cy - H} ${CX + W},${cy} ${CX},${cy + H} ${CX - W},${cy}`;
+// Maps the flat 100x100 grid onto the plane: (0,0) top corner, (100,0) right, (0,100) left.
+const flat = (cy: number) => `matrix(${W / 100} ${H / 100} ${-W / 100} ${H / 100} ${CX} ${cy - H})`;
 
 const layers = [
-  { y: 110, cls: 'top', ...text[0] },
-  { y: 230, cls: 'mid', ...text[1] },
-  { y: 350, cls: 'base', ...text[2] },
+  { y: 125, cls: 'top', ...text[0] },
+  { y: 290, cls: 'mid', ...text[1] },
+  { y: 455, cls: 'base', ...text[2] },
 ];
 ---
 
-<svg class="hero-layers" viewBox="0 0 640 460" role="img" aria-label={label}>
+<svg class="hero-layers" viewBox="0 0 660 590" role="img" aria-label={label}>
+  <!-- Corner guides that tie the stack together -->
+  <g class="guides" aria-hidden="true">
+    {[CX - W, CX + W].map((x) => <line x1={x} y1={layers[0].y} x2={x} y2={layers[2].y} />)}
+    <line x1={CX} y1={layers[0].y + H} x2={CX} y2={layers[2].y + H} />
+  </g>
+
   {[...layers].reverse().map((l, i) => (
-    <g class={`layer layer--${l.cls}`} style={`--rise:${i * 120}px; --delay:${i * 90}ms`}>
-      <polygon points={iso(220, l.y, 200, 80)} class="plane" />
-      {l.cls === 'base' && Array.from({ length: 4 }).map((_, r) =>
-        Array.from({ length: 4 }).map((_, c) => (
-          <circle cx={220 + (c - r) * 38} cy={l.y + (c + r - 3) * 15} r="3.5" class="dot" />
-        )))}
-      {l.cls === 'mid' && (
-        <g>
-          <polygon points={iso(170, l.y - 2, 46, 18)} class="chip" />
-          <polygon points={iso(262, l.y - 18, 46, 18)} class="chip" />
-          <polygon points={iso(268, l.y + 26, 46, 18)} class="chip" />
-        </g>
-      )}
-      {l.cls === 'top' && (
-        <g>
-          <polygon points={iso(190, l.y, 104, 42)} class="chip chip--light" />
-          <polyline points={`${150},${l.y + 2} ${190},${l.y - 14} ${232},${l.y + 4}`} class="path" />
-        </g>
-      )}
-      <line x1="420" y1={l.y} x2="440" y2={l.y} class="leader" />
-      <text x="450" y={l.y - 4} class="t-name">{l.name}</text>
-      <text x="450" y={l.y + 18} class="t-note">{l.note}</text>
+    <g class={`layer layer--${l.cls}`} style={`--rise:${i * 110}px; --delay:${i * 110}ms`}>
+      <polygon points={diamond(l.y + 10)} class="shadow" />
+      <polygon points={diamond(l.y)} class="plane" />
+
+      <g transform={flat(l.y)}>
+        {l.cls === 'top' && (
+          <g class="ui">
+            <rect x="8" y="8" width="84" height="7" rx="1.5" class="ui-bar" />
+            <circle cx="12" cy="11.5" r="1.6" class="ui-dot" />
+            <rect x="8" y="19" width="17" height="73" rx="2" class="ui-side" />
+            {[25, 33, 41, 49].map((y) => <rect x="11" y={y} width="11" height="3" rx="1.5" class="ui-nav" />)}
+            <rect x="29" y="19" width="30" height="22" rx="2" class="ui-card" />
+            <rect x="62" y="19" width="30" height="22" rx="2" class="ui-card" />
+            <rect x="32" y="23" width="14" height="3" rx="1" class="ui-ink" />
+            <rect x="32" y="31" width="20" height="5" rx="1" class="ui-accent" />
+            <rect x="65" y="23" width="12" height="3" rx="1" class="ui-ink" />
+            <rect x="65" y="31" width="22" height="5" rx="1" class="ui-ink-soft" />
+            <rect x="29" y="45" width="63" height="47" rx="2" class="ui-card" />
+            <polyline points="33,84 42,78 50,80 59,69 68,72 77,60 88,55" class="ui-line" />
+            <circle cx="88" cy="55" r="2" class="ui-point" />
+          </g>
+        )}
+        {l.cls === 'mid' && (
+          <g class="kit" transform="translate(14 14) scale(0.84)">
+            <rect x="10" y="10" width="34" height="11" rx="5.5" class="k-button" />
+            <rect x="50" y="10" width="40" height="11" rx="2" class="k-field" />
+            <rect x="53" y="14.5" width="16" height="2" rx="1" class="k-text" />
+            <rect x="10" y="30" width="20" height="10" rx="5" class="k-toggle" />
+            <circle cx="25" cy="35" r="3.6" class="k-knob" />
+            <rect x="36" y="30" width="10" height="10" rx="2" class="k-check" />
+            <polyline points="38.5,35 40.5,37.2 44,32.8" class="k-tick" />
+            <rect x="52" y="30" width="38" height="10" rx="2" class="k-field" />
+            <rect x="10" y="49" width="80" height="41" rx="3" class="k-card" />
+            <rect x="15" y="55" width="28" height="3" rx="1.5" class="k-text" />
+            <rect x="15" y="62" width="60" height="2" rx="1" class="k-text k-text--soft" />
+            <rect x="15" y="67" width="52" height="2" rx="1" class="k-text k-text--soft" />
+            <rect x="15" y="77" width="22" height="8" rx="4" class="k-button" />
+          </g>
+        )}
+        {l.cls === 'base' && (
+          <g class="tokens" transform="translate(14 14) scale(0.84)">
+            {['t-accent', 't-ink', 't-muted', 't-soft'].map((c, k) => (
+              <rect x={10 + k * 15} y="10" width="12" height="12" rx="2" class={c} />
+            ))}
+            {[4, 7, 10, 14, 19].map((h, k) => (
+              <rect x={10 + k * 7} y={44 - h} width="4" height={h} rx="1" class="t-scale" />
+            ))}
+            {Array.from({ length: 5 }).map((_, r) =>
+              Array.from({ length: 5 }).map((_, c) => (
+                <circle cx={52 + c * 9} cy={52 + r * 9} r="1.3" class="t-dot" />
+              )))}
+            <rect x="10" y="52" width="32" height="36" rx="2" class="t-type" />
+            <text x="14" y="78" class="t-glyph">Aa</text>
+          </g>
+        )}
+      </g>
+
+      <line x1={CX + W + 8} y1={l.y} x2={CX + W + 36} y2={l.y} class="leader" />
+      <circle cx={CX + W} cy={l.y} r="3" class="anchor" />
+      <text x={CX + W + 46} y={l.y - 2} class="t-name">{l.name}</text>
+      <text x={CX + W + 46} y={l.y + 20} class="t-note">{l.note}</text>
     </g>
   ))}
 </svg>
 
 <style>
   .hero-layers { width: 100%; height: auto; overflow: visible; }
-  .plane { fill: var(--paper-2); stroke: var(--ink); stroke-width: 1.5; }
+  .hero-layers * { vector-effect: non-scaling-stroke; }
+
+  .guides line { stroke: var(--line); stroke-width: 1; stroke-dasharray: 2 5; }
+  .shadow { fill: var(--ink); opacity: 0.06; }
+  .plane { fill: var(--paper); stroke: var(--ink); stroke-width: 1; stroke-linejoin: round; }
   .layer--top .plane { fill: var(--accent); stroke: var(--accent); }
-  .chip { fill: var(--accent-soft); stroke: var(--ink); stroke-width: 1.25; }
-  .chip--light { fill: var(--paper); stroke: var(--paper); }
-  .dot { fill: var(--ink); }
-  .path { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
-  .leader { stroke: var(--muted); stroke-width: 1; }
-  .t-name { fill: var(--ink); font: 700 18px var(--font); }
+  .layer--base .plane { fill: var(--paper-2); }
+
+  /* Product: a real screen on the cobalt plane */
+  .ui-bar { fill: var(--paper); opacity: 0.95; }
+  .ui-dot { fill: var(--accent); }
+  .ui-side { fill: var(--paper); opacity: 0.16; }
+  .ui-nav { fill: var(--paper); opacity: 0.55; }
+  .ui-card { fill: var(--paper); }
+  .ui-ink { fill: var(--ink); opacity: 0.75; }
+  .ui-ink-soft { fill: var(--ink); opacity: 0.18; }
+  .ui-accent { fill: var(--accent); }
+  .ui-line { fill: none; stroke: var(--accent); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  .ui-point { fill: var(--accent); }
+
+  /* System: the components products are built from */
+  .k-button { fill: var(--accent); }
+  .k-field, .k-check { fill: var(--paper); stroke: var(--ink); stroke-width: 1; }
+  .k-text { fill: var(--ink); opacity: 0.7; }
+  .k-text--soft { opacity: 0.25; }
+  .k-toggle { fill: var(--ink); }
+  .k-knob { fill: var(--paper); }
+  .k-tick { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .k-card { fill: var(--paper-2); stroke: var(--ink); stroke-width: 1; }
+
+  /* Foundations: colour, scale, spacing and type */
+  .t-accent { fill: var(--accent); }
+  .t-ink { fill: var(--ink); }
+  .t-muted { fill: var(--muted); }
+  .t-soft { fill: var(--accent-soft); stroke: var(--ink); stroke-width: 0.75; }
+  .t-scale { fill: var(--ink); opacity: 0.8; }
+  .t-dot { fill: var(--ink); opacity: 0.55; }
+  .t-type { fill: var(--paper); stroke: var(--ink); stroke-width: 1; }
+  .t-glyph { fill: var(--ink); font-family: var(--font-display); font-size: 19px; font-weight: 420; }
+
+  .leader { stroke: var(--ink); stroke-width: 1; }
+  .anchor { fill: var(--paper); stroke: var(--ink); stroke-width: 1; }
+  .layer--top .anchor { stroke: var(--accent); }
+  .t-name { fill: var(--ink); font-family: var(--font-display); font-size: 24px; font-weight: 420; letter-spacing: -0.01em; }
   .t-note { fill: var(--muted); font: 400 13px var(--font); }
 
   @media (prefers-reduced-motion: no-preference) {
     .layer {
-      animation: rise 900ms cubic-bezier(0.2, 0.7, 0.1, 1) both;
+      animation: rise 1100ms cubic-bezier(0.2, 0.7, 0.1, 1) both;
       animation-delay: calc(250ms + var(--delay));
     }
+    .guides { animation: fade 600ms ease-out 1100ms both; }
     @keyframes rise {
-      from { transform: translateY(var(--rise)); }
-      to { transform: translateY(0); }
+      from { transform: translateY(var(--rise)); opacity: 0.4; }
+      to { transform: translateY(0); opacity: 1; }
     }
+    @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
   }
 </style>
