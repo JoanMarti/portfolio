@@ -67,9 +67,9 @@ export const experience: Role[] = [
     start: '2022-12', end: '2025-03',
     type: contract,
     note: {
-      en: 'Owned key product and design decisions for an internal trading and risk platform. Led 3 designers day to day, presented progress to business leaders every quarter, designed the deal capture MVP and built the design system with the Angular team.',
-      de: 'Verantwortung für zentrale Produkt- und Designentscheide bei einer internen Plattform für Handel und Risikomanagement. Tägliche Führung von 3 Designern, quartalsweise Präsentationen vor der Geschäftsleitung, Design des Deal-Capture-MVP und Aufbau des Designsystems mit dem Angular-Team.',
-      es: 'Tomé las decisiones clave de producto y diseño en una plataforma interna de trading y riesgos. Lideré a diario a 3 diseñadores, presenté avances a la dirección cada trimestre, diseñé el MVP de captura de operaciones y construí el design system con el equipo de Angular.',
+      en: 'Led the design system and the design team of an internal platform. Details under NDA.',
+      de: 'Leitung des Designsystems und des Designteams einer internen Plattform. Details unter NDA.',
+      es: 'Lideré el design system y el equipo de diseño de una plataforma interna. Detalles bajo NDA.',
     },
   },
   {

@@ -16,7 +16,7 @@ const t = ui[lang].home;
 
 const projects = await getProjects(lang);
 const productWork = projects.filter((p) => p.data.discipline.includes('product'));
-const order = ['adevinta-sui', 'finora', 'smartstamp', 'crealogix-design-hub', 'julius-baer-onboarding', 'coches-net-exploration-hub'];
+const order = ['smartstamp', 'adevinta-sui', 'crealogix-design-hub', 'julius-baer-onboarding', 'finora', 'coches-net-exploration-hub'];
 const rank = (slug: string) => (order.indexOf(slug) + 1 || 99);
 const featured = productWork.filter((p) => p.data.featured).sort((a, b) => rank(a.slug) - rank(b.slug));
 const more = productWork.filter((p) => !p.data.featured);

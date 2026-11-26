@@ -93,7 +93,7 @@ const en = {
     title: 'About',
     hi: 'Hi, I’m Joan.',
     paras: [
-      'I’m a Senior Product Designer based in Zug, Switzerland, working at Lead and Principal scope. For 16 years I’ve designed digital products where clarity is essential: commodity trading, private banking, banking software, fintech and car marketplaces.',
+      'I’m a Senior Product Designer based in Zug, Switzerland, with experience leading design systems and design teams. For 16 years I’ve designed digital products where clarity is essential: commodity trading, private banking, banking software, fintech and car marketplaces.',
       'I own products end to end, from research and problem framing to detailed design and implementation, and I build the design systems they run on. I like the parts other people skip: naming tokens so engineers and designers mean the same thing, writing documentation people actually read, and setting up the governance that keeps a system alive after launch.',
       'I started in graphic and multimedia design, which gave me a visual foundation and an eye for detail. Curiosity about how people think pulled me into UX and product. A master’s in advertising and marketing strategy, plus training in trend analysis and qualitative research, taught me to connect design decisions to business ones.',
       'I work close to code. I prototype and build with Claude Code and Cursor, review pull requests in Angular and Flutter with engineers, and build my own products in React, such as {athleteos}. AI speeds up research synthesis, documentation and checks; a person still decides what ships.',
@@ -207,7 +207,7 @@ const de: Dict = {
     title: 'Über mich',
     hi: 'Hallo, ich bin Joan.',
     paras: [
-      'Ich bin Senior Product Designer in Zug und arbeite mit der Verantwortung eines Lead oder Principal Designers. Seit 16 Jahren gestalte ich digitale Produkte, bei denen Klarheit entscheidend ist: Rohstoffhandel, Private Banking, Banking-Software, Fintech und Automarktplätze.',
+      'Ich bin Senior Product Designer in Zug und habe Erfahrung in der Leitung von Designsystemen und Designteams. Seit 16 Jahren gestalte ich digitale Produkte, bei denen Klarheit entscheidend ist: Rohstoffhandel, Private Banking, Banking-Software, Fintech und Automarktplätze.',
       'Ich verantworte Produkte von Anfang bis Ende, von der Forschung und Problemdefinition bis zum Detaildesign und zur Umsetzung, und baue die Designsysteme, auf denen sie laufen. Ich mag die Teile, die andere auslassen: Tokens so benennen, dass Engineers und Designer dasselbe meinen, Dokumentation schreiben, die tatsächlich gelesen wird, und die Governance aufsetzen, die ein System nach dem Launch am Leben hält.',
       'Angefangen habe ich im Grafik- und Multimediadesign. Das gab mir ein visuelles Fundament und ein Auge fürs Detail. Die Neugier darauf, wie Menschen denken, führte mich zu UX und Produktdesign. Ein Master in Werbe- und Marketingstrategie sowie eine Ausbildung in Trendanalyse und qualitativer Forschung haben mich gelehrt, Designentscheide mit Geschäftsentscheiden zu verbinden.',
       'Ich arbeite nah am Code. Ich prototype und baue mit Claude Code und Cursor, prüfe Pull Requests in Angular und Flutter mit dem Engineering und baue eigene Produkte in React, etwa {athleteos}. KI beschleunigt Research-Synthese, Dokumentation und Prüfungen; was live geht, entscheidet weiterhin ein Mensch.',
@@ -319,7 +319,7 @@ const es: Dict = {
     title: 'Sobre mí',
     hi: 'Hola, soy Joan.',
     paras: [
-      'Soy Senior Product Designer y vivo en Zug, Suiza, y trabajo con el alcance de un Lead o Principal Designer. Llevo 16 años diseñando productos digitales donde la claridad es imprescindible: trading de materias primas, banca privada, software bancario, fintech y marketplaces de coches.',
+      'Soy Senior Product Designer, vivo en Zug, Suiza, y tengo experiencia liderando design systems y equipos de diseño. Llevo 16 años diseñando productos digitales donde la claridad es imprescindible: trading de materias primas, banca privada, software bancario, fintech y marketplaces de coches.',
       'Me ocupo del producto de principio a fin, desde la investigación y la definición del problema hasta el diseño en detalle y la implementación, y construyo los design systems que lo sostienen. Me gustan las partes que otros se saltan: nombrar los tokens para que diseño y desarrollo hablen el mismo idioma, escribir documentación que la gente realmente lee y montar la gobernanza que mantiene vivo un sistema después del lanzamiento.',
       'Empecé en el diseño gráfico y multimedia, que me dio una base visual y ojo para el detalle. La curiosidad por cómo piensan las personas me llevó a la UX y al producto. Un máster en estrategias de publicidad y marketing, junto con formación en análisis de tendencias e investigación cualitativa, me enseñó a conectar las decisiones de diseño con las de negocio.',
       'Trabajo cerca del código. Prototipo y construyo con Claude Code y Cursor, reviso pull requests en Angular y Flutter con ingeniería y desarrollo mis propios productos en React, como {athleteos}. La IA acelera la síntesis de investigación, la documentación y las revisiones; lo que sale a producción lo sigue decidiendo una persona.',

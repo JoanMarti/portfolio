@@ -11,7 +11,7 @@ duration: "Sep to Oct 2026, 31 sprints"
 tools: [Figma, Flutter, Riverpod, Claude Code, GitHub Actions]
 cover: wealth
 featured: true
-order: 2.5
+order: 4.5
 kind: side-project
 discipline: [product, visual]
 tldr:
