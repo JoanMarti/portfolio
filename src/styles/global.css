@@ -405,3 +405,7 @@ body { overflow-wrap: break-word; }
 .prose .spec-fields div { border-top: 2px solid var(--accent); padding-top: 12px; }
 .prose .spec-fields dt { font-weight: 650; }
 .prose .spec-fields dd { margin: 4px 0 0; font-size: var(--step--1); color: var(--muted); }
+
+/* Store buttons at the end of a case */
+.prose .store-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 1.4em; }
+.prose .store-links a { text-decoration: none; }

@@ -30,7 +30,11 @@ metrics:
   - value: "4"
     label: user types served by one app
     method: Registered artist, collector, enterprise and visitor
-links: []
+links:
+  - label: "Smartstamp ArtID on the App Store"
+    href: https://apps.apple.com/us/app/smartstamp-artid/id1670131767
+  - label: "Smartstamp ArtID on Google Play"
+    href: https://play.google.com/store/apps/details?id=com.smartstamp.app
 ---
 
 ## Context
@@ -295,3 +299,9 @@ One example: the bottom navigation took 83 pixels of height, which crowded artwo
 - When you inherit a product, the first deliverable is a shared picture of what is missing. Making gaps visible speeds up decisions more than polished screens do.
 - Organise navigation around what people come to do, not around the objects in the database. It also makes the product easier to extend.
 - A first build in real hands, even in TestFlight, is the fastest way to see what the design got wrong. Version 2 came from using version 1.
+
+## Try the app
+
+Smartstamp ArtID is live on iOS and Android. Download it to register or verify an artwork yourself.
+
+<p class="store-links" aria-label="Download links"><a class="btn btn--primary" href="https://apps.apple.com/us/app/smartstamp-artid/id1670131767" rel="noopener" target="_blank">Download on the App Store</a><a class="btn" href="https://play.google.com/store/apps/details?id=com.smartstamp.app" rel="noopener" target="_blank">Get it on Google Play</a></p>

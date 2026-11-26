@@ -30,7 +30,11 @@ metrics:
   - value: "4"
     label: Nutzertypen in einer App
     method: Registrierte Künstlerinnen und Künstler, Sammler, Unternehmen und Besucher
-links: []
+links:
+  - label: "Smartstamp ArtID im App Store"
+    href: https://apps.apple.com/us/app/smartstamp-artid/id1670131767
+  - label: "Smartstamp ArtID bei Google Play"
+    href: https://play.google.com/store/apps/details?id=com.smartstamp.app
 ---
 
 ## Kontext
@@ -294,3 +298,9 @@ Ein Beispiel: Die Navigationsleiste war 83 Pixel hoch und drängte die Werkvorsc
 - Wer ein Produkt übernimmt, sollte zuerst ein gemeinsames Bild davon schaffen, was fehlt. Sichtbare Lücken beschleunigen Entscheidungen mehr als ausgefeilte Screens.
 - Navigation sollte sich daran orientieren, was Menschen tun wollen, nicht an den Objekten in der Datenbank. Das macht das Produkt auch leichter erweiterbar.
 - Ein erster Build in echten Händen, selbst in TestFlight, zeigt am schnellsten, was am Design nicht stimmt. Version 2 entstand aus der Nutzung von Version 1.
+
+## Die App ausprobieren
+
+Smartstamp ArtID ist für iOS und Android verfügbar. Lade die App herunter und registriere oder prüfe selbst ein Kunstwerk.
+
+<p class="store-links" aria-label="Download-Links"><a class="btn btn--primary" href="https://apps.apple.com/us/app/smartstamp-artid/id1670131767" rel="noopener" target="_blank">Im App Store laden</a><a class="btn" href="https://play.google.com/store/apps/details?id=com.smartstamp.app" rel="noopener" target="_blank">Bei Google Play holen</a></p>
