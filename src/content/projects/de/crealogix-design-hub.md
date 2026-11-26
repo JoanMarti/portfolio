@@ -22,16 +22,16 @@ tldr:
 metrics:
   - value: "+75%"
     label: "Nutzung und Effizienz des Systems"
-    method: "TODO"
+    method: "Über alle Banken auf dem System gemessen, zusammen mit Kennzahlen zu Umsetzung im Team, Produktentwicklung und Effizienz"
   - value: "+35%"
     label: "Kundenzufriedenheit"
-    method: "TODO"
+    method: "Kundenfeedback zur Einführung des Designsystems und Kundenzufriedenheit, über alle Banken erhoben"
   - value: "+50%"
     label: "Effizienz in der Umsetzung"
-    method: "TODO"
+    method: "Über alle Banken auf dem System gemessen, als Teil der Effizienzkennzahlen"
   - value: "5+"
     label: "Finanzinstitute auf einem System"
-    method: "TODO"
+    method: "Banken und Finanzinstitute, die auf dem gemeinsamen Kern arbeiten"
 ---
 
 ## Was auf dem Spiel stand

@@ -22,16 +22,16 @@ tldr:
 metrics:
   - value: "+75%"
     label: "adoption and efficiency of the system"
-    method: "TODO"
+    method: "Measured across all the banks on the system, together with metrics on team implementation, product evolution and efficiency"
   - value: "+35%"
     label: "customer satisfaction"
-    method: "TODO"
+    method: "Client feedback on the implementation of the design system and customer satisfaction, collected across all the banks"
   - value: "+50%"
     label: "implementation efficiency"
-    method: "TODO"
+    method: "Measured across all the banks on the system, as part of the efficiency metrics"
   - value: "5+"
     label: "financial organisations on one system"
-    method: "TODO"
+    method: "Banks and financial organisations working on the shared core"
 ---
 
 ## What was at stake

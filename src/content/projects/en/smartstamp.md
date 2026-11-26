@@ -6,7 +6,7 @@ client: Smartstamp
 sector: Art tech and authentication
 year: "2025"
 role: "Senior Product Designer"
-team: "TODO"            # TODO: founders, engineers, marketing. Who did you work with?
+team: "PM, 2 founders, 2 developers, an art world specialist and the marketing director"
 duration: "6 months"
 tools: [Figma, User flows, Information architecture, UI library, Design specs, TestFlight]
 cover: ia
@@ -23,7 +23,7 @@ metrics:
     method: Received sitemap (Home › Spaces › Space › Artwork list › Artwork › Transfer) compared with the Actions tab in the new navigation
   - value: "90%"
     label: "completion of the identity verification journey"
-    method: "TODO"
+    method: "Registered users who completed the KYC identity check, introduced so that investors and users on the platform are real, certified people"
   - value: "7"
     label: core features in one Actions hub
     method: Register, Verify, Transfer, Resume drafts, Certificate, Exhibition label and Price list
@@ -225,6 +225,24 @@ The decisions behind it:
 Artwork data changes often (prices, inventory numbers, series), so every field in the artwork record is edited in place and confirmed on its own. Size, weight and price use pickers with units (centimetres or inches, kilograms or pounds, CHF, EUR or USD), so international collectors enter data their own way and records stay consistent.
 
 ![Twelve states of the artwork record: inline editing, confirmation ticks, unit pickers for size and weight, a currency picker for price and multi-select for medium.](/projects/smartstamp/artwork-edit-states.webp "Artwork record states. Every field is edited in place and confirmed on its own.")
+
+## Decisions and trade-offs
+
+**1. Actions before objects.** Navigation is organised around register, verify and transfer, not around the database.
+
+*Trade off:* Spaces are no longer the way in; they support the actions from the home screen. *Gain:* Transferring an artwork went from five levels to one tap.
+
+**2. Make the gaps visible before drawing screens.** The first flow showed what was undefined in blue and the open questions in pink.
+
+*Trade off:* The first deliverable had no polished interface. *Gain:* An agenda for decisions with the founders, marketing and engineering, and every branch answered by version 1.2.
+
+**3. At least three fingerprints, more as an option.** Each fingerprint feeds the artwork’s digital ID and its blockchain certificate, the base of a digital portfolio for transport, sale and identification.
+
+*Trade off:* Registering takes longer than a single photo. *Gain:* An ID secure enough to certify the work, with three, six, seven or nine captures depending on the piece.
+
+**4. Verify every user with KYC.** Investors and everyone registering on the platform had to be real, certified people, and the funnel had to stay easy so registrations reached the end.
+
+*Trade off:* One more step in onboarding. *Gain:* Certified users, and 90% of them completed the identity verification journey.
 
 ## A system behind the screens
 

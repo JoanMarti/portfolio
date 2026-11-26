@@ -112,6 +112,20 @@ SUI ist Open Source. Code, Historie und Marken-Themes sind öffentlich auf GitHu
 
 Der Code ist die Arbeit der Frontend-Community von Adevinta Spain. Mein Teil lag auf der Designseite für das Motor-Vertical: das System in Sketch starten, versionieren, jede Komponente auf Definition, Umsetzung und Einsatz auf allen Plattformen validieren und testen und Design und Code beim Wechsel zu React synchron halten.
 
+## Entscheidungen und ihr Preis
+
+**1. Ein System statt eines pro Plattform.** Web, iOS und Android hatten je ein Designsystem mit guten Ideen, aber keines war die Referenz.
+
+*Preis:* Jedes Plattformteam gab sein eigenes System auf. *Gewinn:* Eine Referenz für alle Designer und Entwickler der vier Marktplätze.
+
+**2. Schritt für Schritt statt eines grossen Neubaus.** Zuerst Abstract, dann gemeinsame Grundlagen, dann React-Komponenten in SUI.
+
+*Preis:* Ein langsamerer Weg, als alles auf einmal zu ersetzen. *Gewinn:* Jeder Schritt löste das dringendste Problem des vorherigen, und die Teams lieferten weiter.
+
+**3. Gemeinsames Verhalten, Marke in Themes.** Komponenten enthalten Verhalten, Struktur und Barrierefreiheit; jeder Marktplatz hat sein eigenes Theme.
+
+*Preis:* Weniger Markenfreiheit innerhalb der Komponenten. *Gewinn:* Eine Korrektur an einer Komponente erreicht alle vier Marken auf einmal.
+
 ## Was ich gelernt habe
 
 - **Abstimmung entsteht in Gesprächen, nicht in Dateien.** Ein gemeinsames System funktionierte erst, als jedes Plattformteam es mitgestaltet hatte.

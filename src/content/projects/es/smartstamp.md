@@ -6,7 +6,7 @@ client: Smartstamp
 sector: Arte y autenticación
 year: "2025"
 role: "Senior Product Designer"
-team: "TODO"
+team: "PM, 2 fundadores, 2 desarrolladores, un especialista del mundo del arte y el director de marketing"
 duration: "6 meses"
 tools: [Figma, User flows, Arquitectura de la información, Librería de UI, Especificaciones de diseño, TestFlight]
 cover: ia
@@ -23,7 +23,7 @@ metrics:
     method: Sitemap recibido (Inicio › Spaces › Space › Lista de obras › Obra › Transferir) comparado con la pestaña Actions de la nueva navegación
   - value: "90%"
     label: "de verificaciones de identidad completadas"
-    method: "TODO"
+    method: "Usuarios registrados que completaron la verificación de identidad KYC, introducida para que inversores y usuarios de la plataforma fueran personas reales y certificadas"
   - value: "7"
     label: funciones clave en un único centro de acciones
     method: Registrar, Verificar, Transferir, Retomar borradores, Certificado, Etiqueta de exposición y Lista de precios
@@ -224,6 +224,24 @@ Las decisiones detrás:
 Los datos de una obra cambian a menudo (precios, números de inventario, series), así que cada campo de la ficha se edita en su sitio y se confirma por separado. El tamaño, el peso y el precio usan selectores con unidades (centímetros o pulgadas, kilos o libras, CHF, EUR o USD), para que los coleccionistas de cualquier país introduzcan los datos a su manera y las fichas sigan siendo coherentes.
 
 ![Doce estados de la ficha de una obra: edición en el propio campo, marcas de confirmación, selectores de unidades para tamaño y peso, selector de moneda para el precio y selección múltiple para la técnica.](/projects/smartstamp/artwork-edit-states.webp "Estados de la ficha de una obra. Cada campo se edita en su sitio y se confirma por separado.")
+
+## Decisiones y lo que costaron
+
+**1. Acciones antes que objetos.** La navegación se ordena por registrar, verificar y transferir, no por la base de datos.
+
+*Lo que cedimos:* Los Spaces dejan de ser la puerta de entrada; apoyan las acciones desde la home. *Lo que ganamos:* Transferir una obra pasó de cinco niveles a un toque.
+
+**2. Hacer visibles los huecos antes de dibujar pantallas.** El primer flujo mostraba en azul lo que no estaba definido y en rosa las preguntas abiertas.
+
+*Lo que cedimos:* El primer entregable no tenía una interfaz pulida. *Lo que ganamos:* Una agenda de decisiones con los fundadores, marketing e ingeniería, y en la versión 1.2 cada rama tenía respuesta.
+
+**3. Al menos tres huellas, y más como opción.** Cada huella alimenta el ID digital de la obra y su certificado en blockchain, la base de un portafolio digital para su transporte, venta o identificación.
+
+*Lo que cedimos:* Registrar lleva más tiempo que una sola foto. *Lo que ganamos:* Un ID lo bastante seguro para certificar la obra, con tres, seis, siete o nueve capturas según la pieza.
+
+**4. Verificar a cada usuario con KYC.** Los inversores y todos los que se registraban tenían que ser personas reales y certificadas, y el funnel tenía que seguir siendo fácil para que los registros llegaran al final.
+
+*Lo que cedimos:* Un paso más en el onboarding. *Lo que ganamos:* Usuarios certificados, y el 90% completó la verificación de identidad.
 
 ## Un sistema detrás de las pantallas
 

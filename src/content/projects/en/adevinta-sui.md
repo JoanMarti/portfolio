@@ -112,6 +112,20 @@ SUI is open source. The code, the history and the brand themes are public on Git
 
 The code is the work of Adevinta Spain’s frontend community. My part was on the design side for the motor vertical: starting the system in Sketch, versioning it, validating and testing each component for definition, implementation and use on every platform, and keeping design and code aligned while it moved to React.
 
+## Decisions and trade-offs
+
+**1. One system instead of one per platform.** Web, iOS and Android each had a design system with good ideas, but none was the reference.
+
+*Trade off:* Each platform team gave up its own system. *Gain:* One reference for every designer and developer across the four marketplaces.
+
+**2. Step by step instead of a big rewrite.** Abstract first, then shared foundations, then React components in SUI.
+
+*Trade off:* A slower path than replacing everything at once. *Gain:* Each step fixed the most painful problem of the previous one, and the teams kept shipping.
+
+**3. Shared behaviour, brand in themes.** Components hold behaviour, structure and accessibility; each marketplace has its own theme.
+
+*Trade off:* Less brand freedom inside the components. *Gain:* A fix to a component reaches all four brands at once.
+
 ## What I learned
 
 - **Alignment comes from conversations, not files.** One system only worked once every platform team had shaped it together.

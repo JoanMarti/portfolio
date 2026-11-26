@@ -6,7 +6,7 @@ client: Smartstamp
 sector: Kunst und Echtheitsprüfung
 year: "2025"
 role: "Senior Product Designer"
-team: "TODO"
+team: "PM, 2 Gründer, 2 Entwickler, eine Fachperson aus der Kunstwelt und der Marketingleiter"
 duration: "6 Monate"
 tools: [Figma, User Flows, Informationsarchitektur, UI-Bibliothek, Designspezifikationen, TestFlight]
 cover: ia
@@ -23,7 +23,7 @@ metrics:
     method: Übernommene Sitemap (Start › Spaces › Space › Werkliste › Werk › Übertragen) im Vergleich zum Tab Actions in der neuen Navigation
   - value: "90%"
     label: "abgeschlossene Identitätsprüfungen"
-    method: "TODO"
+    method: "Registrierte Nutzer, die die KYC-Identitätsprüfung abschlossen. Sie wurde eingeführt, damit Investoren und Nutzer der Plattform echte, zertifizierte Personen sind"
   - value: "7"
     label: Kernfunktionen in einem Aktionsbereich
     method: Registrieren, Prüfen, Übertragen, Entwürfe fortsetzen, Zertifikat, Ausstellungsetikett und Preisliste
@@ -224,6 +224,24 @@ Die Entscheide dahinter:
 Werkdaten ändern sich oft (Preise, Inventarnummern, Serien). Deshalb wird jedes Feld direkt bearbeitet und einzeln bestätigt. Grösse, Gewicht und Preis nutzen Auswahlfelder mit Einheiten (Zentimeter oder Zoll, Kilogramm oder Pfund, CHF, EUR oder USD), damit internationale Sammler Daten auf ihre Art erfassen und die Einträge trotzdem einheitlich bleiben.
 
 ![Zwölf Zustände des Werkeintrags: Bearbeitung direkt im Feld, Bestätigungshaken, Einheitenauswahl für Grösse und Gewicht, Währungsauswahl für den Preis und Mehrfachauswahl für die Technik.](/projects/smartstamp/artwork-edit-states.webp "Zustände des Werkeintrags. Jedes Feld wird direkt bearbeitet und einzeln bestätigt.")
+
+## Entscheidungen und ihr Preis
+
+**1. Aktionen vor Objekten.** Die Navigation ist nach Registrieren, Prüfen und Übertragen geordnet, nicht nach der Datenbank.
+
+*Preis:* Spaces sind nicht mehr der Einstieg; sie unterstützen die Aktionen von der Startseite aus. *Gewinn:* Ein Werk zu übertragen ging von fünf Ebenen auf einen Tipp.
+
+**2. Lücken sichtbar machen, bevor Screens entstehen.** Der erste Flow zeigte Undefiniertes in Blau und offene Fragen in Rosa.
+
+*Preis:* Das erste Ergebnis hatte keine ausgearbeitete Oberfläche. *Gewinn:* Eine Agenda für Entscheide mit den Gründern, dem Marketing und der Entwicklung, und in Version 1.2 hatte jeder Ast eine Antwort.
+
+**3. Mindestens drei Fingerabdrücke, mehr als Option.** Jeder Fingerabdruck fliesst in die digitale ID des Werks und sein Blockchain-Zertifikat ein, die Basis eines digitalen Portfolios für Transport, Verkauf und Identifikation.
+
+*Preis:* Das Registrieren dauert länger als ein einzelnes Foto. *Gewinn:* Eine ID, die sicher genug ist, um das Werk zu zertifizieren, mit drei, sechs, sieben oder neun Aufnahmen je nach Werk.
+
+**4. Jeden Nutzer mit KYC verifizieren.** Investoren und alle, die sich registrieren, mussten echte, zertifizierte Personen sein, und der Funnel musste einfach bleiben, damit Registrierungen bis zum Ende kommen.
+
+*Preis:* Ein zusätzlicher Schritt im Onboarding. *Gewinn:* Zertifizierte Nutzer, und 90% von ihnen schlossen die Identitätsprüfung ab.
 
 ## Ein System hinter den Screens
 

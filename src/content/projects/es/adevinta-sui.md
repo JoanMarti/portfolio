@@ -112,6 +112,20 @@ SUI es de código abierto. El código, el historial y los temas de marca son pú
 
 El código es obra de la comunidad frontend de Adevinta Spain. Mi parte estaba en el lado del diseño para la vertical de motor: iniciar el sistema en Sketch, versionarlo, validar y testear cada componente en definición, implementación y uso en todas las plataformas, y mantener diseño y código alineados mientras pasaba a React.
 
+## Decisiones y lo que costaron
+
+**1. Un sistema en lugar de uno por plataforma.** Web, iOS y Android tenían cada uno un design system con buenas ideas, pero ninguno era la referencia.
+
+*Lo que cedimos:* Cada equipo de plataforma renunció a su propio sistema. *Lo que ganamos:* Una sola referencia para todos los diseñadores y desarrolladores de los cuatro marketplaces.
+
+**2. Por pasos en lugar de reescribirlo todo.** Primero Abstract, después fundamentos compartidos y al final componentes React en SUI.
+
+*Lo que cedimos:* Un camino más lento que sustituirlo todo de golpe. *Lo que ganamos:* Cada paso resolvía el problema más urgente del anterior, y los equipos seguían entregando.
+
+**3. Comportamiento compartido, marca en temas.** Los componentes guardan comportamiento, estructura y accesibilidad; cada marketplace tiene su propio tema.
+
+*Lo que cedimos:* Menos libertad de marca dentro de los componentes. *Lo que ganamos:* Un arreglo en un componente llega a las cuatro marcas a la vez.
+
 ## Qué aprendí
 
 - **La alineación sale de las conversaciones, no de los archivos.** El sistema único solo funcionó cuando todos los equipos de plataforma le dieron forma juntos.

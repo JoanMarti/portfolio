@@ -22,16 +22,16 @@ tldr:
 metrics:
   - value: "+75%"
     label: "adopción y eficiencia del sistema"
-    method: "TODO"
+    method: "Medido en todos los bancos del sistema, junto con métricas de implementación en los equipos, evolución del producto y eficiencia"
   - value: "+35%"
     label: "satisfacción del cliente"
-    method: "TODO"
+    method: "Feedback de los clientes sobre la implementación del design system y satisfacción del cliente, recogidos en todos los bancos"
   - value: "+50%"
     label: "eficiencia de implementación"
-    method: "TODO"
+    method: "Medido en todos los bancos del sistema, dentro de las métricas de eficiencia"
   - value: "5+"
     label: "entidades financieras con un solo sistema"
-    method: "TODO"
+    method: "Bancos y entidades financieras que trabajan sobre el núcleo común"
 ---
 
 ## Qué estaba en juego
