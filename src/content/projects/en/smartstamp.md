@@ -273,18 +273,29 @@ Each flow is a frame with the same parts: a spec on the left and the screens in 
 
 ### One library underneath
 
-All files use the same UI library, and every component in it is documented.
+Every file links to one UI library. It starts with a few base components, and the patterns on screen are built from them, so a change to a button reaches every quick action, card and form that uses it.
 
-<div class="compare">
-  <figure>
-    <img src="/projects/smartstamp/ui-buttons.webp" alt="Button component states for primary, secondary and tertiary buttons in default, hover and press, plus quick action icons, a row of spaces and two verification cards." />
-    <p class="compare-note">Button states and the components built from them.</p>
-  </figure>
-  <figure>
-    <img src="/projects/smartstamp/ui-button-docs.webp" alt="Documentation page for the button component: behaviour, variants, header actions, interaction and usability rules, visual hierarchy and behaviour notes." />
-    <p class="compare-note">Each component is documented with its behaviour, variants, accessibility rules (tap targets of 44 to 48 px) and usage.</p>
-  </figure>
-</div>
+<figure class="ss-lib" aria-label="Smartstamp button states and components, redrawn">
+  <div class="ss-panel">
+    <p class="ss-t">Button hierarchy</p>
+    <div class="ss-grid"><div class="ss-row ss-head"><span></span><span>Default</span><span>Hover</span><span>Press</span></div><div class="ss-row"><span class="ss-k">Primary</span><span class="ss-b ss-pri ss-d" aria-hidden="true">Continue</span><span class="ss-b ss-pri ss-h" aria-hidden="true">Continue</span><span class="ss-b ss-pri ss-p" aria-hidden="true">Continue</span></div><div class="ss-row"><span class="ss-k">Secondary</span><span class="ss-b ss-sec ss-d" aria-hidden="true">Continue</span><span class="ss-b ss-sec ss-h" aria-hidden="true">Continue</span><span class="ss-b ss-sec ss-p" aria-hidden="true">Continue</span></div><div class="ss-row"><span class="ss-k">Tertiary</span><span class="ss-b ss-ter ss-d" aria-hidden="true">Continue</span><span class="ss-b ss-ter ss-h" aria-hidden="true">Continue</span><span class="ss-b ss-ter ss-p" aria-hidden="true">Continue</span></div></div>
+  </div>
+  <ul class="ss-rules"><li><strong>One primary action per screen</strong>The filled button marks the most important step, so the next move is never in doubt.</li><li><strong>Tap targets of 44 to 48 px</strong>The iOS and Android minimums, kept on every button and icon.</li><li><strong>Feedback on every tap</strong>Hover, press and disabled states respond at once.</li></ul>
+  <div class="ss-panel ss-parts">
+    <p class="ss-t">Built from the same pieces</p>
+    <div class="ss-cols">
+      <div><p class="ss-s">Quick actions</p><div class="ss-qa"><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></i>Verify Artwork</span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></i>New Space</span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="4" width="13" height="13" rx="2"/><path d="M4 8v11h11"/><path d="M11 11h5m-2-2 2 2-2 2"/></svg></i>Transfer Artwork</span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><g class="fill"><circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><circle cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></g></svg></i>More Options</span></div></div>
+      <div><p class="ss-s">Spaces</p><div class="ss-sp"><span class="ss-new"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></i>New space</span><span class="ss-ph"></span><span class="ss-ph"></span></div></div>
+      <div><p class="ss-s">Verify options</p><div class="ss-vo"><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></i><b>Scan QR code</b><small>Point your camera at the Smartstamp QR on a certificate, label or price list</small></span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="2.5"/><path d="M8.5 16.5c1-2 6-2 7 0"/></svg></i><b>Enter Smartstamp ID</b><small>Type the Smartstamp ID manually</small></span></div></div>
+    </div>
+  </div>
+</figure>
+
+**Documented the same way.** Every component page answers the same questions, so designers and developers use it without asking. The button page, for example:
+
+<dl class="spec-fields ss-docs"><div><dt>Purpose</dt><dd>Buttons trigger actions or lead to the next step in a flow.</dd></div><div><dt>Behaviour</dt><dd>One action per tap, with immediate state feedback.</dd></div><div><dt>Variants</dt><dd>Primary, secondary and tertiary, each with a role in the hierarchy.</dd></div><div><dt>States and actions</dt><dd>Default, hover, press and disabled, plus the actions in each header.</dd></div><div><dt>Interaction and usability</dt><dd>Tap targets, fixed headers and a back arrow that always returns one level.</dd></div><div><dt>Visual hierarchy and notes</dt><dd>Alignment, icon style and how the component behaves in modals.</dd></div></dl>
+
+![Documentation page for the button component: behaviour, variants, header actions, interaction and usability rules, visual hierarchy and behaviour notes.](/projects/smartstamp/ui-button-docs.webp "The button page in the library, with every section filled in.")
 
 ## Working with engineering after launch
 

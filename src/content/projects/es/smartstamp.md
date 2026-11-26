@@ -272,18 +272,29 @@ Cada flujo es un frame con las mismas partes: a la izquierda una especificación
 
 ### Una librería debajo
 
-Todos los archivos usan la misma librería de UI, y cada componente está documentado.
+Todos los archivos están conectados a una sola librería de UI. Parte de unos pocos componentes base, y los patrones de las pantallas se construyen a partir de ellos, así que un cambio en un botón llega a cada acción rápida, tarjeta y formulario que lo usa.
 
-<div class="compare">
-  <figure>
-    <img src="/projects/smartstamp/ui-buttons.webp" alt="Estados del componente botón para botones primarios, secundarios y terciarios en reposo, hover y pulsado, además de iconos de acciones rápidas, una fila de spaces y dos tarjetas de verificación." />
-    <p class="compare-note">Los estados del botón y los componentes que se construyen a partir de ellos.</p>
-  </figure>
-  <figure>
-    <img src="/projects/smartstamp/ui-button-docs.webp" alt="Página de documentación del componente botón: comportamiento, variantes, acciones de cabecera, reglas de interacción y usabilidad, jerarquía visual y notas de comportamiento." />
-    <p class="compare-note">Cada componente está documentado con su comportamiento, sus variantes, sus reglas de accesibilidad (áreas táctiles de 44 a 48 px) y su uso.</p>
-  </figure>
-</div>
+<figure class="ss-lib" aria-label="Estados de botón y componentes de Smartstamp, redibujados">
+  <div class="ss-panel">
+    <p class="ss-t">Jerarquía de botones</p>
+    <div class="ss-grid"><div class="ss-row ss-head"><span></span><span>Por defecto</span><span>Hover</span><span>Pulsado</span></div><div class="ss-row"><span class="ss-k">Primario</span><span class="ss-b ss-pri ss-d" aria-hidden="true">Continuar</span><span class="ss-b ss-pri ss-h" aria-hidden="true">Continuar</span><span class="ss-b ss-pri ss-p" aria-hidden="true">Continuar</span></div><div class="ss-row"><span class="ss-k">Secundario</span><span class="ss-b ss-sec ss-d" aria-hidden="true">Continuar</span><span class="ss-b ss-sec ss-h" aria-hidden="true">Continuar</span><span class="ss-b ss-sec ss-p" aria-hidden="true">Continuar</span></div><div class="ss-row"><span class="ss-k">Terciario</span><span class="ss-b ss-ter ss-d" aria-hidden="true">Continuar</span><span class="ss-b ss-ter ss-h" aria-hidden="true">Continuar</span><span class="ss-b ss-ter ss-p" aria-hidden="true">Continuar</span></div></div>
+  </div>
+  <ul class="ss-rules"><li><strong>Una acción principal por pantalla</strong>El botón relleno marca el paso más importante, para que el siguiente movimiento nunca sea dudoso.</li><li><strong>Áreas táctiles de 44 a 48 px</strong>Los mínimos de iOS y Android, respetados en cada botón e icono.</li><li><strong>Respuesta en cada toque</strong>Hover, pulsado y desactivado responden al instante.</li></ul>
+  <div class="ss-panel ss-parts">
+    <p class="ss-t">Construido con las mismas piezas</p>
+    <div class="ss-cols">
+      <div><p class="ss-s">Acciones rápidas</p><div class="ss-qa"><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></i>Verify Artwork</span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></i>New Space</span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="4" width="13" height="13" rx="2"/><path d="M4 8v11h11"/><path d="M11 11h5m-2-2 2 2-2 2"/></svg></i>Transfer Artwork</span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><g class="fill"><circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><circle cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></g></svg></i>More Options</span></div></div>
+      <div><p class="ss-s">Spaces</p><div class="ss-sp"><span class="ss-new"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></i>New space</span><span class="ss-ph"></span><span class="ss-ph"></span></div></div>
+      <div><p class="ss-s">Opciones de verificación</p><div class="ss-vo"><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></i><b>Scan QR code</b><small>Point your camera at the Smartstamp QR on a certificate, label or price list</small></span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="2.5"/><path d="M8.5 16.5c1-2 6-2 7 0"/></svg></i><b>Enter Smartstamp ID</b><small>Type the Smartstamp ID manually</small></span></div></div>
+    </div>
+  </div>
+</figure>
+
+**Documentado siempre igual.** Cada página de componente responde a las mismas preguntas, para que diseño y desarrollo lo usen sin tener que preguntar. La página del botón, por ejemplo:
+
+<dl class="spec-fields ss-docs"><div><dt>Propósito</dt><dd>Los botones lanzan acciones o llevan al siguiente paso de un flujo.</dd></div><div><dt>Comportamiento</dt><dd>Una acción por toque, con respuesta inmediata de estado.</dd></div><div><dt>Variantes</dt><dd>Primario, secundario y terciario, cada uno con su papel en la jerarquía.</dd></div><div><dt>Estados y acciones</dt><dd>Por defecto, hover, pulsado y desactivado, más las acciones de cada cabecera.</dd></div><div><dt>Interacción y usabilidad</dt><dd>Áreas táctiles, cabeceras fijas y una flecha atrás que siempre sube un nivel.</dd></div><div><dt>Jerarquía visual y notas</dt><dd>Alineación, estilo de iconos y cómo se comporta el componente en modales.</dd></div></dl>
+
+![Página de documentación del componente botón: comportamiento, variantes, acciones de cabecera, reglas de interacción y usabilidad, jerarquía visual y notas de comportamiento.](/projects/smartstamp/ui-button-docs.webp "La página del botón en la librería, con todas las secciones completas.")
 
 ## Trabajar con desarrollo después del lanzamiento
 

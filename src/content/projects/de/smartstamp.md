@@ -272,18 +272,29 @@ Jeder Flow ist ein Frame mit denselben Teilen: links eine Spezifikation, rechts 
 
 ### Eine Bibliothek darunter
 
-Alle Dateien nutzen dieselbe UI-Bibliothek, und jede Komponente darin ist dokumentiert.
+Jede Datei ist mit einer UI-Bibliothek verbunden. Sie beginnt mit wenigen Basiskomponenten, und die Muster auf den Screens bauen darauf auf. Eine Änderung an einem Button erreicht so jede Schnellaktion, jede Karte und jedes Formular, das ihn nutzt.
 
-<div class="compare">
-  <figure>
-    <img src="/projects/smartstamp/ui-buttons.webp" alt="Zustände der Button-Komponente für primäre, sekundäre und tertiäre Buttons in Normal, Hover und Gedrückt, dazu Icons für Schnellaktionen, eine Reihe von Spaces und zwei Prüfkarten." />
-    <p class="compare-note">Button-Zustände und die Komponenten, die daraus entstehen.</p>
-  </figure>
-  <figure>
-    <img src="/projects/smartstamp/ui-button-docs.webp" alt="Dokumentationsseite der Button-Komponente: Verhalten, Varianten, Header-Aktionen, Regeln zu Interaktion und Bedienbarkeit, visuelle Hierarchie und Hinweise zum Verhalten." />
-    <p class="compare-note">Jede Komponente ist dokumentiert: Verhalten, Varianten, Barrierefreiheit (Tippflächen von 44 bis 48 px) und Einsatz.</p>
-  </figure>
-</div>
+<figure class="ss-lib" aria-label="Button-Zustände und Komponenten von Smartstamp, neu gezeichnet">
+  <div class="ss-panel">
+    <p class="ss-t">Button-Hierarchie</p>
+    <div class="ss-grid"><div class="ss-row ss-head"><span></span><span>Standard</span><span>Hover</span><span>Gedrückt</span></div><div class="ss-row"><span class="ss-k">Primär</span><span class="ss-b ss-pri ss-d" aria-hidden="true">Weiter</span><span class="ss-b ss-pri ss-h" aria-hidden="true">Weiter</span><span class="ss-b ss-pri ss-p" aria-hidden="true">Weiter</span></div><div class="ss-row"><span class="ss-k">Sekundär</span><span class="ss-b ss-sec ss-d" aria-hidden="true">Weiter</span><span class="ss-b ss-sec ss-h" aria-hidden="true">Weiter</span><span class="ss-b ss-sec ss-p" aria-hidden="true">Weiter</span></div><div class="ss-row"><span class="ss-k">Tertiär</span><span class="ss-b ss-ter ss-d" aria-hidden="true">Weiter</span><span class="ss-b ss-ter ss-h" aria-hidden="true">Weiter</span><span class="ss-b ss-ter ss-p" aria-hidden="true">Weiter</span></div></div>
+  </div>
+  <ul class="ss-rules"><li><strong>Eine Hauptaktion pro Screen</strong>Der gefüllte Button markiert den wichtigsten Schritt, damit der nächste Schritt immer klar ist.</li><li><strong>Tippflächen von 44 bis 48 px</strong>Die Mindestgrössen von iOS und Android, bei jedem Button und Icon eingehalten.</li><li><strong>Rückmeldung bei jedem Tippen</strong>Hover, Gedrückt und Deaktiviert reagieren sofort.</li></ul>
+  <div class="ss-panel ss-parts">
+    <p class="ss-t">Aus denselben Bausteinen</p>
+    <div class="ss-cols">
+      <div><p class="ss-s">Schnellaktionen</p><div class="ss-qa"><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v5c0 4.5-3 8-7 10-4-2-7-5.5-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg></i>Verify Artwork</span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></i>New Space</span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="7" y="4" width="13" height="13" rx="2"/><path d="M4 8v11h11"/><path d="M11 11h5m-2-2 2 2-2 2"/></svg></i>Transfer Artwork</span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><g class="fill"><circle cx="6" cy="6" r="1.6"/><circle cx="12" cy="6" r="1.6"/><circle cx="18" cy="6" r="1.6"/><circle cx="6" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="18" cy="12" r="1.6"/><circle cx="6" cy="18" r="1.6"/><circle cx="12" cy="18" r="1.6"/><circle cx="18" cy="18" r="1.6"/></g></svg></i>More Options</span></div></div>
+      <div><p class="ss-s">Spaces</p><div class="ss-sp"><span class="ss-new"><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M12 8v8M8 12h8"/></svg></i>New space</span><span class="ss-ph"></span><span class="ss-ph"></span></div></div>
+      <div><p class="ss-s">Prüfoptionen</p><div class="ss-vo"><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h3l2-2h6l2 2h3v11H4z"/><circle cx="12" cy="13" r="3.5"/></svg></i><b>Scan QR code</b><small>Point your camera at the Smartstamp QR on a certificate, label or price list</small></span><span><i><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="2.5"/><path d="M8.5 16.5c1-2 6-2 7 0"/></svg></i><b>Enter Smartstamp ID</b><small>Type the Smartstamp ID manually</small></span></div></div>
+    </div>
+  </div>
+</figure>
+
+**Immer gleich dokumentiert.** Jede Komponentenseite beantwortet dieselben Fragen, damit Design und Entwicklung sie ohne Rückfragen nutzen können. Die Seite des Buttons zum Beispiel:
+
+<dl class="spec-fields ss-docs"><div><dt>Zweck</dt><dd>Buttons lösen Aktionen aus oder führen zum nächsten Schritt im Flow.</dd></div><div><dt>Verhalten</dt><dd>Eine Aktion pro Tippen, mit sofortiger Rückmeldung.</dd></div><div><dt>Varianten</dt><dd>Primär, sekundär und tertiär, jede mit einer Rolle in der Hierarchie.</dd></div><div><dt>Zustände und Aktionen</dt><dd>Standard, Hover, Gedrückt und Deaktiviert, dazu die Aktionen in jedem Header.</dd></div><div><dt>Interaktion und Usability</dt><dd>Tippflächen, fixierte Header und ein Zurück-Pfeil, der immer eine Ebene zurückführt.</dd></div><div><dt>Visuelle Hierarchie und Hinweise</dt><dd>Ausrichtung, Icon-Stil und das Verhalten in Modals.</dd></div></dl>
+
+![Dokumentationsseite der Button-Komponente: Verhalten, Varianten, Header-Aktionen, Regeln zu Interaktion und Usability, visuelle Hierarchie und Hinweise zum Verhalten.](/projects/smartstamp/ui-button-docs.webp "Die Seite des Buttons in der Bibliothek, mit allen Abschnitten ausgefüllt.")
 
 ## Zusammenarbeit mit der Entwicklung nach dem Launch
 
