@@ -220,12 +220,6 @@ The decisions behind it:
 - **Keep the effort low.** A prefilled title, an optional description and one primary action per screen keep a task that people tend to postpone short enough to finish.
 - **Accessible selection.** Every type tile combines an icon and a label, and the selected state changes fill and icon colour, not only the border.
 
-## Designing the details
-
-Artwork data changes often (prices, inventory numbers, series), so every field in the artwork record is edited in place and confirmed on its own. Size, weight and price use pickers with units (centimetres or inches, kilograms or pounds, CHF, EUR or USD), so international collectors enter data their own way and records stay consistent.
-
-![Twelve states of the artwork record: inline editing, confirmation ticks, unit pickers for size and weight, a currency picker for price and multi-select for medium.](/projects/smartstamp/artwork-edit-states.webp "Artwork record states. Every field is edited in place and confirmed on its own.")
-
 ## Decisions and trade-offs
 
 **1. Actions before objects.** Navigation is organised around register, verify and transfer, not around the database.

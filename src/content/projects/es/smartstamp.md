@@ -219,12 +219,6 @@ Las decisiones detrás:
 - **Poco esfuerzo.** Un título ya rellenado, una descripción opcional y una sola acción principal por pantalla hacen corta una tarea que la gente suele dejar para más tarde.
 - **Selección accesible.** Cada tipo combina icono y texto, y al seleccionarlo cambian el relleno y el color del icono, no solo el borde.
 
-## Diseñar los detalles
-
-Los datos de una obra cambian a menudo (precios, números de inventario, series), así que cada campo de la ficha se edita en su sitio y se confirma por separado. El tamaño, el peso y el precio usan selectores con unidades (centímetros o pulgadas, kilos o libras, CHF, EUR o USD), para que los coleccionistas de cualquier país introduzcan los datos a su manera y las fichas sigan siendo coherentes.
-
-![Doce estados de la ficha de una obra: edición en el propio campo, marcas de confirmación, selectores de unidades para tamaño y peso, selector de moneda para el precio y selección múltiple para la técnica.](/projects/smartstamp/artwork-edit-states.webp "Estados de la ficha de una obra. Cada campo se edita en su sitio y se confirma por separado.")
-
 ## Decisiones y lo que costaron
 
 **1. Acciones antes que objetos.** La navegación se ordena por registrar, verificar y transferir, no por la base de datos.

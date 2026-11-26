@@ -219,12 +219,6 @@ Die Entscheide dahinter:
 - **Wenig Aufwand.** Ein vorausgefüllter Titel, eine optionale Beschreibung und eine Hauptaktion pro Screen halten eine Aufgabe kurz, die man sonst gern aufschiebt.
 - **Zugängliche Auswahl.** Jede Typ-Kachel kombiniert Icon und Beschriftung, und die Auswahl ändert Füllung und Iconfarbe, nicht nur den Rahmen.
 
-## Die Details gestalten
-
-Werkdaten ändern sich oft (Preise, Inventarnummern, Serien). Deshalb wird jedes Feld direkt bearbeitet und einzeln bestätigt. Grösse, Gewicht und Preis nutzen Auswahlfelder mit Einheiten (Zentimeter oder Zoll, Kilogramm oder Pfund, CHF, EUR oder USD), damit internationale Sammler Daten auf ihre Art erfassen und die Einträge trotzdem einheitlich bleiben.
-
-![Zwölf Zustände des Werkeintrags: Bearbeitung direkt im Feld, Bestätigungshaken, Einheitenauswahl für Grösse und Gewicht, Währungsauswahl für den Preis und Mehrfachauswahl für die Technik.](/projects/smartstamp/artwork-edit-states.webp "Zustände des Werkeintrags. Jedes Feld wird direkt bearbeitet und einzeln bestätigt.")
-
 ## Entscheidungen und ihr Preis
 
 **1. Aktionen vor Objekten.** Die Navigation ist nach Registrieren, Prüfen und Übertragen geordnet, nicht nach der Datenbank.
