@@ -445,3 +445,37 @@ body { overflow-wrap: break-word; }
 @media (max-width: 560px) { .prose .ss-row { grid-template-columns: 74px repeat(3, minmax(0, 1fr)); gap: 6px; } .prose .ss-k { font-size: 12px; } .prose .ss-b { font-size: 12px; padding: 0 4px; } }
 .prose .ss-docs { grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr)); }
 .prose .ss-docs div { border-top-color: #cc5530; }
+
+/* Data chart drawn in SVG (SUI library history) */
+.prose .chart { margin: 2.2em 0; max-width: none; background: var(--paper-2); border-radius: var(--radius-lg); padding: clamp(18px, 3vw, 28px); }
+.prose .chart-title { margin: 0; font-weight: 650; }
+.prose .chart-legend { list-style: none; padding: 0; margin: 10px 0 14px; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: var(--step--1); color: var(--muted); }
+.prose .chart-legend li { margin: 0; display: flex; align-items: center; gap: 8px; }
+.prose .chart-legend i { width: 12px; height: 12px; border-radius: 3px; }
+.prose .chart-svg { display: block; width: 100%; height: auto; overflow: visible; }
+.prose .chart-svg .grid { stroke: var(--line); stroke-width: 1; }
+.prose .chart-svg .ax { fill: var(--muted); font-size: 11px; font-variant-numeric: tabular-nums; }
+.prose .chart-svg .val { fill: var(--ink); font-size: 12px; font-weight: 600; }
+.prose .chart-svg .ann { stroke: var(--muted); stroke-dasharray: 3 4; }
+.prose .chart-svg .ann-t { fill: var(--muted); font-size: 11px; }
+.prose .chart-svg path:hover { opacity: .8; }
+.prose .chart figcaption { margin-top: 14px; font-size: var(--step--1); color: var(--muted); max-width: 70ch; }
+.prose .chart-table { margin-top: 10px; font-size: var(--step--1); }
+.prose .chart-table summary { cursor: pointer; color: var(--accent); }
+.prose .chart-table table { margin-top: 10px; }
+
+/* Anatomy of a component package */
+.prose .pkg { margin: 2em 0; max-width: none; background: var(--paper-2); border-radius: var(--radius-lg); padding: clamp(18px, 3vw, 28px); }
+.prose .pkg-root { margin: 0 0 12px; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 14px; color: var(--muted); }
+.prose .pkg ul { list-style: none; padding: 0; margin: 0; display: grid; }
+.prose .pkg li { margin: 0; display: grid; grid-template-columns: 150px 1fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); font-size: var(--step--1); color: var(--muted); }
+.prose .pkg li code { color: var(--ink); font-size: 14px; background: none; padding: 0; }
+.prose .pkg-cap { margin: 12px 0 0; font-size: var(--step--1); color: var(--muted); }
+@media (max-width: 560px) { .prose .pkg li { grid-template-columns: 1fr; gap: 4px; } }
+.prose .chart-scroll { overflow-x: auto; }
+@media (max-width: 640px) { .prose .chart-svg .ax { font-size: 17px; } .prose .chart-svg .val { font-size: 20px; } .prose .chart-svg .ann-t, .prose .chart-svg .odd { display: none; } }
+.prose .themes { margin: 2em 0; max-width: none; display: grid; gap: 16px; }
+.prose .themes figure { margin: 0; display: grid; grid-template-columns: 160px minmax(0, 640px); gap: 20px; align-items: center; }
+.prose .themes figcaption { order: -1; font-weight: 600; }
+.prose .themes img { border-radius: var(--radius-lg); width: 100%; }
+@media (max-width: 640px) { .prose .themes figure { grid-template-columns: 1fr; gap: 8px; } }
