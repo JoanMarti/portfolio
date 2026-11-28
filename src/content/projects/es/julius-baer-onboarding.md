@@ -55,6 +55,24 @@ Lo que aprendimos:
 - Los pasos de KYC generan inquietud cuando no saben por qué se les pide algo.
 - Sobre todo, quieren saber qué pasará después.
 
+## Buscando patrones
+
+Antes de dibujar nada, recopilé patrones de onboarding y de configuración de apps fuera de la banca: seguros, fitness, eventos, inmobiliaria y bienestar. De cada uno anoté qué podía resolvernos. Se agrupaban en cuatro.
+
+<div class="patterns" role="group" aria-label="Patrones recopilados para el onboarding"><div><p class="pt-h">Preguntar</p><ul><li>Preguntas conversacionales para conocer al cliente</li><li>Burbujas para elegir áreas de interés, con más detalle al tocarlas</li></ul></div><div><p class="pt-h">Explorar</p><ul><li>Categorías principales y sus servicios en una sola vista</li><li>Fácil de recorrer y de profundizar en un área</li><li>Deslizar entre los servicios elegidos y abrir el detalle</li></ul></div><div><p class="pt-h">Decidir</p><ul><li>Configurar cada servicio en un «carrito»</li><li>Vista previa de gráficos en un modal, a pantalla completa al elegirlos</li><li>Una propuesta de valor clara para cada servicio</li></ul></div><div><p class="pt-h">Progreso</p><ul><li>Una señal sencilla de cuánto falta</li><li>El progreso junto a una vista previa del carrito</li><li>Un estado de éxito al final</li></ul></div></div>
+
+## Estructurar el recorrido
+
+Los patrones dieron forma a un flujo de contenido sencillo, desde lo que engancha al cliente hasta convertirlo en prospecto.
+
+<ol class="phases"><li><strong>Áreas de interés</strong><span>Objetivos de vida, preguntas clave y servicios principales, para enganchar</span></li><li><strong>Explorar el detalle</strong><span>Los servicios, productos u objetivos concretos de cada una</span></li><li><strong>Propuesta</strong><span>Un producto que el cliente puede configurar</span></li><li><strong>Registro</strong><span>El cliente pasa a ser prospecto</span></li></ol>
+
+Por debajo, planteé tres puertas de entrada. Se podía empezar por un servicio, por una pregunta o por un momento vital, y cada puerta tenía los mismos niveles hasta el detalle.
+
+<div class="ia3" role="group" aria-label="Tres entradas a la misma estructura"><div class="ia3-col"><p class="ia3-h">Servicios</p><p class="ia3-l">Categoría</p><div class="ia3-c cat"><span>Inversión</span><span>Planificación patrimonial</span></div><p class="ia3-l">Servicio</p><div class="ia3-c svc"><span>Mandato de asesoramiento</span><span>Mandato discrecional</span><span>Productos estructurados</span><span>Ejecución y asesoramiento de valores</span><span>Divisas y metales preciosos</span></div><p class="ia3-l">Detalle</p><div class="ia3-c det"><span>Mandato discrecional: mandatos y estrategias</span></div></div><div class="ia3-col"><p class="ia3-h">Preguntas</p><p class="ia3-l">Categoría</p><div class="ia3-c cat"><span>Preguntas clave del cliente</span></div><p class="ia3-l">Servicio</p><div class="ia3-c svc"><span>Los servicios que responden a cada una</span></div><p class="ia3-l">Detalle</p><div class="ia3-c det"><span>El detalle de cada servicio</span></div></div><div class="ia3-col"><p class="ia3-h">Emociones</p><p class="ia3-l">Categoría</p><div class="ia3-c cat"><span>Familia</span><span>Sucesión</span></div><p class="ia3-l">Servicio</p><div class="ia3-c svc"><span>Una entrada para cada situación familiar</span></div><p class="ia3-l">Detalle</p><div class="ia3-c det"><span>El detalle de cada servicio</span></div></div></div>
+
+De ahí salió el concepto paso a paso. El cliente selecciona primero todos sus objetivos y momentos, puede leer el detalle de cualquiera y después lo ve todo en una vista de carrito, donde lo ajusta o añade más servicios antes de continuar.
+
 ## Decisiones clave
 
 **Muchos caminos, una sola estructura.** En lugar de un flujo lineal, el onboarding se adapta al origen del cliente, a su perfil, a si ya tiene relación con el banco y a su experiencia inversora. Todos los caminos comparten el mismo esqueleto, así que cumplimiento revisa una estructura y no una docena de flujos. Modelamos los caminos y los casos límite antes de prototipar para encontrar preguntas redundantes y posibles puntos de abandono.
@@ -64,6 +82,16 @@ Lo que aprendimos:
 **Explicar el cumplimiento en lugar de esconderlo.** Cada paso de KYC explica por qué es necesario y qué viene después, con el progreso siempre a la vista. La transparencia convirtió la fricción normativa en un momento de tranquilidad.
 
 **Contención visual.** Una interfaz mínima, microinteracciones sutiles y nada de efectos llamativos. En banca privada, la calma es la señal de calidad.
+
+## El prototipo
+
+Las primeras pantallas preguntan antes de vender. Tres preguntas cortas sobre objetivos, temas de interés y temas para profundizar, con el progreso siempre visible y la opción de saltarlas.
+
+![Tres pantallas de onboarding: objetivos de vida para elegir con fotos, temas de interés como burbujas con iconos y temas para profundizar, como derivados, divisas e inversión sostenible, como burbujas.](/projects/julius-baer-onboarding/jb-questions.webp "Objetivos, temas de interés y temas para profundizar. El cliente elige lo que le importa, nunca rellena un formulario.")
+
+Las respuestas dan forma a lo que viene después. La home muestra los objetivos elegidos y sugiere servicios para hablar con su gestor. Al abrir una cuenta del pilar 3a, el cliente ve una estrategia recomendada según esas respuestas, puede elegir otra y tiene a una persona a quien preguntar en la parte inferior de la pantalla.
+
+![Home con los objetivos de vida elegidos y tres servicios sugeridos: productos estructurados, planificación patrimonial y mandatos discrecionales. Dos pantallas de estrategia de inversión para una cuenta del pilar 3a con la estrategia recomendada Income 35%, un mensaje de confirmación y la opción de hacer una pregunta rápida con la foto de un asesor.](/projects/julius-baer-onboarding/jb-suggestions.webp "Sugerencias según los objetivos, una estrategia recomendada que se puede cambiar y un asesor a un toque.")
 
 ## Validación
 
