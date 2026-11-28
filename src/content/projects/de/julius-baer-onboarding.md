@@ -55,6 +55,16 @@ Was wir gelernt haben:
 - KYC-Schritte verunsichern, wenn nicht klar ist, warum etwas gefragt wird.
 - Vor allem wollen Kunden wissen, was als Nächstes passiert.
 
+## Eine erste Reise
+
+Meine erste Skizze der Reise hatte zwei Regeln. Die Kundschaft kann alles digital und mit voller Sicherheit erledigen, kann aber immer eine Person erreichen. Und jeder Ausstieg aus der Reise bekommt eine eigene Massnahme, um sie zurückzugewinnen.
+
+<ol class="jd" aria-label="Erster Entwurf der Reise für den digitalen Vertriebskanal"><li><strong>Ausgangslage</strong><span>5 bis 10 Fragen, um ein erstes Gefühl für die Person und ihre Bedürfnisse zu bekommen</span></li><li><strong>Mögliche Interessen</strong><span>Die Themen, die für sie zählen könnten, auf Basis dieser Antworten</span></li><li class="opt"><em>Optional</em><strong>Fortschritt sichern</strong><span>Ein einfaches Konto, um Fortschritt und Angaben zu behalten. So viel wie möglich fragen, mindestens E-Mail oder Telefon</span></li><li><strong>Konfigurieren</strong><span>Das Paket aus den gewählten Interessen formen</span></li><li><strong>Vorschau</strong><span>Die möglichen Lösungspakete auf Basis dieser Konfiguration sehen</span></li><li><strong>Kaufen</strong><span>Die Konfiguration verfeinern und das finale Paket kaufen</span></li></ol>
+
+<div class="jd-m" role="group" aria-label="Drei Säulen durch die Reise"><p class="jd-mh">Drei Säulen durch die Reise</p><div class="jd-row jd-head"><span>Interesse</span><span>Konfigurieren</span><span>Vorschau</span></div><div class="jd-row"><span><b>Anlegen</b></span><span>Ein Vermögensverwaltungsmandat anpassen</span><span>Das Mandat</span></div><div class="jd-row"><span><b>Kredite</b></span><span>Ein Kreditrechner</span><span>Das Kreditangebot</span></div><div class="jd-row"><span><b>Vermögensplanung</b></span><span>Mini-Apps: Stammbaum, Bilanz, Vermögensprojektion</span><span>Lösungen für Nachfolge, Vorsorge und Absicherung</span></div><p class="jd-touch"><strong>Erster menschlicher Kontakt</strong> Optional, während der Vorschau: ein erstes Gespräch mit einer Kundenberaterin oder einem Kundenberater aus dem Pool, um die Konfiguration zu verfeinern. Selbstbewusst angeboten, damit die Bank nie unsicher über ihr eigenes Angebot wirkt.</p></div>
+
+Die Vorschau zeigt auch, wie die drei Säulen zusammenspielen, dazu weitere Dienstleistungen wie Gespräche mit Kundenberatung oder Fachleuten, online oder vor Ort.
+
 ## Den ganzen Service abbilden
 
 Ich fasste das Konzept als digitalen Vertriebskanal und bildete den ganzen Service in einem Blueprint ab, vom ersten Kontakt bis zur laufenden Betreuung als Kundin oder Kunde. Ausgangspunkt waren eine Persona und ein Flow: Vermögensplanung und ein Mandat.

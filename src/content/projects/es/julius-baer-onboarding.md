@@ -55,6 +55,16 @@ Lo que aprendimos:
 - Los pasos de KYC generan inquietud cuando no saben por qué se les pide algo.
 - Sobre todo, quieren saber qué pasará después.
 
+## Un primer recorrido
+
+Mi primer boceto del recorrido tenía dos reglas. El cliente puede hacerlo todo en digital con total confianza, pero siempre puede hablar con una persona. Y cada salida del recorrido tiene su propia acción para recuperarlo.
+
+<ol class="jd" aria-label="Primer borrador del recorrido del distribuidor digital"><li><strong>Punto de partida</strong><span>De 5 a 10 preguntas para hacerse una primera idea del prospecto y sus necesidades</span></li><li><strong>Posibles intereses</strong><span>Los temas que pueden interesarle, a partir de esas respuestas</span></li><li class="opt"><em>Opcional</em><strong>Guardar el progreso</strong><span>Una cuenta sencilla para conservar el progreso y lo ya contestado. Preguntar todo lo posible, como mínimo email o teléfono</span></li><li><strong>Configurar</strong><span>Dar forma al paquete a partir de los intereses elegidos</span></li><li><strong>Vista previa</strong><span>Ver los posibles paquetes de solución según esa configuración</span></li><li><strong>Comprar</strong><span>El prospecto ajusta la configuración y compra el paquete final</span></li></ol>
+
+<div class="jd-m" role="group" aria-label="Tres pilares a lo largo del recorrido"><p class="jd-mh">Tres pilares a lo largo del recorrido</p><div class="jd-row jd-head"><span>Interés</span><span>Configurar</span><span>Vista previa</span></div><div class="jd-row"><span><b>Inversión</b></span><span>Personalizar un mandato discrecional</span><span>El mandato</span></div><div class="jd-row"><span><b>Financiación</b></span><span>Una calculadora de préstamos</span><span>La oferta de financiación</span></div><div class="jd-row"><span><b>Planificación patrimonial</b></span><span>Mini apps: árbol familiar, balance, proyección patrimonial</span><span>Soluciones de sucesión, jubilación y protección</span></div><p class="jd-touch"><strong>Primer contacto humano</strong> Opcional, durante la vista previa: una primera sesión con un gestor del equipo para ajustar la configuración. Ofrecida con seguridad, para que el banco nunca parezca inseguro de su propia oferta.</p></div>
+
+La vista previa muestra también cómo se combinan los tres pilares, y servicios extra como sesiones con un gestor o con expertos, en línea o en persona.
+
 ## Mapear el servicio completo
 
 Planteé el concepto como un distribuidor digital y mapeé el servicio completo en un blueprint, desde cómo llega un lead al banco hasta el seguimiento cuando ya es cliente. Partí de una persona y un flujo: planificación patrimonial y un mandato.

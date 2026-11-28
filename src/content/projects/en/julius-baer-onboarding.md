@@ -55,6 +55,16 @@ What we learned:
 - KYC steps create anxiety when clients don’t know why something is asked.
 - Above all, clients want to know what happens next.
 
+## A first journey
+
+My first sketch of the journey had two rules. The client can do everything digitally with full confidence, but can always reach a person. And every way out of the journey gets its own win-back action.
+
+<ol class="jd" aria-label="First journey draft for the digital distributor"><li><strong>Baseline</strong><span>5 to 10 questions to get a first feeling for the prospect and their needs</span></li><li><strong>Potential interests</strong><span>The topics that could matter to the prospect, based on those answers</span></li><li class="opt"><em>Optional</em><strong>Save progress</strong><span>A simple account to keep progress and earlier input. Ask as much as possible, at least email or phone</span></li><li><strong>Configure</strong><span>Shape the package from the interests chosen before</span></li><li><strong>Preview</strong><span>See the possible solution packages based on that configuration</span></li><li><strong>Buy</strong><span>The prospect refines the configuration and buys the final package</span></li></ol>
+
+<div class="jd-m" role="group" aria-label="Three pillars through the journey"><p class="jd-mh">Three pillars through the journey</p><div class="jd-row jd-head"><span>Interest</span><span>Configure</span><span>Preview</span></div><div class="jd-row"><span><b>Investing</b></span><span>Tailor a discretionary mandate</span><span>The mandate</span></div><div class="jd-row"><span><b>Lending</b></span><span>A lending calculator</span><span>The lending offer</span></div><div class="jd-row"><span><b>Wealth planning</b></span><span>Mini apps: family tree, balance sheet, wealth projection</span><span>Solutions for succession, retirement and protection</span></div><p class="jd-touch"><strong>First human touchpoint</strong> Optional, during the preview: a first session with a relationship manager from the pool to refine the configuration. Offered with confidence, so the bank never seems unsure about its own offer.</p></div>
+
+The preview also shows how the three pillars work together, plus extra services such as sessions with a relationship manager or experts, online or in person.
+
 ## Mapping the whole service
 
 I framed the concept as a digital distributor and mapped the whole service in a blueprint, from how a lead finds the bank to the ongoing relationship once they are a client. It started from one persona and one flow: wealth planning and a mandate.

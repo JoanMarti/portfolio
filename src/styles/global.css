@@ -530,3 +530,21 @@ body { overflow-wrap: break-word; }
 .prose .bp-j { margin: 0 0 12px; max-width: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
 .prose .bp-j .bp-s { margin-top: 0; }
 @media (max-width: 720px) { .prose .bp-j { grid-template-columns: 1fr; } }
+
+/* First journey draft: steps and the three pillars across them */
+.prose .jd { list-style: none; margin: 2em 0 12px; padding: 0; max-width: none; display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 8px; counter-reset: jd; }
+.prose .jd li { counter-increment: jd; margin: 0; position: relative; background: var(--paper-2); border-radius: var(--radius); padding: 14px 14px 16px; display: grid; gap: 4px; align-content: start; }
+.prose .jd li::before { content: counter(jd); font-size: var(--step--1); font-weight: 650; color: var(--accent); }
+.prose .jd li.opt { background: transparent; border: 1px dashed var(--line); }
+.prose .jd em { position: absolute; top: 14px; right: 12px; font-style: normal; font-size: 11px; color: var(--muted); }
+.prose .jd strong { font-size: var(--step-0); line-height: 1.25; }
+.prose .jd span { font-size: 13px; line-height: 1.45; color: var(--muted); }
+.prose .jd-m { margin: 0 0 1.6em; max-width: none; background: var(--paper-2); border-radius: var(--radius-lg); padding: clamp(16px, 3vw, 24px); }
+.prose .jd-mh { margin: 0 0 12px; font-weight: 650; }
+.prose .jd-row { display: grid; grid-template-columns: 1fr 1.4fr 1.4fr; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); font-size: var(--step--1); color: var(--muted); }
+.prose .jd-row b { color: var(--ink); font-weight: 600; }
+.prose .jd-head { border-top: 0; padding-top: 0; font-size: 12px; }
+.prose .jd-touch { margin: 14px 0 0; padding: 14px 16px; border-radius: var(--radius); border: 1px dashed color-mix(in srgb, var(--accent) 60%, transparent); font-size: var(--step--1); color: var(--muted); }
+.prose .jd-touch strong { color: var(--ink); display: block; margin-bottom: 2px; }
+@media (max-width: 900px) { .prose .jd { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .prose .jd { grid-template-columns: 1fr 1fr; } .prose .jd-row { grid-template-columns: 1fr; gap: 2px; } .prose .jd-head { display: none; } }
