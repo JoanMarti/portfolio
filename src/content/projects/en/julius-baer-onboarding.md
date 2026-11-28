@@ -123,6 +123,46 @@ The answers shape what comes next. The home shows the goals the client picked an
 
 ![Home screen with the client’s selected life goals and three suggested services: structured products, wealth planning and discretionary mandates. Two investment strategy screens for a pillar 3a account with a recommended Income 35% strategy, a confirmation message and a quick question option with an advisor photo.](/projects/julius-baer-onboarding/jb-suggestions.webp "Suggestions based on the client’s goals, a recommended strategy they can change, and an advisor one tap away.")
 
+## The refined app
+
+After the first prototype we refined the whole flow, from the first screen to an open account. It follows the order of the journey.
+
+### Intro
+
+A short welcome explains the three steps: tell us about your financial life, get an investment proposal, sign up digitally. Clients who already have an access code skip straight in. Short videos with a person from the bank then introduce each pillar: the investment, wealth planning, what goes beyond wealth, and how world events affect the client’s money.
+
+![Intro screens: a welcome with start and access code, the three steps, and two video screens with a diagram of the investment inside the client’s wider wealth and world events.](/projects/julius-baer-onboarding/jb-r-intro.webp "Welcome, the three steps and video introductions to each pillar, with a simple visual of how the pillars wrap around each other.")
+
+### How do you want to start?
+
+Clients can start from a profile that resembles them, such as a careerist, a highflyer or a senior, and change it later. Or they answer a few questions: what matters to them, their total wealth with sliders, major financial events such as a property sale or an inheritance, and how to reach them. Every step can be skipped. At the end they get an access code to come back to their configuration without an account.
+
+![Profile creation screens: three quick start profiles with photos, six goals as icon tiles, sliders for invested assets, cash, other assets, liabilities and savings, a list of financial events with one expanded to set amount and year, and contact details with an access code.](/projects/julius-baer-onboarding/jb-r-start.webp "Quick start profiles, goals, wealth with sliders, financial events and the access code.")
+
+### Your profile and the proposal
+
+The profile shows how complete it is, area by area, because the more complete it is, the more tailored the proposal. The proposal sums up the financial life and the investment, lists the services proposed and those always included, and keeps a person and the way to become a client on the same screen. If the client started from a profile, a short note explains the assumptions made and that they can change them at any time.
+
+![Screens: profile completeness drawn as a plant with four areas, a thank you screen, the proposal with financial life, investment, a service catalogue and an advisor, and a modal explaining the assumptions behind the careerist profile.](/projects/julius-baer-onboarding/jb-r-proposal.webp "Profile completeness, a thank you, the proposal and the note on assumptions.")
+
+### Your solution
+
+The financial life shows today’s wealth and its projection, first in a basic view and then in an advanced one that splits it into the investment with the bank, other investments, other assets and savings. Financial events such as a gift or an inheritance appear on the timeline and can be edited. In the investment, the client moves strategy, initial investment and leverage and sees the expected value change, then picks building blocks such as ESG or single stocks.
+
+![Screens: wealth projection as an area chart, the same with gift and inheritance events, an advanced stacked bar view by asset type, and the investment screen with expected performance, strategy, initial investment and leverage sliders and building blocks.](/projects/julius-baer-onboarding/jb-r-solution.webp "Financial life in basic and advanced views with events, and the investment with strategy, leverage and building blocks.")
+
+### Content and experts
+
+Insights bring news with what the bank already did about it, such as a rebalanced portfolio, and education on topics such as retirement, succession or real estate. The experts tab lets the client ask for help by call or chat, book a welcome session, join live sessions and talk to an expert directly. Some topics unlock as the profile grows.
+
+![Screens: an insights feed with articles by analysts and a portfolio adjusted label, an education list, the experts home with help and support and bookable sessions, a welcome session with dates and a question box, and a live support session with comments.](/projects/julius-baer-onboarding/jb-r-content.webp "Insights with news and education, and the experts tab with sessions.")
+
+### Onboarding
+
+When the client is ready, becoming a client takes three steps: personal information, video identification and signing the agreements, with progress always visible. The last screen confirms the account is open and shows how to transfer the funds.
+
+![Onboarding screens: a personal information form, video identification, a list of five documents to sign with two already signed, and a confirmation that the account is open with its number and a transfer instruction.](/projects/julius-baer-onboarding/jb-r-onboarding.webp "Personal information, video identification, agreements and an open account.")
+
 ## Validation
 
 High-fidelity prototypes for desktop and mobile, tested in moderated sessions with high-net-worth clients, advisors and internal stakeholders. We looked at completion confidence, trust signals, clarity of the flow, moments of hesitation and how advisors felt about their role in it.

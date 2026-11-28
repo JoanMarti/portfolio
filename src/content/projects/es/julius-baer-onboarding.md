@@ -123,6 +123,46 @@ Las respuestas dan forma a lo que viene después. La home muestra los objetivos 
 
 ![Home con los objetivos de vida elegidos y tres servicios sugeridos: productos estructurados, planificación patrimonial y mandatos discrecionales. Dos pantallas de estrategia de inversión para una cuenta del pilar 3a con la estrategia recomendada Income 35%, un mensaje de confirmación y la opción de hacer una pregunta rápida con la foto de un asesor.](/projects/julius-baer-onboarding/jb-suggestions.webp "Sugerencias según los objetivos, una estrategia recomendada que se puede cambiar y un asesor a un toque.")
 
+## La app refinada
+
+Después del primer prototipo refinamos el flujo completo, desde la primera pantalla hasta la cuenta abierta. Sigue el orden del recorrido.
+
+### Intro
+
+Una bienvenida breve explica los tres pasos: contar tu vida financiera, recibir una propuesta de inversión y darte de alta en digital. Quien ya tiene un código de acceso entra directamente. Después, vídeos cortos con una persona del banco presentan cada pilar: la inversión, la planificación patrimonial, lo que va más allá del patrimonio y cómo afecta el mundo al dinero del cliente.
+
+![Pantallas de intro: bienvenida con inicio y código de acceso, los tres pasos y dos pantallas de vídeo con un diagrama de la inversión dentro del patrimonio del cliente y de los acontecimientos del mundo.](/projects/julius-baer-onboarding/jb-r-intro.webp "Bienvenida, los tres pasos y vídeos de cada pilar, con un visual sencillo de cómo se envuelven los pilares.")
+
+### ¿Cómo quieres empezar?
+
+El cliente puede empezar desde un perfil que se le parezca, como profesional en ascenso, emprendedor o sénior, y cambiarlo después. O responder unas preguntas: qué le importa, su patrimonio total con deslizadores, grandes eventos financieros como vender una casa o una herencia, y cómo contactarle. Cada paso se puede saltar. Al final recibe un código de acceso para volver a su configuración sin crear cuenta.
+
+![Pantallas de creación de perfil: tres perfiles de inicio rápido con fotos, seis objetivos como iconos, deslizadores de inversiones, efectivo, otros activos, deudas y ahorro, una lista de eventos financieros con uno abierto para fijar importe y año, y los datos de contacto con el código de acceso.](/projects/julius-baer-onboarding/jb-r-start.webp "Perfiles de inicio rápido, objetivos, patrimonio con deslizadores, eventos financieros y el código de acceso.")
+
+### Tu perfil y la propuesta
+
+El perfil muestra cuánto está completo, área por área, porque cuanto más completo, más ajustada es la propuesta. La propuesta resume la vida financiera y la inversión, lista los servicios propuestos y los siempre incluidos, y mantiene a una persona y el camino para hacerse cliente en la misma pantalla. Si el cliente empezó desde un perfil, una nota breve explica las suposiciones hechas y que puede cambiarlas cuando quiera.
+
+![Pantallas: el perfil dibujado como una planta con cuatro áreas y su porcentaje, una pantalla de agradecimiento, la propuesta con vida financiera, inversión, catálogo de servicios y un asesor, y un modal que explica las suposiciones del perfil profesional en ascenso.](/projects/julius-baer-onboarding/jb-r-proposal.webp "Lo completo que está el perfil, un agradecimiento, la propuesta y la nota sobre las suposiciones.")
+
+### Tu solución
+
+La vida financiera muestra el patrimonio de hoy y su proyección, primero en una vista básica y después en una avanzada que lo separa en la inversión con el banco, otras inversiones, otros activos y ahorro. Los eventos financieros, como una donación o una herencia, aparecen en la línea temporal y se pueden editar. En la inversión, el cliente mueve la estrategia, la inversión inicial y el apalancamiento y ve cambiar el valor esperado, y después elige piezas como ESG o acciones individuales.
+
+![Pantallas: proyección del patrimonio en un gráfico de área, la misma con una donación y una herencia, una vista avanzada en barras apiladas por tipo de activo, y la pantalla de inversión con rendimiento esperado, estrategia, inversión inicial, apalancamiento y piezas.](/projects/julius-baer-onboarding/jb-r-solution.webp "Vida financiera en vista básica y avanzada con eventos, y la inversión con estrategia, apalancamiento y piezas.")
+
+### Contenido y expertos
+
+Insights trae noticias junto con lo que el banco ya ha hecho al respecto, como una cartera reequilibrada, y formación sobre temas como jubilación, sucesión o inmobiliario. La pestaña de expertos permite pedir ayuda por llamada o chat, reservar una sesión de bienvenida, unirse a sesiones en directo y hablar directamente con un experto. Algunos temas se desbloquean a medida que crece el perfil.
+
+![Pantallas: un feed de insights con artículos de analistas y la etiqueta cartera ajustada, una lista de formación, la home de expertos con ayuda y sesiones reservables, una sesión de bienvenida con fechas y un espacio para preguntas, y una sesión en directo con comentarios.](/projects/julius-baer-onboarding/jb-r-content.webp "Insights con noticias y formación, y la pestaña de expertos con sesiones.")
+
+### Onboarding
+
+Cuando el cliente está listo, hacerse cliente lleva tres pasos: datos personales, identificación por vídeo y firma de los contratos, con el progreso siempre visible. La última pantalla confirma que la cuenta está abierta y explica cómo transferir los fondos.
+
+![Pantallas de onboarding: un formulario de datos personales, la identificación por vídeo, una lista de cinco documentos con dos ya firmados, y la confirmación de la cuenta abierta con su número y las instrucciones de transferencia.](/projects/julius-baer-onboarding/jb-r-onboarding.webp "Datos personales, identificación por vídeo, contratos y cuenta abierta.")
+
 ## Validación
 
 Prototipos de alta fidelidad para escritorio y móvil, probados en sesiones moderadas con clientes de alto patrimonio, asesores y responsables internos. Observamos la seguridad al completar el proceso, las señales de confianza, la claridad del flujo, los momentos de duda y cómo vivían los asesores su papel.

@@ -123,6 +123,46 @@ Die Antworten prägen, was folgt. Die Startseite zeigt die gewählten Ziele und 
 
 ![Startseite mit den gewählten Lebenszielen und drei vorgeschlagenen Dienstleistungen: strukturierte Produkte, Vermögensplanung und Vermögensverwaltungsmandate. Zwei Screens zur Anlagestrategie für ein Säule-3a-Konto mit der empfohlenen Strategie Income 35%, einer Bestätigung und einer Option für eine kurze Frage mit Foto eines Beraters.](/projects/julius-baer-onboarding/jb-suggestions.webp "Vorschläge auf Basis der Ziele, eine empfohlene Strategie, die sich ändern lässt, und eine Beratungsperson nur einen Tipp entfernt.")
 
+## Die verfeinerte App
+
+Nach dem ersten Prototyp verfeinerten wir den ganzen Flow, vom ersten Screen bis zum eröffneten Konto. Er folgt der Reihenfolge der Reise.
+
+### Intro
+
+Ein kurzer Willkommensscreen erklärt die drei Schritte: vom finanziellen Leben erzählen, einen Anlagevorschlag erhalten, digital eröffnen. Wer schon einen Zugangscode hat, steigt direkt ein. Kurze Videos mit einer Person der Bank stellen danach jede Säule vor: die Anlage, die Vermögensplanung, was über das Vermögen hinausgeht und wie das Weltgeschehen das Geld der Kundschaft berührt.
+
+![Intro-Screens: Willkommen mit Start und Zugangscode, die drei Schritte und zwei Video-Screens mit einem Diagramm der Anlage innerhalb des gesamten Vermögens und des Weltgeschehens.](/projects/julius-baer-onboarding/jb-r-intro.webp "Willkommen, die drei Schritte und Videos zu jeder Säule, mit einer einfachen Darstellung, wie die Säulen ineinandergreifen.")
+
+### Wie möchten Sie starten?
+
+Man kann mit einem Profil starten, das einem ähnelt, etwa Karrieremensch, Highflyer oder Senior, und es später ändern. Oder man beantwortet einige Fragen: was einem wichtig ist, das Gesamtvermögen mit Schiebereglern, grosse finanzielle Ereignisse wie ein Immobilienverkauf oder ein Erbe und wie man erreichbar ist. Jeder Schritt lässt sich überspringen. Am Ende gibt es einen Zugangscode, um ohne Konto zur Konfiguration zurückzukehren.
+
+![Screens zur Profilerstellung: drei Schnellstart-Profile mit Fotos, sechs Ziele als Kacheln, Schieberegler für Anlagen, Cash, weitere Vermögenswerte, Verbindlichkeiten und Sparen, eine Liste finanzieller Ereignisse mit einem geöffneten für Betrag und Jahr sowie Kontaktdaten mit Zugangscode.](/projects/julius-baer-onboarding/jb-r-start.webp "Schnellstart-Profile, Ziele, Vermögen mit Schiebereglern, finanzielle Ereignisse und der Zugangscode.")
+
+### Ihr Profil und der Vorschlag
+
+Das Profil zeigt Bereich für Bereich, wie vollständig es ist, denn je vollständiger es ist, desto passender der Vorschlag. Der Vorschlag fasst finanzielles Leben und Anlage zusammen, listet die vorgeschlagenen und die immer enthaltenen Dienstleistungen und hält eine Person und den Weg zur Kontoeröffnung auf demselben Screen. Wer mit einem Profil gestartet ist, sieht einen kurzen Hinweis zu den getroffenen Annahmen und dass sie sich jederzeit ändern lassen.
+
+![Screens: Vollständigkeit des Profils als Pflanze mit vier Bereichen, ein Danke-Screen, der Vorschlag mit finanziellem Leben, Anlage, Dienstleistungskatalog und Berater sowie ein Modal zu den Annahmen hinter dem Profil Karrieremensch.](/projects/julius-baer-onboarding/jb-r-proposal.webp "Vollständigkeit des Profils, ein Dankeschön, der Vorschlag und der Hinweis zu den Annahmen.")
+
+### Ihre Lösung
+
+Das finanzielle Leben zeigt das heutige Vermögen und seine Projektion, zuerst in einer einfachen und dann in einer erweiterten Ansicht, die nach Anlage bei der Bank, anderen Anlagen, weiteren Vermögenswerten und Sparen aufteilt. Finanzielle Ereignisse wie eine Schenkung oder ein Erbe erscheinen auf der Zeitachse und lassen sich bearbeiten. Bei der Anlage verschiebt man Strategie, Anfangsinvestition und Hebel und sieht den erwarteten Wert sich verändern, dann wählt man Bausteine wie ESG oder Einzeltitel.
+
+![Screens: Vermögensprojektion als Flächendiagramm, dasselbe mit Schenkung und Erbe, eine erweiterte Ansicht als gestapelte Balken nach Vermögensart und der Anlage-Screen mit erwarteter Entwicklung, Strategie, Anfangsinvestition, Hebel und Bausteinen.](/projects/julius-baer-onboarding/jb-r-solution.webp "Finanzielles Leben in einfacher und erweiterter Ansicht mit Ereignissen, und die Anlage mit Strategie, Hebel und Bausteinen.")
+
+### Inhalte und Fachleute
+
+Insights bringen News mit dem, was die Bank bereits unternommen hat, etwa ein neu ausgerichtetes Portfolio, und Wissen zu Themen wie Vorsorge, Nachfolge oder Immobilien. Im Bereich Fachleute kann man per Anruf oder Chat Hilfe holen, ein Willkommensgespräch buchen, an Live-Sessions teilnehmen und direkt mit einer Fachperson sprechen. Manche Themen werden freigeschaltet, wenn das Profil wächst.
+
+![Screens: ein Insights-Feed mit Artikeln von Analysten und dem Hinweis Portfolio angepasst, eine Liste zu Wissen, die Startseite der Fachleute mit Hilfe und buchbaren Sessions, ein Willkommensgespräch mit Terminen und Fragefeld und eine Live-Session mit Kommentaren.](/projects/julius-baer-onboarding/jb-r-content.webp "Insights mit News und Wissen, und der Bereich Fachleute mit Sessions.")
+
+### Onboarding
+
+Wenn die Person bereit ist, braucht die Kontoeröffnung drei Schritte: persönliche Angaben, Video-Identifikation und das Unterzeichnen der Verträge, mit sichtbarem Fortschritt. Der letzte Screen bestätigt das eröffnete Konto und zeigt, wie man das Geld überweist.
+
+![Onboarding-Screens: ein Formular für persönliche Angaben, die Video-Identifikation, eine Liste von fünf Dokumenten, zwei davon unterzeichnet, und die Bestätigung des eröffneten Kontos mit Nummer und Überweisungsanleitung.](/projects/julius-baer-onboarding/jb-r-onboarding.webp "Persönliche Angaben, Video-Identifikation, Verträge und ein eröffnetes Konto.")
+
 ## Validierung
 
 High-Fidelity-Prototypen für Desktop und Mobile, getestet in moderierten Sessions mit vermögenden Privatkunden, Beratern und internen Verantwortlichen. Wir beobachteten die Sicherheit beim Abschliessen, Vertrauenssignale, die Verständlichkeit des Ablaufs, Momente des Zögerns und wie die Berater ihre Rolle darin erlebten.
