@@ -65,6 +65,14 @@ Mi primer boceto del recorrido tenía dos reglas. El cliente puede hacerlo todo 
 
 La vista previa muestra también cómo se combinan los tres pilares, y servicios extra como sesiones con un gestor o con expertos, en línea o en persona.
 
+## Qué podía ofrecer el distribuidor
+
+Además del mandato discrecional, el objetivo era recoger tanta información como el cliente quisiera compartir y mostrarla de una forma que tuviera sentido para él. Cuanto más sabemos, antes entiende al cliente un gestor del equipo o un especialista, y antes puede recomendarle algo útil. Agrupamos las funcionalidades que valoramos en cinco áreas.
+
+<div class="fm" role="group" aria-label="Mapa de funcionalidades en cinco áreas"><div><p class="fm-h">Inversión</p><p class="fm-s">El mandato discrecional</p><ul><li>Estrategia, con nueva simulación</li><li>Piezas: preferencias como ESG, foco regional o acciones individuales, y temas como IA o salud</li></ul></div><div><p class="fm-h">Tu vida financiera</p><p class="fm-s">Lo que tiene el cliente y hacia dónde va</p><ul><li>Visión del patrimonio como balance</li><li>Proyección del patrimonio con entradas y salidas de dinero</li><li>Estructura del patrimonio por asignación, divisa y geografía</li></ul></div><div><p class="fm-h">Extras de planificación</p><p class="fm-s">Ayuda más allá de invertir</p><ul><li>Expertos bajo demanda</li><li>Árbol familiar</li><li>Archivo de documentos</li><li>Presencia global</li></ul></div><div><p class="fm-h">Más allá del patrimonio</p><p class="fm-s">Contenido e insights</p><ul><li>Impacto del mundo: cómo las crisis, las noticias y la regulación afectan a la cartera</li><li>Piezas breves de contenido del banco</li></ul></div><div><p class="fm-h">Banca</p><p class="fm-s">Lo del día a día</p><ul><li>Cuenta corriente</li><li>Pagos</li></ul></div></div>
+
+![Conceptos de las funcionalidades: simulación de inversión a lo largo de la vida con escenario esperado, mejor y peor, preferencias y temas de inversión como tarjetas con imagen, patrimonio neto como balance, proyección con probabilidad de alcanzar el objetivo, estructura del patrimonio por asignación, una vista del impacto del mundo y un árbol familiar.](/projects/julius-baer-onboarding/jb-feature-map.webp "Conceptos para las funcionalidades: simulación, preferencias, patrimonio neto, proyección, estructura del patrimonio, impacto del mundo y árbol familiar.")
+
 ## Mapear el servicio completo
 
 Planteé el concepto como un distribuidor digital y mapeé el servicio completo en un blueprint, desde cómo llega un lead al banco hasta el seguimiento cuando ya es cliente. Partí de una persona y un flujo: planificación patrimonial y un mandato.

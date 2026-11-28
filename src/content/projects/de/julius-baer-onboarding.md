@@ -65,6 +65,14 @@ Meine erste Skizze der Reise hatte zwei Regeln. Die Kundschaft kann alles digita
 
 Die Vorschau zeigt auch, wie die drei Säulen zusammenspielen, dazu weitere Dienstleistungen wie Gespräche mit Kundenberatung oder Fachleuten, online oder vor Ort.
 
+## Was der Kanal bieten könnte
+
+Neben dem Vermögensverwaltungsmandat war das Ziel, so viele Informationen zu erfassen, wie die Kundschaft teilen möchte, und sie so darzustellen, dass sie ihr etwas bedeuten. Je mehr wir wissen, desto schneller versteht eine Kundenberaterin oder ein Kundenberater aus dem Pool oder eine Fachperson die Person und kann etwas Sinnvolles empfehlen. Die Funktionen, die wir prüften, ordneten wir in fünf Bereiche.
+
+<div class="fm" role="group" aria-label="Funktionslandkarte in fünf Bereichen"><div><p class="fm-h">Anlegen</p><p class="fm-s">Das Vermögensverwaltungsmandat</p><ul><li>Strategie, mit erneuter Simulation</li><li>Bausteine: Präferenzen wie ESG, regionaler Fokus oder Einzeltitel und Themen wie KI oder Gesundheit</li></ul></div><div><p class="fm-h">Ihr finanzielles Leben</p><p class="fm-s">Was die Person hat und wohin es geht</p><ul><li>Vermögensübersicht als Bilanz</li><li>Vermögensprojektion mit Geldflüssen rein und raus</li><li>Vermögensstruktur nach Allokation, Währung und Region</li></ul></div><div><p class="fm-h">Extras der Vermögensplanung</p><p class="fm-s">Hilfe über das Anlegen hinaus</p><ul><li>Fachleute auf Abruf</li><li>Stammbaum</li><li>Dokumententresor</li><li>Globale Präsenz</li></ul></div><div><p class="fm-h">Über das Vermögen hinaus</p><p class="fm-s">Inhalte und Einblicke</p><ul><li>Einblicke in die Weltlage: wie Krisen, News und Regulierung das Portfolio berühren</li><li>Kurze Inhalte der Bank</li></ul></div><div><p class="fm-h">Banking</p><p class="fm-s">Das Alltägliche</p><ul><li>Kontokorrent</li><li>Zahlungen</li></ul></div></div>
+
+![Konzepte der Funktionen: Anlagesimulation über die Lebenszeit mit erwarteter, bester und schwacher Entwicklung, Anlagepräferenzen und Themen als Bildkarten, Nettovermögen als Bilanz, Vermögensprojektion mit Zielwahrscheinlichkeit, Vermögensstruktur nach Allokation, eine Ansicht zur Weltlage und ein Stammbaum.](/projects/julius-baer-onboarding/jb-feature-map.webp "Konzepte für die Funktionen: Simulation, Präferenzen, Nettovermögen, Projektion, Vermögensstruktur, Weltlage und Stammbaum.")
+
 ## Den ganzen Service abbilden
 
 Ich fasste das Konzept als digitalen Vertriebskanal und bildete den ganzen Service in einem Blueprint ab, vom ersten Kontakt bis zur laufenden Betreuung als Kundin oder Kunde. Ausgangspunkt waren eine Persona und ein Flow: Vermögensplanung und ein Mandat.

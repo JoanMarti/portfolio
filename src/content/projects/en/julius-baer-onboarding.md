@@ -65,6 +65,14 @@ My first sketch of the journey had two rules. The client can do everything digit
 
 The preview also shows how the three pillars work together, plus extra services such as sessions with a relationship manager or experts, online or in person.
 
+## What the distributor could offer
+
+Beyond the discretionary mandate, the goal was to capture as much information as the client is willing to share and to show it in a way that means something to them. The more we know, the faster a relationship manager from the pool or a specialist understands the client and can recommend something useful. We grouped the features we considered into five areas.
+
+<div class="fm" role="group" aria-label="Feature map in five areas"><div><p class="fm-h">Investment</p><p class="fm-s">The discretionary mandate</p><ul><li>Strategy, with resimulation</li><li>Building blocks: preferences such as ESG, regional focus or single stocks, and themes such as AI or health care</li></ul></div><div><p class="fm-h">Your financial life</p><p class="fm-s">What the client has and where it is going</p><ul><li>Wealth overview as a balance sheet</li><li>Wealth projection with cash events in and out</li><li>Wealth structure by allocation, currency and geography</li></ul></div><div><p class="fm-h">Wealth planning extras</p><p class="fm-s">Help beyond investing</p><ul><li>Experts on demand</li><li>Family tree</li><li>Document vault</li><li>Global footprint</li></ul></div><div><p class="fm-h">Beyond wealth</p><p class="fm-s">Content and insights</p><ul><li>World impact insights: how crises, news and regulation touch the portfolio</li><li>Short content pieces from the bank</li></ul></div><div><p class="fm-h">Banking</p><p class="fm-s">The everyday basics</p><ul><li>Cash account</li><li>Payments</li></ul></div></div>
+
+![Feature concepts: lifetime investment simulation with expected, best and poor performance, investment preferences and themes as image cards, net worth as a balance sheet, net worth projection with goal probability, wealth structure by allocation, a world impact view and a family tree.](/projects/julius-baer-onboarding/jb-feature-map.webp "Concepts for the features: simulation, preferences, net worth, projection, wealth structure, world impact and family tree.")
+
 ## Mapping the whole service
 
 I framed the concept as a digital distributor and mapped the whole service in a blueprint, from how a lead finds the bank to the ongoing relationship once they are a client. It started from one persona and one flow: wealth planning and a mandate.
